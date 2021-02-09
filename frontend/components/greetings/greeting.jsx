@@ -7,13 +7,15 @@ class Greeting extends React.Component{
   render(){
     const { logout, currentUser} = this.props;
     let welcome;
-    
+
+    const log = (<Link exact to='/login'>Log In</Link>);
+    const sign = (<Link exact to='/singup'>Sign Up</Link>);
     if (!currentUser){
       welcome = (
         <div>
-          <h3>Please Log In or Sign Up</h3>
-          <Link to='/'>Sign Up</Link>
-          {/* <Link to='/'>Sign Up</Link> */}
+          <h3>Please {log} or {sign}</h3>
+          {/* <Link exact to='/login'>Log In</Link> */}
+          {/* <Link to='/signup'>Sign Up</Link> */}
         </div>
       )
     } else {

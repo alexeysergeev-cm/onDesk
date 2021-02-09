@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   update(field){
@@ -25,26 +24,48 @@ class SessionForm extends React.Component {
 
 
   render(){
+
+    let form; 
+    if (this.props.formType === 'Sign Up'){
+      form = (<div>
+        <label>Username
+              <input type="text" value={this.state.username}
+            onChange={this.update('username')}
+          />
+        </label>
+        <label>Email
+              <input type="text" value={this.state.email}
+            onChange={this.update('email')}
+          />
+        </label>
+        <label>Password
+              <input type="password" value={this.state.password}
+            onChange={this.update('password')}
+          />
+        </label>
+      </div>)
+    } else {
+      form = (<div>
+        <label>Username
+              <input type="text" value={this.state.username}
+            onChange={this.update('username')}
+          />
+        </label>
+        <label>Password
+              <input type="password" value={this.state.password}
+            onChange={this.update('password')}
+          />
+        </label>
+      </div>)
+    }
+    
+
     return(
       <>  
         <div className='session-form'>
           <h2>{this.props.formType}</h2>
-          <form onSubmit={handleSubmit}>
-            <label>Username
-              <input type="text" value={this.state.username}
-                onChange={this.update('username')}
-              />
-            </label>
-            <label>Email
-              <input type="text" value={this.state.email}
-                onChange={this.update('email')}
-              />
-            </label>
-            <label>Username
-              <input type="password" value={this.state.password}
-                onChange={this.update('password')}
-              />
-            </label>
+          <form onSubmit={this.handleSubmit}>
+            {form}
             <button>{this.props.formType}</button>
           </form>
         </div>
@@ -52,3 +73,5 @@ class SessionForm extends React.Component {
     )
   }
 }
+
+export default SessionForm;
