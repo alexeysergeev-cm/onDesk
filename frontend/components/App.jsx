@@ -3,8 +3,10 @@ import GreetingContainer from './greetings/greeting_container'
 
 const App = () => (
   <div>
-    <h1>onDesk</h1>
-    <GreetingContainer />
+    <header>
+      <h1>onDesk</h1>
+      <GreetingContainer />
+    </header>
   </div>
 );
 
