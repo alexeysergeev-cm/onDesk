@@ -20,20 +20,22 @@ const receiveErrors = (errors) => ({ //array
 })
 
 
-export const signup = (user) =>  dispatch =>(
+export const signup = (user) => dispatch => (
   SessionApiUtil.signup(user)
     .then((user) => dispatch(receiveCurrentUser(user)))
-    .fail((errors) => dispatch(receiveErrors(errors)))
-)
+  )
+  // .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 
-export const login = (user) => dispatch => (
-  SessionApiUtil.login(user)
-    .then((user) => dispatch(receiveCurrentUser(user)))
-    .fail((errors) => dispatch(receiveErrors(errors)))
-)
+export const login = (user) => dispatch => 
 
-export const logout = () => dispatch => (
+SessionApiUtil.login(user)
+    .then((nUser) => dispatch(receiveCurrentUser(nUser)))
+    // .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+
+
+
+export const logout = () => dispatch => {
   SessionApiUtil.logout()
     .then(() => dispatch(logoutCurrentUser()))
-    .fail((errors) => dispatch(receiveErrors(errors)))
-)
+    // .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
+}
