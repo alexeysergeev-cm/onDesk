@@ -15,7 +15,7 @@ const sessionReducer = (state = _nullSession, action) => {
       return { currentUserId: action.currentUser.id}
     case REMOVE_CURRENT_USER:
       // return nextState[currentUserId] = null;
-      return state;
+      return _nullSession;
     default:
       return state
   }
