@@ -8,10 +8,10 @@ const App = () => (
   <div>
     <header>
       <h1>onDesk</h1>
-      <GreetingContainer />
     </header>
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
+    <Route exact path="/" component={GreetingContainer} />
+    <Route exact path="/login" component={LoginFormContainer} />
+    <Route exact path="/signup" component={SignupFormContainer} />
   </div>
 );
 

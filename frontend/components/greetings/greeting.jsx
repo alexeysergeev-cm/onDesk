@@ -9,7 +9,7 @@ class Greeting extends React.Component{
     let welcome;
 
     const log = (<Link exact to='/login'>Log In</Link>);
-    const sign = (<Link exact to='/singup'>Sign Up</Link>);
+    const sign = (<Link exact to='/signup'>Sign Up</Link>);
     if (!currentUser){
       welcome = (
         <div>
@@ -21,7 +21,7 @@ class Greeting extends React.Component{
     } else {
       welcome = (
       <div>
-        <h3>Welcome {currentUser.username}</h3>
+        <h3>Welcome {currentUser.username}!</h3>
         <button onClick={() => logout()}>Logout</button>
       </div>
       )

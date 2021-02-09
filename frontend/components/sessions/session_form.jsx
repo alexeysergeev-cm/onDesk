@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router'
 
 
 class SessionForm extends React.Component {
@@ -8,6 +9,7 @@ class SessionForm extends React.Component {
       username: "",
       email: '',
       password: "",
+      redirect: false,
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,10 +22,17 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     this.props.processForm(this.state)
+      .then(() => this.setState({ redirect: true }));
+    // <Redirect path='/' />
   }
 
 
   render(){
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect to='/' />;
+    }
 
     let form; 
     if (this.props.formType === 'Sign Up'){

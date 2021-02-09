@@ -6,6 +6,8 @@ class Api::SessionsController < ApplicationController
                                     )
     if @user 
       login!(@user)
+      # debugger
+      # redirect_to '/'
       render '/api/users/show'
     else
       render json: ['Invalid username or password, please try again'], 

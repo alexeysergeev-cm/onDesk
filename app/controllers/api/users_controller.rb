@@ -10,6 +10,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = selected_user
+  end
+  
 
   private
   def user_params
