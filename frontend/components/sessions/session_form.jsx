@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
       // debugger
-      form = (<div>
+      form = (<div className='session-form'>
         <form onSubmit={this.handleSubmit}>
         <h2>{formType} to onDesk</h2>
           <label>Username
@@ -79,9 +79,9 @@ class SessionForm extends React.Component {
     return(
       <div className='session'>  
         <h1 className="logo">onDesk</h1>
-        <div className='session-form'>
+
           {form}
-        </div>
+
       </div>
     )
   }
