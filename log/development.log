@@ -4871,3 +4871,34 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 240ms (Views: 8.6ms | ActiveRecord: 3.8ms)
 
 
+Started DELETE "/api/session" for ::1 at 2021-02-09 20:26:45 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "v3n9PedrY7N2y7m39r9ZRA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "tori"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "z1nMCnQLQYHEm0dp0Jh6cQ"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "torr@io.com"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z1nMCnQLQYHEm0dp0Jh6cQ"], ["updated_at", "2021-02-10 04:26:45.971468"], ["id", 16]]
+  ↳ app/models/user.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-09 20:48:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "": expected selector or at-rule, was "/*":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___3889570812668234184_70175144616120'
+
+Started POST "/__better_errors/584d39031cf39087/variables" for ::1 at 2021-02-09 20:48:15 -0800
