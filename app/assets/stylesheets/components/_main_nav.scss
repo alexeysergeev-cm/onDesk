@@ -63,12 +63,14 @@
       vertical-align: middle;
       border: 1px solid transparent;
     }
-    .btn-sm{
+    .btn-sm {
       color: $white;
+      padding: 6px 12px;
+      border: 1px solid transparent;
     }
    .btn:hover {
     text-decoration: underline;
-    
+
    }
  }
 
