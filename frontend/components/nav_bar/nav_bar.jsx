@@ -7,7 +7,7 @@ class NavBar  extends  React.Component{
     const display = (
       <div>
         <Link className="btn btn-sm" to="/login">Log In</Link>
-        <Link className="btn" to="/signup">Sign Up</Link>
+        <Link className="btn btn-bg" to="/signup">Sign Up</Link>
       </div>
     );
   
