@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
 
     let form; 
     if (this.props.formType === 'Sign Up'){
+      let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
       form = (<div>
         <label>Username
               <input type="text" value={this.state.username}
@@ -54,31 +55,34 @@ class SessionForm extends React.Component {
         </label>
       </div>)
     } else {
+      let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
+      // debugger
       form = (<div>
-        <label>Username
-              <input type="text" value={this.state.username}
-            onChange={this.update('username')}
-          />
-        </label>
-        <label>Password
-              <input type="password" value={this.state.password}
-            onChange={this.update('password')}
-          />
-        </label>
+        <form onSubmit={this.handleSubmit}>
+        <h2>{formType} to onDesk</h2>
+          <label>Username
+                <input type="text" value={this.state.username}
+              onChange={this.update('username')}
+            />
+          </label>
+          <label>Password
+                <input type="password" value={this.state.password}
+              onChange={this.update('password')}
+            />
+          </label>
+          <button>{formType}</button>
+        </form>
       </div>)
     }
     
 
     return(
-      <>  
+      <div className='session'>  
+        <h1 className="logo">onDesk</h1>
         <div className='session-form'>
-          <h2>{this.props.formType}</h2>
-          <form onSubmit={this.handleSubmit}>
-            {form}
-            <button>{this.props.formType}</button>
-          </form>
+          {form}
         </div>
-      </>
+      </div>
     )
   }
 }
