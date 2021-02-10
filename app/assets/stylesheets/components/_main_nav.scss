@@ -1,20 +1,20 @@
-.nav-bar {
-   display: flex;
-   justify-content: space-between;
-   padding: 20px;
-   background: lightblue;
-   align-items: center;
-   .btn {
-     background-color: white;
-     padding: 10px;
-     box-shadow: 3px 3px 3px darkblue;
-     text-decoration: none;
-   }
-   .btn:hover {
-    background-color: rgb(240, 240, 240);
-    box-shadow: 1px 1px 1px darkblue;
-   }
- }
+// .nav-bar {
+//    display: flex;
+//    justify-content: space-between;
+//    padding: 20px;
+//    background: lightblue;
+//    align-items: center;
+//    .btn {
+//      background-color: white;
+//      padding: 10px;
+//      box-shadow: 3px 3px 3px darkblue;
+//      text-decoration: none;
+//    }
+//    .btn:hover {
+//     background-color: rgb(240, 240, 240);
+//     box-shadow: 1px 1px 1px darkblue;
+//    }
+//  }
 
  .fixed-top {
    position: fixed;
@@ -24,7 +24,7 @@
    left: 0;
    z-index: 1030; 
    display: block;
-  //  box-sizing: border-box;
+  //  box-sizing: border-box; ??
   font-family: $san-serif;
   color: $dark-blue;
   background-color: $light-blue;
@@ -35,10 +35,16 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
+  //  flex-wrap: wrap; ??
+   padding: 24px;
+   -webkit-box-pack: justify;
  }
 
  .float-left {
   float: left;
+  color: $white;
+  background-color: transparent; //?rgb(0 0 0 / 0%)?
+  font-family: $caveat;
  }
 
  .float-right {
