@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #CRLLL
 
   def current_user
-    # debugger
+
     return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token]) #we find user
     # return @current_user

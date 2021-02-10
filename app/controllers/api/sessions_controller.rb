@@ -6,7 +6,6 @@ class Api::SessionsController < ApplicationController
                                     )
     if @user 
       login!(@user)
-      # debugger
       # redirect_to '/'
       render '/api/users/show'
     else
