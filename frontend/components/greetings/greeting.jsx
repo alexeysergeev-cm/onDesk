@@ -21,7 +21,8 @@ class Greeting extends React.Component{
     } else {
       welcome = (
       <div>
-        <h3>Welcome {currentUser.username}!</h3>
+        <h3>Welcome {currentUser.username[0].toUpperCase() + 
+            currentUser.username.slice(1)}!</h3>
         <button onClick={() => logout()}>Logout</button>
       </div>
       )

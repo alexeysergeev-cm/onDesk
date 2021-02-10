@@ -8,8 +8,8 @@ class NavBar  extends  React.Component{
       <div>
         {/* <p>Hello, {currentUser.username}</p>
         <button onClick={logout}>Log Out</button> */}
+        <Link className="" to="/login">Log In</Link>
         <Link className="btn" to="/signup">Sign Up</Link>
-        <Link className="btn" to="/login">Log In</Link>
       </div>
     );
   
