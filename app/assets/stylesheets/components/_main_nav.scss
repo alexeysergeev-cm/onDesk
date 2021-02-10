@@ -36,20 +36,40 @@
    align-items: center;
    justify-content: space-between;
   //  flex-wrap: wrap; ??
-   padding: 24px;
+   padding: 20px;
    -webkit-box-pack: justify;
+   
  }
 
  .float-left {
   float: left;
   color: $white;
-  background-color: transparent; //?rgb(0 0 0 / 0%)?
+  background-color: transparent; //yes -> rgb(0 0 0 / 0%)
   font-family: $caveat;
+  font-size: x-large;
+  width: 130px;
+  height: 50px;
  }
 
  .float-right {
-  float: right;
-  display: block;
+    float: right;
+    display: block;
+    .btn {
+      background-color: transparent;
+      padding: 5px;
+      // box-shadow: 3px 3px 3px darkblue;
+      text-decoration: none;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid transparent;
+    }
+    .btn-sm{
+      color: $white;
+    }
+   .btn:hover {
+    text-decoration: underline;
+    
+   }
  }
 
  
