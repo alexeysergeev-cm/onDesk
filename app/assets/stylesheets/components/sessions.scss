@@ -21,12 +21,9 @@
 .session-form {
    display: flex;
    flex-direction: column;
-
     height: 608px;
     max-width: 400px;
     margin: auto;
-
-
    justify-content: center;
    align-items: center;
    form {
@@ -41,6 +38,17 @@
      padding: 25px 40px;
      box-shadow: 0 0 10px $silver;
    }
+   h2{
+     display: block;
+     margin: 10px 0px 25px 0px;
+     margin-block-start: -200px;
+     margin-block-end: 50px;
+     font-family: $san-serif;
+     font-weight: bold;
+     width: 320px;
+     height: 27px;
+     text-align: center;
+    }
 }
 
 .session{
