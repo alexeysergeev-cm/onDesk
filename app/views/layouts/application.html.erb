@@ -9,7 +9,12 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <% if logged_in? %>
+    <% body = "bye" %>
+  <% else %>
+    <% body = "hello" %>
+  <% end %>
+  <body class="<%= body %>">
     <%= yield %>
   </body>
 </html>
