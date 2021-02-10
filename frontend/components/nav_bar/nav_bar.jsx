@@ -6,19 +6,19 @@ class NavBar  extends  React.Component{
     const { currentUser, logout } = this.props
     const display = (
       <div>
-        {/* <p>Hello, {currentUser.username}</p>
-        <button onClick={logout}>Log Out</button> */}
         <Link className="" to="/login">Log In</Link>
         <Link className="btn" to="/signup">Sign Up</Link>
       </div>
     );
   
     return (
-      <header className="nav-bar">
-        <h1 className="logo">onDesk</h1>
-        <div>
-          {display}
-        </div>
+      <header className="fixed-top">
+        <nav className="navbar">
+          <a className='float-left' href="/">onDesk</a>
+          <div className='float-right'>
+            {display}
+          </div>
+        </nav>
       </header>
     );
   }

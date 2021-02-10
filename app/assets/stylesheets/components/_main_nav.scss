@@ -15,3 +15,35 @@
     box-shadow: 1px 1px 1px darkblue;
    }
  }
+
+ .fixed-top {
+   position: fixed;
+   top: 0;
+   right: 0;
+   right: 0;
+   left: 0;
+   z-index: 1030; 
+   display: block;
+  //  box-sizing: border-box;
+  font-family: $san-serif;
+  color: $dark-blue;
+  background-color: $light-blue;
+ }
+
+ .nav-bar{
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .float-left {
+  float: left;
+ }
+
+ .float-right {
+  float: right;
+  display: block;
+ }
+
+ 
