@@ -1,0 +1,17 @@
+.nav-bar {
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   background: lightblue;
+   align-items: center;
+   .btn {
+     background-color: white;
+     padding: 10px;
+     box-shadow: 3px 3px 3px darkblue;
+     text-decoration: none;
+   }
+   .btn:hover {
+    background-color: rgb(240, 240, 240);
+    box-shadow: 1px 1px 1px darkblue;
+   }
+ }
