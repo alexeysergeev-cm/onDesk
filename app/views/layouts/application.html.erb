@@ -15,9 +15,9 @@
   </head>
 
   <% if logged_in? %>
-    <% body = "bye" %>
+    <% body = "yes" %>
   <% else %>
-    <% body = "hello" %>
+    <% body = "no" %>
   <% end %>
   <body class="<%= body %>">
     <%= yield %>

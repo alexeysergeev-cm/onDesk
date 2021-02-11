@@ -7,28 +7,28 @@ class Greeting extends React.Component{
   render(){
     const { logout, currentUser} = this.props;
     let welcome;
+    let name;
 
-    const log = (<Link to='/login'>Log In</Link>);
-    const sign = (<Link to='/signup'>Sign Up</Link>);
-    if (!currentUser){
-      welcome = (
-        <div>
-          <h3>Please {log} or {sign}</h3>
-        </div>
-      )
-    } else {
+    if (currentUser){
       welcome = (
       <div>
-        <h3>Welcome {currentUser.username[0].toUpperCase() + 
-            currentUser.username.slice(1)}!</h3>
-        <button onClick={() => logout()}>Logout</button>
+          <button className="btn btn-bg loggedIn" onClick={() => logout()}>Logout</button>
       </div>
       )
+      name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
     }
 
     return(
       <>
-        {welcome}
+        <header className="fixed-top">
+          <nav className="nav-bar loggedIn">
+            <a className='float-left'>onDesk</a>
+            <h3>Welcome {name}!</h3>
+            <div className='float-right'>
+              {welcome}
+            </div>
+          </nav>
+        </header>
       </>
     )
   }

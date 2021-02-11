@@ -14,7 +14,7 @@ class NavBar  extends  React.Component{
     return (
       <header className="fixed-top">
         <nav className="nav-bar">
-          <a className='float-left' href="/">onDesk</a>
+          <a className='float-left' >onDesk</a>
           <div className='float-right'>
             {display}
           </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router'
-import { Link } from 'react-router-dom'
-
+import { Link, Route} from 'react-router-dom'
+import GreetingContainer from '../greetings/greeting_container'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -47,6 +47,7 @@ class SessionForm extends React.Component {
     e.preventDefault()
     this.props.demoUser({email: 'tori@io.com', password: '123456'})
       .then(() => this.setState({ redirect: true }))
+      // .then(() => this.props.history.push('/greeting'))
       // this.props.history.push('/')
   }
 
@@ -54,7 +55,10 @@ class SessionForm extends React.Component {
     const { redirect } = this.state;
 
     if (redirect) {
-      return <Redirect to='/' />;
+      return <Redirect to='/'/>;
+      // return <Route exact path="/greeting" component={GreetingContainer} />
+      // return <Route exact path="/greeting" render={() => <GreetingContainer />} />
+
     }
     // debugger
     const errors = Object.values(this.props.errors).map((err, i) =>(

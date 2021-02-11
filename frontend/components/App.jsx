@@ -5,12 +5,13 @@ import LoginFormContainer from '../components/sessions/login_form_container';
 import SignupFormContainer from '../components/sessions/signup_form_container';
 import {AuthRoute} from '../util/route_util'
 import NavBarContainer from '../components/nav_bar/nav_bar_container'
+import Home from './nav_bar/home/home'
 
 const App = () => (
   <div>
-    <Route exact path="/" component={NavBarContainer} />
-    <Route exact path="/" component={GreetingContainer} />
-    {/* <Route exact path="/" component={Home} /> */}
+    <Home />
+    {/* <Route exact path="/" component={NavBarContainer} />
+    <Route exact path="/greeting" component={GreetingContainer} /> */}
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
