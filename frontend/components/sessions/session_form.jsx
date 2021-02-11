@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router'
+import { Link } from 'react-router-dom'
 
 
 class SessionForm extends React.Component {
@@ -31,7 +32,13 @@ class SessionForm extends React.Component {
     e.preventDefault()
     this.props.processForm(this.state)
       .then(() => this.setState({ redirect: true }))
-
+  }
+  //questionable function :( ?
+  removeErr(){
+    let $errField = document.getElementsByClassName('session-errors err-on')
+    // debugger
+    $errField[0].classList.remove('err-on') 
+    // debugger
   }
 
 
@@ -48,10 +55,17 @@ class SessionForm extends React.Component {
     ))
 
     if (errors[0] instanceof Array === false) {
-      const $errField = document.getElementsByClassName('session-errors')
-      if ($errField.length >= 1) {
+      if (errors[0].includes('another')){
+        let $errField = document.getElementsByClassName('session-errors');
+        $errField[0].classList.remove('err-on');
+      }
+      let $errField = document.getElementsByClassName('session-errors')
+      debugger
+      // if ($errField.length >= 1) {
+      if ($errField[0].innerText !== "Email already in use by another account. You can use ") {
         $errField[0].classList.add('err-on')
       }
+      
     }
     
 
@@ -71,8 +85,9 @@ class SessionForm extends React.Component {
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
       form = (<div className='session-form blue'>
-        <div as='p' className='session-errors ' id="signup">{errors}</div>
         <form onSubmit={this.handleSubmit}>
+          <div as='p' className='session-errors ' id="signup">{errors} 
+          <Link onClick={this.removeErr} to="/login">log in</Link></div>
           <h1>Sign up for you account</h1>
           <input type="email" value={this.state.email}
             className='form-field inner-section'
@@ -94,6 +109,7 @@ class SessionForm extends React.Component {
       </div>)
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
+      // debugger
         form = (<div className='session-form'>
         <form onSubmit={this.handleSubmit}>
         <div as='p' className='session-errors'>{errors}</div>
