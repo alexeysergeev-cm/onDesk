@@ -12906,3 +12906,607 @@ Unpermitted parameters: :redirect, :formChange
 Completed 401 Unauthorized in 229ms (Views: 0.1ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for ::1 at 2021-02-11 10:28:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 114ms (Views: 111.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:28:39 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gLxmT_-0XgiRGWN5OoHNqQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 236ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:28:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 531ms (Views: 526.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:29:07 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WgwluGAKHFwEshik5suA1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 226ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:29:14 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@dca", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@dca"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:29:20 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@dca", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@dca"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:29:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:30:04 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "j5INCTbAL4Q43YP8cdcA2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 229ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:30:11 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@ad", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@ad"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:30:16 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@ad", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@ad"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:30:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 556ms (Views: 550.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:31:01 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bYIMkwHi22G4hvhuXNd49g"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 227ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:31:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 503ms (Views: 500.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:31:51 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "zZzwqrL6bRbxuaFXapxCAw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 234ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:31:57 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@f", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@f"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:31:59 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@f", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@f"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:42:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 435ms (Views: 432.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:42:23 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (6.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-XlllE_P1eWIsNu8PQTFUA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 237ms (Views: 0.3ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:45:23 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@d", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@d"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:45:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:45:52 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Y5tsxop1RjNZYkKa9zT3lQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 245ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 10:46:17 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@d", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@d"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:57:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 682ms (Views: 673.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:58:09 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (55.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iw37GTofvbQoEIh110k9Cg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 300ms (Views: 0.2ms | ActiveRecord: 56.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 10:59:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 405ms (Views: 402.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:59:24 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "W7Q1fcKSkHK1cdv37IaStQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 217ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:59:26 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "s8_P-KRZFB71hNrQc5DkAQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 218ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:59:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xy5RloEO_LC8U8njE2WOMw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 218ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 10:59:28 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FwSRfOqC2RfHIabRxyfIrA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 229ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:00:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 553ms (Views: 550.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:00:15 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LJa0JUfMO6ZJKnYFchuJ4w"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 219ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:00:16 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "nGL-gPL0UB9MyScrzMx5RQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 223ms (Views: 0.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:00:17 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "R5TdLzj3RzsPOvYuvI1HvQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 228ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:00:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 342ms (Views: 339.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:00:59 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qgbMU-sahGuAsQOzUUUJwQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 217ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:01:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 443ms (Views: 440.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:01:23 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WyJbHhArapbSbNelX_PajA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 221ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:01:30 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@s", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@s"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:01:57 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@s", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@s"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 3ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:02:49 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 378ms (Views: 375.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:03:01 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AL_MVagwzKI4i9A_N4TX6w"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 362ms (Views: 0.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:03:07 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@d", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@d"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:03:12 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@d", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@d"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:03:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 367ms (Views: 364.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:03:39 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdlasd@d", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdlasd@d"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:03:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:03:59 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "xTS-xSGZft31Wzzmb-PLaw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 218ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:04:01 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5fiIYg_Kt5j6IgRufpzYCQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 218ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 11:04:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-02-11 11:04:27 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"asdlasd", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>"Sign Up"}}
+Unpermitted parameters: :redirect, :formChange
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdlasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4D-c-1EaMy6B3cnYcM93_g"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:5
+Completed 401 Unauthorized in 220ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:04:35 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"s@asdlasd", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "s@asdlasd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 11:04:39 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"tori@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "tori"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "O6HWagnKbtwxQ-aWGGJKwA"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 21], ["LIMIT", 1]]
+  ↳ app/models/user.rb:27
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "O6HWagnKbtwxQ-aWGGJKwA"], ["updated_at", "2021-02-11 19:04:39.583065"], ["id", 21]]
+  ↳ app/models/user.rb:27
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:27
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 234ms (Views: 10.3ms | ActiveRecord: 5.8ms)
+
+

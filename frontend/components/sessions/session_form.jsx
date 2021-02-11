@@ -55,17 +55,17 @@ class SessionForm extends React.Component {
     ))
 
     if (errors[0] instanceof Array === false) {
+      let $errField = document.getElementsByClassName('session-errors');
       if (errors[0].includes('another')){
-        let $errField = document.getElementsByClassName('session-errors');
         $errField[0].classList.remove('err-on');
-      }
-      let $errField = document.getElementsByClassName('session-errors')
-      debugger
-      // if ($errField.length >= 1) {
-      if ($errField[0].innerText !== "Email already in use by another account. You can use ") {
+      } else {
         $errField[0].classList.add('err-on')
       }
-      
+      if ($errField.length >= 1) {
+        if ($errField[0].innerText !== "Email already in use by another account. You can use ") {
+          $errField[0].classList.add('err-on')
+        }
+      } 
     }
     
 
