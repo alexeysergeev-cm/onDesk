@@ -21,9 +21,12 @@ class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
+    if (this.props.formType === 'Create Acc'){
+      let formType = 'Sign Up'
+      return < Redirect to='/signup' />;
+    }
     this.props.processForm(this.state)
       .then(() => this.setState({ redirect: true }));
-    // <Redirect path='/' />
   }
 
 
@@ -35,7 +38,7 @@ class SessionForm extends React.Component {
     }
 
     let form; 
-    if (this.props.formType === 'Sign Up'){
+    if (this.props.formType === 'Create Acc'){
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
       form = (<div className='session-form'> 
         <form onSubmit={this.handleSubmit}>
@@ -55,7 +58,7 @@ class SessionForm extends React.Component {
       form = (<div className='session-form'>
         <form onSubmit={this.handleSubmit}>
         <h2>{formType} to onDesk</h2>
-            <input type="text" value={this.state.email}
+            <input type="email" value={this.state.email}
               className='form-field'
               placeholder="Enter email"
               onChange={this.update('email')}
