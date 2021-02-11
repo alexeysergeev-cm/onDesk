@@ -71,6 +71,7 @@ class SessionForm extends React.Component {
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
       form = (<div className='session-form blue'>
+        <div as='p' className='session-errors ' id="signup">{errors}</div>
         <form onSubmit={this.handleSubmit}>
           <h1>Sign up for you account</h1>
           <input type="email" value={this.state.email}
