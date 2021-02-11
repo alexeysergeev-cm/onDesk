@@ -62,15 +62,16 @@ class SessionForm extends React.Component {
         <h2>{formType} to onDesk</h2>
           <label>Username
                 <input type="text" value={this.state.username}
+              className='form-field'
               onChange={this.update('username')}
             />
           </label>
           <label>Password
-                <input type="password" value={this.state.password}
+                <input type="password" className='form-field'
               onChange={this.update('password')}
             />
           </label>
-          <button>{formType}</button>
+          <button className='acc-btn'>{formType}</button>
         </form>
       </div>)
     }

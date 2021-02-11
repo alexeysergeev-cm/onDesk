@@ -49,6 +49,32 @@
      height: 27px;
      text-align: center;
     }
+    .acc-btn {
+      background-color: $green;
+      width: 290px;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 0;
+      color: $white;
+      font-family: $san-serif;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      padding: 10px 20px;
+      position: relative;
+      border: 0px;
+      
+    }
+    input {
+      margin: 0 0 20px;
+    }
+    .form-field{
+      width: 308px;
+      height: 26px;
+      border: 2px solid $silver;
+      margin-bottom: 16px;
+      // box-sizing: border-box;
+    }
 }
 
 .session{
