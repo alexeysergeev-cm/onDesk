@@ -91,6 +91,8 @@ class SessionForm extends React.Component {
 
           <hr className="solid" />
           <Link className='hr' to='/login'>Already have an account? Log In</Link>
+          <p className='small-text'>or</p>
+          <button className='hr' onClick={this.demoUser}>Demo User</button>
         </form>
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
@@ -118,6 +120,8 @@ class SessionForm extends React.Component {
 
           <hr className="solid" />
           <Link className='hr' to='/login'>Already have an account? Log In</Link>
+          <p className='small-text'>or</p>
+          <button className='hr' onClick={this.demoUser}>Demo User</button>
         </form>
       </div>)
     } else {
@@ -140,9 +144,8 @@ class SessionForm extends React.Component {
 
           <hr className="solid" />
           <Link className='hr' to='/signup'>Sign up for an account</Link>
-          <p>or</p>
-          <button onClick={this.demoUser}>Demo User</button>
-          {/* <Link to onClick={this.demoUser}>Demo User</h2> ///?????? */}
+          <p className='small-text'>or</p>
+          <button className='hr' onClick={this.demoUser}>Demo User</button>
         </form>
       </div>)
     }

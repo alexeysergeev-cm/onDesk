@@ -135,7 +135,7 @@ h6{
 #signup{
   width: 289px;
   height: 40px;
-  margin-block-end: 75px;
+  // margin-block-end: 75px;
 }
 
 
@@ -152,7 +152,16 @@ hr.solid {
   font-family: $san-serif;
   color: blue;
   text-decoration: none;
+  padding: 0;
 }
 .hr:hover{
   text-decoration: underline;
+}
+
+.small-text{
+  font-size: 14px;
+  font-family: $san-serif;
+  color: $grey;
+  text-decoration: none;
+  padding: 6px 0 6px 0;
 }
