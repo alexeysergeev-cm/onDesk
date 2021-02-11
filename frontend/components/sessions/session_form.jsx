@@ -47,6 +47,17 @@ class SessionForm extends React.Component {
       err
     ))
 
+    if (errors) {
+      const errors = errors.split(' ')
+      if (errors.includes('username')){
+        const $errField = document.getElementsByClassName('session-errors')
+        if ($errField.length >= 1) {
+          $errField[0].classList.add('err-on')
+        }
+      }
+    }
+    
+
     let form; 
     if (this.props.formType === 'Create Acc' && !this.state.formChange){
       form = (<div className='session-form'> 
@@ -85,12 +96,9 @@ class SessionForm extends React.Component {
       </div>)
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
-        if (errors){
-        }
         form = (<div className='session-form'>
-
         <form onSubmit={this.handleSubmit}>
-        <div as='p' className='session-errors err-on'>{errors}</div>
+        <div as='p' className='session-errors'>{errors}</div>
         <h1>{formType} to onDesk</h1>
             <input type="email" value={this.state.email}
             className='form-field inner-section'
