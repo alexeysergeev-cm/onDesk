@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
 
   render(){
     const { redirect } = this.state;
-
+    // debugger
     if (redirect) {
       return <Redirect to='/' />;
     }
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
       form = (<div className='session-form'> 
         <form>
           <h1>Sign up for you account</h1>
-          <input type="text" value={this.state.email}
+          <input type="email" value={this.state.email}
             className='form-field inner-section'
               placeholder="Enter email"
             onChange={this.update('email')}
@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
       form = (<div className='session-form blue'>
         <form onSubmit={this.handleSubmit}>
           <h1>Sign up for you account</h1>
-          <input type="text" value={this.state.email}
+          <input type="email" value={this.state.email}
             className='form-field inner-section'
             placeholder="Enter email"
             onChange={this.update('email')}
@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
             placeholder="Enter username"
             onChange={this.update('username')}
           />
-          <input type="password" className='form-field'
+          <input type="password" className='form-field inner-section'
             placeholder="Enter password"
             onChange={this.update('password')}
           />

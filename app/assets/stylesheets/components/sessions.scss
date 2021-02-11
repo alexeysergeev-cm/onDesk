@@ -31,7 +31,7 @@
      margin-block-end: 50px;
      font-family: $san-serif;
      font-weight: bold;
-     font-size: 18px;
+     font-size: 16px;
      width: 320px;
      height: 27px;
      text-align: center;
@@ -78,6 +78,13 @@
   h2{
     margin-block-start: -100px; 
   }
+}
+h6{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  color: $grey;
 }
 
 .logo{
