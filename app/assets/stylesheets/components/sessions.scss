@@ -63,6 +63,17 @@
     }
 }
 
+//how do I inherit 2 classes
+.acc-btn.blue {
+  background-color: $light-blue;
+}
+
+.session-form.blue{
+  h2{
+    margin-block-start: -100px; 
+  }
+}
+
 .logo{
   display: flex;
   position: relative;

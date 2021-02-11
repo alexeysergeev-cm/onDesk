@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
         </form>
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
-      form = (<div className='session-form'>
+      form = (<div className='session-form blue'>
         <form onSubmit={this.handleSubmit}>
           <h2>Sign up for you account</h2>
           <input type="text" value={this.state.email}
@@ -73,8 +73,8 @@ class SessionForm extends React.Component {
             placeholder="Enter password"
             onChange={this.update('password')}
           />
-          <h6> Hello?.</h6>
-          <button className='acc-btn'>{this.state.formChange}</button>
+          <h6> By signing up, I accept the Atlassian <a href="">Cloud Terms of Service</a> and acknowledge the <a href="">Privacy Policy</a>.</h6>
+          <button className='acc-btn blue'>{this.state.formChange}</button>
         </form>
       </div>)
     } else {
