@@ -12,7 +12,7 @@
    justify-content: center;
    align-items: center;
    form {
-     height: 520px;
+    //  height: 520px;
      width: 320px;
      background: $white;
      display: flex;
@@ -78,11 +78,11 @@
   background-color: $light-blue;
 }
 
-.session-form.blue{
-  h1{
-    margin-block-start: -50px; 
-  }
-}
+// .session-form.blue{
+//   h1{
+//     margin-block-start: -50px; 
+//   }
+// }
 h6{
   margin-top: 20px;
   margin-bottom: 20px;

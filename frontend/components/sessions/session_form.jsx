@@ -33,6 +33,7 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state)
       .then(() => this.setState({ redirect: true }))
   }
+  
   //questionable function :( ?
   removeErr(){
     let $errField = document.getElementsByClassName('session-errors err-on')
