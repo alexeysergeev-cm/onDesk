@@ -47,13 +47,10 @@ class SessionForm extends React.Component {
       err
     ))
 
-    if (errors) {
-      const errors = errors.split(' ')
-      if (errors.includes('username')){
-        const $errField = document.getElementsByClassName('session-errors')
-        if ($errField.length >= 1) {
-          $errField[0].classList.add('err-on')
-        }
+    if (errors[0] instanceof Array === false) {
+      const $errField = document.getElementsByClassName('session-errors')
+      if ($errField.length >= 1) {
+        $errField[0].classList.add('err-on')
       }
     }
     
