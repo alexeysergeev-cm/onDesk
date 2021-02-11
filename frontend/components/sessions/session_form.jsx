@@ -47,12 +47,12 @@ class SessionForm extends React.Component {
         <form>
           <h2>Sign up for you account</h2>
           <input type="text" value={this.state.email}
-            className='form-field'
+            className='form-field inner-section'
               placeholder="Enter email"
             onChange={this.update('email')}
           />
           <h6>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></h6>
-          <button className='acc-btn'onClick={this.handleClick} >Continue</button>
+          <button className='acc-btn' onClick={this.handleClick} >Continue</button>
         </form>
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
@@ -60,12 +60,12 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h2>Sign up for you account</h2>
           <input type="text" value={this.state.email}
-            className='form-field'
+            className='form-field inner-section'
             placeholder="Enter email"
             onChange={this.update('email')}
           />
           <input type="text" value={this.state.username}
-            className='form-field'
+            className='form-field inner-section'
             placeholder="Enter username"
             onChange={this.update('username')}
           />
@@ -84,11 +84,11 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <h2>{formType} to onDesk</h2>
             <input type="email" value={this.state.email}
-              className='form-field'
+            className='form-field inner-section'
               placeholder="Enter email"
               onChange={this.update('email')}
             />
-            <input type="password" className='form-field'
+          <input type="password" className='form-field inner-section'
               placeholder="Enter password"
               onChange={this.update('password')}
             />
