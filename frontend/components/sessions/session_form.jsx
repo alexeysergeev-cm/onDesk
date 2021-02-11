@@ -10,21 +10,25 @@ class SessionForm extends React.Component {
       email: '',
       password: "",
       redirect: false,
+      formChange: '',
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   update(field){
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  handleClick(){
+    this.setState({
+      formChange: 'Sign Up'
+    })
+    return < Redirect to='/signup' />;
+  };
+
   handleSubmit(e){
     e.preventDefault()
-    if (this.props.formType === 'Create Acc'){
-      let formType = 'Sign Up'
-      return < Redirect to='/signup' />;
-    }
     this.props.processForm(this.state)
       .then(() => this.setState({ redirect: true }));
   }
@@ -38,18 +42,39 @@ class SessionForm extends React.Component {
     }
 
     let form; 
-    if (this.props.formType === 'Create Acc'){
-      let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
+    if (this.props.formType === 'Create Acc' && !this.state.formChange){
       form = (<div className='session-form'> 
-        <form onSubmit={this.handleSubmit}>
-          <h2>{formType} for you account</h2>
+        <form>
+          <h2>Sign up for you account</h2>
           <input type="text" value={this.state.email}
             className='form-field'
               placeholder="Enter email"
             onChange={this.update('email')}
           />
-          <h6>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="http://">Privacy Policy.</a></h6>
-          <button className='acc-btn'>Continue</button>
+          <h6>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></h6>
+          <button className='acc-btn'onClick={this.handleClick} >Continue</button>
+        </form>
+      </div>)
+    } else if (this.state.formChange === 'Sign Up') {
+      form = (<div className='session-form'>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Sign up for you account</h2>
+          <input type="text" value={this.state.email}
+            className='form-field'
+            placeholder="Enter email"
+            onChange={this.update('email')}
+          />
+          <input type="text" value={this.state.username}
+            className='form-field'
+            placeholder="Enter username"
+            onChange={this.update('username')}
+          />
+          <input type="password" className='form-field'
+            placeholder="Enter password"
+            onChange={this.update('password')}
+          />
+          <h6> Hello?.</h6>
+          <button className='acc-btn'>{this.state.formChange}</button>
         </form>
       </div>)
     } else {
