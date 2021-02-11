@@ -30,16 +30,22 @@ class SessionForm extends React.Component {
   handleSubmit(e){
     e.preventDefault()
     this.props.processForm(this.state)
-      .then(() => this.setState({ redirect: true }));
+      .then(() => this.setState({ redirect: true }))
+
   }
 
 
   render(){
     const { redirect } = this.state;
-    // debugger
+
+
     if (redirect) {
       return <Redirect to='/' />;
     }
+    debugger
+    const errors = Object.values(this.props.errors).map((err, i) =>(
+      <h1 key={i}>{err}</h1>
+    ))
 
     let form; 
     if (this.props.formType === 'Create Acc' && !this.state.formChange){
@@ -101,6 +107,7 @@ class SessionForm extends React.Component {
     return(
       <div className='session'>  
         <h1 className="logo">onDesk</h1>
+          {errors}
           {form}
       </div>
     )

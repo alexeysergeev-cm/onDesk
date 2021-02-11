@@ -3,7 +3,7 @@ import { login } from '../../actions/session_actions';
 import SessionForm from './session_form'
 
 const mSTP = (state, ownProps) => ({
-  errors: state.entities[state.errors.session.errors],
+  errors: state.errors.session,
   formType: 'Log In'
 })
 
