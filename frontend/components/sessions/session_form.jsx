@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Create Acc' && !this.state.formChange){
       form = (<div className='session-form'> 
         <form>
-          <h2>Sign up for you account</h2>
+          <h1>Sign up for you account</h1>
           <input type="text" value={this.state.email}
             className='form-field inner-section'
               placeholder="Enter email"
@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
     } else if (this.state.formChange === 'Sign Up') {
       form = (<div className='session-form blue'>
         <form onSubmit={this.handleSubmit}>
-          <h2>Sign up for you account</h2>
+          <h1>Sign up for you account</h1>
           <input type="text" value={this.state.email}
             className='form-field inner-section'
             placeholder="Enter email"
@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
       // debugger
       form = (<div className='session-form'>
         <form onSubmit={this.handleSubmit}>
-        <h2>{formType} to onDesk</h2>
+        <h1>{formType} to onDesk</h1>
             <input type="email" value={this.state.email}
             className='form-field inner-section'
               placeholder="Enter email"
