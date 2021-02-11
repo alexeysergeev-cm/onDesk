@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
     this.props.processForm(this.state)
       .then(() => this.setState({ redirect: true }))
   }
-  
+
   //questionable function :( ?
   removeErr(){
     let $errField = document.getElementsByClassName('session-errors err-on')
@@ -42,10 +42,15 @@ class SessionForm extends React.Component {
     // debugger
   }
 
+  demoUser(e){
+    e.preventDefault()
+    this.props.processForm({email: 'tori@import.com', password: '123456'})
+      .then(() => this.setState({ redirect: true }))
+      // this.props.history.push('/')
+  }
 
   render(){
     const { redirect } = this.state;
-
 
     if (redirect) {
       return <Redirect to='/' />;
@@ -82,6 +87,9 @@ class SessionForm extends React.Component {
           />
           <h6>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy.</a></h6>
           <button className='acc-btn' onClick={this.handleClick} >Continue</button>
+          
+          <hr className="solid" />
+          <Link to='/login'>Already have an account? Log In</Link>
         </form>
       </div>)
     } else if (this.state.formChange === 'Sign Up') {
@@ -106,6 +114,9 @@ class SessionForm extends React.Component {
           />
           <h6> By signing up, I accept the Atlassian <a href="">Cloud Terms of Service</a> and acknowledge the <a href="">Privacy Policy</a>.</h6>
           <button className='acc-btn blue'>{this.state.formChange}</button>
+
+          <hr className="solid" />
+          <Link to='/login'>Already have an account? Log In</Link>
         </form>
       </div>)
     } else {
@@ -125,6 +136,11 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
             />
           <button className='acc-btn'>{formType}</button>
+
+          <hr className="solid" />
+
+          <Link to='/login'>Sign up for an account</Link>
+          {/* <Link to onClick={this.demoUser}>Demo User</h2> ///?????? */}
         </form>
       </div>)
     }

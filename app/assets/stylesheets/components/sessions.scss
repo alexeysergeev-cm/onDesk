@@ -138,3 +138,11 @@ h6{
   margin-block-end: 75px;
 }
 
+
+/* Solid border */
+hr.solid {
+  display: block;
+  border-top: 1px solid rgb(204, 204, 204);
+  margin: 25px 0 14px 0;
+  width: 100%;
+}
