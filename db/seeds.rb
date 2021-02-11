@@ -10,29 +10,29 @@ User.destroy_all
 
 users =[
     { 
-        username: "user1",
+        username: "mickey",
         password: "123456",
-        email: "us@io.com"
+        email: "mickey@io.com"
     },
     { 
-        username: "user2",
+        username: "lulu",
         password: "123456",
-        email: "asd@gmail.com"
+        email: "lulu@io.com"
     },
     { 
-        username: "user3",
+        username: "charlie",
         password: "123456",
-        email: "ops@io.com"
+        email: "charlie@io.com"
     },
     { 
-        username: "user4",
+        username: "robert",
         password: "123456",
-        email: "haho@io.com"
+        email: "robert@io.com"
     },
     { 
         username: "tori",
         password: "123456",
-        email: "torr@io.com"
+        email: "tori@io.com"
     },
 ]
 User.create(users)
