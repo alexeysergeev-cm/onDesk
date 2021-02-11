@@ -15,6 +15,7 @@ class SessionForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this)
+    this.demoUser = this.demoUser.bind(this)
   }
 
   update(field){
@@ -44,7 +45,7 @@ class SessionForm extends React.Component {
 
   demoUser(e){
     e.preventDefault()
-    this.props.processForm({email: 'tori@import.com', password: '123456'})
+    this.props.demoUser({email: 'tori@io.com', password: '123456'})
       .then(() => this.setState({ redirect: true }))
       // this.props.history.push('/')
   }
@@ -139,6 +140,8 @@ class SessionForm extends React.Component {
 
           <hr className="solid" />
           <Link className='hr' to='/signup'>Sign up for an account</Link>
+          <p>or</p>
+          <button onClick={this.demoUser}>Demo User</button>
           {/* <Link to onClick={this.demoUser}>Demo User</h2> ///?????? */}
         </form>
       </div>)
