@@ -42,9 +42,9 @@ class SessionForm extends React.Component {
     if (redirect) {
       return <Redirect to='/' />;
     }
-    debugger
+    // debugger
     const errors = Object.values(this.props.errors).map((err, i) =>(
-      <h1 key={i}>{err}</h1>
+      err
     ))
 
     let form; 
@@ -85,9 +85,12 @@ class SessionForm extends React.Component {
       </div>)
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
-      // debugger
-      form = (<div className='session-form'>
+        if (errors){
+        }
+        form = (<div className='session-form'>
+
         <form onSubmit={this.handleSubmit}>
+        <div as='p' className='session-errors err-on'>{errors}</div>
         <h1>{formType} to onDesk</h1>
             <input type="email" value={this.state.email}
             className='form-field inner-section'
@@ -107,7 +110,7 @@ class SessionForm extends React.Component {
     return(
       <div className='session'>  
         <h1 className="logo">onDesk</h1>
-          {errors}
+
           {form}
       </div>
     )
