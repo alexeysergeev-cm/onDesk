@@ -63,6 +63,9 @@
       margin-bottom: 16px;
       // box-sizing: border-box;
     }
+    a{
+    text-decoration: underline;
+  }
 }
 
 .form-field.inner-section{
@@ -128,3 +131,4 @@ h6{
 .session-errors.err-on {
   display: inline-block;
 }
+
