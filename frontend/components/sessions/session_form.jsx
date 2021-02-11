@@ -37,22 +37,17 @@ class SessionForm extends React.Component {
     let form; 
     if (this.props.formType === 'Sign Up'){
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
-      form = (<div>
-        <label>Username
-              <input type="text" value={this.state.username}
-            onChange={this.update('username')}
-          />
-        </label>
-        <label>Email
-              <input type="text" value={this.state.email}
+      form = (<div className='session-form'> 
+        <form onSubmit={this.handleSubmit}>
+          <h2>{formType} for you account</h2>
+          <input type="text" value={this.state.email}
+            className='form-field'
+              placeholder="Enter email"
             onChange={this.update('email')}
           />
-        </label>
-        <label>Password
-              <input type="password" value={this.state.password}
-            onChange={this.update('password')}
-          />
-        </label>
+          <h6>By signing up, you confirm that you've read and accepted our <a href="#">Terms of Service</a> and <a href="http://">Privacy Policy.</a></h6>
+          <button className='acc-btn'>Continue</button>
+        </form>
       </div>)
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
@@ -78,9 +73,7 @@ class SessionForm extends React.Component {
     return(
       <div className='session'>  
         <h1 className="logo">onDesk</h1>
-
           {form}
-
       </div>
     )
   }
