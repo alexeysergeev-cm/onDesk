@@ -18749,3 +18749,226 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 245ms (Views: 18.6ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/" for ::1 at 2021-02-11 21:49:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 149ms (Views: 141.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:49:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 399ms (Views: 396.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 21:49:53 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.builder
+  [1m[36mDesk Load (5.5ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.builder:1
+  Rendered api/desks/index.json.builder (729.7ms)
+Completed 500 Internal Server Error in 743ms (ActiveRecord: 5.5ms)
+
+
+
+NameError - undefined local variable or method `json' for #<#<Class:0x00007fc611c6f078>:0x00007fc610e9e160>
+Did you mean?  JSON:
+  app/views/api/desks/index.json.builder:2:in `block in _app_views_api_desks_index_json_builder___1361956973392367925_70244333950480'
+  app/views/api/desks/index.json.builder:1:in `_app_views_api_desks_index_json_builder___1361956973392367925_70244333950480'
+
+Started GET "/" for ::1 at 2021-02-11 21:51:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 21:51:32 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.builder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.builder:1
+  Rendered api/desks/index.json.builder (338.5ms)
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 0.3ms)
+
+
+
+NameError - undefined local variable or method `json' for #<#<Class:0x00007fc611c6f078>:0x00007fc6157c3098>
+Did you mean?  JSON:
+  app/views/api/desks/index.json.builder:3:in `block in _app_views_api_desks_index_json_builder___1361956973392367925_70244370357480'
+  app/views/api/desks/index.json.builder:1:in `_app_views_api_desks_index_json_builder___1361956973392367925_70244370357480'
+
+Started GET "/api/desks" for ::1 at 2021-02-11 21:51:59 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.builder
+  [1m[36mDesk Load (30.2ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.builder:1
+  Rendered api/desks/index.json.builder (374.7ms)
+Completed 500 Internal Server Error in 386ms (ActiveRecord: 30.2ms)
+
+
+
+NameError - undefined local variable or method `json' for #<#<Class:0x00007fc611c6f078>:0x00007fc617d15f08>
+Did you mean?  JSON:
+  app/views/api/desks/index.json.builder:3:in `block in _app_views_api_desks_index_json_builder___1361956973392367925_70244389925920'
+  app/views/api/desks/index.json.builder:1:in `_app_views_api_desks_index_json_builder___1361956973392367925_70244389925920'
+
+Started GET "/" for ::1 at 2021-02-11 21:52:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 21:53:01 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.builder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.builder:1
+Started GET "/" for ::1 at 2021-02-11 21:54:32 -0800
+Started GET "/" for ::1 at 2021-02-11 21:54:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (68.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (208.3ms)
+Processing by StaticPagesController#root as HTML
+  Rendered api/desks/index.json.builder (91408.1ms)
+  Rendering static_pages/root.html.erb within layouts/application
+Completed 500 Internal Server Error in 91428ms (ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (100.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (167.1ms)
+
+NameError - undefined local variable or method `json' for #<#<Class:0x00007fc611c6f078>:0x00007fc611bce1f0>
+Did you mean?  JSON:
+  app/views/api/desks/index.json.builder:3:in `block in _app_views_api_desks_index_json_builder___1361956973392367925_70244338957860'
+  app/views/api/desks/index.json.builder:1:in `_app_views_api_desks_index_json_builder___1361956973392367925_70244338957860'
+
+Completed 200 OK in 1299ms (Views: 1042.2ms | ActiveRecord: 68.5ms)
+
+
+Completed 200 OK in 723ms (Views: 557.1ms | ActiveRecord: 162.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:54:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 21:54:42 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (2.2ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:1
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (7.8ms)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 22:23:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 477ms (Views: 464.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 22:23:27 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (18.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:1
+  Rendered api/desks/_desk.json.jbuilder (0.9ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (28.4ms)
+Completed 200 OK in 40ms (Views: 18.4ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 22:24:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 374ms (Views: 369.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-11 22:24:07 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:1
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (6.2ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 22:24:47 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"desk"=>{"title"=>"wow!"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Unpermitted parameter: :desk
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+Completed 422 Unprocessable Entity in 9ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mDesk Load (2.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+Started POST "/api/desks" for ::1 at 2021-02-11 22:25:29 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"wow!"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "wow!"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (1.8ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "wow!"], ["author_id", 39], ["created_at", "2021-02-12 06:25:29.420290"], ["updated_at", "2021-02-12 06:25:29.420290"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.8ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 4.0ms)
+
+
+  [1m[36mDesk Load (0.5ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m

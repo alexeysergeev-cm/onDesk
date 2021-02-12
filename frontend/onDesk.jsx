@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import {login, signup, logout} from './actions/session_actions'
 import configureStore from './store/store'
 import Root from './components/root'
-
+import {fetchDesks, createDesk} from './actions/desk_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store; 
@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   
-
+  window.createDesk = createDesk;
+  window.fetchDesks = fetchDesks;
   window.getState = store.getState;
   window.dispatch = store.dispatch; 
 
