@@ -27,11 +27,9 @@ class Greeting extends React.Component{
       <div>
           <button className="btn-logout" onClick={this.clickDropDown}
             >
-
             <ul className='home-dropdown' >
               <ul>
                 {/* <div id='x'></div> */}
-
                 {/* <img src="logo.png" alt='ok' width="50" height="50"/> */}
                 <li>{name}</li> 
                 <li className='shadowed-text'>{currentUser.email}</li>
