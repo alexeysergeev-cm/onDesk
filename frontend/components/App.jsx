@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greetings/greeting_container';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
 import LoginFormContainer from '../components/sessions/login_form_container';
 import SignupFormContainer from '../components/sessions/signup_form_container';
 import {AuthRoute} from '../util/route_util'
@@ -9,11 +9,11 @@ import Home from './nav_bar/home/home'
 
 const App = () => (
   <div>
-    <Home />
-    {/* <Route exact path="/" component={NavBarContainer} />
-    <Route exact path="/greeting" component={GreetingContainer} /> */}
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <Route exact path='/'><Home /></Route>
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+    </Switch>
   </div>
 );
 
