@@ -12,7 +12,6 @@
    justify-content: center;
    align-items: center;
    form {
-    //  height: 520px;
      width: 320px;
      background: $white;
      display: flex;
@@ -27,8 +26,6 @@
    h1{
      display: block;
      margin: 10px 0px 50px 0px;
-    //  margin-block-start: -200px;
-    //  margin-block-end: 50px;
      font-family: $san-serif;
      font-weight: bold;
      font-size: 16px;
@@ -51,7 +48,7 @@
       padding: 10px 20px;
       position: relative;
       border: 0px;
-      
+
     }
     input {
       margin: 0 0 20px;
@@ -61,7 +58,6 @@
       height: 26px;
       border: 2px solid $silver;
       margin-bottom: 16px;
-      // box-sizing: border-box;
     }
     .a{
     text-decoration: underline;
@@ -78,11 +74,6 @@
   background-color: $light-blue;
 }
 
-// .session-form.blue{
-//   h1{
-//     margin-block-start: -50px; 
-//   }
-// }
 h6{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -98,7 +89,6 @@ h6{
   // background-color: transparent; //yes -> rgb(0 0 0 / 0%)
   font-family: $caveat;
   font-size: 50px;
-  // height: 43px;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -135,7 +125,6 @@ h6{
 #signup{
   width: 289px;
   height: 40px;
-  // margin-block-end: 75px;
 }
 
 

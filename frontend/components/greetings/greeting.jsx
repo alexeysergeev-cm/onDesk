@@ -12,7 +12,7 @@ class Greeting extends React.Component{
     if (currentUser){
       welcome = (
       <div>
-          <button className="btn btn-bg loggedIn" onClick={() => logout()}>Logout</button>
+          <button className="btn-bg-home loggedIn" onClick={() => logout()}></button>
       </div>
       )
       name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
@@ -22,8 +22,8 @@ class Greeting extends React.Component{
       <>
         <header className="fixed-top-home">
           <nav className="nav-bar-home loggedIn">
-            <a className='float-left'>onDesk</a>
-            <h3>Welcome {name}!</h3>
+            <a className='float-left'></a>
+            <h3>onDesk</h3>
             <div className='float-right'>
               {welcome}
             </div>

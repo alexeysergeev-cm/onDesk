@@ -38,9 +38,7 @@ class SessionForm extends React.Component {
   //questionable function :( ?
   removeErr(){
     let $errField = document.getElementsByClassName('session-errors err-on')
-    // debugger
     $errField[0].classList.remove('err-on') 
-    // debugger
   }
 
   demoUser(e){
@@ -54,18 +52,14 @@ class SessionForm extends React.Component {
 
     if (redirect) {
       return <Redirect to='/'/>;
-      // return <Route exact path="/greeting" component={GreetingContainer} />
-      // return <Route exact path="/greeting" render={() => <GreetingContainer />} />
-
     }
-    // debugger
+
     const errors = Object.values(this.props.errors).map((err, i) =>(
       err
     ))
 
     if (errors[0] instanceof Array === false) {
       let $errField = document.getElementsByClassName('session-errors');
-
       if (errors[0].includes('another')){
         $errField[0].classList.remove('err-on');
       } else {
@@ -78,7 +72,7 @@ class SessionForm extends React.Component {
       } 
     }
     let linkErr = errors[0].includes('Email') ? <Link className='a' onClick={this.removeErr} to="/login"> log in</Link> : ''
-    // debugger
+
  
 
 
@@ -132,7 +126,6 @@ class SessionForm extends React.Component {
       </div>)
     } else {
       let formType = this.props.formType.split(' ')[0] + ' ' + this.props.formType.split(' ')[1].toLowerCase()
-      // debugger
         form = (<div className='session-form'>
         <form onSubmit={this.handleSubmit}>
         <div as='p' className='session-errors'>{errors}</div>
@@ -160,7 +153,6 @@ class SessionForm extends React.Component {
     return(
       <div className='session'>  
         <h1 className="logo">onDesk</h1>
-
           {form}
       </div>
     )

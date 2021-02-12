@@ -18,7 +18,7 @@ class DeskIndex extends React.Component{
     return(
       <div>
         {desks.map(desk => (
-          <button key={desk.id}>
+          <button key={desk.id} className='desk-item-btn'>
             <DeskIndexItem 
             desk={desk}
           />  
