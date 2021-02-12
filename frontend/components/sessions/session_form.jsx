@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
       form = (<div className='session-form blue'>
         <form onSubmit={this.handleSubmit}>
           <div as='p' className='session-errors ' id="signup">{errors} 
-          <Link onClick={this.removeErr} to="/login">log in</Link></div>
+          <Link className='a' onClick={this.removeErr} to="/login">log in</Link></div>
           <h1>Sign up for you account</h1>
           <input type="email" value={this.state.email}
             className='form-field inner-section'

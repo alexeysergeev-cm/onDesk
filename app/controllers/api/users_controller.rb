@@ -6,10 +6,14 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      # render json: @user.errors.full_messages, status: 401
-      # render json: ["Email already in use by another account. You can use log in or use the forgot 
-      #   password page to reset your password."], status: 401
-      # <a href="#">log in</a> +
+      # debugger 
+      @user.errors.full_messages.each do |error|
+        if error.include?('Password')
+          debugger
+          return render json: [error], status: 404
+        end
+      end 
+
       render json: ["Email already in use by another account. You can use "], status: 401
     end
   end
@@ -17,7 +21,6 @@ class Api::UsersController < ApplicationController
   def show
     @user = selected_user
   end
-  
 
   private
   def user_params
