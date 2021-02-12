@@ -67,6 +67,7 @@ class SessionForm extends React.Component {
 
     if (errors[0] instanceof Array === false) {
       let $errField = document.getElementsByClassName('session-errors');
+
       if (errors[0].includes('another')){
         $errField[0].classList.remove('err-on');
       } else {
@@ -78,7 +79,10 @@ class SessionForm extends React.Component {
         }
       } 
     }
-    
+    let linkErr = errors[0].includes('Email') ? <Link className='a' onClick={this.removeErr} to="/login" > log in</Link> : ''
+    // debugger
+ 
+
 
     let form; 
     if (this.props.formType === 'Create Acc' && !this.state.formChange){
@@ -103,7 +107,7 @@ class SessionForm extends React.Component {
       form = (<div className='session-form blue'>
         <form onSubmit={this.handleSubmit}>
           <div as='p' className='session-errors ' id="signup">{errors} 
-          <Link className='a' onClick={this.removeErr} to="/login">log in</Link></div>
+          {linkErr}</div>
           <h1>Sign up for you account</h1>
           <input type="email" value={this.state.email}
             className='form-field inner-section'

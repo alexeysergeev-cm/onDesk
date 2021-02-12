@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
       # debugger 
       @user.errors.full_messages.each do |error|
         if error.include?('Password')
-          debugger
+          # debugger
           return render json: [error], status: 404
         end
       end 
