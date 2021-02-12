@@ -7,32 +7,45 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all 
-
 users =[
     { 
-        username: "mickey",
-        password: "123456",
-        email: "mickey@io.com"
-    },
-    { 
-        username: "lulu",
-        password: "123456",
-        email: "lulu@io.com"
-    },
-    { 
-        username: "charlie",
-        password: "123456",
-        email: "charlie@io.com"
-    },
-    { 
-        username: "robert",
-        password: "123456",
-        email: "robert@io.com"
-    },
-    { 
+        email: "tori@io.com",
         username: "tori",
         password: "123456",
-        email: "tori@io.com"
+    },
+    { 
+        email: "mickey@io.com",
+        username: "mickey",
+        password: "123456",
+    },
+    { 
+        email: "lulu@io.com",
+        username: "lulu",
+        password: "123456",
+    },
+    { 
+        email: "charlie@io.com",
+        username: "charlie",
+        password: "123456",
+    },
+    { 
+        email: "robert@io.com",
+        username: "robert",
+        password: "123456",
     },
 ]
 User.create(users)
+
+
+Desk.destroy_all
+desks = [
+    {
+        title: 'Ideas',
+        author_id: 1,
+    },
+    {
+        title: 'Fly to Mars',
+        author_id: 1,
+    }
+]
+Desk.create(desks)

@@ -6,14 +6,11 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      # debugger 
       @user.errors.full_messages.each do |error|
         if error.include?('Password')
-          # debugger
           return render json: [error], status: 404
         end
       end 
-
       render json: ["Email already in use by another account. You can use "], status: 401
     end
   end
