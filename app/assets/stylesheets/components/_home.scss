@@ -1,0 +1,79 @@
+.fixed-top-home {
+   position: fixed;
+   top: 0;
+   right: 0;
+   right: 0;
+   left: 0;
+   z-index: 1030; 
+   display: block;
+  
+  font-family: $san-serif;
+  color: $dark-blue;
+  background-color: $light-blue;
+}
+
+.nav-bar-home{
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+  //  flex-wrap: wrap; ??
+
+  //  -webkit-box-pack: justify;
+  padding: 5px;
+  background-color: $blue-home;
+  padding: 4px;
+  
+ }
+
+ .float-left {
+  float: left;
+  color: $white;
+  background-color: transparent; //yes -> rgb(0 0 0 / 0%)
+  font-family: $caveat;
+  font-size: x-large;
+  width: 130px;
+  height: 50px;
+ }
+
+ .float-right {
+    float: right;
+    display: block;
+    .btn {
+      background-color: transparent;
+      padding: 5px;
+      // box-shadow: 3px 3px 3px darkblue;
+      text-decoration: none;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid transparent;
+    }
+    .btn-sm {
+      color: $white;
+      padding: 6px 12px;
+      border: 1px solid transparent;
+    }
+    .btn-bg {
+      color: $light-blue;
+      padding: 9px 18px;
+      border: 1px solid transparent;
+      background-color: $white;
+      border-radius: 5px;
+    }
+    
+   .btn-sm:hover {
+    text-decoration: underline;
+   }
+ }
+
+ h3{
+   margin: 0;
+ }
+
+.btn-bg.loggedIn {
+  color: $light-blue;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  background-color: $white;
+  border-radius: 5px;
+}

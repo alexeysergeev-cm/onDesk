@@ -20,8 +20,8 @@ class Greeting extends React.Component{
 
     return(
       <>
-        <header className="fixed-top">
-          <nav className="nav-bar loggedIn">
+        <header className="fixed-top-home">
+          <nav className="nav-bar-home loggedIn">
             <a className='float-left'>onDesk</a>
             <h3>Welcome {name}!</h3>
             <div className='float-right'>
