@@ -18073,3 +18073,679 @@ Migrating to AddIndexToDesks (20210212040730)
   ↳ db/seeds.rb:51
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:51
+Started GET "/" for ::1 at 2021-02-11 20:29:28 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7u2I7vuZdGi_OcITMwdIOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (21.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7u2I7vuZdGi_OcITMwdIOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 200 OK in 438ms (Views: 424.3ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 20:29:34 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tori@io.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["updated_at", "2021-02-12 04:29:34.442596"], ["id", 39]]
+  ↳ app/models/user.rb:28
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 245ms (Views: 11.0ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:31:36 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:12: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 404
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:12:in `'
+
+Started GET "/" for ::1 at 2021-02-11 20:34:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 78ms (Views: 65.1ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:34:53 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:13: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 404
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:13:in `'
+
+Started GET "/" for ::1 at 2021-02-11 20:35:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 55ms (Views: 52.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:35:18 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:13: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 404
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:13:in `'
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:37:22 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:13: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 404
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:13:in `'
+
+Started GET "/" for ::1 at 2021-02-11 20:38:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 82ms (Views: 61.5ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:38:44 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:13: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 404
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:13:in `'
+
+Started GET "/" for ::1 at 2021-02-11 20:39:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 86ms (Views: 78.5ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:39:14 -0800
+
+SyntaxError - syntax error, unexpected tIVAR, expecting keyword_end
+      render :json @desk.errors.full_messages, status...
+                   ^~~~~
+/Users/alexkansas/Desktop/onDesk/app/controllers/api/desks_controller.rb:13: syntax error, unexpected tLABEL, expecting '='
+...k.errors.full_messages, status: 401
+...                        ^~~~~~~:
+  app/controllers/api/desks_controller.rb:13:in `'
+
+Started GET "/" for ::1 at 2021-02-11 20:39:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 94ms (Views: 84.7ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:39:44 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Create (22.9ms)[0m  [1m[32mINSERT INTO "desks" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "hello"], ["created_at", "2021-02-12 04:41:32.276792"], ["updated_at", "2021-02-12 04:41:32.276792"]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 500 Internal Server Error in 107683ms (ActiveRecord: 31.4ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "author_id" of relation "desks" violates not-null constraint
+DETAIL:  Failing row contains (3, hello, null, 2021-02-12 04:41:32.276792, 2021-02-12 04:41:32.276792).
+: INSERT INTO "desks" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id":
+  app/controllers/api/desks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 20:45:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 124ms (Views: 103.0ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:45:59 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 404 Not Found in 4555ms (Views: 0.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 20:47:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 58ms (Views: 50.5ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:47:05 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 404 Not Found in 33649ms (Views: 1.3ms | ActiveRecord: 8.5ms)
+
+
+  [1m[36mDesk Load (15.5ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+Started GET "/" for ::1 at 2021-02-11 20:51:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:51:34 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:8
+  [1m[36mDesk Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:8
+Completed 422 Unprocessable Entity in 39ms (ActiveRecord: 24.9ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Author must exist:
+  app/controllers/api/desks_controller.rb:8:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 20:53:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 53ms (Views: 46.7ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:53:21 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:8
+  [1m[36mDesk Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:8
+Completed 422 Unprocessable Entity in 18ms (ActiveRecord: 4.4ms)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Author must exist:
+  app/controllers/api/desks_controller.rb:8:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 20:58:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 84ms (Views: 58.3ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:58:46 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 404 Not Found in 4468ms (Views: 0.3ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 20:58:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 77ms (Views: 67.5ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:59:04 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 404 Not Found in 22ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+  [1m[36mDesk Load (2.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+Started POST "/api/desks" for ::1 at 2021-02-11 20:59:52 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 401 Unauthorized in 41ms (Views: 0.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 20:59:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 20:59:58 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 401 Unauthorized in 11ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:00:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 210ms (Views: 187.1ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:00:15 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 401 Unauthorized in 86592ms (Views: 0.3ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:02:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 86ms (Views: 77.0ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:02:05 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[36mDesk Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:10
+Completed 422 Unprocessable Entity in 73964ms (Views: 0.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:03:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 61ms (Views: 52.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:03:26 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 8.8ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007f9fcfe05008>:
+  app/controllers/api/desks_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:04:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 57ms (Views: 49.5ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:04:09 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 3.4ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007f9fd40e5990>:
+  app/controllers/api/desks_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:04:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:04:29 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007f9fd43a42d0>:
+  app/controllers/api/desks_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:04:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 68ms (Views: 60.3ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:04:53 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007f9fd428eb70>:
+  app/controllers/api/desks_controller.rb:8:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:05:27 -0800
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 1448ms (Views: 1435.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:05:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:05:35 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mDesk Load (2.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mUser Load (21.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 500 Internal Server Error in 706892ms (ActiveRecord: 29.3ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007fc61143b5a0>:
+  app/controllers/api/desks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:17:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 64ms (Views: 53.9ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:17:30 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 500 Internal Server Error in 26959ms (ActiveRecord: 9.1ms)
+
+
+
+NameError - undefined local variable or method `author_id' for #<Api::DesksController:0x00007fc6113cb3e0>:
+  app/controllers/api/desks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:18:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 74ms (Views: 65.5ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:18:36 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (0.6ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "hello"], ["author_id", 39], ["created_at", "2021-02-12 05:18:36.169214"], ["updated_at", "2021-02-12 05:18:36.169214"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 8.1ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/desks/index, application/index with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/alexkansas/Desktop/onDesk/app/views":
+  app/controllers/api/desks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2021-02-11 21:19:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 63ms (Views: 55.9ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:19:09 -0800
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      render :json hello
+                   ^~~~~:
+  app/controllers/api/desks_controller.rb:10:in `'
+
+Started GET "/" for ::1 at 2021-02-11 21:22:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 52ms (Views: 44.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-11 21:23:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 59ms (Views: 49.9ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:23:03 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"hello"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "hello"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+Completed 422 Unprocessable Entity in 29ms (Views: 0.2ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-11 21:23:25 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"we do it!"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "we do it!"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (1.1ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "we do it!"], ["author_id", 39], ["created_at", "2021-02-12 05:23:25.200140"], ["updated_at", "2021-02-12 05:23:25.200140"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (3.0ms)
+Completed 200 OK in 25ms (Views: 11.1ms | ActiveRecord: 6.8ms)
+
+
+  [1m[36mDesk Load (1.7ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+Started POST "/api/desks" for ::1 at 2021-02-11 21:25:45 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"pew!"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4yHXm7Ql_yNv_bsOrEKH0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "pew!"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (0.3ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "pew!"], ["author_id", 39], ["created_at", "2021-02-12 05:25:45.361656"], ["updated_at", "2021-02-12 05:25:45.361656"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.7ms)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/desks?desk%5Btitle%5D=pew!" for ::1 at 2021-02-11 21:27:25 -0800
+Processing by Api::DesksController#index as JSON
+  Parameters: {"desk"=>{"title"=>"pew!"}}
+No template found for Api::DesksController#index, rendering head :no_content
+Completed 204 No Content in 101ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 21:28:26 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"hello", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-11 21:28:51 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tori@io.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KXq_b_cMTwd8QJr2HI1JLw"], ["updated_at", "2021-02-12 05:28:51.359536"], ["id", 39]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 245ms (Views: 18.6ms | ActiveRecord: 4.2ms)
+
+

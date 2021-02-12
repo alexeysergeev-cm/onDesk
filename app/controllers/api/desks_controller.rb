@@ -5,17 +5,17 @@ class Api::DesksController < ApplicationController
   end
 
   def create
-    @desk = Desk.new(desk_params)
+    @desk = current_user.desks.new(desk_params)
     if @desk.save 
-      render :index
+      render :show
     else
-      render :json @desk.errors.full_messages, status: 404
+      render json: @desk.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   private
   def desk_params
-    params.require(:desk).permit(:title)
+    params.require(:desk).permit(:title, :author_id)
   end
 
 end

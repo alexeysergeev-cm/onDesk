@@ -7,6 +7,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_many :desks,
+    foreign_key: :author_id
+
   #SPIRE
 
   def self.find_by_credentials(email, pw)
