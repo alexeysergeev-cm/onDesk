@@ -6,7 +6,6 @@
    left: 0;
    z-index: 1030; 
    display: block;
-  
   font-family: $san-serif;
   color: $dark-blue;
   background-color: $light-blue;
@@ -18,7 +17,6 @@
    align-items: center;
    justify-content: space-between;
    box-sizing: border-box;
-   overflow: hidden;
   background-color: $blue-home;
   padding: 4px;
   width: 100%;
@@ -30,7 +28,7 @@
  .float-left {
   float: left;
   color: $white;
-  background-color: transparent; //yes -> rgb(0 0 0 / 0%)
+  background-color: transparent; 
   font-family: $caveat;
   font-size: x-large;
   width: 130px;
@@ -42,17 +40,40 @@
     display: block;
  }
 
-
-
-.btn-bg-home.loggedIn {
+.btn-logout {
   height: 32px;
   width: 32px;
   padding: 4px 8px;
   border: 1px solid transparent;
-  // background-color: $white;    
   background-image: url('tori.gif');
-  border-radius: 5px;
+  border-radius: 100%;
+  background-size: cover;
+  display: inline-flex;
 }
+
+.home-dropdown {
+	position: absolute;
+	display: none;
+	top: 30px;
+	right: 0;
+	background-color: #fff;
+	border: 1px solid $silver;
+	border-radius: 3px;
+	padding: 10px;
+	width: 225px;
+	z-index: 1;
+	color: $grey;
+	font-family: $san-serif;
+	text-align: left;
+	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+	font-weight: initial;
+}
+
+.btn-logout:hover .home-dropdown{
+	display: block;
+}
+
+
 
 //Desks??/
 .desk-item-btn{
