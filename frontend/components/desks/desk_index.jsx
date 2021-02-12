@@ -2,6 +2,11 @@ import React from 'react'
 import DeskIndexItem from './desk_index_item'
 
 class DeskIndex extends React.Component{
+  constructor(props){
+    // debugger 
+    super(props)
+
+  }
 
   componentDidMount(){
     this.props.fetchDesks()
@@ -12,12 +17,13 @@ class DeskIndex extends React.Component{
     // debugger
     return(
       <div>
-        {/* {desks.map(bench => (
-          <DeskIndexItem 
+        {desks.map(desk => (
+          <button key={desk.id}>
+            <DeskIndexItem 
             desk={desk}
-            key={bench.id}
-          />
-        ))} */}
+          />  
+          </button>
+        ))}
       </div>
     )
   }
