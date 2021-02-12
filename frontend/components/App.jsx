@@ -5,16 +5,18 @@ import LoginFormContainer from '../components/sessions/login_form_container';
 import SignupFormContainer from '../components/sessions/signup_form_container';
 import {AuthRoute} from '../util/route_util'
 import NavBarContainer from '../components/nav_bar/nav_bar_container'
-import Home from './nav_bar/home/home'
+import Home from './nav_bar/home/home';
+import DeskIndexContainer from '../components/desks/desk_index_container'
 
 const App = () => (
   <div>
-    <Switch>
+
       <Route exact path='/'><Home /></Route>
+      <DeskIndexContainer />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-    </Switch>
   </div>
+
 );
 
 export default App;
