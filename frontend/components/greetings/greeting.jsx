@@ -9,35 +9,46 @@ class Greeting extends React.Component{
   }
 
   clickDropDown(){
-
+    const $drop = document.getElementsByClassName('btn-logout')
+    $drop[0].classList.toggle('active')
   }
+
   render(){
     const { logout, currentUser, email} = this.props;
     let welcome;
     let name;
+    
+    
 
     if (currentUser){
       name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
+      // debugger
       welcome = (
       <div>
-          <button className="btn-logout" onClick={this.clickDropDown}>
+          <button className="btn-logout" onClick={this.clickDropDown}
+            >
 
             <ul className='home-dropdown' >
-              <li>
-                <li>name</li> 
-                <li>{currentUser.email}</li>
+              <ul>
+                {/* <div id='x'></div> */}
+
+                {/* <img src="logo.png" alt='ok' width="50" height="50"/> */}
+                <li>{name}</li> 
+                <li className='shadowed-text'>{currentUser.email}</li>
               <hr className="Solid"/>
-              </li>
+              </ul>
               <li>Papers</li>
               <li>Settings</li>
               <hr className="Solid"/>
-              <li onClick={() => logout()}>Log out</li>
+              <li onClick={() => logout()}>Log Out</li>
             </ul>
           </button>
       </div>
       )
+      
     }
 
+    
     return(
       <>
         <header className="fixed-top-home">

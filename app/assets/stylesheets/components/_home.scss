@@ -62,17 +62,23 @@
 	padding: 10px;
 	width: 225px;
 	z-index: 1;
-	color: $grey;
+	color: $dark-blue;
 	font-family: $san-serif;
 	text-align: left;
 	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
 	font-weight: initial;
+  font-size: 14px;
 }
 
-.btn-logout:hover .home-dropdown{
+.btn-logout.active .home-dropdown{
 	display: block;
 }
 
+.shadowed-text{
+  font-size: 9pt;
+  color: $grey;
+  display: block;
+}
 
 
 //Desks??/
