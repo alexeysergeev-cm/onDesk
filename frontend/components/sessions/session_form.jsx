@@ -47,8 +47,6 @@ class SessionForm extends React.Component {
     e.preventDefault()
     this.props.demoUser({email: 'tori@io.com', password: '123456'})
       .then(() => this.setState({ redirect: true }))
-      // .then(() => this.props.history.push('/greeting'))
-      // this.props.history.push('/')
   }
 
   render(){
@@ -79,7 +77,7 @@ class SessionForm extends React.Component {
         }
       } 
     }
-    let linkErr = errors[0].includes('Email') ? <Link className='a' onClick={this.removeErr} to="/login" > log in</Link> : ''
+    let linkErr = errors[0].includes('Email') ? <Link className='a' onClick={this.removeErr} to="/login"> log in</Link> : ''
     // debugger
  
 
@@ -123,7 +121,7 @@ class SessionForm extends React.Component {
             placeholder="Enter password"
             onChange={this.update('password')}
           />
-          <h6> By signing up, I accept the Atlassian <a className='a' href="">Cloud Terms of Service</a> and acknowledge the <a className='a' href="">Privacy Policy</a>.</h6>
+          <h6> By signing up, I accept the Atlassian <a className='a' href="#">Cloud Terms of Service</a> and acknowledge the <a className='a' href="#">Privacy Policy</a>.</h6>
           <button className='acc-btn blue'>{this.state.formChange}</button>
 
           <hr className="solid" />
