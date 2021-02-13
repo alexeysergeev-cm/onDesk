@@ -41,19 +41,19 @@ Desk.destroy_all
 desks = [
     {
         title: 'Ideas',
-        author_id: '50',
+        author_id: users[0].id,
     },
     {
         title: 'Fly to Mars',
-        author_id: '50',
+        author_id: users[0].id,
     },
     {
         title: 'Plan family trip to hawaii',
-        author_id: '50',
+        author_id: users[0].id,
     },
     {
         title: 'Hire engineers',
-        author_id: '50',
+        author_id: users[0].id,
     }
 ]
 Desk.create(desks)
