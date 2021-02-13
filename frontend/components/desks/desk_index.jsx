@@ -10,19 +10,19 @@ class DeskIndex extends React.Component{
     this.props.fetchDesks()
   }
 
-  getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-  return color;
-  }
+  // getRandomColor() {
+  //   var letters = '0123456789ABCDEF';
+  //   var color = '#';
+  //   for (var i = 0; i < 6; i++) {
+  //     color += letters[Math.floor(Math.random() * 16)];
+  //   }
+  // return color;
+  // }
 
   render(){
     const { desks } = this.props
     // debugger
-    let color = () => getRandomColor()
+    // let color = () => getRandomColor()
     return(
       <div className='home-container'>
         <div className='home-sticky-container'>
@@ -40,6 +40,7 @@ class DeskIndex extends React.Component{
               <li className='li-h'>Team Projects</li>
             </div>
           </nav>
+          
           <div className='desk-page'>
             {desks.map(desk => (
               <span className='desk-tile'>
@@ -52,6 +53,7 @@ class DeskIndex extends React.Component{
             ))}
           </div>
         </div>
+        {/* <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/0cad30a99820b0d840a5b48635d00b6e/updated-layouts-collab.png" alt="" /> */}
       </div>
     )
   }
