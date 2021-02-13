@@ -25,15 +25,34 @@
   
  }
 
- .float-left {
+//  .float-left-home{
+//    display: flex;
+//    flex-grow: 1;
+//    flex-basis: 100%;
+//  }
+
+.float-left-home {
   float: left;
   color: $white;
   background-color: transparent; 
   font-family: $caveat;
-  font-size: x-large;
   width: 130px;
-  height: 50px;
+  height: 32px;
+}
+ .search{
+  border-radius: 3px;
+  color: $white;
+  background-color: $light-blue; 
+  font-family: $caveat;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
  }
+ 
 
  .float-right {
     float: right;
@@ -181,7 +200,8 @@ h3.h3-home{
   margin: 0;
   cursor: pointer;
   display: inline-block;
-  height: ;
+  height: 30px;
+  width: 80px;
 }
 
 .desk-index{
