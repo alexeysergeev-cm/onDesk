@@ -62,3 +62,32 @@
    }
  }
 
+ .intro-container{
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+ }
+
+ .intro-text{
+  text-align: left;
+  color: $white;
+  padding-right: 30px;
+   padding-left: 30px;
+   margin-right: auto;
+   margin-left: auto;
+ }
+
+.intro-text-big{
+  font-size: 48px;
+  font-family: $san-serif;
+}
+
+.lead{
+  font-family: $san-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
