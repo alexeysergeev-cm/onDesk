@@ -107,7 +107,26 @@
 
 .li-items{
   margin-bottom: 12px;
+  list-style: none;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+
 }
+
+.li-h{
+  margin-bottom: 4px;
+  min-width: 120px;
+  height: 32px;
+  font-weight: 700;
+}
+
+.li-h.active {
+  background-color: rgb(228, 240, 246);
+  color: rgb(0, 121, 191);
+  border-radius: 4px;
+}
+
 .desk-tile{
   width: 195px;
   height: 95px;

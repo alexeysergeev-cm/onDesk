@@ -30,14 +30,14 @@ class DeskIndex extends React.Component{
         <div className='home-sticky-container'>
           <nav className='home-left-sidebar'>
             <div className='li-items'>
-              <li>Desks</li>
-              <li>Templates</li>
-              <li>Home</li>
+              <li className='li-h active'>Desks</li>
+              <li className='li-h'>Templates</li>
+              <li className='li-h'>Home</li>
             </div>
             <div className='li-items'>
-              <div>Teams</div>
-              <li>Peronal Projects</li>
-              <li>Team Projects</li>
+              <div >Teams</div>
+              <li className='li-h'>Peronal Projects</li>
+              <li className='li-h'>Team Projects</li>
             </div>
           </nav>
           <div className='desk-page'>
