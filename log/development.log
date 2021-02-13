@@ -27817,3 +27817,27 @@ Processing by Api::DesksController#index as JSON
 Completed 200 OK in 20ms (Views: 14.8ms | ActiveRecord: 2.0ms)
 
 
+Started DELETE "/api/session" for ::1 at 2021-02-12 17:43:51 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4lC1I1k_nZlF4SiPjb5eUg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "tgIOEcVVWKvs6wZQgYeKTA"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 39], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "tgIOEcVVWKvs6wZQgYeKTA"], ["updated_at", "2021-02-13 01:43:51.347509"], ["id", 39]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-12 17:44:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 133ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
