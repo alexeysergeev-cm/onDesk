@@ -27,21 +27,31 @@ class DeskIndex extends React.Component{
     let color = () => getRandomColor()
     return(
       <div className='home-container'>
-
-        <div className='desk-page'>
-          {desks.map(desk => (
-
-            <span className='desk-tile'>
-              <div  key={desk.id} className='desk-tile-details'>
-                <DeskIndexItem 
-                desk={desk}
-              />  
-              </div>
-            </span>
-          ))}
-
-      </div>
-
+        <div className='home-sticky-container'>
+          <nav className='home-left-sidebar'>
+            <div className='li-items'>
+              <li>Desks</li>
+              <li>Templates</li>
+              <li>Home</li>
+            </div>
+            <div className='li-items'>
+              <div>Teams</div>
+              <li>Peronal Projects</li>
+              <li>Team Projects</li>
+            </div>
+          </nav>
+          <div className='desk-page'>
+            {desks.map(desk => (
+              <span className='desk-tile'>
+                <div  key={desk.id} className='desk-tile-details'>
+                  <DeskIndexItem 
+                  desk={desk}
+                />  
+                </div>
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
