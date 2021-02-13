@@ -56,7 +56,9 @@ class Greeting extends React.Component{
                 <i class="fa fa-search"></i>
               </a>
             </div>
-            <h3 className='h3-home'>onDesk</h3>
+            <a href="/" className='h3-home-a'>
+              <h3 className='h3-home'>onDesk</h3>
+            </a>
             <div className='float-right'>
               {welcome}
             </div>

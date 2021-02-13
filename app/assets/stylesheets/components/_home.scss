@@ -53,6 +53,24 @@
   height: 32px;
  }
  
+ .h3-home-a{
+  display: block;
+  position: relative;
+  flex-shrink: 0;
+  height: 30px;
+  opacity: 0.5;
+  margin-bottom: 5px;
+  margin-right: 50px;
+}
+h3.h3-home{
+  font-family: $caveat;
+  color: $white;
+  margin: 0;
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+  
+}
 
  .float-right {
     float: right;
@@ -194,15 +212,7 @@
   max-height: 40px;
 }
 
-h3.h3-home{
-  font-family: $caveat;
-  color: $white;
-  margin: 0;
-  cursor: pointer;
-  display: inline-block;
-  height: 30px;
-  width: 80px;
-}
+
 
 .desk-index{
   margin-top: 32px;
