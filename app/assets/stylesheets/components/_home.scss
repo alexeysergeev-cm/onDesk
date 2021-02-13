@@ -81,15 +81,51 @@
 }
 
 
-//Desks??/
-.desk-item-btn{
-  color: $light-blue;
-  padding: 4px 8px;
-  border: 1px solid transparent;
-  background-color: $white;
-  border-radius: 5px;
+//Desks -----
+.home-container{
+  width: 100%;
+  height: 2025px;
+}
+
+.desk-page{
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.desk-tile{
+  width: 195px;
+  height: 95px;
+  padding: 8px;
+  border-radius: 3px;
+  display: block;
+  background-color: $green;
+  color: $white;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.desk-tile-details{
+  width: 170px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.desk-tile-name{
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+  max-height: 40px;
 }
 
 h3{
   font-family: $caveat;
+}
+
+.desk-index{
+  margin-top: 32px;
 }

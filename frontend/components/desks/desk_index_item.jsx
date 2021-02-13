@@ -9,10 +9,10 @@ class IndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.desk
+    let dName = title;
     return(
-      <div className='desk-index-item' onClick={this.handleClick}>
-        <span>{title}</span>
-        <span>{id}</span>
+      <div className='desk-tile-name' onClick={this.handleClick}>
+        <div>{title}</div>
       </div>
     )
   }
