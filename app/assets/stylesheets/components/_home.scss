@@ -130,6 +130,11 @@
   color: rgb(0, 121, 191);
   border-radius: 4px;
 }
+.li-h:hover {
+  background-color: $silver;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .shadowed-text.big{
   font-size: 14px;

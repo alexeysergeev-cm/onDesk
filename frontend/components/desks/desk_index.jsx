@@ -28,8 +28,8 @@ class DeskIndex extends React.Component{
         <div className='home-sticky-container'>
           <nav className='home-left-sidebar'>
             <div className='li-items'>
-              <li className='li-h active'>
-                <a href="/" className='li-it'>Desks</a> 
+              <li className='li-h active' href='/'>
+                <a href="/">Desk</a> 
                 </li>
               <li className='li-h'>Templates</li>
               <li className='li-h'>Home</li>
