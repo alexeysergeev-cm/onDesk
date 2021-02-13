@@ -3,9 +3,7 @@ import DeskIndexItem from './desk_index_item'
 
 class DeskIndex extends React.Component{
   constructor(props){
-    // debugger 
     super(props)
-
   }
 
   componentDidMount(){
@@ -30,12 +28,14 @@ class DeskIndex extends React.Component{
         <div className='home-sticky-container'>
           <nav className='home-left-sidebar'>
             <div className='li-items'>
-              <li className='li-h active'>Desks</li>
+              <li className='li-h active'>
+                <a href="/" className='li-it'>Desks</a> 
+                </li>
               <li className='li-h'>Templates</li>
               <li className='li-h'>Home</li>
             </div>
             <div className='li-items'>
-              <div >Teams</div>
+              <div className='shadowed-text big'>Teams</div> 
               <li className='li-h'>Peronal Projects</li>
               <li className='li-h'>Team Projects</li>
             </div>

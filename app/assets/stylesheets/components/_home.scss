@@ -116,15 +116,29 @@
 
 .li-h{
   margin-bottom: 4px;
-  min-width: 120px;
-  height: 32px;
+  min-width: 200px;
+  height: 20px;
   font-weight: 700;
+  padding: 6px 8px 6px 0;
+  color: rgb(23, 43, 77);
+  display: flex;
+  align-items: center;
 }
 
 .li-h.active {
   background-color: rgb(228, 240, 246);
   color: rgb(0, 121, 191);
   border-radius: 4px;
+}
+
+.shadowed-text.big{
+  font-size: 14px;
+  color: rgb(94, 108, 132);
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 16px;
+  padding: 8px 0;
+  text-transform: uppercase;
 }
 
 .desk-tile{
