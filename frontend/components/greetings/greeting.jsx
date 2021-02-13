@@ -52,7 +52,7 @@ class Greeting extends React.Component{
         <header className="fixed-top-home">
           <nav className="nav-bar-home loggedIn">
             <a className='float-left'></a>
-            <h3>onDesk</h3>
+            <h3 className='h3-home'>onDesk</h3>
             <div className='float-right'>
               {welcome}
             </div>
