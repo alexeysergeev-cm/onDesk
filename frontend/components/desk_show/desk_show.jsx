@@ -18,10 +18,19 @@ class DeskShow extends React.Component{
       title = desk.title
     }
 
-    debugger
+    //turning greating header` background to transparent
+    let header = document.getElementsByClassName('desk-header-container');
+    if (header.length) {
+      // debugger
+      let greetFixedTop = header[0].lastElementChild;
+      greetFixedTop.classList.add('show');
+      let greetNavBar = greetFixedTop.lastElementChild
+      greetNavBar.classList.add('show')
+    }
+    //-----
 
     return(
-      <div id='desk-show-container'>
+      <div className='desk-show-container'>
         <div className='desk-header-container'>
           <GreetingContainer />
         </div>

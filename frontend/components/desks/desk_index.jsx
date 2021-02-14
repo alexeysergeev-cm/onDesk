@@ -1,6 +1,7 @@
 import React from 'react'
 import DeskIndexItem from './desk_index_item'
 import { Link } from 'react-router-dom'
+
 class DeskIndex extends React.Component{
   constructor(props){
     super(props)
