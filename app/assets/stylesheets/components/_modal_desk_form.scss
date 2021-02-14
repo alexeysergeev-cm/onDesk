@@ -10,21 +10,62 @@
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 125px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
- .desk-form {
+
+//---------__DESK FORM
+.desk-form-container{
+  position: relative;
+  top: 44px;
+  margin-bottom: 80px;
+}
+
+.desk-form-box {
+  outline: 1px solid black;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/2dcfe02cc44fac3aaca8996f33e8cc43/photo-1528920304568-7aa06b3dda8b.jpg');
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 3px;
+
+}
+
+.desk-form {
+
    display: flex;
-   justify-content: center;
-   flex-direction: column;
+   justify-content: space-between;
  }
 
- .desk-form-box {
-   outline: 1px solid black;
-   padding: 20px;
+ .desk-input{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 700;
+  left: -8px;
+  font-family: $apple;
+  width: 219px;
+  height: 23px;
 
-   position: relative;
-   background-image: url('https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png');
+
  }
+
+ .desk-input:focus {
+    background-color: $light-grey;
+    border-radius: 5px;
+    
+ }
+
+ .close-x{
+   font-size: 16px;
+   color: $white;
+   font-weight: lighter;
+   padding: 0px 5px 10px 5px;
+
+ }
+//  .fa.fa-times{
+//    padding: 0px 5px 10px 5px;
+//  }
