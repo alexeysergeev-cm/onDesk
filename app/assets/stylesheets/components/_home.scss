@@ -72,9 +72,22 @@ h3.h3-home{
   
 }
 
- .float-right {
+ .float-right-home {
     float: right;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .btn-logout-home{
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
  }
 
 .btn-logout {
@@ -216,4 +229,20 @@ h3.h3-home{
 
 .desk-index{
   margin-top: 32px;
+}
+
+
+.add-desk{
+  opacity: 0.8;
+  border-radius: 3px;
+  color: $white;
+  background-color: $light-blue; 
+  font-family: $caveat;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  margin: 0 4px 0 0;
+  width: 32px;
+  height: 32px;
 }

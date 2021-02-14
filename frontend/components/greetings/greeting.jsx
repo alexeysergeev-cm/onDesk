@@ -24,7 +24,7 @@ class Greeting extends React.Component{
       name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
       // debugger
       welcome = (
-      <div>
+      <div className='btn-logout-home'>
           <button className="btn-logout" onClick={this.clickDropDown}
             >
             <ul className='home-dropdown' >
@@ -59,7 +59,10 @@ class Greeting extends React.Component{
             <a href="/" className='h3-home-a'>
               <h3 className='h3-home'>onDesk</h3>
             </a>
-            <div className='float-right'>
+            <div className='float-right-home'>
+              <button className='add-desk'>
+                <i class="fa fa-plus"></i>
+              </button>
               {welcome}
             </div>
           </nav>
