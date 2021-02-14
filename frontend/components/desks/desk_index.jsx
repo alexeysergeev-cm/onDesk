@@ -43,7 +43,7 @@ class DeskIndex extends React.Component{
           
           <div className='desk-page'>
             {desks.map(desk => (
-              <span className='desk-tile'>
+              <span key={desk.id} className='desk-tile'>
                 <div  key={desk.id} className='desk-tile-details'>
                   <DeskIndexItem 
                   desk={desk}

@@ -14,3 +14,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+ .desk-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ .desk-form-box {
+   outline: 1px solid black;
+   padding: 20px;
+
+   position: relative;
+   background-image: url('https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png');
+ }

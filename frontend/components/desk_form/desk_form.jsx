@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { withRouter } from 'react-router-dom'
 
 class DeskForm extends React.Component{
@@ -9,7 +8,7 @@ class DeskForm extends React.Component{
       title: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    
+    // debugger
   }
 
   handleSubmit(e){
@@ -19,17 +18,18 @@ class DeskForm extends React.Component{
   }
 
   update(field){
-    e => this.setState({[field]: e.currentTarget.value})
+    return e => this.setState({[field]: e.currentTarget.value})
   }
 
   render(){
     return(
       <div className='desk-form-container'>
         <form onSubmit={this.handleSubmit} className='desk-form-box'>
+          <div onClick={this.props.closeModal} className="close-x">X</div>
           <div className='desk-form'>
               <input type="text"
-                value={this.state.value}
-                onChange={this.forceUpdate('title')}
+                value={this.state.title}
+                onChange={this.update('title')}
                 className='desk-input'
               />
           </div>

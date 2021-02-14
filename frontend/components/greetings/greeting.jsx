@@ -14,7 +14,7 @@ class Greeting extends React.Component{
   }
 
   render(){
-    const { logout, currentUser, email} = this.props;
+    const { logout, currentUser, email, openModal } = this.props;
     let welcome;
     let name;
     
@@ -53,15 +53,15 @@ class Greeting extends React.Component{
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
               <a className='search' href='/'>
-                <i class="fa fa-search"></i>
+                <i className="fa fa-search"></i>
               </a>
             </div>
             <a href="/" className='h3-home-a'>
               <h3 className='h3-home'>onDesk</h3>
             </a>
             <div className='float-right-home'>
-              <button className='add-desk'>
-                <i class="fa fa-plus"></i>
+              <button className='add-desk' onClick={() => openModal('Create Desk')}>
+                <i className="fa fa-plus"></i>
               </button>
               {welcome}
             </div>

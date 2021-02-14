@@ -8,11 +8,10 @@ function Modal({modal, closeModal}){
   if (!modal){
     return null;
   }
-
   let component;
   switch (modal) {
     case 'Create Desk':
-      component = <DeskFromContainer />
+      component = <DeskFromContainer />;
       break;
     default:
       return null;
