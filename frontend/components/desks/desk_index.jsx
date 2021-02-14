@@ -1,6 +1,6 @@
 import React from 'react'
 import DeskIndexItem from './desk_index_item'
-
+import { Link } from 'react-router-dom'
 class DeskIndex extends React.Component{
   constructor(props){
     super(props)
@@ -43,6 +43,7 @@ class DeskIndex extends React.Component{
           
           <div className='desk-page'>
             {desks.map(desk => (
+              <Link to={`/${desk.id}/deskshow`}> 
               <span key={desk.id} className='desk-tile'>
                 <div  key={desk.id} className='desk-tile-details'>
                   <DeskIndexItem 
@@ -50,6 +51,7 @@ class DeskIndex extends React.Component{
                 />  
                 </div>
               </span>
+              </Link>
             ))}
           </div>
         </div>

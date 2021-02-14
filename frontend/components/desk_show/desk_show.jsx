@@ -4,12 +4,18 @@ import { ProtectedRoute } from '../../util/route_util';
 
 class DeskShow extends React.Component{
 
+  componentDidMount(){
+    debugger
+    this.props.fetchDesk(this.props.match.params.deskId)
+  }
+
   render(){
-    const { title } = this.props
+    const { title, id } = this.props
     return(
       <div>
         <div>
-            {}
+            {id}
+            {title}
         </div>
 
       </div>

@@ -5,6 +5,9 @@ const desksReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_DESKS:
       return action.desks;
+    case RECEIVE_DESK:
+      debugger
+      return action.desk
     default:
       return state;
   }

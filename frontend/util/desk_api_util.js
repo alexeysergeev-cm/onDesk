@@ -3,7 +3,12 @@
 export const fetchDesks = () => (
   $.ajax({
     url: '/api/desks',
-    error: (err) => console.log(err) // for debugging?
+  })
+)
+
+export const fetchDesk = (id) => (
+  $.ajax({
+    url: `/api/desks/${id}`,
   })
 )
 

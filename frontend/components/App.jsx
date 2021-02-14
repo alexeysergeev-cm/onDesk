@@ -8,14 +8,16 @@ import NavBarContainer from '../components/nav_bar/nav_bar_container'
 import Home from './nav_bar/home/home';
 import DeskIndexContainer from '../components/desks/desk_index_container'
 import Modal from './modal/modal'
+import DeskShowContainer from './desk_show/desk_show_container';
 
 const App = () => (
   <div>
       <Modal />
       <Route exact path='/'><Home /></Route>
-      <ProtectedRoute path='/' component={DeskIndexContainer} />
+      <ProtectedRoute exact path='/' component={DeskIndexContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <ProtectedRoute path='/:deskId/deskshow' component={DeskShowContainer} />
   </div>
 
 );

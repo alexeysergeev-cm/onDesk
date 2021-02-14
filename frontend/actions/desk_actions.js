@@ -27,9 +27,10 @@ export const fetchDesks = () => dispatch => (
     .fail((errors) => dispatch(receiveDeskErrors(errors)))
 )
 
-export const fetchDesk = (id) => (
+export const fetchDesk = (id) => dispatch => (
   DeskUtil.fetchDesk(id)
-    .then((payload) => dispatch(receiveDesk(payload)))
+    .then((desk) => dispatch(receiveDesk(desk)))
+    .fail(errors => dispatch(receiveDeskErrors(errors)))
 )
 
 export const createDesk = (desk) => dispatch => (

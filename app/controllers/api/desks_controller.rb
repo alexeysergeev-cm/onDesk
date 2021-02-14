@@ -13,6 +13,11 @@ class Api::DesksController < ApplicationController
     end
   end
 
+  def show
+    @desk = Desk.find(params[:id])
+  end
+
+
   private
   def desk_params
     params.require(:desk).permit(:title, :author_id)
