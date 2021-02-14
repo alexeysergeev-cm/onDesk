@@ -10,7 +10,7 @@ const receiveDesks = (desks) => ({
   desks
 })
 
-const receiveDesk = (desk) => ({
+const receiveDesk = ({desk}) => ({
   type: RECEIVE_DESK,
   desk
 })
@@ -29,7 +29,7 @@ export const fetchDesks = () => dispatch => (
 
 export const fetchDesk = (id) => dispatch => (
   DeskUtil.fetchDesk(id)
-    .then((desk) => dispatch(receiveDesk(desk)))
+    .then((payload) => dispatch(receiveDesk(payload)))
     .fail(errors => dispatch(receiveDeskErrors(errors)))
 )
 

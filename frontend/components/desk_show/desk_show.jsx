@@ -5,12 +5,19 @@ import { ProtectedRoute } from '../../util/route_util';
 class DeskShow extends React.Component{
 
   componentDidMount(){
-    debugger
-    this.props.fetchDesk(this.props.match.params.deskId)
+    this.props.fetchDesk(this.props.deskId)
   }
 
   render(){
-    const { title, id } = this.props
+    const { desk } = this.props
+    
+    let id;
+    let title;
+    if (desk){
+      id = desk.id
+      title = desk.title
+    }
+
     return(
       <div>
         <div>
