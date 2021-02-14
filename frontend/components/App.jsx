@@ -7,10 +7,11 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util'
 import NavBarContainer from '../components/nav_bar/nav_bar_container'
 import Home from './nav_bar/home/home';
 import DeskIndexContainer from '../components/desks/desk_index_container'
+import Modal from './modal/modal'
 
 const App = () => (
   <div>
-
+      <Modal />
       <Route exact path='/'><Home /></Route>
       <ProtectedRoute path='/' component={DeskIndexContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
