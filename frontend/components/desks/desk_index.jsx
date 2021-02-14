@@ -53,7 +53,6 @@ class DeskIndex extends React.Component{
             ))}
           </div>
         </div>
-        {/* <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/0cad30a99820b0d840a5b48635d00b6e/updated-layouts-collab.png" alt="" /> */}
       </div>
     )
   }
