@@ -11,7 +11,7 @@ import Modal from './modal/modal'
 import DeskShowContainer from './desk_show/desk_show_container';
 
 const App = () => (
-  <div>
+  <div className='document-container'>
       <Modal />
       <Route exact path='/'><Home /></Route>
       <ProtectedRoute exact path='/' component={DeskIndexContainer} />
