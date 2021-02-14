@@ -5,11 +5,12 @@
   background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1284x1920/986a001e73329110f17307e6a1fbe258/photo-1552588353-2f2cc7d429e4.jpg');
   background-size: cover;
   background-position: 50%;
+  z-index: -1;
 }
 
 .desk-header-container{
   background-color: transparent;
-  height: 100%;
+  height: 42px;
 }
 
 .fixed-top-home.show{
@@ -18,4 +19,25 @@
 
 .nav-bar-home.loggedIn.show{
   background-color: rgba(2, 106, 167, 0.4);
+}
+
+.desk-name-header{
+  background: rgba(0, 0, 0, 0.14);
+  height: auto;
+  padding: 8px 4px 4px 8px;
+  position: relative;
+  // display: block;
+}
+
+.desk-name-header-btn{
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 3px;
+  color: $white;
+  float: left;
+  height: auto;
+  font-size: 18px;
+  font-family: $apple;
+  max-width: 400px;
+  padding: 5px;
+  margin-bottom: 4px;
 }
