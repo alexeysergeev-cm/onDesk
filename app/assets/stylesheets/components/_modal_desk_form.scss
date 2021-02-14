@@ -19,7 +19,7 @@
 //---------__DESK FORM
 .desk-form-container{
   position: relative;
-  top: 44px;
+  top: 60px;
   margin-bottom: 80px;
 }
 
@@ -32,7 +32,6 @@
   background-size: cover;
   background-position: 50%;
   border-radius: 3px;
-
 }
 
 .desk-form {
@@ -50,16 +49,45 @@
   font-family: $apple;
   width: 219px;
   height: 23px;
+  color: $white;
  }
 
  .desk-input:focus {
-    background-color: $light-grey;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    
  }
+ .desk-input::placeholder { 
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8; 
+}
 
  .close-x{
    font-size: 16px;
    color: $white;
    font-weight: lighter;
    padding: 0px 5px 10px 5px;
+   cursor: pointer;
  }
+
+ .desk-submit{
+   background-color: $white;
+   width: 86px;
+   height: 19px;
+   border-radius: 5px;
+   padding: 6px 12px;
+   margin-top: 8px;
+   margin-bottom: 8px;
+   cursor: not-allowed !important;
+   font-size: 14px;
+   font-family: $apple;
+   align-items: center;
+
+ }
+
+ .desk-submit.allowed{
+   cursor: pointer !important;
+   background-color: $green;
+   color: $white;
+ }
+

@@ -8,6 +8,7 @@ class DeskForm extends React.Component{
       title: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this)
     // debugger
   }
 
@@ -18,10 +19,24 @@ class DeskForm extends React.Component{
   }
 
   update(field){
+    let input = document.getElementsByClassName('desk-input')
+    if (input.length){
+      let b = document.getElementsByClassName('desk-submit')
+      if (input[0].value.length > 0) {
+        b[0].classList.add('allowed')
+      } else {
+        b[0].classList.remove('allowed')
+      }
+    }
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
   render(){
+
+
+
+    // debugger
+
     return(
       <div className='desk-form-container'>
         <form onSubmit={this.handleSubmit}>
