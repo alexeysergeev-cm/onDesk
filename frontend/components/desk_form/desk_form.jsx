@@ -24,17 +24,18 @@ class DeskForm extends React.Component{
   render(){
     return(
       <div className='desk-form-container'>
-        <form onSubmit={this.handleSubmit} className='desk-form-box'>
-          <div className='desk-form'>
-              <input type="text"
-                value={this.state.title}
-                onChange={this.update('title')}
-                className='desk-input'
-                placeholder="Add desk title"
-              />
-            <div onClick={this.props.closeModal} className="close-x"><i className="fa fa-times"></i></div>
+        <form onSubmit={this.handleSubmit}>
+          <div className='desk-form-box'>
+            <div className='desk-form'>
+                <input type="text"
+                  value={this.state.title}
+                  onChange={this.update('title')}
+                  className='desk-input'
+                  placeholder="Add desk title"
+                />
+              <div onClick={this.props.closeModal} className="close-x"><i className="fa fa-times"></i></div>
+            </div>
           </div>
-
           <input type="submit" className='desk-submit' value={this.props.formType}/>
         </form>
       </div>

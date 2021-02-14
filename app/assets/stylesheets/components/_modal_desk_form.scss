@@ -36,9 +36,10 @@
 }
 
 .desk-form {
-
    display: flex;
    justify-content: space-between;
+   width: 295px;
+   height: 95px;
  }
 
  .desk-input{
@@ -49,14 +50,11 @@
   font-family: $apple;
   width: 219px;
   height: 23px;
-
-
  }
 
  .desk-input:focus {
     background-color: $light-grey;
     border-radius: 5px;
-    
  }
 
  .close-x{
@@ -64,8 +62,4 @@
    color: $white;
    font-weight: lighter;
    padding: 0px 5px 10px 5px;
-
  }
-//  .fa.fa-times{
-//    padding: 0px 5px 10px 5px;
-//  }
