@@ -26,7 +26,7 @@
   height: auto;
   padding: 8px 4px 4px 8px;
   position: relative;
-  // display: block;
+  justify-content: space-between;
 }
 
 .desk-name-header-btn{
@@ -40,4 +40,9 @@
   max-width: 400px;
   padding: 5px;
   margin-bottom: 4px;
+}
+
+
+#show-menu{
+  float: right;
 }

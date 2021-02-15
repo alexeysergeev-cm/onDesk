@@ -36,8 +36,11 @@ class DeskShow extends React.Component{
         </div>
         <div className='desk-name-header'>
           <div className='desk-name-header-btn'>
-
-            {title}
+              {title}
+          </div>
+          <div className='desk-name-header-btn' id='show-menu'>
+            <span className='icon-list-items'></span>
+            <span>Show Menu</span>
           </div>
 
         </div>
