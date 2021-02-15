@@ -140,19 +140,13 @@ h3.h3-home{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
-}
-
-.home-sticky-container.not-centered{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  // justify-content: center;
 }
 
 .home-left-sidebar{
   position: sticky;
   margin-top: 70px;
-  // margin-right: auto;
+  margin-right: 15px;
   padding: 0 16px;
   width: 240px;
   float: left;

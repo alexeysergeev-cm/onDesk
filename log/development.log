@@ -39412,3 +39412,632 @@ Processing by Api::DesksController#index as JSON
 Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 1.3ms)
 
 
+Started DELETE "/api/session" for ::1 at 2021-02-15 09:45:22 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LYxbHXT9ZKy7qDhDnYlR0g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NwSQl3PGnE9Q7PDarXEtgA"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NwSQl3PGnE9Q7PDarXEtgA"], ["updated_at", "2021-02-15 17:45:22.373556"], ["id", 50]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-15 09:45:37 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"hulk24@io.com", "password"=>"[FILTERED]", "redirect"=>"false", "formChange"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulk24@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hulk24@io.com"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["updated_at", "2021-02-15 17:45:37.383034"], ["id", 55]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 232ms (Views: 10.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:45:37 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (3.7ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/index.json.jbuilder (8.4ms)
+Completed 200 OK in 26ms (Views: 18.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 09:45:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 212ms (Views: 209.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:45:55 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (38.4ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/index.json.jbuilder (42.0ms)
+Completed 200 OK in 55ms (Views: 13.3ms | ActiveRecord: 39.2ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-15 09:46:17 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"asdas", "id"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "asdas"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (0.8ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "asdas"], ["author_id", 55], ["created_at", "2021-02-15 17:46:17.601451"], ["updated_at", "2021-02-15 17:46:17.601451"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (2.5ms)
+Completed 200 OK in 18ms (Views: 10.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/desks/47" for ::1 at 2021-02-15 09:46:17 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"47"}
+  [1m[36mDesk Load (8.0ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.8ms)
+Completed 200 OK in 24ms (Views: 12.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 09:46:18 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:46:19 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (22.1ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/index.json.jbuilder (29.5ms)
+Completed 200 OK in 41ms (Views: 15.4ms | ActiveRecord: 22.9ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-15 09:47:31 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"asdasd", "id"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "asdasd"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (0.3ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "asdasd"], ["author_id", 55], ["created_at", "2021-02-15 17:47:31.605910"], ["updated_at", "2021-02-15 17:47:31.605910"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.3ms)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/desks/48" for ::1 at 2021-02-15 09:47:31 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"48"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.8ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 09:47:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:47:33 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (48.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (65.1ms)
+Completed 200 OK in 77ms (Views: 11.1ms | ActiveRecord: 60.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 09:48:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 202ms (Views: 198.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:48:43 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (2.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (75.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/index.json.jbuilder (83.9ms)
+Completed 200 OK in 93ms (Views: 13.3ms | ActiveRecord: 77.7ms)
+
+
+Started GET "/api/desks/48" for ::1 at 2021-02-15 09:49:08 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"48"}
+  [1m[36mDesk Load (5.5ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (2.1ms)
+Completed 200 OK in 24ms (Views: 12.9ms | ActiveRecord: 5.6ms)
+
+
+Started DELETE "/api/desks/48" for ::1 at 2021-02-15 09:49:12 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"48"}
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (1.2ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 48]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/index.json.jbuilder (2.3ms)
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:12 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/index.json.jbuilder (3.7ms)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/desks/47" for ::1 at 2021-02-15 09:49:13 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"47"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/show.json.jbuilder (1.2ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/desks/47" for ::1 at 2021-02-15 09:49:14 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"47"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (0.4ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 47]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/index.json.jbuilder (1.3ms)
+Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:14 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/index.json.jbuilder (2.3ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/desks" for ::1 at 2021-02-15 09:49:20 -0800
+Processing by Api::DesksController#create as JSON
+  Parameters: {"desk"=>{"title"=>"sadsda", "id"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "desks" WHERE "desks"."title" = $1 LIMIT $2[0m  [["title", "sadsda"], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[36mDesk Create (0.5ms)[0m  [1m[32mINSERT INTO "desks" ("title", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "sadsda"], ["author_id", 55], ["created_at", "2021-02-15 17:49:20.767074"], ["updated_at", "2021-02-15 17:49:20.767074"]]
+  ↳ app/controllers/api/desks_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:9
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/show.json.jbuilder (1.2ms)
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/desks/49" for ::1 at 2021-02-15 09:49:20 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"49"}
+  [1m[36mDesk Load (0.5ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.9ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 09:49:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:22 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (6.2ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (31.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.8ms)
+  Rendered api/desks/index.json.jbuilder (43.4ms)
+Completed 200 OK in 57ms (Views: 15.9ms | ActiveRecord: 37.6ms)
+
+
+Started GET "/api/desks/49" for ::1 at 2021-02-15 09:49:32 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"49"}
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (2.5ms)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-02-15 09:49:34 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yj0LFgGkkJvXiWuNHGgN8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "I8XKvz-2dJ96YogPZHPR3Q"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "hulk24@io.com"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "I8XKvz-2dJ96YogPZHPR3Q"], ["updated_at", "2021-02-15 17:49:34.986988"], ["id", 55]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-02-15 09:49:37 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tori@io.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["updated_at", "2021-02-15 17:49:38.162175"], ["id", 50]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 234ms (Views: 9.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:38 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (15.3ms)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/desks/42" for ::1 at 2021-02-15 09:49:43 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"42"}
+  [1m[36mDesk Load (0.6ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.6ms)
+  Rendered api/desks/show.json.jbuilder (3.5ms)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/api/desks/42" for ::1 at 2021-02-15 09:49:45 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"42"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 42]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (7.3ms)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:45 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (11.4ms)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/desks/41" for ::1 at 2021-02-15 09:49:46 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"41"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/show.json.jbuilder (1.3ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/desks/41" for ::1 at 2021-02-15 09:49:50 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"41"}
+  [1m[36mDesk Load (0.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (0.4ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 41]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (23.2ms)
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:50 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.6ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.6ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (12.3ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/desks/40" for ::1 at 2021-02-15 09:49:51 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"40"}
+  [1m[36mDesk Load (0.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/show.json.jbuilder (1.3ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/desks/40" for ::1 at 2021-02-15 09:49:53 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"40"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 40]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (7.0ms)
+Completed 200 OK in 18ms (Views: 12.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:53 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (7.9ms)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/desks/39" for ::1 at 2021-02-15 09:49:54 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"39"}
+  [1m[36mDesk Load (0.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.4ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/desks/39" for ::1 at 2021-02-15 09:49:56 -0800
+Processing by Api::DesksController#destroy as JSON
+  Parameters: {"id"=>"39"}
+  [1m[36mDesk Load (0.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[36mDesk Destroy (0.4ms)[0m  [1m[31mDELETE FROM "desks" WHERE "desks"."id" = $1[0m  [["id", 39]]
+  ↳ app/controllers/api/desks_controller.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/desks_controller.rb:23
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/index.json.jbuilder (5.8ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-15 09:49:56 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sBgZsE9UreyQJRl1Y1THpA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/index.json.jbuilder (11.0ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
