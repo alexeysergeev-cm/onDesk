@@ -17,6 +17,16 @@ class Api::DesksController < ApplicationController
     @desk = Desk.find(params[:id])
   end
 
+  def destroy
+    @desk = Desk.find(params[:id])
+    if @desk && @desk.author_id == current_user.id
+      @desk.destroy
+      render 'api/desks/index'
+    else
+      render json: ['Could not destroy desk'], status: 401
+    end
+  end
+
 
   private
   def desk_params

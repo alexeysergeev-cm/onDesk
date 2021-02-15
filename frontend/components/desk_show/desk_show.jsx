@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import GreetingContainer from '../greetings/greeting_container'
+
+
+
 class DeskShow extends React.Component{
   constructor(props) {
     super(props)
     this.clickDropDown = this.clickDropDown.bind(this)
+    this.handleDeleteDesk = this.handleDeleteDesk.bind(this)
   }
 
   componentDidMount(){
@@ -17,9 +21,15 @@ class DeskShow extends React.Component{
     $drop.classList.toggle('active')
   }
 
+  handleDeleteDesk(){
+    // debugger
+    this.props.deleteDesk(this.props.deskId)
+      .then(() => this.props.history.push('/'))
+    // return <Redirect to='/' />
+  }
 
   render(){
-    const { desk } = this.props
+    const { desk, deleteDesk } = this.props
 
     let id;
     let title;
@@ -47,14 +57,13 @@ class DeskShow extends React.Component{
             <span>Show Menu</span>
             <ul className='home-dropdown' >
               <ul>
-                {/* <li>{name}</li> */}
-                {/* <li className='shadowed-text'>{currentUser.email}</li> */}
+                <li>MENU</li>
                 <hr className="Solid" />
               </ul>
               <li>Papers</li>
               <li>Settings</li>
               <hr className="Solid" />
-              {/* <li onClick={() => logout()}>Log Out</li> */}
+              <li onClick={this.handleDeleteDesk}>Delete Desk</li>
             </ul>
           </div>
 

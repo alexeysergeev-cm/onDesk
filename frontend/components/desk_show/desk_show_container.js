@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import DeskShow from './desk_show';
-import { fetchDesk } from '../../actions/desk_actions';
+import { fetchDesk, deleteDesk } from '../../actions/desk_actions';
 import { selectDesk } from '../../reducers/selectors';
 
 
@@ -15,7 +15,8 @@ const mSTP = (state, ownParams) => {
 
 const mDTP = dispatch => {
   return ({
-    fetchDesk: id => dispatch(fetchDesk(id))
+    fetchDesk: id => dispatch(fetchDesk(id)),
+    deleteDesk: deskId => dispatch(deleteDesk(deskId))
   })
 }
 

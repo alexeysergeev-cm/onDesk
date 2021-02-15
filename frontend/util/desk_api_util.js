@@ -19,3 +19,11 @@ export const createDesk = (desk) => (
     data: { desk }
   })
 )
+
+export const deleteDesk = (deskId) => (
+  $.ajax({
+    url: `/api/desks/${deskId}`,
+    method: 'DELETE',
+  })
+)
+

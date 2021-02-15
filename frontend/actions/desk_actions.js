@@ -3,7 +3,7 @@ import * as DeskUtil from '../util/desk_api_util'
 export const RECEIVE_DESKS = 'RECEIVE_DESKS'
 export const RECEIVE_DESK = 'RECEIVE_DESK'
 export const RECEIVE_DESK_ERRORS = 'RECEIVE_DESK_ERRORS'
-
+export const REMOVE_DESK = 'REMOVE_DESK'
 
 const receiveDesks = (desks) => ({
   type: RECEIVE_DESKS,
@@ -18,6 +18,11 @@ const receiveDesk = ({desk}) => ({
 const receiveDeskErrors = (errors) => ({ //array
   type: RECEIVE_DESK_ERRORS,
   errors
+})
+
+const removeDesk = (deskId) => ({
+  type: REMOVE_DESK,
+  deskId
 })
 
 
@@ -38,3 +43,10 @@ export const createDesk = (desk) => dispatch => (
     .then(createdDesk => dispatch(receiveDesk(createdDesk)))
     .fail(errors => dispatch(receiveDeskErrors(errors)))
 )
+
+export const deleteDesk = (deskId) => dispatch => (
+  DeskUtil.deleteDesk(deskId)
+    .then(() => dispatch(removeDesk(deskId)))
+    .fail((errors) => dispatch(receiveDeskErrors(errors)))
+)
+
