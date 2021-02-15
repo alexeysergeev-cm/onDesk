@@ -22,10 +22,8 @@ class DeskShow extends React.Component{
   }
 
   handleDeleteDesk(){
-    // debugger
     this.props.deleteDesk(this.props.deskId)
       .then(() => this.props.history.push('/'))
-    // return <Redirect to='/' />
   }
 
   render(){
