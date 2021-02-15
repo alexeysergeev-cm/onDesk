@@ -144,9 +144,12 @@ h3.h3-home{
 }
 
 .home-left-sidebar{
-  margin: 70px 0 0 0;
+  position: sticky;
+  margin-top: 70px;
+  margin-right: auto;
   padding: 0 16px;
   width: 240px;
+  float: left;
 }
 
 .desk-page{
