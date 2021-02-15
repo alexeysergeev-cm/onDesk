@@ -27,7 +27,7 @@ class DeskShow extends React.Component{
   }
 
   render(){
-    const { desk, deleteDesk } = this.props
+    const { desk } = this.props
 
     let id;
     let title;
@@ -64,9 +64,6 @@ class DeskShow extends React.Component{
               <li onClick={this.handleDeleteDesk}>Delete Desk</li>
             </ul>
           </div>
-
-
-
     )
 
     return(
@@ -78,12 +75,7 @@ class DeskShow extends React.Component{
           <div className='desk-name-header-btn'>
               {title}
           </div>
-          {/* <div className='desk-name-header-btn' id='show-menu'>
-            <span className='icon-list-items'></span>
-            <span>Show Menu</span>
-          </div> */}
           {menu}
-
         </div>
 
 

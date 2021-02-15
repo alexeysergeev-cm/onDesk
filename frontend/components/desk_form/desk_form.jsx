@@ -5,17 +5,19 @@ class DeskForm extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title: ''
+      title: '',
+      id: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
-    // debugger
+
   }
 
   handleSubmit(e){
     e.preventDefault();
     this.props.createDesk(this.state)
       .then(this.props.closeModal)
+      .then(() => this.props.history.push(`/${this.props.lastId}/deskshow`))
   }
 
   update(field){

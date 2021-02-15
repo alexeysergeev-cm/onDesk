@@ -4,9 +4,15 @@ import { createDesk } from '../../actions/desk_actions'
 import DeskForm from './desk_form'
 import { closeModal} from '../../actions/modal_actions';
 
-const mSTP = state => ({
-  formType: 'Create Desk'
-})
+const mSTP = state => {
+  const ids = Object.keys(state.entities.desks)
+  const lastId = ids[ids.length - 1]
+  // debugger
+  return({
+    lastId,
+    formType: 'Create Desk'
+  })
+}
 
 const mDTP = dispatch => ({
   createDesk: (desk) => dispatch(createDesk(desk)),
