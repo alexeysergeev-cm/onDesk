@@ -143,10 +143,16 @@ h3.h3-home{
   justify-content: center;
 }
 
+.home-sticky-container.not-centered{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .home-left-sidebar{
   position: sticky;
   margin-top: 70px;
-  margin-right: auto;
+  // margin-right: auto;
   padding: 0 16px;
   width: 240px;
   float: left;
