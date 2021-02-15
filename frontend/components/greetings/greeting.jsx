@@ -55,6 +55,7 @@ class Greeting extends React.Component{
               </a>
             </div>
             <a href="/" className='h3-home-a'>
+              <img src={window.logo} className='nav-bar-logo home-logo' />
               <h3 className='h3-home'>onDesk</h3>
             </a>
             <div className='float-right-home'>

@@ -31,6 +31,14 @@
   font-size: x-large;
   width: 130px;
   height: 50px;
+  display: flex;
+ }
+
+ .nav-bar-logo{
+    width: 30px;
+    height: 30px;
+    padding: 5px 1px 5px 5px;
+    margin: 5px 2px 5px 5px;
  }
 
  .float-right {

@@ -14,7 +14,11 @@ class NavBar  extends  React.Component{
     return (
       <header className="fixed-top">
         <nav className="nav-bar">
-          <a className='float-left' >onDesk</a>
+          
+          <a className='float-left'>
+            <img src={window.logo} className='nav-bar-logo'/>
+            <div>onDesk</div>
+          </a>
           <div className='float-right'>
             {display}
           </div>

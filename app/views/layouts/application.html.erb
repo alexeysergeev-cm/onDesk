@@ -19,6 +19,10 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <script>
+    window.logo = "<%= image_url('logo.png') %>"
+  </script>
+  
   <% if logged_in? %>
     <% body = "yes" %>
   <% else %>
