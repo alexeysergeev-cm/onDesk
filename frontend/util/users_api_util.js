@@ -3,5 +3,5 @@
 
 //fetch User 
 
-// '/api/users?query={email}' - traditional
+// '/api/users?query=${email}'
 //  

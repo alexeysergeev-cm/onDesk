@@ -10,16 +10,22 @@ class DeskShow extends React.Component{
     super(props)
     this.clickDropDown = this.clickDropDown.bind(this)
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this)
+    this.clickInvite = this.clickInvite.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchDesk(this.props.deskId)
   }
 
+  clickInvite(){
+    const $drop = document.getElementById('show-invite')
+    $drop.classList.toggle('active')
+  }
   clickDropDown() {
     const $drop = document.getElementById('show-menu')
     $drop.classList.toggle('active')
   }
+
 
   handleDeleteDesk(){
     this.props.deleteDesk(this.props.deskId)
@@ -66,6 +72,29 @@ class DeskShow extends React.Component{
           </div>
     )
 
+    //-------invite Dropdown 
+    let invite = (
+      <div className='desk-name-header-btn invite' id='show-invite' onClick={this.clickInvite}>
+        <div className="invite-text">
+          <span>Invite</span>
+        </div>
+        <ul className='home-dropdown invite' >
+          <div className='invite-pop-over'>
+            <span >Invite To Desk</span>
+            <div className="close-x invite"><i className="fa fa-times"></i></div>
+          </div>
+          <hr className="Solid" />
+          <input type="text"
+            
+            className='invite-input'
+            placeholder="Email address"
+          />
+          <button onClick={this.handleInvite}>Invite</button>
+        </ul>
+      </div>
+    )
+
+
     return(
       <div className='desk-show-container'>
         <div className='desk-header-container'>
@@ -75,6 +104,7 @@ class DeskShow extends React.Component{
           <div className='desk-name-header-btn'>
               {title}
           </div>
+          {invite}
           {menu}
         </div>
 

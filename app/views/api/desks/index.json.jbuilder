@@ -8,3 +8,4 @@ Desk.all.each do |desk|
     end
   end
 end
+

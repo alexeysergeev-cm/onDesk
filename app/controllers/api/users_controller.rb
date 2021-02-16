@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index
-    # email = params[query]
+    # email = params[:query]
     # user = User.where(email: email)
     # 
   end
