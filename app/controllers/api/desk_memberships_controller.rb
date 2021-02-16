@@ -6,6 +6,7 @@ class Api::DeskMembershipsController < ApplicationController
       render json: { message: 'Success!'}
     else
       render json: ['Can`t assign that user!'], status: 404
+    end
   end
 
   private
