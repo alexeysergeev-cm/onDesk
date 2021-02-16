@@ -1,9 +1,12 @@
 class Api::UsersController < ApplicationController
 
   def index
-    # email = params[:query]
-    # user = User.where(email: email)
-    # 
+    email = params[:email]
+    debugger
+    user_id = User.where(email: email).pluck(:id)
+    @user = User.find_by(id: user_id[0])
+    render :show
+    debugger
   end
 
   def create

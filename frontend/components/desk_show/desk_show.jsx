@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import GreetingContainer from '../greetings/greeting_container'
+import SearchContainer from './search_container';
 
 
 
@@ -96,7 +97,7 @@ class DeskShow extends React.Component{
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />
-          <form >
+          {/* <form >
             <div>
               <input type="text"
                 className='invite-input'
@@ -104,7 +105,8 @@ class DeskShow extends React.Component{
               />
             </div>
             <button className='acc-btn'>Invite</button>
-          </form>
+          </form> */}
+          <SearchContainer />
         </ul>
       </div>
     )

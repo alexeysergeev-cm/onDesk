@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
-
+import {FIND_USER} from '../actions/users_actions'
 
 
 const usersReducer = (state = {}, action) => {
@@ -10,6 +10,10 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, 
         { [action.currentUser.id]: action.currentUser })
+    case FIND_USER:
+      debugger
+      nextState[action.user.id] = action.user
+      return nextState;
     default:
       return state
   }
