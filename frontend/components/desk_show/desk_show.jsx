@@ -17,11 +17,15 @@ class DeskShow extends React.Component{
     this.props.fetchDesk(this.props.deskId)
   }
 
+  //--Invite DropDown
   clickInvite(e){
     const $drop = document.getElementsByClassName('home-dropdown invite')
-
-    debugger
-  
+    const $xMark = document.getElementsByClassName('close-x invite')
+    
+    if ($xMark && $drop[0].classList.contains('open')){
+      $drop[0].classList.remove('open')
+      return
+    }
     if (!$drop[0].classList.contains('open') ) {
       $drop[0].classList.add('open')
     } else {
@@ -89,7 +93,7 @@ class DeskShow extends React.Component{
         <ul className='home-dropdown invite'>
           <div className='invite-pop-over'>
             <span >Invite To Desk</span>
-            <div className="close-x invite" ><i className="fa fa-times"></i></div>
+            <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />
           <form >
@@ -104,8 +108,7 @@ class DeskShow extends React.Component{
         </ul>
       </div>
     )
-
-
+  
     return(
       <div className='desk-show-container'>
         <div className='desk-header-container'>
