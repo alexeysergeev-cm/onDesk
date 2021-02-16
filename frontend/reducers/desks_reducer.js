@@ -1,4 +1,4 @@
-import { RECEIVE_DESK, RECEIVE_DESK_ERRORS, RECEIVE_DESKS, REMOVE_DESK} from '../actions/desk_actions';
+import { RECEIVE_DESK, RECEIVE_DESK_ERRORS, RECEIVE_DESKS, REMOVE_DESK, } from '../actions/desk_actions';
 
 const desksReducer = (state = {}, action) => {
   Object.freeze(state);

@@ -1,10 +1,10 @@
 
 
-export const createMemebership = (payload) => (
+export const createMemebership = (desk_membership) => (
   $.ajax({
     url: `/api/desk_memberships`,
     method: 'POST',
-    data: { payload }
+    data: { desk_membership }
   })
 )
 

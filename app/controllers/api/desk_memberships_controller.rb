@@ -1,7 +1,8 @@
 class Api::DeskMembershipsController < ApplicationController
 
   def create
-    @desk_membership = DeskMembership.new(desk_m)
+    @desk_membership = DeskMembership.new(membership_params)
+    debugger
     if @desk_membership.save
       render json: { message: 'Success!'}
     else
@@ -10,7 +11,7 @@ class Api::DeskMembershipsController < ApplicationController
   end
 
   private
-  def desk_m
-    require(:desk_memberships).permit(:user_id, :desk_id)
+  def membership_params
+    params.require(:desk_membership).permit(:user_id, :desk_id)
   end
 end

@@ -9,3 +9,14 @@ Desk.all.each do |desk|
   end
 end
 
+DeskMembership.all.each do |membership|
+  if membership.user_id == current_user.id
+    Desk.all.each do |desk|
+      if membership.desk_id == desk.id 
+        json.set! desk.id do 
+          json.partial! 'desk', desk: desk
+        end
+      end
+    end
+  end
+end

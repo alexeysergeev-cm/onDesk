@@ -34,8 +34,6 @@ class DeskForm extends React.Component{
   }
 
   render(){
-
-
     return(
       <div className='desk-form-container'>
         <form onSubmit={this.handleSubmit}>
