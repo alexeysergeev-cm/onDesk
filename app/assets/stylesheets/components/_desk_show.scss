@@ -57,8 +57,9 @@
   height: 200px;
 }
 
+//----INVITE
 
-.desk-name-header-btn.invite{
+.invite-btn{
  background: rgba(255, 255, 255, 0.24);
   border-radius: 3px;
   color: $white;
@@ -71,11 +72,9 @@
   // margin-bottom: 4px;
   font-weight: 700; 
   margin: 2px 10px;
-
 }
 
-
-.desk-name-header-btn.invite.active .home-dropdown.invite{
+.home-dropdown.invite.open{
 	display: block;
   width: 250px;
   height: 350px;
@@ -100,7 +99,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: -1;
 }
 
 .invite-text{

@@ -23,7 +23,6 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = selected_user
-
   end
 
   private

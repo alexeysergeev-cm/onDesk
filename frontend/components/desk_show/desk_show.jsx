@@ -17,10 +17,18 @@ class DeskShow extends React.Component{
     this.props.fetchDesk(this.props.deskId)
   }
 
-  clickInvite(){
-    const $drop = document.getElementById('show-invite')
-    $drop.classList.toggle('active')
+  clickInvite(e){
+    const $drop = document.getElementsByClassName('home-dropdown invite')
+
+    debugger
+  
+    if (!$drop[0].classList.contains('open') ) {
+      $drop[0].classList.add('open')
+    } else {
+        $drop[0].classList.remove('open')
+      }
   }
+
   clickDropDown() {
     const $drop = document.getElementById('show-menu')
     $drop.classList.toggle('active')
@@ -74,22 +82,25 @@ class DeskShow extends React.Component{
 
     //-------invite Dropdown 
     let invite = (
-      <div className='desk-name-header-btn invite' id='show-invite' onClick={this.clickInvite}>
-        <div className="invite-text">
+      <div className='invite-btn' id='show-invite' >
+        <div className="invite-text" id='show-invite' onClick={this.clickInvite}>
           <span>Invite</span>
         </div>
-        <ul className='home-dropdown invite' >
+        <ul className='home-dropdown invite'>
           <div className='invite-pop-over'>
             <span >Invite To Desk</span>
-            <div className="close-x invite"><i className="fa fa-times"></i></div>
+            <div className="close-x invite" ><i className="fa fa-times"></i></div>
           </div>
           <hr className="Solid" />
-          <input type="text"
-            
-            className='invite-input'
-            placeholder="Email address"
-          />
-          <button onClick={this.handleInvite}>Invite</button>
+          <form >
+            <div>
+              <input type="text"
+                className='invite-input'
+                placeholder="Email address"
+              />
+            </div>
+            <button className='acc-btn'>Invite</button>
+          </form>
         </ul>
       </div>
     )
