@@ -5,6 +5,11 @@ class Api::UsersController < ApplicationController
     debugger
     user_id = User.where(email: email).pluck(:id)
     @user = User.find_by(id: user_id[0])
+
+    # if @user 
+    #   @DeskMembership = DeskMembership.create(@user.id)
+    # else
+
     render :show
     debugger
   end

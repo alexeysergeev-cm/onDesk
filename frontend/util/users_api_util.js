@@ -12,3 +12,4 @@ export const fetchUser = (email) => (
     data: {email}
   })
 )
+
