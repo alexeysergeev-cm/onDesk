@@ -6,6 +6,7 @@ import { createMembership } from '../../actions/desk_memberships_actions';
 const mSTP = state => {
   const message = state.deskMembership.message
   const errors = state.errors.invite
+  const membershipErr = state.errors.membership 
   const users = state.entities.users
   const deskId = Object.values(state.entities.desks)[0]
   return({
@@ -13,6 +14,7 @@ const mSTP = state => {
     deskId,
     errors,
     message,
+    membershipErr
   })
 }
 

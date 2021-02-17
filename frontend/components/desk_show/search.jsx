@@ -26,8 +26,8 @@ class Search extends React.Component{
   };
   
   render(){
-    const { errors, message } = this.props
-    let error = errors[0];
+    const { errors, message, membershipErr } = this.props
+    let error = errors[0] || membershipErr[0];
     if (errors.length && !message){
       let $error = document.getElementsByClassName('invite-errors')
       $error[0].classList.add('err-on')
@@ -36,6 +36,9 @@ class Search extends React.Component{
       $error[0].classList.remove('err-on')
       let $success = document.getElementsByClassName('invite-success')
       $success[0].classList.add('suc-on')
+    } else if (membershipErr.length){
+      let $error = document.getElementsByClassName('invite-errors')
+      $error[0].classList.add('err-on')
     }
 
     return(

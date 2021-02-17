@@ -49,7 +49,6 @@ class DeskShow extends React.Component{
 
     //----errors
     let error = deskErr[0];
-    debugger
     if (deskErr.length) {
       let $error = document.getElementsByClassName('desk-errors')
       $error[0].classList.add('err-on')
