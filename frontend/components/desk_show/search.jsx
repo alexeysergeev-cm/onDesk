@@ -50,7 +50,7 @@ class Search extends React.Component{
           {error}
         </div>
         <div className='invite-success'>
-          {success}
+          {/* {success} */}
         </div>
       </div>
     )

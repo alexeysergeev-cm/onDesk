@@ -4,7 +4,7 @@ import { fetchUser } from '../../actions/users_actions'
 import { createMembership } from '../../actions/desk_memberships_actions';
 
 const mSTP = state => {
-
+  const message = state.deskMembership.message
   const errors = state.errors.invite
   debugger
   const users = state.entities.users
@@ -12,7 +12,8 @@ const mSTP = state => {
   return({
     users,
     deskId,
-    errors
+    errors,
+    message
   })
 }
 
