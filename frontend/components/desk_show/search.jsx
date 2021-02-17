@@ -47,7 +47,7 @@ class Search extends React.Component{
             value={this.state.query}
             onChange={this.handleInputChange('query')}
           />
-        <button className='acc-btn'>Invite</button>
+        <button className='invite-acc-btn'>Invite</button>
         </form>
             <hr className="Solid" />
         <div className='render-result'>
