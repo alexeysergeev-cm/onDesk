@@ -11,7 +11,6 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, 
         { [action.currentUser.id]: action.currentUser })
     case FIND_USER:
-      debugger
       nextState[action.user.id] = action.user
       return nextState;
     default:

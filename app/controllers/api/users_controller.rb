@@ -2,7 +2,6 @@ class Api::UsersController < ApplicationController
 
   def index
     email = params[:email]
-    debugger
     user_id = User.where(email: email).pluck(:id)
     @user = User.find_by(id: user_id[0])
 
@@ -11,7 +10,6 @@ class Api::UsersController < ApplicationController
     # else
 
     render :show
-    debugger
   end
 
   def create

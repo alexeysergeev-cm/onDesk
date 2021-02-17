@@ -14,11 +14,11 @@ class Search extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     let newMemberId;
-    debugger
+
     this.props.fetchUser(this.state.query)
-      // .then(() => this.props.createMembership({ user_id: user.id, desk_id: this.props.deskId }))
-      .then(() => Object.values(this.props.users).forEach(obj => { if (obj.email == this.state.query) newMemberId = obj.id }))
-      .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
+    .then(() => Object.values(this.props.users).forEach(obj => { if (obj.email == this.state.query) newMemberId = obj.id }))
+    .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
+    // .then(() => this.props.createMembership({ user_id: user.id, desk_id: this.props.deskId }))
   }
 
 

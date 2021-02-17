@@ -5,7 +5,6 @@ const desksReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_DESKS:
-      debugger
       return action.desks;
     case RECEIVE_DESK:
       // const newDesk = { [action.desk.id]: action.desk };

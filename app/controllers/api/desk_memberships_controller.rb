@@ -2,7 +2,6 @@ class Api::DeskMembershipsController < ApplicationController
 
   def create
     @desk_membership = DeskMembership.new(membership_params)
-    debugger
     if @desk_membership.save
       render json: { message: 'Success!'}
     else

@@ -6,7 +6,6 @@ import { createMembership } from '../../actions/desk_memberships_actions';
 const mSTP = state => {
   const users = state.entities.users
   const deskId = Object.values(state.entities.desks)[0]
-  debugger
   return({
     users,
     deskId

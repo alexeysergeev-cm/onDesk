@@ -7,7 +7,6 @@ import { selectDesk } from '../../reducers/selectors';
 const mSTP = (state, ownParams) => {
   const deskId = parseInt(ownParams.match.params.deskId)
   const title = selectDesk(state.entities, deskId)
-  debugger
   return({
     deskId,
     title,
