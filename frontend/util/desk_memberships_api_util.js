@@ -8,3 +8,9 @@ export const createMembership = (desk_membership) => (
   })
 )
 
+
+// export const deskMembers = (members) => (
+//   $.ajax({
+//     url: 
+//   })
+// )

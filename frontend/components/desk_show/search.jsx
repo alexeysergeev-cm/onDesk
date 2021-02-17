@@ -21,11 +21,9 @@ class Search extends React.Component{
     // .then(() => this.props.createMembership({ user_id: user.id, desk_id: this.props.deskId }))
   }
 
-
   handleInputChange(field){
     return event => this.setState({ [field]: event.currentTarget.value})
   };
-
   
   render(){
     return(

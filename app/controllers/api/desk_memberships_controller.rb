@@ -1,11 +1,15 @@
 class Api::DeskMembershipsController < ApplicationController
 
+  # def index
+  #   @
+  # end
+
   def create
     @desk_membership = DeskMembership.new(membership_params)
     if @desk_membership.save
       render json: { message: 'Success!'}
     else
-      render json: ['Can`t assign that user!'], status: 404
+      render json: ['Can`t find that user!'], status: 404
     end
   end
 

@@ -6,6 +6,7 @@ const membershipReducer = (state = {}, action) => {
 
   switch(action.type){
     case CREATE_MEMBERSHIP:
+      debugger
       return action.payload;
     default:
       return state;
