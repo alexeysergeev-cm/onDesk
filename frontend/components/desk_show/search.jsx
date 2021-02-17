@@ -49,11 +49,14 @@ class Search extends React.Component{
           />
         <button className='acc-btn'>Invite</button>
         </form>
-        <div className='invite-errors'>
-          {error}
-        </div>
-        <div className='invite-success'>
-          {message}
+            <hr className="Solid" />
+        <div className='render-result'>
+          <div className='invite-errors'>
+            {error}
+          </div>
+          <div className='invite-success'>
+            {message}
+          </div>
         </div>
       </div>
     )
