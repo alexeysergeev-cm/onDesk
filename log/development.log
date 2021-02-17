@@ -43527,3 +43527,45 @@ Processing by Api::DesksController#index as JSON
 Completed 200 OK in 25ms (Views: 15.9ms | ActiveRecord: 3.9ms)
 
 
+  [1m[36mDeskMembership Load (0.6ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.5ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.6ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 18]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 19]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeskMembership Load (0.5ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDesk Load (3.3ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  [1m[36mDeskMembership Load (0.5ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (1.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.5ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.5ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 21]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.3ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeskMembership Load (0.4ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.6ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.4ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDeskMembership Load (0.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeskMembership Destroy (0.4ms)[0m  [1m[31mDELETE FROM "desk_memberships" WHERE "desk_memberships"."id" = $1[0m  [["id", 23]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDeskMembership Load (1.8ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDesk Load (1.2ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  [1m[36mDeskMembership Load (0.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDesk Load (0.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  [1m[36mDeskMembership Load (0.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  [1m[36mDesk Load (1.1ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m

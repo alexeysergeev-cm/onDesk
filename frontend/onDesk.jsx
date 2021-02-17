@@ -5,7 +5,7 @@ import configureStore from './store/store'
 import Root from './components/root'
 import {fetchDesks, createDesk} from './actions/desk_actions'
 import { fetchUser } from './actions/users_actions'
-import { createMemebership } from './actions/desk_memberships_actions'
+import { createMembership } from './actions/desk_memberships_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   let store; 
@@ -36,5 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.signup = signup
   // window.logout = logout
   window.fetchUser = fetchUser
-  window.createMembership = createMemebership
+  window.createMembership = createMembership
 })
