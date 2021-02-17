@@ -9,7 +9,6 @@ const deskErrorsReducer = (state = _errors, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_DESK_ERRORS:
-      debugger
       return action.errors;
     default:
       return state;
