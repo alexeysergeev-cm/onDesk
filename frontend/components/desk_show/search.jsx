@@ -26,6 +26,15 @@ class Search extends React.Component{
   };
   
   render(){
+    const { errors } = this.props
+    let error = errors[0];
+    if (errors.length){
+      let $error = document.getElementsByClassName('invite-errors')
+      $error[0].classList.add('err-on')
+    } else {
+      // $error[0].classList.remove('err-on')
+    }
+
     return(
       <div className="searchForm">
         <form onSubmit={this.handleSubmit}>
@@ -37,6 +46,12 @@ class Search extends React.Component{
           />
         <button className='acc-btn'>Invite</button>
         </form>
+        <div className='invite-errors'>
+          {error}
+        </div>
+        <div className='invite-success'>
+          {success}
+        </div>
       </div>
     )
   }
