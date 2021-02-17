@@ -43569,3 +43569,4 @@ Completed 200 OK in 25ms (Views: 15.9ms | ActiveRecord: 3.9ms)
   [1m[36mDesk Load (0.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
   [1m[36mDeskMembership Load (0.7ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
   [1m[36mDesk Load (1.1ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  [1m[36mDesk Load (0.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m

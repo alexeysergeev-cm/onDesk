@@ -22,7 +22,6 @@ class DeskShow extends React.Component{
   clickInvite(e){
     const $drop = document.getElementsByClassName('home-dropdown invite')
     const $xMark = document.getElementsByClassName('close-x invite')
-    
     if ($xMark && $drop[0].classList.contains('open')){
       $drop[0].classList.remove('open')
       return
@@ -46,19 +45,11 @@ class DeskShow extends React.Component{
   }
 
   render(){
-    const { desk } = this.props
-
-    let id;
-    let title;
-    if (desk){
-      id = desk.id
-      title = desk.title
-    }
+    const { title } = this.props
 
     //turning greating header` background to transparent
     let header = document.getElementsByClassName('desk-header-container');
     if (header.length) {
-      // debugger
       let greetFixedTop = header[0].lastElementChild;
       greetFixedTop.classList.add('show');
       let greetNavBar = greetFixedTop.lastElementChild
@@ -97,15 +88,6 @@ class DeskShow extends React.Component{
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />
-          {/* <form >
-            <div>
-              <input type="text"
-                className='invite-input'
-                placeholder="Email address"
-              />
-            </div>
-            <button className='acc-btn'>Invite</button>
-          </form> */}
           <SearchContainer />
         </ul>
       </div>
@@ -123,8 +105,6 @@ class DeskShow extends React.Component{
           {invite}
           {menu}
         </div>
-
-
       </div>
     )
   }
