@@ -26,13 +26,16 @@ class Search extends React.Component{
   };
   
   render(){
-    const { errors } = this.props
+    const { errors, message } = this.props
     let error = errors[0];
-    if (errors.length){
+    if (errors.length && !message){
       let $error = document.getElementsByClassName('invite-errors')
       $error[0].classList.add('err-on')
-    } else {
-      // $error[0].classList.remove('err-on')
+    } else if (message) {
+      let $error = document.getElementsByClassName('invite-errors')
+      $error[0].classList.remove('err-on')
+      let $success = document.getElementsByClassName('invite-success')
+      $success[0].classList.add('suc-on')
     }
 
     return(
@@ -50,7 +53,7 @@ class Search extends React.Component{
           {error}
         </div>
         <div className='invite-success'>
-          {/* {success} */}
+          {message}
         </div>
       </div>
     )

@@ -141,3 +141,24 @@
 .invite-errors.err-on {
   display: inline-block;
 }
+
+.invite-success {
+  background-color: $green;
+  color: $white;
+  width: 260px;
+  height: 17px;
+  padding: 7px 14px;
+  border: 1px solid $silver;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-block-start: 16px;
+  margin-block-end: 16px;
+  border-radius: 4px;
+  display: none;
+  font-size: 16px;
+  // font-family: $apple;
+}
+
+.invite-success.suc-on{
+  display: inline-block;
+}
