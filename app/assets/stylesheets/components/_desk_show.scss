@@ -120,12 +120,16 @@
   background-color: $white;
   box-shadow: inset 0 0 0 2px $blue-home;
   border-radius: 3px;
+  width: 200px;
+  height: 32px;
+  text-align: left;
+  padding-left: 10px;
 }
 
 .invite-errors {
   background-color: $orange;
   color: $white;
-  width: 260px;
+  width: 150px;
   height: 17px;
   padding: 7px 14px;
   border: 1px solid $silver;
@@ -145,7 +149,7 @@
 .invite-success {
   background-color: $green;
   color: $white;
-  width: 260px;
+  width: 150px;
   height: 17px;
   padding: 7px 14px;
   border: 1px solid $silver;
