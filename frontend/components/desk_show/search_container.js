@@ -6,14 +6,13 @@ import { createMembership } from '../../actions/desk_memberships_actions';
 const mSTP = state => {
   const message = state.deskMembership.message
   const errors = state.errors.invite
-  debugger
   const users = state.entities.users
   const deskId = Object.values(state.entities.desks)[0]
   return({
     users,
     deskId,
     errors,
-    message
+    message,
   })
 }
 

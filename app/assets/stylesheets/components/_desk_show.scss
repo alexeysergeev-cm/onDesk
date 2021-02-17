@@ -174,3 +174,24 @@
     border-radius: 5px;
     background-color: $light-grey;
 }
+
+
+.desk-errors {
+  background-color: red;
+  color: $white;
+  width: auto;
+  height: auto;
+  padding: 5px 10px;
+  border: 1px solid $white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: none;
+  font-size: 18px;
+  text-align: center;
+}
+.desk-errors.err-on {
+  display: inline-block;
+  margin: 0 150px;
+  margin-top: 5px;
+}

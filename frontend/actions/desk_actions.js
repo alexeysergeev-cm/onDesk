@@ -47,6 +47,6 @@ export const createDesk = (desk) => dispatch => (
 export const deleteDesk = (deskId) => dispatch => (
   DeskUtil.deleteDesk(deskId)
     .then(() => dispatch(removeDesk(deskId)))
-    .fail((errors) => dispatch(receiveDeskErrors(errors)))
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)))
 )
 

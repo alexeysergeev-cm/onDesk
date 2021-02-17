@@ -45,7 +45,17 @@ class DeskShow extends React.Component{
   }
 
   render(){
-    const { title } = this.props
+    const { title, deskErr } = this.props
+
+    //----errors
+    let error = deskErr[0];
+    debugger
+    if (deskErr.length) {
+      let $error = document.getElementsByClassName('desk-errors')
+      $error[0].classList.add('err-on')
+    } 
+    //--- 
+
 
     //turning greating header` background to transparent
     let header = document.getElementsByClassName('desk-header-container');
@@ -104,6 +114,9 @@ class DeskShow extends React.Component{
           </div>
           {invite}
           {menu}
+        </div>
+        <div className='desk-errors'>
+          {error}
         </div>
       </div>
     )
