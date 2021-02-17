@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { fetchUser } from '../../actions/users_actions'
+import { createMembership } from '../../actions/desk_memberships_actions';
 
 const mSTP = state => {
-  const user = state.entities.users
+  const users = state.entities.users
+  const deskId = Object.keys(state.entities.desks)[0]
   debugger
   return({
-    user
+    users,
+    deskId
   })
 }
 
 const mDTP = dispatch => ({
-  fetchUser: email => dispatch(fetchUser(email))
+  fetchUser: email => dispatch(fetchUser(email)),
+  createMembership: (payload) => dispatch(createMembership(payload))
 })
 
 export default connect(mSTP,mDTP)(Search)

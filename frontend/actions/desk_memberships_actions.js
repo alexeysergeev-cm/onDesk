@@ -2,7 +2,7 @@ import * as DeskMembershipsApiUtil from '../util/desk_memberships_api_util'
 
 export const CREATE_MEMBERSHIP = "CREATE_MEMBERSHIP"
 
-const receiveMemebership = (payload) => {
+const receiveMembership = (payload) => {
   debugger
   return({
     type: CREATE_MEMBERSHIP,
@@ -10,7 +10,7 @@ const receiveMemebership = (payload) => {
   })
 }
 
-export const createMemebership = (payload) => dispatch => (
-  DeskMembershipsApiUtil.createMemebership(payload)
-    .then((desk_user_ids) => dispatch(receiveMemebership(desk_user_ids)))
+export const createMembership = (payload) => dispatch => (
+  DeskMembershipsApiUtil.createMembership(payload)
+    .then((desk_user_ids) => dispatch(receiveMembership(desk_user_ids)))
 )

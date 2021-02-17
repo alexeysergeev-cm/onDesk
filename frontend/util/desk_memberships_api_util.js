@@ -1,6 +1,6 @@
 
 
-export const createMemebership = (desk_membership) => (
+export const createMembership = (desk_membership) => (
   $.ajax({
     url: `/api/desk_memberships`,
     method: 'POST',
