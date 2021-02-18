@@ -128,6 +128,7 @@ class DeskShow extends React.Component{
                 <DeskEditContainer 
                   deskId={deskId}
                   currUserId={currUserId}
+                  clearErrors={this.props.clearErrors}
                 />
               </div>
           </div>

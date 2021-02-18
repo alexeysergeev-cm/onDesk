@@ -24,6 +24,8 @@ class Api::DesksController < ApplicationController
       if @desk.update(desk_params)
         render :show
       end
+    else  
+      render json: ["Only a Desk's author can update the Title"], status: 401
     end
   end
 

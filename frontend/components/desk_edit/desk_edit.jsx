@@ -29,7 +29,8 @@ class EditDesk extends React.Component{
     let updateForm = document.getElementsByClassName('udate-form-container');
     deskTitle[0].classList.remove('hide')
     updateForm[0].classList.remove('show')
-      // .then(() => this.props.history.push(`/${this.state.id}/deskshow`))
+
+    setTimeout(() => this.props.clearErrors(), 5000)
   }
 
 
