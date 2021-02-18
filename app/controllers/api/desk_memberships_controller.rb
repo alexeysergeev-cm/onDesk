@@ -15,7 +15,7 @@ class Api::DeskMembershipsController < ApplicationController
     end
 
     if @desk_membership.save
-      render json: { message: 'Success!'}
+      render json: { message: 'Success, user invited!'}
     end
   end
 

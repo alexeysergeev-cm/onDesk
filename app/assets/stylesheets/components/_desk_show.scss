@@ -128,19 +128,16 @@
 .render-result{
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  text-align: center;
 }
 
 .invite-errors {
-  background-color: red;
-  color: $white;
+  color: $orange;
   width: auto;
   height: auto;
-  padding: 5px 10px;
-  border: 1px solid $silver;
+  padding: auto;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 4px;
   display: none;
   font-size: 16px;
 }
@@ -149,15 +146,12 @@
 }
 
 .invite-success {
-  background-color: $green;
-  color: $white;
-  width: 150px;
-  height: 17px;
-  padding: 5px 10px;
-  border: 1px solid $silver;
+  color: $green;
+  width: auto;
+  height: auto;
+  padding: auto;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 4px;
   display: none;
   font-size: 16px;
 }

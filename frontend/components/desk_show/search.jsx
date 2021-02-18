@@ -4,9 +4,7 @@ class Search extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      query: "",
-      data: [],
-      filteredData: []
+      query: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -14,11 +12,13 @@ class Search extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     let newMemberId;
-
+    debugger
     this.props.fetchUser(this.state.query)
     .then(() => Object.values(this.props.users).forEach(obj => { if (obj.email == this.state.query) newMemberId = obj.id }))
     .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
-    // .then(() => this.props.createMembership({ user_id: user.id, desk_id: this.props.deskId }))
+
+    setTimeout(() => (this.props.clearMessage(), this.props.clearErrors()), 3000)
+
   }
 
   handleInputChange(field){
@@ -27,7 +27,9 @@ class Search extends React.Component{
   
   render(){
     const { errors, message, membershipErr } = this.props
+
     let error = errors[0] || membershipErr[0];
+
     if (errors.length && !message){
       let $error = document.getElementsByClassName('invite-errors')
       $error[0].classList.add('err-on')
