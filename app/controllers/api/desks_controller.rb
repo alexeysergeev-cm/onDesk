@@ -22,7 +22,7 @@ class Api::DesksController < ApplicationController
     @desk = Desk.find_by(id: params[:id])
     if @desk && current_user.id == @desk.author_id
       if @desk.update(desk_params)
-        return 
+        render :show
       end
     end
   end

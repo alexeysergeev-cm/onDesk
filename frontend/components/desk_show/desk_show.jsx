@@ -22,8 +22,10 @@ class DeskShow extends React.Component{
 
   //---titleUpdate
   titleUpdate(){
-    
-    debugger
+    let deskTitle = document.getElementsByClassName('desk-title');
+    let updateForm = document.getElementsByClassName('udate-form-container');
+    deskTitle[0].classList.add('hide')
+    updateForm[0].classList.add('show')
   }
 
 
@@ -56,7 +58,7 @@ class DeskShow extends React.Component{
   }
 
   render(){
-    const { title, deskErr } = this.props
+    const { title, deskErr, deskId, currUserId } = this.props
     //----errors
     let error = deskErr[0];
     if (deskErr.length) {
@@ -123,7 +125,10 @@ class DeskShow extends React.Component{
               {title}
             </div>
               <div className='udate-form-container'>
-                <DeskEditContainer />
+                <DeskEditContainer 
+                  deskId={deskId}
+                  currUserId={currUserId}
+                />
               </div>
           </div>
           {invite}

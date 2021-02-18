@@ -8,10 +8,12 @@ const mSTP = (state, ownParams) => {
   const deskId = parseInt(ownParams.match.params.deskId)
   const title = selectDesk(state.entities, deskId)
   const deskErr = state.errors.desk
+  const currUserId = state.session.currentUserId
   return({
     deskId,
     title,
-    deskErr
+    deskErr,
+    currUserId
   }) 
 }
 
