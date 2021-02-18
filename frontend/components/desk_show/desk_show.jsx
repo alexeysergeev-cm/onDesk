@@ -121,7 +121,7 @@ class DeskShow extends React.Component{
         <div className='desk-name-header'>
           <div className='desk-name-header-btn' onClick={this.titleUpdate}>
               {title}
-              <div className='udate-form-container show'>
+              <div className='udate-form-container'>
                 <DeskEditContainer />
               </div>
           </div>

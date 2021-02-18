@@ -207,7 +207,14 @@
 
 //-----UPDATE DESK NAME 
 
+.udate-form-container{
+  width: 100px;
+  height: 100px;
+  display: none;
+}
+
 .udate-form-container.show{
   width: 100px;
   height: 100px;
+  display: block;
 }
