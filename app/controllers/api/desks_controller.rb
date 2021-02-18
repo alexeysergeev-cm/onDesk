@@ -18,6 +18,15 @@ class Api::DesksController < ApplicationController
     @desk = Desk.find(params[:id])
   end
 
+  def update
+    @desk = Desk.find_by(id: params[:id])
+    if @desk && current_user.id == @desk.author_id
+      if @desk.update(desk_params)
+        return 
+      end
+    end
+  end
+
   def destroy
     @desk = Desk.find(params[:id])
     if @desk && @desk.author_id == current_user.id

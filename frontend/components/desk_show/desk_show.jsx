@@ -23,8 +23,7 @@ class DeskShow extends React.Component{
   //---titleUpdate
   titleUpdate(){
     
-
-    
+    debugger
   }
 
 
@@ -119,8 +118,10 @@ class DeskShow extends React.Component{
           <GreetingContainer />
         </div>
         <div className='desk-name-header'>
-          <div className='desk-name-header-btn' onClick={this.titleUpdate}>
+          <div className='desk-name-header-btn'>
+            <div className='desk-title' onClick={this.titleUpdate}>
               {title}
+            </div>
               <div className='udate-form-container'>
                 <DeskEditContainer />
               </div>
