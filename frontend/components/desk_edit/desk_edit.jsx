@@ -31,7 +31,6 @@ class EditDesk extends React.Component{
   render(){
     // const { desk, formType, submitEvent } = this.props;
     // if (!desk) return null;
-    debugger
     return(
       <form onSubmit={this.handleSubmit}>
         <div className='update-desk-container'>
