@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import DeskShow from './desk_show';
 import { fetchDesk, deleteDesk } from '../../actions/desk_actions';
 import { selectDesk } from '../../reducers/selectors';
-
+import { clearErrors } from '../../actions/clear_errors_actions'
 
 const mSTP = (state, ownParams) => {
   const deskId = parseInt(ownParams.match.params.deskId)
@@ -18,7 +18,8 @@ const mSTP = (state, ownParams) => {
 const mDTP = dispatch => {
   return ({
     fetchDesk: id => dispatch(fetchDesk(id)),
-    deleteDesk: deskId => dispatch(deleteDesk(deskId))
+    deleteDesk: deskId => dispatch(deleteDesk(deskId)),
+    clearErrors: () => dispatch(clearErrors()),
   })
 }
 

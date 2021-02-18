@@ -171,21 +171,27 @@
 
 
 .desk-errors {
-  background-color: red;
-  color: $white;
-  width: auto;
+  background-color: white;
+  color: red;
+  width: 400px;
   height: auto;
-  padding: 5px 10px;
-  border: 1px solid $white;
+  padding: auto;
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 4px;
   display: none;
   font-size: 18px;
+  font-weight: 500;
+  font-family: $san-serif;
   text-align: center;
 }
 .desk-errors.err-on {
   display: inline-block;
-  margin: 0 150px;
   margin-top: 5px;
+}
+
+.desk-errors-container{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

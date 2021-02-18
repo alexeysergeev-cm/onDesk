@@ -10,7 +10,7 @@ class Api::DeskMembershipsController < ApplicationController
     
     DeskMembership.all.each do |membership|
       if membership.user_id == @desk_membership.user_id && membership.desk_id == @desk_membership.desk_id 
-        return render json: ['User already a member'], status: 422
+        return render json: ['User already a member!'], status: 422
       end
     end
 

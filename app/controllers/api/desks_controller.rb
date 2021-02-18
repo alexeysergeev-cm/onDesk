@@ -24,7 +24,7 @@ class Api::DesksController < ApplicationController
       @desk.destroy
       render 'api/desks/index'
     else
-      render json: ['Only a Desk`s author can delete a shared desk'], status: 401
+      render json: ["Only a Desk's author can delete a shared desk"], status: 401
     end
   end
 

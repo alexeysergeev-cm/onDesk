@@ -42,6 +42,8 @@ class DeskShow extends React.Component{
   handleDeleteDesk(){
     this.props.deleteDesk(this.props.deskId)
       .then(() => this.props.history.push('/'))
+    
+    setTimeout(() => this.props.clearErrors(), 5000)
   }
 
   render(){
@@ -114,8 +116,10 @@ class DeskShow extends React.Component{
           {invite}
           {menu}
         </div>
-        <div className='desk-errors'>
-          {error}
+        <div className='desk-errors-container'>
+          <div className='desk-errors'>
+            {error}
+          </div>
         </div>
       </div>
     )
