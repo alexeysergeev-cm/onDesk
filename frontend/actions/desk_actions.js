@@ -44,9 +44,10 @@ export const createDesk = (desk) => dispatch => (
     .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
 )
 
-export const updateEvent = (desk) => dispatch => (
+export const updateDesk = (desk) => dispatch => (
   DeskUtil.updateDesk(desk)
     .then((updatedDesk) => dispatch(receiveDesk(updatedDesk)))
+    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
 )
 
 export const deleteDesk = (deskId) => dispatch => (

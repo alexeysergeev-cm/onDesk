@@ -1,15 +1,18 @@
 import { connect } from 'react-redux';
-import { fetchDesk, updatedDesk } from '../../actions/desk_actions';
+import { fetchDesk, updateDesk } from '../../actions/desk_actions';
 import EditDesk from './desk_edit';
 
-const mSTP = (state, ownParams) => ({
-  desk: state.desk[ownParams.match.props.deskId],
-  formType: 'Update Desk'
-})
+const mSTP = (state, ownParams) => {
+  // debugger 
+  // return({
+  //   desk: state.entities.desks[ownParams.match.props.deskId],
+  //   formType: 'Update Desk'
+  // })
+}
 
 const mDTP = (dispatch) => ({
   fetchDesk: (deskId) => dispatch(fetchDesk(deskId)),
-  submitDesk: (desk) => dispatch(updatedDesk(desk))
+  submitDesk: (desk) => dispatch(updateDesk(desk))
 })
 
-export default connect(mSTP, mDTP)(EditDesk)
+export default connect(null, mDTP)(EditDesk)

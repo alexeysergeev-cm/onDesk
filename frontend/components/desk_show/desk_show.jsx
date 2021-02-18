@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 import GreetingContainer from '../greetings/greeting_container'
 import SearchContainer from './search_container';
+import DeskEditContainer from '../desk_edit/desk_edit_container';
 
 
 
@@ -12,11 +13,20 @@ class DeskShow extends React.Component{
     this.clickDropDown = this.clickDropDown.bind(this)
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this)
     this.clickInvite = this.clickInvite.bind(this)
+    this.titleUpdate = this.titleUpdate.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchDesk(this.props.deskId)
   }
+
+  //---titleUpdate
+  titleUpdate(){
+    
+
+    
+  }
+
 
   //--Invite DropDown
   clickInvite(e){
@@ -48,7 +58,6 @@ class DeskShow extends React.Component{
 
   render(){
     const { title, deskErr } = this.props
-
     //----errors
     let error = deskErr[0];
     if (deskErr.length) {
@@ -110,8 +119,11 @@ class DeskShow extends React.Component{
           <GreetingContainer />
         </div>
         <div className='desk-name-header'>
-          <div className='desk-name-header-btn'>
+          <div className='desk-name-header-btn' onClick={this.titleUpdate}>
               {title}
+              <div className='udate-form-container show'>
+                <DeskEditContainer />
+              </div>
           </div>
           {invite}
           {menu}

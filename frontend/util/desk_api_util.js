@@ -24,7 +24,7 @@ export const updateDesk = (desk) => (
   $.ajax({
     url: `/api/desks/${desk.id}`,
     method: 'PATCH',
-    data: { desk}
+    data: { desk }
   })
 )
 

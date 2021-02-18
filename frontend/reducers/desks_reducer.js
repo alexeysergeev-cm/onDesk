@@ -9,9 +9,9 @@ const desksReducer = (state = {}, action) => {
     case RECEIVE_DESK:
       // const newDesk = { [action.desk.id]: action.desk };
       // return Object.assign({}, state, newDesk);
-      nextState[action.desk.id] = action.desk;
-      return nextState
-      // return action.desk
+      // nextState[action.desk.id] = action.desk;
+      // return nextState
+      return action.desk
     case REMOVE_DESK:
       delete nextState[action.deskId]
     default:
