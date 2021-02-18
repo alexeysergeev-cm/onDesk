@@ -81,8 +81,8 @@
    cursor: not-allowed !important;
    font-size: 14px;
    font-family: $apple;
-   align-items: center;
-
+  text-align: center;
+  transition: background-color 1s;
  }
 
  .desk-submit.allowed{
