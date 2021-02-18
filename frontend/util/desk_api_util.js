@@ -20,6 +20,14 @@ export const createDesk = (desk) => (
   })
 )
 
+export const updateDesk = (desk) => (
+  $.ajax({
+    url: `/api/desks/${desk.id}`,
+    method: 'PATCH',
+    data: { desk}
+  })
+)
+
 export const deleteDesk = (deskId) => (
   $.ajax({
     url: `/api/desks/${deskId}`,

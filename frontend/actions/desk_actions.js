@@ -29,19 +29,24 @@ const removeDesk = (deskId) => ({
 export const fetchDesks = () => dispatch => (
   DeskUtil.fetchDesks()
     .then((desks) => dispatch(receiveDesks(desks)))
-    .fail((errors) => dispatch(receiveDeskErrors(errors)))
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)))
 )
 
 export const fetchDesk = (id) => dispatch => (
   DeskUtil.fetchDesk(id)
     .then((payload) => dispatch(receiveDesk(payload)))
-    .fail(errors => dispatch(receiveDeskErrors(errors)))
+    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
 )
 
 export const createDesk = (desk) => dispatch => (
   DeskUtil.createDesk(desk)
     .then(createdDesk => dispatch(receiveDesk(createdDesk)))
-    .fail(errors => dispatch(receiveDeskErrors(errors)))
+    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
+)
+
+export const updateEvent = (desk) => dispatch => (
+  DeskUtil.updateDesk(desk)
+    .then((updatedDesk) => dispatch(receiveDesk(updatedDesk)))
 )
 
 export const deleteDesk = (deskId) => dispatch => (

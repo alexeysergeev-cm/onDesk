@@ -5,7 +5,6 @@ import DeskForm from './desk_form'
 import { closeModal} from '../../actions/modal_actions';
 
 const mSTP = state => {
-  // const ids = Object.keys(state.entities.desks)
   const lastId = state.entities.desks.id
   return({
     lastId,
