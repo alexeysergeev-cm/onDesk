@@ -212,14 +212,42 @@
 }
 
 .udate-form-container{
-  width: 100px;
-  height: 100px;
   display: none;
+  width: 125px;
+  height: 65px;
 }
 
 .udate-form-container.show{
-  width: auto;
-  height: auto;
   display: block;
   z-index: 1;
+
+}
+
+.desk-edit-input{
+  width: 112px;
+  height: 19px;
+  padding: 3px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.desk-edit-input:focus{
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.edit-btn-container{
+  text-align: end;
+}
+
+.edit-submit{
+  font-size: 13px;
+  background: rgb(211, 211, 211);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: background 0.5s;
+}
+
+.edit-submit:hover{
+  background: $green;
 }

@@ -43,11 +43,13 @@ class EditDesk extends React.Component{
           <input type="text"
             value={this.state.title}
             onChange={this.update('title')}
-            className='desk-input'
+            className='desk-edit-input'
             placeholder="Update title"
           />
         </div>
-        <button>Submit</button>
+        <div className='edit-btn-container'>
+          <button className='edit-submit'>Update</button>
+        </div>
       </form>
     )
   }
