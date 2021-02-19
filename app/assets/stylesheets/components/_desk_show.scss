@@ -241,13 +241,15 @@
 
 .edit-submit{
   font-size: 13px;
-  background: rgb(211, 211, 211);
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  transition: background 0.5s;
+  
+  background: linear-gradient(to left, rgb(211, 211, 211) 50%, $green 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
 }
 
 .edit-submit:hover{
-  background: $green;
+  background-position: left;
 }
