@@ -1,6 +1,7 @@
 
 
- .fixed-top {
+ .home-home {
+   padding-top: 84px;
    top: 0;
    right: 0;
    right: 0;
@@ -15,14 +16,28 @@
   height:auto;
  }
 
+ .fixed-top{
+  display: block;
+  position: fixed;
+  top: 0;
+   right: 0;
+   right: 0;
+   left: 0;
+   z-index: 1030; 
+   display: block;
+  font-family: $san-serif;
+  color: $dark-blue;
+  background-color: $light-blue;
+ }
+
  .nav-bar{
    position: relative;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 20px;
+   padding: 6px;
    -webkit-box-pack: justify;
-  
+
  }
 
  .float-left {

@@ -12,17 +12,19 @@ class NavBar  extends  React.Component{
     );
   
     return (
-      <header className="fixed-top">
-        <nav className="nav-bar">
-          
-          <a className='float-left'>
-            <img src={window.logo} className='nav-bar-logo'/>
-            <div>onDesk</div>
-          </a>
-          <div className='float-right'>
-            {display}
-          </div>
-        </nav>
+      <header className="home-home">
+        <div className='fixed-top'>
+          <nav className="nav-bar">
+            
+            <a className='float-left'>
+              <img src={window.logo} className='nav-bar-logo'/>
+              <div>onDesk</div>
+            </a>
+            <div className='float-right'>
+              {display}
+            </div>
+          </nav>
+        </div>
         <div className='intro-container'>
           <div className='intro-text'>
             <h1 className='intro-text-big'> 
