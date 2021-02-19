@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!--<Mozzila--->
-    <link href="http://mozilla.github.io/foundation-icons/assets/foundation-icons.css" type="text/css" rel="stylesheet">
+    <link href="https://mozilla.github.io/foundation-icons/assets/foundation-icons.css" type="text/css" rel="stylesheet">
 
     <%= favicon_link_tag 'logo.png' %>
     <!-- import font--->
@@ -17,17 +17,20 @@
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+
+    <script type="text/javascript">
+      window.logo = "<%= image_url('logo.png') %>";
+    </script>
+
+    <% if logged_in? %>
+      <% body = "yes" %>
+    <% else %>
+      <% body = "no" %>
+    <% end %>
   </head>
 
-  <script>
-    window.logo = "<%= image_url('logo.png') %>"
-  </script>
   
-  <% if logged_in? %>
-    <% body = "yes" %>
-  <% else %>
-    <% body = "no" %>
-  <% end %>
   <body class="<%= body %>">
     <%= yield %>
   </body>
