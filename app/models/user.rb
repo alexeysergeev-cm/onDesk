@@ -12,6 +12,9 @@ class User < ApplicationRecord
 
   has_many :desk_memberships,
     foreign_key: :user_id
+
+  has_many :lists, 
+    foreign_key: :user_id
   #SPIRE
 
   def self.find_by_credentials(email, pw)

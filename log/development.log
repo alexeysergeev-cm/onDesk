@@ -45048,3 +45048,110 @@ Processing by Api::DesksController#index as JSON
 Completed 200 OK in 116ms (Views: 59.7ms | ActiveRecord: 52.1ms)
 
 
+Started GET "/" for ::1 at 2021-02-19 09:39:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LkhGDyDzGNqvJ8l4Tth93Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 87ms (Views: 80.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-02-19 09:39:45 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (24.8ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LkhGDyDzGNqvJ8l4Tth93Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  Rendered api/desks/_desk.json.jbuilder (0.2ms)
+  [1m[36mDeskMembership Load (2.1ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:12
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/index.json.jbuilder (132.3ms)
+Completed 200 OK in 153ms (Views: 111.7ms | ActiveRecord: 28.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2930914089749604000)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLists (20210219174544)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (135.6ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "title" character varying NOT NULL, "desk_id" integer NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210219174544_create_lists.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_lists_on_title_and_author_id" ON "lists"  ("title", "author_id")[0m
+  ↳ db/migrate/20210219174544_create_lists.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210219174544"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2930914089749604000)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

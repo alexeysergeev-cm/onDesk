@@ -5,5 +5,5 @@ class Desk < ApplicationRecord
     class_name: :User
 
   has_many :desk_memberships
-
+  has_many :lists
 end
