@@ -177,7 +177,7 @@ h3.h3-home{
   min-width: 200px;
   height: 20px;
   font-weight: 700;
-  padding: 6px 8px 6px 0;
+  padding: 6px 8px 6px 15px;
   color: rgb(23, 43, 77);
   display: flex;
   align-items: center;
@@ -202,6 +202,7 @@ h3.h3-home{
   line-height: 16px;
   padding: 8px 0;
   text-transform: uppercase;
+  padding-left: 15px;
 }
 
 .desk-tile{
