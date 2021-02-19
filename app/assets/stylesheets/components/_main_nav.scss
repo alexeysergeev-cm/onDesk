@@ -1,7 +1,6 @@
 
 
  .fixed-top {
-   position: fixed;
    top: 0;
    right: 0;
    right: 0;
@@ -11,6 +10,9 @@
   font-family: $san-serif;
   color: $dark-blue;
   background-color: $light-blue;
+  display: block;
+  position:absolute;
+  height:auto;
  }
 
  .nav-bar{
@@ -71,7 +73,6 @@
  }
 
  .intro-container{
-   width: 100%;
    padding-right: 15px;
    padding-left: 15px;
    margin-right: auto;

@@ -22,3 +22,6 @@ let imagesArr = ["https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2
     let randomImg = imagesArr[Math.floor(Math.random() * imagesArr.length)]
 
     let b = document.getElementsByClassName('desk-tile')
+
+
+
