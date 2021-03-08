@@ -14,6 +14,7 @@ const desksReducer = (state = {}, action) => {
       return action.desk
     case REMOVE_DESK:
       delete nextState[action.deskId]
+      return nextState
     default:
       return state;
   }
