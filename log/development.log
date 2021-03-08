@@ -45188,3 +45188,820 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 144ms (Views: 133.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-03-08 09:17:25 -0800
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?:
+
+Started POST "/__better_errors/db869c473dd7a528/variables" for ::1 at 2021-03-08 09:17:26 -0800
+Started GET "/" for ::1 at 2021-03-08 09:19:02 -0800
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?:
+
+Started POST "/__better_errors/6331912fdf04e395/variables" for ::1 at 2021-03-08 09:19:14 -0800
+Started GET "/" for ::1 at 2021-03-08 09:22:36 -0800
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?:
+
+Started POST "/__better_errors/f8e7d332b36b553e/variables" for ::1 at 2021-03-08 09:22:36 -0800
+Started GET "/" for ::1 at 2021-03-08 09:25:01 -0800
+
+PG::ConnectionBad - could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?:
+
+Started POST "/__better_errors/dfea6e012f62d1b9/variables" for ::1 at 2021-03-08 09:25:01 -0800
+Started GET "/" for ::1 at 2021-03-08 09:25:54 -0800
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 2159ms (Views: 2156.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-03-08 09:26:44 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tori@io.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "agiT8njFTw1_vk3ovyHKjA"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "agiT8njFTw1_vk3ovyHKjA"], ["updated_at", "2021-03-08 17:26:44.917337"], ["id", 50]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 300ms (Views: 9.8ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-03-08 09:26:44 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (33.9ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "agiT8njFTw1_vk3ovyHKjA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mDeskMembership Load (2.2ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:12
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/index.json.jbuilder (95.9ms)
+Completed 200 OK in 142ms (Views: 56.9ms | ActiveRecord: 45.7ms)
+
+
+Started GET "/api/desks/141" for ::1 at 2021-03-08 09:28:39 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"141"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (32.0ms)
+Completed 200 OK in 127ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api_lists/get" for ::1 at 2021-03-08 09:51:41 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api_lists/get"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api_lists" for ::1 at 2021-03-08 09:54:41 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api_lists"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-03-08 10:04:12 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "agiT8njFTw1_vk3ovyHKjA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 162ms (Views: 156.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/desks/141" for ::1 at 2021-03-08 10:04:12 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"141"}
+  [1m[36mDesk Load (2.5ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 141], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (5.3ms)
+Completed 200 OK in 24ms (Views: 14.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api_lists/post" for ::1 at 2021-03-08 10:05:43 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api_lists/post"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api_session/delete" for ::1 at 2021-03-08 10:11:57 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api_session/delete"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/session/delete" for ::1 at 2021-03-08 10:20:09 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/session/delete"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/session/" for ::1 at 2021-03-08 10:20:38 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+actionpack (5.2.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/api/session/" for ::1 at 2021-03-08 10:21:11 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "agiT8njFTw1_vk3ovyHKjA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "w9QPMH2zMGDc5u_nW9Na6Q"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "w9QPMH2zMGDc5u_nW9Na6Q"], ["updated_at", "2021-03-08 18:21:11.288246"], ["id", 50]]
+  ↳ app/models/user.rb:37
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 10.0ms)
+
+
+Started DELETE "/api/session/" for ::1 at 2021-03-08 10:21:31 -0800
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/session/" for ::1 at 2021-03-08 10:21:35 -0800
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 10:21:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 185ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-03-08 10:21:42 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"tori@io.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tori@io.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "tori@io.com"], ["id", 50], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["updated_at", "2021-03-08 18:21:42.495396"], ["id", 50]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:37
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 232ms (Views: 9.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/desks" for ::1 at 2021-03-08 10:21:42 -0800
+Processing by Api::DesksController#index as JSON
+  Rendering api/desks/index.json.jbuilder
+  [1m[36mDesk Load (3.2ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mDeskMembership Load (24.9ms)[0m  [1m[34mSELECT "desk_memberships".* FROM "desk_memberships"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:12
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.0ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  [1m[36mCACHE Desk Load (0.0ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/desks/index.json.jbuilder:14
+  Rendered api/desks/_desk.json.jbuilder (0.1ms)
+  Rendered api/desks/index.json.jbuilder (102.8ms)
+Completed 200 OK in 115ms (Views: 83.9ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-08 10:21:45 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.5ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (1.4ms)
+Completed 200 OK in 17ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:23:03 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 35ms (ActiveRecord: 0.5ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:23:24 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:25:59 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.5ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:26:13 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:28:03 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:28:30 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 5ms (ActiveRecord: 2.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:39:in `list_params'
+  app/controllers/api/lists_controller.rb:4:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:29:54 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 24266ms (ActiveRecord: 115.7ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:30:43 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 24133ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:31:24 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 26939ms (ActiveRecord: 0.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:33:10 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 34432ms (ActiveRecord: 0.7ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists" for ::1 at 2021-03-08 10:35:31 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 12881ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:36:28 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mList Load (2.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:39:50 -0800
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 202749ms (ActiveRecord: 1.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:41:13 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 193240ms (ActiveRecord: 3.3ms)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 110942ms (ActiveRecord: 1.6ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists" for ::1 at 2021-03-08 10:45:33 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 10449ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists" for ::1 at 2021-03-08 10:46:06 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 2294ms (ActiveRecord: 0.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists" for ::1 at 2021-03-08 10:46:12 -0800
+Processing by Api::ListsController#create as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 8424ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists" for ::1 at 2021-03-08 10:46:29 -0800
+Processing by Api::ListsController#create as JSON
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:46:54 -0800
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 24210ms (ActiveRecord: 0.9ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Processing by Api::ListsController#create as JSON
+  Parameters: {"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 400 Bad Request in 594058ms (ActiveRecord: 6.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: list:
+  app/controllers/api/lists_controller.rb:40:in `list_params'
+  app/controllers/api/lists_controller.rb:5:in `create'
+
+Started POST "/api/lists/" for ::1 at 2021-03-08 10:57:10 -0800
+Processing by Api::ListsController#create as JSON
+  Parameters: {"list"=>{"author_id"=>"50", "desk_id"=>"15", "title"=>"hello"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/lists_controller.rb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:6
+  [1m[36mDesk Load (2.1ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/lists_controller.rb:6
+  [1m[36mList Create (11.6ms)[0m  [1m[32mINSERT INTO "lists" ("title", "desk_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "hello"], ["desk_id", 15], ["author_id", 50], ["created_at", "2021-03-08 18:59:04.104186"], ["updated_at", "2021-03-08 18:59:04.104186"]]
+  ↳ app/controllers/api/lists_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/lists_controller.rb:6
+Completed 500 Internal Server Error in 113897ms (ActiveRecord: 33.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/lists/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/alexkansas/Desktop/onDesk/app/views":
+  app/controllers/api/lists_controller.rb:7:in `create'
+
+Started GET "/api/lists" for ::1 at 2021-03-08 11:07:59 -0800
+Processing by Api::ListsController#index as JSON
+  Rendering api/lists/index.json.jbuilder
+  [1m[36mDesk Load (1.1ms)[0m  [1m[34mSELECT "desks".* FROM "desks"[0m
+  ↳ app/views/api/lists/index.json.jbuilder:4
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered api/lists/index.json.jbuilder (357.5ms)
+Completed 500 Internal Server Error in 370ms (ActiveRecord: 2.1ms)
+
+
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE List Load (0.0ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/alexkansas/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+
+NameError - undefined local variable or method `list' for #<#<Class:0x00007fd03854c1c0>:0x00007fd03aa5c140>
+Did you mean?  @lists:
+  app/views/api/lists/index.json.jbuilder:5:in `block in _app_views_api_lists_index_json_jbuilder__1401862344922889023_70266156934600'
+  app/views/api/lists/index.json.jbuilder:4:in `_app_views_api_lists_index_json_jbuilder__1401862344922889023_70266156934600'
+
+Started GET "/api/lists" for ::1 at 2021-03-08 11:13:43 -0800
+Processing by Api::ListsController#index as JSON
+  Rendering api/lists/index.json.jbuilder
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/api/lists/index.json.jbuilder:12
+  Rendered api/lists/_list.json.jbuilder (0.4ms)
+  Rendered api/lists/index.json.jbuilder (4.4ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/lists" for ::1 at 2021-03-08 11:14:05 -0800
+Processing by Api::ListsController#index as JSON
+  Rendering api/lists/index.json.jbuilder
+  [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/api/lists/index.json.jbuilder:12
+  Rendered api/lists/_list.json.jbuilder (0.3ms)
+  Rendered api/lists/index.json.jbuilder (3.4ms)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+

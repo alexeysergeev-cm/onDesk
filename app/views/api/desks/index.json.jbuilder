@@ -1,6 +1,5 @@
 
 #fetch only what belong to user
-
 Desk.all.each do |desk|
   if desk.author_id == current_user.id     
     json.set! desk.id do 
@@ -9,6 +8,7 @@ Desk.all.each do |desk|
   end
 end
 
+# fetch shared desks 
 DeskMembership.all.each do |membership|
   if membership.user_id == current_user.id
     Desk.all.each do |desk|
