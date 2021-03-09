@@ -16,14 +16,17 @@ class ListForm extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  handleClick(){
-
-    // debugger
+  handleClick(e){
     let clicked = document.getElementsByClassName('list-new-click')
-    clicked[0].style.display = "none"
     let form = document.getElementsByClassName('list-form')
-    form[0].style.display = "block"
-    
+
+    if (e.currentTarget.className === 'fa fa-window-close-o'){
+      clicked[0].style.display = "block"
+      form[0].style.display = "none"
+    } else {
+      clicked[0].style.display = "none"
+      form[0].style.display = "block"
+    }
   }
 
   render(){
@@ -36,7 +39,8 @@ class ListForm extends React.Component{
                   className="list-form-input"
                   placeholder="Enter list title..."
                 />
-                {/* <input type="submit" className="list-submit" value="Add"/> */}
+                <button>Add</button>
+                <i className="fa fa-window-close-o" aria-hidden="true" onClick={this.handleClick}></i>
               </form>
 
     return(
