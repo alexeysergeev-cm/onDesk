@@ -4,6 +4,7 @@ import { ProtectedRoute } from '../../util/route_util';
 import GreetingContainer from '../greetings/greeting_container'
 import SearchContainer from './search_container';
 import DeskEditContainer from '../desk_edit/desk_edit_container';
+import ListIndexContainer from '../lists/list_index_container'
 
 
 
@@ -140,6 +141,7 @@ class DeskShow extends React.Component{
             {error}
           </div>
         </div>
+        <ListIndexContainer />
       </div>
     )
   }

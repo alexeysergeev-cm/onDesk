@@ -9,9 +9,14 @@ class ListIndexItem extends React.Component{
   render(){
     const { title, id } = this.props.list
     return(
-      <div className='list-name'>
-        <div>{title}</div>
-      </div>
+        <div className='list-title-cont'>
+          <div className="list-title">
+            {title}
+          </div>
+          <div className="list-extras">
+            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+          </div>
+        </div>
     )
   }
 }

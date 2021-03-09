@@ -3,7 +3,6 @@ import { createList, updateList, deleteList } from '../../actions/list_actions';
 import ListIndex from './list_index'
 
 const mSTP = state => {
-  debugger
   return ({
     lists: Object.values(state.entities.lists)
   })
