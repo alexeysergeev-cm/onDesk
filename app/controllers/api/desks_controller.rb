@@ -15,7 +15,8 @@ class Api::DesksController < ApplicationController
   end
 
   def show
-    @desk = Desk.find(params[:id])
+    @desk = Desk.includes(:lists).find(params[:id])
+    # debugger
   end
 
   def update

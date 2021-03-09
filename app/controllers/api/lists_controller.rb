@@ -1,7 +1,6 @@
 class Api::ListsController < ApplicationController
 
   def create
-    debugger
     @list = current_user.lists.new(list_params)
     if @list.save 
       render :show

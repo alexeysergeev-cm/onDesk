@@ -3,9 +3,11 @@ json.desk do
 end
 
 json.lists do 
-  @desk.lists.each do |list|
-    json.set! list.id do 
-      json.extract! list, :id, :title, :desk_id, :author_id
-    end
+  @desk.lists.to_a.each do |listy|
+    # debugger
+      json.set! listy.id do 
+        # json.partial! '/api/lists/list', list: list
+        json.extract! listy, :id, :title, :desk_id, :author_id
+      end
   end
 end

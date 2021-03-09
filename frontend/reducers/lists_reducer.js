@@ -1,5 +1,5 @@
 import {RECEIVE_LIST, REMOVE_LIST} from '../actions/list_actions';
-
+import { RECEIVE_DESK } from '../actions/desk_actions';
 
 const listsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -11,6 +11,9 @@ const listsReducer = (state = {}, action) => {
     case REMOVE_LIST:
       delete nextState[action.listId]
       return nextState
+    case RECEIVE_DESK: //show desk with all lists
+    // debugger
+      return Object.assign(nextState, action.payload.lists)
     default:
       return state;
   }
