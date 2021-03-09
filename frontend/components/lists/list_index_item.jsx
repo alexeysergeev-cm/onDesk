@@ -14,7 +14,7 @@ class ListIndexItem extends React.Component{
             {title}
           </div>
           <div className="list-extras">
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
           </div>
         </div>
     )

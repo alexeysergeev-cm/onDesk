@@ -4,8 +4,12 @@ import ListForm from './list_form'
 
 
 const mSTP = state => {
-  // debugger
+  const currentUserId = state.session.currentUserId
+  const deskId = Object.keys(state.entities.desks)[0]
+
   return({
+    currentUserId,
+    deskId
   })
 }
 
