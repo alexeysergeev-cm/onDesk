@@ -1,8 +1,5 @@
 class Api::DeskMembershipsController < ApplicationController
 
-  # def index
-  #   @
-  # end
 
   def create
     #check if user already a mamber

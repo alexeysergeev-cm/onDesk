@@ -9,6 +9,7 @@ import Home from './nav_bar/home/home';
 import DeskIndexContainer from '../components/desks/desk_index_container'
 import Modal from './modal/modal'
 import DeskShowContainer from './desk_show/desk_show_container';
+import ListIndexContainer from './lists/list_index_container'
 
 const App = () => (
   <div className='document-container'>

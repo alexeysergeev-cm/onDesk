@@ -10,9 +10,9 @@ const receiveDesks = (desks) => ({
   desks
 })
 
-const receiveDesk = ({desk}) => ({
+const receiveDesk = (payload) => ({
   type: RECEIVE_DESK,
-  desk
+  payload
 })
 
 const receiveDeskErrors = (errors) => ({ //array

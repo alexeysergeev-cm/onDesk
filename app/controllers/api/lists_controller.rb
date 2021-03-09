@@ -1,7 +1,6 @@
 class Api::ListsController < ApplicationController
 
   def create
-    debugger
     @list = current_user.lists.new(list_params)
     if @list.save 
       render :show
@@ -25,15 +24,12 @@ class Api::ListsController < ApplicationController
     @list = List.find(params[:id])
     if @list && @list.author_id == current_user.id
       @list.destroy
-      render 'api/lists/index'
+      render :show
     else
       render json: ["Only a list's author can delete a list"], status: 401
     end
   end
 
-  def index
-    @lists = List.all
-  end
 
   private
   def list_params

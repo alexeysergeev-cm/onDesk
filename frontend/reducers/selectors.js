@@ -1,3 +1,5 @@
 export const selectDesk = ({ desks }, deskId) => {
-  return desks.title;
+  if (desks[deskId] !== undefined){
+    return desks[deskId].title
+  }
 }
