@@ -9,13 +9,26 @@ class ListForm extends React.Component{
       id: ''
     }
 
-    // this.update = this.update.bind(this)
+    this.update = this.update.bind(this)
+  }
+
+  update(field){
+    return e => this.setState({[field]: e.currentTarget.value})
   }
 
   render(){
     return(
-      <div>
-        Hello
+      <div className="list-form-cont">
+        <form onSubmit={this.handleSubmit}>
+          <input type="text"
+            value={this.state.title}
+            onChange={this.update('title')}
+            className="list-title-input"
+            placeholder="Add another list"
+          />
+          {/* <input type="submit" className="list-submit" value="Add"/> */}
+        </form>
+       
       </div>
     )
   }
