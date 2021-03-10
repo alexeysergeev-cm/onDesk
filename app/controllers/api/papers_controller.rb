@@ -1,7 +1,8 @@
-class Api::PapersControllerController < ApplicationController
+class Api::PapersController < ApplicationController
 
   def create
-    @paper = current_user.papers.new(paper_params)
+    debugger
+    @paper = Paper.new(paper_params)
     if @paper.save 
       render :show
     else
@@ -33,6 +34,6 @@ class Api::PapersControllerController < ApplicationController
 
   private
   def paper_params
-    params.require(:paper).permit(:title, :desk_id, :author_id)
+    params.require(:paper).permit(:title, :list_id, :author_id)
   end
 end

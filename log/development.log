@@ -57192,3 +57192,256 @@ Migrating to CreatePapers (20210310013311)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-03-09 18:58:47 -0800
+  [1m[35m (11.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexkansas/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 1141ms (Views: 1126.9ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 18:58:49 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (1.6ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (1.6ms)
+  Rendered api/desks/show.json.jbuilder (9.0ms)
+Completed 200 OK in 94ms (Views: 35.0ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:01:57 -0800
+
+ActionController::RoutingError - uninitialized constant Api::PapersController:
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:02:41 -0800
+
+ActionController::RoutingError - uninitialized constant Api::PapersController:
+
+Started GET "/" for ::1 at 2021-03-09 19:02:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 133ms (Views: 119.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:02:45 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (1.0ms)
+  Rendered api/desks/show.json.jbuilder (3.9ms)
+Completed 200 OK in 81ms (Views: 13.7ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:02:49 -0800
+
+ActionController::RoutingError - uninitialized constant Api::PapersController:
+
+Started GET "/" for ::1 at 2021-03-09 19:03:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 136ms (Views: 133.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:03:38 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (1.1ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (1.5ms)
+  Rendered api/desks/show.json.jbuilder (3.7ms)
+Completed 200 OK in 70ms (Views: 15.8ms | ActiveRecord: 15.1ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:03:42 -0800
+
+ActionController::RoutingError - uninitialized constant Api::PapersController:
+
+Started GET "/" for ::1 at 2021-03-09 19:05:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:05:52 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (1.0ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.8ms)
+  Rendered api/desks/show.json.jbuilder (4.3ms)
+Completed 200 OK in 55ms (Views: 12.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:05:59 -0800
+Processing by Api::PapersController#create as JSON
+  Parameters: {"paper"=>{"author_id"=>"50", "list_id"=>"55", "title"=>"new paper"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `papers' for #<User:0x00007f8c647326a0>:
+  app/controllers/api/papers_controller.rb:4:in `create'
+
+Started GET "/" for ::1 at 2021-03-09 19:06:38 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 80ms (Views: 77.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:06:39 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (0.6ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (0.6ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (4.6ms)
+Completed 200 OK in 109ms (Views: 19.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:06:43 -0800
+Processing by Api::PapersController#create as JSON
+  Parameters: {"paper"=>{"author_id"=>"50", "list_id"=>"55", "title"=>"new paper"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+
+NoMethodError - undefined method `papers' for #<User:0x00007f8c6698fdd8>:
+  app/controllers/api/papers_controller.rb:4:in `create'
+
+Started GET "/" for ::1 at 2021-03-09 19:07:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 79ms (Views: 64.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:07:08 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (0.9ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (1.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (2.4ms)
+Completed 200 OK in 80ms (Views: 13.1ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:07:12 -0800
+Processing by Api::PapersController#create as JSON
+  Parameters: {"paper"=>{"author_id"=>"50", "list_id"=>"55", "title"=>"new paper"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 500 Internal Server Error in 57863ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-09 19:08:10 -0800
+
+NoMethodError - undefined method `papers' for #<User:0x00007f8c6649cad8>:
+  app/controllers/api/papers_controller.rb:5:in `create'
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YdDWa48W8tzzuMMmMxbExA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/desks/70" for ::1 at 2021-03-09 19:08:10 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"70"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 70]]
+  ↳ app/controllers/api/desks_controller.rb:18
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (2.8ms)
+  Rendered api/desks/show.json.jbuilder (6.5ms)
+Completed 200 OK in 131ms (Views: 22.6ms | ActiveRecord: 17.4ms)
+
+
+Started POST "/api/papers" for ::1 at 2021-03-09 19:08:14 -0800
+Processing by Api::PapersController#create as JSON
+  Parameters: {"paper"=>{"author_id"=>"50", "list_id"=>"55", "title"=>"new paper"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/papers_controller.rb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/api/papers_controller.rb:6
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/api/papers_controller.rb:6
+  [1m[36mPaper Create (39.9ms)[0m  [1m[32mINSERT INTO "papers" ("title", "list_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "new paper"], ["list_id", 55], ["author_id", 50], ["created_at", "2021-03-10 03:08:22.265977"], ["updated_at", "2021-03-10 03:08:22.265977"]]
+  ↳ app/controllers/api/papers_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/papers_controller.rb:6
+Completed 500 Internal Server Error in 8023ms (ActiveRecord: 57.0ms)
+
+
+
+ActiveRecord::NotNullViolation - PG::NotNullViolation: ERROR:  null value in column "description" of relation "papers" violates not-null constraint
+DETAIL:  Failing row contains (1, new paper, null, 55, 50, 2021-03-10 03:08:22.265977, 2021-03-10 03:08:22.265977).
+: INSERT INTO "papers" ("title", "list_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id":
+  app/controllers/api/papers_controller.rb:6:in `create'
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2930914089749604000)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveNullConstrainFromPapers (20210310033822)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (54.5ms)[0m  [1m[35mALTER TABLE "papers" ALTER COLUMN "description" DROP NOT NULL[0m
+  ↳ db/migrate/20210310033822_remove_null_constrain_from_papers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (12.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210310033822"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2930914089749604000)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
