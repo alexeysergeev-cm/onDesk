@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
+    get 'papers_controller/create'
+    get 'papers_controller/update'
+    get 'papers_controller/destroy'
+  end
+  namespace :api do
     get 'lists/create'
     get 'lists/update'
     get 'lists/destroy'
