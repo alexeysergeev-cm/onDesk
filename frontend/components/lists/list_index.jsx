@@ -10,11 +10,10 @@ class ListIndex extends React.Component{
     return(
       <div className="list-index-container">
         {lists.map(list => (
-          <div className='list-wrapper'>
+          <div key={list.id} className='list-wrapper'>
             <div className='list-item'>
               <ListIndexItem
                 list={list}
-                key={list.id}
                 deleteList={this.props.deleteList}
                 />
             </div>      

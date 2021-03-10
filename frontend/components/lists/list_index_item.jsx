@@ -1,4 +1,5 @@
 import React from 'react';
+import PaperIndex from '../papers/paper_index_container'
 
 class ListIndexItem extends React.Component{
   constructor(props){
@@ -19,12 +20,15 @@ class ListIndexItem extends React.Component{
             <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
           </div>
         </div>
-        <div className='open-card-composer'>
-          <span className="card-new-click" onClick={this.handleClick}>
+        <PaperIndex 
+          list_id={id}
+        />
+        <div className='open-paper-composer'>
+          <span className="paper-new-click" onClick={this.handleClick}>
             <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-            Add a card
+            Add a paper
           </span>        
-          <div className="card-form">
+          <div className="paper-form">
             {/* {form} */}
           </div>
         </div>

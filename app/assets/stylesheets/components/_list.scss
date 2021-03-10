@@ -26,7 +26,7 @@
 
 .list-title-cont{
   flex: 0 0 auto;
-  padding: 1px 12px;
+  padding: 7px 12px 1px;
   font-size: 22px;
   position: relative;
   min-height: 20px;
@@ -128,20 +128,20 @@
 }
 
 
-.open-card-composer{
+.open-paper-composer{
   min-height: 34px;
   margin-top: 10px;
 
-  .card-new-click{
+  .paper-new-click{
     padding: 5px 120px 5px 10px;
     font-size: 18px;
-    background-color: rgba(158, 144, 156, 40%);
+    // background-color: rgba(158, 144, 156, 40%);
     margin-left: 10px;
     border-radius: 4px;
     cursor: pointer;
   }
-  .card-new-click:hover {
-    background-color: rgba(158, 144, 156, 20%);
+  .paper-new-click:hover {
+    background-color: rgba(158, 144, 156, 25%);
   }
 
   i{
