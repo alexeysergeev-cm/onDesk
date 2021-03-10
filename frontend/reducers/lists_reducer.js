@@ -7,7 +7,8 @@ const listsReducer = (state = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_LIST:
-      return nextState[action.list.id] = action.list
+      nextState[action.list.id] = action.list
+      return nextState
     case REMOVE_LIST:
       delete nextState[action.listId]
       return nextState

@@ -14,7 +14,8 @@ class ListIndexItem extends React.Component{
             {title}
           </div>
           <div className="list-extras">
-            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true" ></i>
+            <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
           </div>
         </div>
     )
