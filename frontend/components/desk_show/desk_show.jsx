@@ -60,6 +60,7 @@ class DeskShow extends React.Component{
 
   render(){
     const { title, deskErr, deskId, currUserId } = this.props
+
     //----errors
     let error = deskErr[0];
     if (deskErr.length) {

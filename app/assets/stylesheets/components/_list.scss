@@ -138,6 +138,10 @@
     background-color: rgba(158, 144, 156, 40%);
     margin-left: 10px;
     border-radius: 4px;
+    cursor: pointer;
+  }
+  .card-new-click:hover {
+    background-color: rgba(158, 144, 156, 20%);
   }
 
   i{
