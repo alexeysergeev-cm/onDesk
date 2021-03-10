@@ -54,7 +54,7 @@ class ListForm extends React.Component{
                   className="list-form-input"
                   placeholder="Enter list title..."
                 />
-                <button>Add</button>
+                <button>Add List</button>
                 <i className="fa fa-window-close-o" aria-hidden="true" onClick={this.handleClick}></i>
               </form>
 
