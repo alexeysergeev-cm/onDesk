@@ -23,12 +23,12 @@ class ListIndexItem extends React.Component{
         <PaperIndex 
           list_id={id}
         />
-        <div className='open-card-composer'>
-          <span className="card-new-click" onClick={this.handleClick}>
+        <div className='open-paper-composer'>
+          <span className="paper-new-click" onClick={this.handleClick}>
             <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-            Add a card
+            Add a paper
           </span>        
-          <div className="card-form">
+          <div className="paper-form">
             {/* {form} */}
           </div>
         </div>

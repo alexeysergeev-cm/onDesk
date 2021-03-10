@@ -19,11 +19,10 @@ class PaperIndex extends React.Component{
     return(
       <div className="paper-index-container">
         {organizedPapers.map(paper => (
-          <div className='paper-wrapper'>
+          <div key={paper.id} className='paper-wrapper'>
             <div className='paper-item'>
               <PaperIndexItem
                 paper={paper}
-                key={paper.id}
                 // deleteList={this.props.deleteList}
                 />
             </div>      

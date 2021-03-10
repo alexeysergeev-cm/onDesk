@@ -128,11 +128,11 @@
 }
 
 
-.open-card-composer{
+.open-paper-composer{
   min-height: 34px;
   margin-top: 10px;
 
-  .card-new-click{
+  .paper-new-click{
     padding: 5px 120px 5px 10px;
     font-size: 18px;
     // background-color: rgba(158, 144, 156, 40%);
@@ -140,7 +140,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  .card-new-click:hover {
+  .paper-new-click:hover {
     background-color: rgba(158, 144, 156, 25%);
   }
 
