@@ -1,4 +1,5 @@
 import React from 'react';
+import PaperIndex from '../papers/paper_index_container'
 
 class ListIndexItem extends React.Component{
   constructor(props){
@@ -19,6 +20,9 @@ class ListIndexItem extends React.Component{
             <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
           </div>
         </div>
+        <PaperIndex 
+          list_id={id}
+        />
         <div className='open-card-composer'>
           <span className="card-new-click" onClick={this.handleClick}>
             <i className="fa fa-plus-square-o" aria-hidden="true"></i>

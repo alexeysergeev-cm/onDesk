@@ -1,4 +1,4 @@
-import { RECEIVE_PAPER, REMOVE_PAPER } from '../actions/list_actions';
+import { RECEIVE_PAPER, REMOVE_PAPER } from '../actions/paper_actions';
 import { RECEIVE_DESK } from '../actions/desk_actions';
 
 const papersReducer = (state = {}, action) => {

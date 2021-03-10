@@ -1,7 +1,6 @@
 class Api::PapersController < ApplicationController
 
   def create
-    debugger
     @paper = Paper.new(paper_params)
     if @paper.save 
       render :show
