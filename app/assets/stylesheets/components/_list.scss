@@ -41,14 +41,21 @@
   .delete-list{
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    background-color: rgb(235, 236, 240);
+    min-width: 135px;
+    box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
+    padding: 5px 5px;
     z-index: 1;
     cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px;
+    color: rgb(139, 0, 0);
+    margin-top: -13px;
+
   }
 }
+
 .list-extras:hover .delete-list{
   display: block;
 }
