@@ -9,14 +9,26 @@ class ListIndexItem extends React.Component{
   render(){
     const { title, id } = this.props.list
     return(
+      <>
         <div className='list-title-cont'>
           <div className="list-title">
             {title}
           </div>
           <div className="list-extras">
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true" ></i>
+            <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
           </div>
         </div>
+        <div className='open-card-composer'>
+          <span className="card-new-click" onClick={this.handleClick}>
+            <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+            Add a card
+          </span>        
+          <div className="card-form">
+            {/* {form} */}
+          </div>
+        </div>
+      </>
     )
   }
 }

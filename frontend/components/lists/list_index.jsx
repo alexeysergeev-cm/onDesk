@@ -15,6 +15,7 @@ class ListIndex extends React.Component{
               <ListIndexItem
                 list={list}
                 key={list.id}
+                deleteList={this.props.deleteList}
                 />
             </div>      
           </div>

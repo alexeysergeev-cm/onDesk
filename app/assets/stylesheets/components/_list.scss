@@ -2,6 +2,7 @@
   display: flex;
 }
 
+
 .list-wrapper{
   width: 272px;
   margin: 6px 4px;
@@ -25,7 +26,8 @@
 
 .list-title-cont{
   flex: 0 0 auto;
-  padding: 10px 18px;
+  padding: 1px 12px;
+  font-size: 22px;
   position: relative;
   min-height: 20px;
   display: flex;
@@ -35,4 +37,114 @@
 .list-extras{
   padding-top: 3px;
   height: 28px;
+
+  
+  .delete-list{
+    display: none;
+    position: absolute;
+    background-color: rgb(235, 236, 240);
+    min-width: 135px;
+    box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
+    padding: 5px 5px;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px;
+    color: rgb(139, 0, 0);
+    margin-top: -13px;
+
+  }
+}
+
+.list-extras:hover .delete-list{
+  display: block;
+  
+}
+
+.list-form-cont{ 
+  width: 272px;
+  margin: 6px 4px;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  font-size: 22px;
+  cursor: pointer;
+  
+  span{
+    background-color: rgb(158, 144, 156);
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    white-space: normal;
+    min-height: 31px;
+    padding-top: 2px;
+    padding-left: 11px;
+  }
+  span:hover{
+    background-color: rgba(158, 144, 156, 60%)
+  }
+  i {
+    padding-top: 5px;
+    font-size: 17px;
+    padding-right: 4px;
+  }
+}
+
+.list-form{
+  display: none;
+  background-color: rgb(235, 236, 240);
+  border-radius: 3px;
+  box-sizing: border-box;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+
+  input{
+    font-size: 20px;
+    padding: 4px 10px;
+    
+  }
+
+  button {
+    font-size: 20px;
+    background-color: $green;
+    margin: 0px 5px 5px 9px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: white;
+  }
+
+  i{
+    padding-top: 5px;
+    font-size: 17px;
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+}
+
+
+.open-card-composer{
+  min-height: 34px;
+  margin-top: 10px;
+
+  .card-new-click{
+    padding: 5px 120px 5px 10px;
+    font-size: 18px;
+    background-color: rgba(158, 144, 156, 40%);
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .card-new-click:hover {
+    background-color: rgba(158, 144, 156, 20%);
+  }
+
+  i{
+    padding: 4px 10px 0px 6px;
+  }
 }

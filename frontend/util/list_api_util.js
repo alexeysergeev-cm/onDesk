@@ -15,7 +15,7 @@ export const createList = (list) => (
 
 export const updateList = (list) => (
   $.ajax({
-    url: `/api/list/${list.id}`,
+    url: `/api/lists/${list.id}`,
     method: 'PATCH',
     data: { list }
   })
@@ -23,7 +23,7 @@ export const updateList = (list) => (
 
 export const deleteList = (listId) => (
   $.ajax({
-    url: `/api/list/${listId}`,
+    url: `/api/lists/${listId}`,
     method: 'DELETE',
   })
 )
