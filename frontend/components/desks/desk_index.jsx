@@ -46,21 +46,25 @@ class DeskIndex extends React.Component{
     let currUserId = this.props.currentUserId
     document.getElementsByClassName('desk-page')[0].style.display = 'none'
     document.getElementsByClassName('desk-page-projects')[0].style.display = 'flex'
-    
+    document.getElementsByClassName('li-h active')[0].classList.remove('active')
+
     let projects = [];
     if (e.currentTarget.innerText === "Created By You"){
+      e.currentTarget.classList.add('active')
       this.props.desks.forEach(desk => {
         if (desk.author_id === currUserId){
           projects.push(desk)
         }
       })
     } else if (e.currentTarget.innerText === "Shared With You"){
+      e.currentTarget.classList.add('active')
       this.props.desks.forEach(desk => {
         if (desk.author_id !== currUserId){
           projects.push(desk)
         }
       })
     } else {
+      e.currentTarget.firstElementChild.classList.add('active')
       document.getElementsByClassName('desk-page')[0].style.display = 'flex'
       document.getElementsByClassName('desk-page-projects')[0].style.display = 'none'
       // projects = this.props.desks
