@@ -4,7 +4,8 @@ import DeskIndex from './desk_index'
 
 const mSTP = state => {
   return ({
-    desks: Object.values(state.entities.desks)
+    desks: Object.values(state.entities.desks),
+    currentUserId: state.session.currentUserId 
   })
 }
 
