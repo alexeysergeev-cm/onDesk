@@ -1,1 +1,1 @@
-json.extract! desk, :id, :title
+json.extract! desk, :id, :title, :author_id
