@@ -61,10 +61,10 @@ class ListForm extends React.Component{
 
     return(
       <div className="list-form-cont">
-          <span className="list-new-click" onClick={this.handleClick}>
-            <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-            Add another list
-          </span>        
+        <span className="list-new-click" onClick={this.handleClick}>
+          <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+          Add another list
+        </span>        
         <div className="list-form">
           {form}
         </div>

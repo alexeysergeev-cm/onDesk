@@ -68457,3 +68457,347 @@ Processing by Api::ListsController#destroy as JSON
 Completed 200 OK in 46ms (Views: 38.7ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/" for ::1 at 2021-03-11 12:00:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 635ms (Views: 630.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:00:25 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (1.6ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.9ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.8ms)
+  Rendered api/desks/show.json.jbuilder (24.5ms)
+Completed 200 OK in 55ms (Views: 33.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:07:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 726ms (Views: 722.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:07:44 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (1.9ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (1.0ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (11.5ms)
+Completed 200 OK in 46ms (Views: 21.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:08:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 77ms (Views: 73.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:08:15 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.6ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (3.3ms)
+Completed 200 OK in 29ms (Views: 14.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:08:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 663ms (Views: 659.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:08:27 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.4ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (3.0ms)
+Completed 200 OK in 23ms (Views: 12.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:08:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 474ms (Views: 471.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:08:43 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.4ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (1.2ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.6ms)
+  Rendered api/desks/show.json.jbuilder (3.3ms)
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:10:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 105ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:10:16 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (2.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (1.0ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (1.4ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.5ms)
+  Rendered api/desks/show.json.jbuilder (3.5ms)
+Completed 200 OK in 26ms (Views: 10.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:10:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:10:43 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (1.0ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.4ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.9ms)
+  Rendered api/desks/show.json.jbuilder (3.6ms)
+Completed 200 OK in 25ms (Views: 16.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:11:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 739ms (Views: 736.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:11:04 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (3.3ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.3ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.3ms)
+  Rendered api/desks/show.json.jbuilder (10.3ms)
+Completed 200 OK in 61ms (Views: 30.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:14:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 589ms (Views: 584.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:14:57 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (1.8ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (1.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (1.1ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (2.7ms)
+Completed 200 OK in 27ms (Views: 11.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:15:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 453ms (Views: 449.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:15:30 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.9ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (1.0ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (5.1ms)
+Completed 200 OK in 25ms (Views: 15.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:17:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 861ms (Views: 858.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:17:54 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.6ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.5ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (1.3ms)
+  Rendered api/desks/show.json.jbuilder (15.7ms)
+Completed 200 OK in 70ms (Views: 53.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-11 12:19:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - wrong number of arguments (1 for 3) for `rgb':
+  app/views/layouts/application.html.erb:29:in `_app_views_layouts_application_html_erb__2149682523476322570_70317317792920'
+
+Started POST "/__better_errors/17ea85122b5e1f66/variables" for ::1 at 2021-03-11 12:19:37 -0800
+Started GET "/" for ::1 at 2021-03-11 12:19:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.3ms)
+
+
+
+Sass::SyntaxError - $blue: Expected 66/25% to have no units or "%" for `rgb':
+  app/views/layouts/application.html.erb:29:in `_app_views_layouts_application_html_erb__2149682523476322570_70317374143320'
+
+Started POST "/__better_errors/8b4dcf35b2a9ae43/variables" for ::1 at 2021-03-11 12:19:51 -0800
+Started GET "/" for ::1 at 2021-03-11 12:19:59 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.2ms)
+
+
+
+Sass::SyntaxError - wrong number of arguments (given 4, expected 1..3) for `rgb':
+  app/views/layouts/application.html.erb:29:in `_app_views_layouts_application_html_erb__2149682523476322570_70317379166960'
+
+Started POST "/__better_errors/cc4d7ec71bedd033/variables" for ::1 at 2021-03-11 12:20:00 -0800
+Started GET "/" for ::1 at 2021-03-11 12:20:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.2ms)
+
+
+
+Sass::SyntaxError - wrong number of arguments (given 4, expected 1..3) for `rgb':
+  app/views/layouts/application.html.erb:29:in `_app_views_layouts_application_html_erb__2149682523476322570_70317385562140'
+
+Started POST "/__better_errors/c55033442e2f871c/variables" for ::1 at 2021-03-11 12:20:03 -0800
+Started GET "/" for ::1 at 2021-03-11 12:20:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "k0TyHHsIigu6ljXZA9OsHw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 458ms (Views: 454.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/desks/15" for ::1 at 2021-03-11 12:20:35 -0800
+Processing by Api::DesksController#show as JSON
+  Parameters: {"id"=>"15"}
+  [1m[36mDesk Load (0.2ms)[0m  [1m[34mSELECT  "desks".* FROM "desks" WHERE "desks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."desk_id" = $1[0m  [["desk_id", 15]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  [1m[36mPaper Load (0.4ms)[0m  [1m[34mSELECT "papers".* FROM "papers" WHERE "papers"."list_id" IN ($1, $2)[0m  [["list_id", 65], ["list_id", 66]]
+  ↳ app/controllers/api/desks_controller.rb:17
+  Rendering api/desks/show.json.jbuilder
+  Rendered api/desks/_desk.json.jbuilder (0.4ms)
+  Rendered api/desks/show.json.jbuilder (3.0ms)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
