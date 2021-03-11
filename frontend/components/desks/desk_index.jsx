@@ -48,11 +48,15 @@ class DeskIndex extends React.Component{
         <div className='home-sticky-container'>
           <nav className='home-left-sidebar'>
             <div className='li-items'>
-              <li className='li-h active' href='/'>
-                <a href="/">Desk</a> 
-                </li>
-              <li className='li-h'>Templates</li>
-              <li className='li-h'>Home</li>
+              {/* <li className='li-h active' href='/'> */}
+                <a href="/"><li className='li-h active' href='/'>All Desks</li></a> 
+                {/* </li> */}
+              <div className='shadowed-text big'>Find me on</div>
+
+              <a href="https://angel.co/u/alexey-sergeev-cm"><li className='li-h'>Angel List<i class="fa fa-angellist" aria-hidden="true"></i></li></a>
+              <a href="https://github.com/alexeysergeev-cm"><li className='li-h'>Github <i class="fa fa-github" aria-hidden="true"></i></li></a>
+              <a href="https://www.linkedin.com/in/alexey-sergeev-cm"><li className='li-h'>LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></li></a>
+
             </div>
             <div className='li-items'>
               <div className='shadowed-text big'>Teams</div> 
