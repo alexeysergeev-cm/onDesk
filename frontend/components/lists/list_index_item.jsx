@@ -1,9 +1,19 @@
 import React from 'react';
-import PaperIndex from '../papers/paper_index_container'
+import PaperIndex from '../papers/paper_index_container';
+import PaperForm from '../papers/paper_form_container';
+
 
 class ListIndexItem extends React.Component{
   constructor(props){
     super(props)
+
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(e){
+    e.currentTarget.style.display = 'none'
+    e.currentTarget.parentElement.lastElementChild.style.display = 'block'
   }
 
 
@@ -30,6 +40,7 @@ class ListIndexItem extends React.Component{
           </span>        
           <div className="paper-form">
             {/* {form} */}
+            <PaperForm />
           </div>
         </div>
       </>

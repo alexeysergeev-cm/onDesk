@@ -30,19 +30,20 @@ class ListForm extends React.Component{
     this.setState({desk_id: deskId}, function(){
       this.props.createList(this.state)
         .then(() => this.handleClick(g))
+        .then(() => this.setState({title: ''}))
     })
   }
 
   handleClick(e){
     let clicked = document.getElementsByClassName('list-new-click')
     let form = document.getElementsByClassName('list-form')
-
     if (e === 'created' || e.currentTarget.className === 'fa fa-window-close-o'){
       clicked[0].style.display = "block"
       form[0].style.display = "none"
     } else {
       clicked[0].style.display = "none"
       form[0].style.display = "block"
+      document.getElementsByClassName('list-form-input')[0].focus()
     }
   }
 
