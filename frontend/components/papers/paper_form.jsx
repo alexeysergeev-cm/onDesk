@@ -10,9 +10,9 @@ class PaperForm extends React.Component{
       author_id: this.props.currentUserId
     }
 
-    // this.update = this.update.bind(this)
+    this.update = this.update.bind(this)
     this.handleClick = this.handleClick.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 
@@ -22,6 +22,21 @@ class PaperForm extends React.Component{
     // debugger
   }
 
+  update(field){
+    return e => this.setState({[field]: e.currentTarget.value})
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    const deskId = parseInt(this.props.deskId)
+    let g = 'created'
+
+    this.setState({desk_id: deskId}, function(){
+      this.props.createList(this.state)
+        .then(() => this.handleClick(g))
+        .then(() => this.setState({title: ''}))
+    })
+  }
 
   render(){
 
@@ -30,8 +45,8 @@ class PaperForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="paper-form-input">
             <input type="text"
-              // value={this.state.title}
-              // onChange={this.update('title')}
+              value={this.state.title}
+              onChange={this.update('title')}
               placeholder="Enter a title for this paper..."
             />
 
