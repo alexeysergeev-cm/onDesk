@@ -40,7 +40,8 @@ class ListIndexItem extends React.Component{
           </span>        
           <div className="paper-form">
             {/* {form} */}
-            <PaperForm />
+            <PaperForm 
+            />
           </div>
         </div>
       </>
