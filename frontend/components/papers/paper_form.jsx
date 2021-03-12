@@ -11,13 +11,19 @@ class PaperForm extends React.Component{
     }
 
     // this.update = this.update.bind(this)
-    // this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 
-  render(){
+  handleClick(e){
+    e.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild.style.display = 'none'
+    e.currentTarget.parentElement.parentElement.parentElement.parentElement.firstChild.style.display = 'flex'
+    // debugger
+  }
 
+
+  render(){
 
     return(
       <div className='p-form'>
