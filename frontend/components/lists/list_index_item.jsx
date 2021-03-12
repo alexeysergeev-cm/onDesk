@@ -14,7 +14,6 @@ class ListIndexItem extends React.Component{
   handleClick(e){
     e.currentTarget.style.display = 'none'
     e.currentTarget.parentElement.lastElementChild.style.display = 'block'
-    debugger
   }
 
 

@@ -20,17 +20,20 @@ class PaperForm extends React.Component{
 
 
     return(
-      // <form onSubmit={this.handleSubmit}>
-      //   <input type="text"
-      //     value={this.state.title}
-      //     onChange={this.update('title')}
-      //     className="list-form-input"
-      //     placeholder="Enter list title..."
-      //   />
-      //   <button>Add List</button>
-      //   <i className="fa fa-window-close-o" aria-hidden="true" onClick={this.handleClick}></i>
-      // </form>
-      <div>hello</div>
+      <div className='p-form'>
+        <form onSubmit={this.handleSubmit}>
+          <div className="paper-form-input">
+            <input type="text"
+              // value={this.state.title}
+              // onChange={this.update('title')}
+              placeholder="Enter a title for this paper..."
+            />
+
+          </div>
+          <button className="paper-btn">Add a paper</button>
+          <i className="fa fa-window-close-o" aria-hidden="true" onClick={this.handleClick}></i>
+        </form>
+      </div>
     )
   }
 }
