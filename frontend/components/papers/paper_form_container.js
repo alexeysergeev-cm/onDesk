@@ -6,10 +6,12 @@ import PaperForm from './paper_form'
 
 const mSTP = state => {
   const currentUserId = state.session.currentUserId
-  // const deskId = Object.keys(state.entities.desks)[0]
+  const papers = state.entities.papers
+  const lists = state.entities.lists
   return({
     currentUserId,
-    // deskId
+    papers,
+    lists
   })
 }
 

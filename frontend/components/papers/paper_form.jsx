@@ -28,14 +28,24 @@ class PaperForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    const deskId = parseInt(this.props.deskId)
-    let g = 'created'
+    const lists = this.props.lists 
+    let listLength = e.target.parentElement.parentElement.parentElement.parentElement.children[1].children.length
+    let listName = e.target.parentElement.parentElement.parentElement.parentElement.firstChild.innerText
 
-    this.setState({desk_id: deskId}, function(){
-      this.props.createList(this.state)
-        .then(() => this.handleClick(g))
-        .then(() => this.setState({title: ''}))
-    })
+    // debugger
+    // for (let item in lists){
+    //   debugger
+    //   if (item.title === listName ){
+    //     // let g = 'created'
+    //     this.setState({list_id: item.id}, function(){
+    //       this.props.createPaper(this.state)
+    //         // .then(() => this.handleClick(g))
+    //         .then(() => this.setState({title: ''}))
+    //     })
+    //   }
+    // }
+
+
   }
 
   render(){
