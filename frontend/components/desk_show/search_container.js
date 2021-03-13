@@ -10,6 +10,7 @@ const mSTP = state => {
   const membershipErr = state.errors.membership 
   const users = state.entities.users
   const deskId = Object.values(state.entities.desks)[0]
+  // debugger
   return({
     users,
     deskId,

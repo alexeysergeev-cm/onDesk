@@ -6,9 +6,11 @@ class Desk < ApplicationRecord
 
   has_many :desk_memberships
   
-  has_many :lists
+  has_many :lists,
+    dependent: :destroy
 
   has_many :papers,
     through: :lists,
-    source: :papers
+    source: :papers,
+    dependent: :destroy
 end

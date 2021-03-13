@@ -6,7 +6,7 @@ class PaperForm extends React.Component{
     super(props)
     this.state = {
       title: '',
-      desk_id: '',
+      list_id: '',
       author_id: this.props.currentUserId
     }
 
@@ -17,9 +17,18 @@ class PaperForm extends React.Component{
 
 
   handleClick(e){
-    e.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild.style.display = 'none'
-    e.currentTarget.parentElement.parentElement.parentElement.parentElement.firstChild.style.display = 'flex'
-    // debugger
+    if (e === 'created'){
+      let paperForm = document.getElementsByClassName('paper-form')
+      for (let item of paperForm) {
+        if (item.style.display === 'block') {
+          item.style.display = 'none'
+          item.parentElement.firstChild.style.display = 'flex'
+        }
+      }
+    } else {
+      e.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild.style.display = 'none'
+      e.currentTarget.parentElement.parentElement.parentElement.parentElement.firstChild.style.display = 'flex'
+    }
   }
 
   update(field){
@@ -28,28 +37,21 @@ class PaperForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    const lists = this.props.lists 
+
     let listLength = e.target.parentElement.parentElement.parentElement.parentElement.children[1].children.length
     let listName = e.target.parentElement.parentElement.parentElement.parentElement.firstChild.innerText
+    let listId = this.props.listId
 
-    // debugger
-    // for (let item in lists){
-    //   debugger
-    //   if (item.title === listName ){
-    //     // let g = 'created'
-    //     this.setState({list_id: item.id}, function(){
-    //       this.props.createPaper(this.state)
-    //         // .then(() => this.handleClick(g))
-    //         .then(() => this.setState({title: ''}))
-    //     })
-    //   }
-    // }
-
-
+    let g = 'created'
+   
+    this.setState({list_id: listId}, function(){
+      this.props.createPaper(this.state)
+        .then(() => this.handleClick(g))
+        .then(() => this.setState({title: ''}))
+    })
   }
 
   render(){
-
     return(
       <div className='p-form'>
         <form onSubmit={this.handleSubmit}>

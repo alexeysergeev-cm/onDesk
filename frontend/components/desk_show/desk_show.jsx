@@ -142,7 +142,9 @@ class DeskShow extends React.Component{
             {error}
           </div>
         </div>
-        <ListIndexContainer />
+        <ListIndexContainer 
+          deskId={deskId}
+        />
       </div>
     )
   }

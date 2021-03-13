@@ -5,8 +5,9 @@ import ListFormContainer from './list_form_container'
 class ListIndex extends React.Component{
 
   render(){
-    const { lists } = this.props
+    const { lists, deskId } = this.props
     if (!lists) return null
+
     return(
       <div className="list-index-container">
         {lists.map(list => (
@@ -19,7 +20,9 @@ class ListIndex extends React.Component{
             </div>      
           </div>
         ))}
-        <ListFormContainer />
+        <ListFormContainer 
+          deskId={deskId}
+        />
       </div>
     )
   }

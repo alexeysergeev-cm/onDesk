@@ -4,12 +4,10 @@ import { createList } from '../../actions/list_actions'
 import ListForm from './list_form'
 
 
-const mSTP = state => {
+const mSTP = (state, ownParams) => {
   const currentUserId = state.session.currentUserId
-  const deskId = Object.keys(state.entities.desks)[0]
   return({
     currentUserId,
-    deskId
   })
 }
 

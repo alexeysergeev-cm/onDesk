@@ -7,5 +7,6 @@ class List < ApplicationRecord
   belongs_to :desk,
     class_name: :Desk
 
-  has_many :papers
+  has_many :papers,
+    dependent: :destroy
 end

@@ -2,10 +2,11 @@
 import { connect } from 'react-redux';
 import { createDesk } from '../../actions/desk_actions'
 import DeskForm from './desk_form'
-import { closeModal} from '../../actions/modal_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-  const lastId = state.entities.desks.id
+  let keys = Object.keys(state.entities.desks)
+  let lastId = keys[keys.length - 1]
   return({
     lastId,
     formType: 'Create Desk'

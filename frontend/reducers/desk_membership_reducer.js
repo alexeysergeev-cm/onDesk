@@ -7,6 +7,7 @@ const membershipReducer = (state = {}, action) => {
 
   switch(action.type){
     case CREATE_MEMBERSHIP:
+      debugger
       return action.payload;
     case CLEAR_MESSAGE:
       return "";
