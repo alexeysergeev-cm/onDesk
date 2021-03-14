@@ -14,6 +14,12 @@ class ListIndexItem extends React.Component{
   handleClick(e){
     e.currentTarget.style.display = 'none'
     e.currentTarget.parentElement.lastElementChild.style.display = 'block'
+    let forms = document.getElementsByClassName('paper-form')
+    for (let item of forms){
+      if (item.style.display === 'block'){
+        item.firstChild.firstChild.firstChild.firstChild.focus()
+      }
+    }
   }
 
 
