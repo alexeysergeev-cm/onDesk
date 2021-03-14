@@ -26,6 +26,7 @@ class ListIndexItem extends React.Component{
   titleUpdate(e){
     e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
     e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'
+    e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus()
   }
 
 
