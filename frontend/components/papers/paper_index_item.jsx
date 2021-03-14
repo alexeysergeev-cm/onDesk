@@ -37,7 +37,7 @@ class PaperIndexItem extends React.Component{
             <div className='delete-paper'>
               <h5>Paper Actions</h5>
               <hr className="Solid"/>
-              <div onClick={this.titleUpdate}>Update title</div>
+              <div onClick={this.titleUpdate}>Update Title</div>
               <div onClick={() => this.props.deletePaper(id)}>Delete Paper</div>
             </div>
           </div>

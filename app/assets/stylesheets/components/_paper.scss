@@ -103,6 +103,13 @@
       color: rgb(112, 128, 144);
       cursor: default;
     }
+    div {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    div:first-of-type {
+      color: green;
+    }
   }
 }
 

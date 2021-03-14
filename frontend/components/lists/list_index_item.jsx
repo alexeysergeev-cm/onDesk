@@ -51,7 +51,7 @@ class ListIndexItem extends React.Component{
             <div className="delete-list">
               <h5>List Actions</h5>  
               <hr className="Solid"/>
-              <div onClick={this.titleUpdate}>Update title</div>
+              <div onClick={this.titleUpdate}>Update Title</div>
               <div onClick={() => this.props.deleteList(id)}>Delete List</div>
             </div>
           </div>
