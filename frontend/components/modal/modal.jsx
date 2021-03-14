@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
 import DeskFromContainer from '../desk_form/desk_form_container';
+import PaperDescriptionContainer from '../papers/paper_description_container';
 
 function Modal({modal, closeModal}){
   if (!modal){
@@ -12,6 +13,9 @@ function Modal({modal, closeModal}){
   switch (modal) {
     case 'Create Desk':
       component = <DeskFromContainer />;
+      break;
+    case 'Add Description':
+      component = <PaperDescriptionContainer />;
       break;
     default:
       return null;

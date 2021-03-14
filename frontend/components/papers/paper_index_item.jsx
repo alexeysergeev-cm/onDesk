@@ -19,7 +19,7 @@ class PaperIndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.paper
-    const { listId } = this.props
+    const { listId, openModal } = this.props
     return(
       <>
         <div className='single-paper'>
@@ -38,6 +38,7 @@ class PaperIndexItem extends React.Component{
               <h5>Paper Actions</h5>
               <hr className="Solid"/>
               <div onClick={this.titleUpdate}>Update Title</div>
+              <div onClick={() => openModal('Add Description')}>Add Description</div>
               <div onClick={() => this.props.deletePaper(id)}>Delete Paper</div>
             </div>
           </div>

@@ -6,7 +6,7 @@ import PaperIndexItem from './paper_index_item'
 class PaperIndex extends React.Component{
 
   render(){
-    const { papers, list_id } = this.props
+    const { papers, list_id, openModal } = this.props
     if (!papers) return null
 
     let organizedPapers = []; 
@@ -25,6 +25,7 @@ class PaperIndex extends React.Component{
                 paper={paper}
                 listId={list_id}
                 deletePaper={this.props.deletePaper}
+                openModal={openModal}
                 />
             </div>      
           </div>
