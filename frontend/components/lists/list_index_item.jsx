@@ -32,6 +32,7 @@ class ListIndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.list
+    const { deskId } = this.props
     return(
       <>
         <div className='list-title-cont'>
@@ -41,9 +42,7 @@ class ListIndexItem extends React.Component{
           <div className='udate-list-container'>
               <ListEditContainer
                 listId={id}
-                // deskId={deskId}
-                // currUserId={currUserId}
-
+                deskId={deskId}
               />
           </div>
           <div className="list-extras">
