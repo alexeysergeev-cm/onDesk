@@ -21,12 +21,12 @@ class EditList extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateList(this.state)
-    debugger
     let lists = document.getElementsByClassName('udate-list-container')
     for (let item of lists){
       if (item.style.display === 'flex'){
         item.style.display = 'none'
         item.parentElement.firstChild.style.display = 'flex'
+        item.parentElement.lastChild.style.display = 'flex'
       }
     }
   }

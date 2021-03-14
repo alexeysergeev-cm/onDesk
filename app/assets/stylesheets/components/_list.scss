@@ -165,4 +165,20 @@
 
 .udate-list-container{
   display: none;
+  font-size: 18px;
+
+  form{
+    display: flex;
+  }
+  button{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0px 2px 3px 0px rgba(9, 30, 66, 25%);
+    height: 28px;
+    font-size: 16px;
+    transition: background-color 0.5s;
+  }
+  button:hover{
+    background-color: rgb(211, 211, 211);
+  }
 }
