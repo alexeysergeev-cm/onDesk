@@ -68,3 +68,44 @@
 .paper-btn:hover{
   background-color: rgba(90, 172, 68, 90%);
 }
+
+
+.single-paper{
+  flex: 0 0 auto;
+  font-size: 20px;
+  position: relative;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paper-extras{
+  padding-top: 4px;
+  font-size: 15px;
+
+  
+  .delete-paper{
+    display: none;
+    position: absolute;
+    background-color: rgb(235, 236, 240);
+    min-width: 200px;
+    box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
+    padding: 5px 5px 12px;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 20px;
+    color: rgb(139, 0, 0);
+    margin-top: -13px;
+    h5{
+      margin: 10px;
+      color: rgb(112, 128, 144);
+      cursor: default;
+    }
+  }
+}
+
+.paper-extras:hover .delete-paper{
+  display: block; 
+}
