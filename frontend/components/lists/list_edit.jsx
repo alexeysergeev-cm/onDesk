@@ -21,7 +21,8 @@ class EditList extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateList(this.state)
-    let lists = document.getElementsByClassName('edit-l-title')
+    debugger
+    let lists = document.getElementsByClassName('udate-list-container')
     for (let item of lists){
       if (item.style.display === 'flex'){
         item.style.display = 'none'
@@ -31,15 +32,6 @@ class EditList extends React.Component{
   }
 
   render(e){
-    
-    // let input = document.getElementsByClassName('list-edit-input')[0]
-    // if (input !== undefined) {
-    //   document.getElementsByTagName('body')[0]
-    //   .addEventListener('click', (e) => {
-    //     if (e.currentTarget !== input)
-    //       this.handleSubmit(e)
-    //     })
-    // }
 
     return(
       <form onSubmit={this.handleSubmit}>
