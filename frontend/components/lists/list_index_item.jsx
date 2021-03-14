@@ -33,7 +33,11 @@ class ListIndexItem extends React.Component{
           </div>
           <div className="list-extras">
             <i className="fa fa-ellipsis-h" aria-hidden="true" ></i>
-            <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
+            <div className="delete-list">
+              <h5>List Actions</h5>  
+              <hr className="Solid"/>
+              <div onClick={() => this.props.deleteList(id)}>Delete List</div>
+            </div>
           </div>
         </div>
         <PaperIndex 
