@@ -12,11 +12,6 @@ class EditDesk extends React.Component{
     this.update = this.update.bind(this)
   }
 
-
-  // componentDidMount(){
-  //   this.props.fetchDesk(this.props.match.params.deskId)
-  // }
-
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value })
   }

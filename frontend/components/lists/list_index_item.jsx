@@ -1,7 +1,7 @@
 import React from 'react';
 import PaperIndex from '../papers/paper_index_container';
 import PaperForm from '../papers/paper_form_container';
-
+import ListEditContainer from './list_edit_container'
 
 class ListIndexItem extends React.Component{
   constructor(props){
@@ -14,6 +14,19 @@ class ListIndexItem extends React.Component{
   handleClick(e){
     e.currentTarget.style.display = 'none'
     e.currentTarget.parentElement.lastElementChild.style.display = 'block'
+    let forms = document.getElementsByClassName('paper-form')
+    for (let item of forms){
+      if (item.style.display === 'block'){
+        item.firstChild.firstChild.firstChild.firstChild.focus()
+      }
+    }
+  }
+
+  //---titleUpdate
+  titleUpdate(e){
+    e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
+    e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'
+    e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus()
   }
 
 
@@ -25,9 +38,22 @@ class ListIndexItem extends React.Component{
           <div className="list-title">
             {title}
           </div>
+          <div className='udate-list-container'>
+              <ListEditContainer
+                listId={id}
+                // deskId={deskId}
+                // currUserId={currUserId}
+
+              />
+          </div>
           <div className="list-extras">
             <i className="fa fa-ellipsis-h" aria-hidden="true" ></i>
-            <div className="delete-list" onClick={() => this.props.deleteList(id)}>Delete List</div>
+            <div className="delete-list">
+              <h5>List Actions</h5>  
+              <hr className="Solid"/>
+              <div onClick={this.titleUpdate}>Update title</div>
+              <div onClick={() => this.props.deleteList(id)}>Delete List</div>
+            </div>
           </div>
         </div>
         <PaperIndex 

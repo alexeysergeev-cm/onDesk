@@ -1,5 +1,6 @@
 import {connect } from 'react-redux';
 import PaperIndex from './paper_index'
+import { deletePaper } from '../../actions/paper_actions'
 
 const mSTP = state => {
   return ({
@@ -10,7 +11,7 @@ const mSTP = state => {
 const mDTP = dispatch => ({
   // createList: (list) => dispatch(createList(list)),
   // updateList: (list) => dispatch(updateList(list)),
-  // deleteList: (listId) => dispatch(deleteList(listId))
+  deletePaper: (paperId) => dispatch(deletePaper(paperId))
 })
 
 export default connect(mSTP, mDTP)(PaperIndex)

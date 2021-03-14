@@ -111,7 +111,9 @@ class DeskShow extends React.Component{
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />
-          <SearchContainer />
+          <SearchContainer 
+            deskId={deskId}
+          />
         </ul>
       </div>
     )
@@ -126,13 +128,13 @@ class DeskShow extends React.Component{
             <div className='desk-title' onClick={this.titleUpdate}>
               {title}
             </div>
-              <div className='udate-form-container'>
-                <DeskEditContainer 
-                  deskId={deskId}
-                  currUserId={currUserId}
-                  clearErrors={this.props.clearErrors}
-                />
-              </div>
+            <div className='udate-form-container'>
+              <DeskEditContainer 
+                deskId={deskId}
+                currUserId={currUserId}
+                clearErrors={this.props.clearErrors}
+              />
+            </div>
           </div>
           {invite}
           {menu}

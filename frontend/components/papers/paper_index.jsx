@@ -23,7 +23,7 @@ class PaperIndex extends React.Component{
             <div className='paper-item'>
               <PaperIndexItem
                 paper={paper}
-                // deleteList={this.props.deleteList}
+                deletePaper={this.props.deletePaper}
                 />
             </div>      
           </div>
