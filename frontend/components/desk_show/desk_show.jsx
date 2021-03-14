@@ -111,7 +111,9 @@ class DeskShow extends React.Component{
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />
-          <SearchContainer />
+          <SearchContainer 
+            deskId={deskId}
+          />
         </ul>
       </div>
     )

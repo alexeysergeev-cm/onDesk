@@ -3,7 +3,6 @@ class Api::UsersController < ApplicationController
   def index
     email = params[:email]
     user_id = User.where(email: email).pluck(:id)
-    # debugger
     @user = User.find_by(id: user_id[0])
 
     if @user 
