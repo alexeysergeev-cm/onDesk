@@ -128,13 +128,13 @@ class DeskShow extends React.Component{
             <div className='desk-title' onClick={this.titleUpdate}>
               {title}
             </div>
-              <div className='udate-form-container'>
-                <DeskEditContainer 
-                  deskId={deskId}
-                  currUserId={currUserId}
-                  clearErrors={this.props.clearErrors}
-                />
-              </div>
+            <div className='udate-form-container'>
+              <DeskEditContainer 
+                deskId={deskId}
+                currUserId={currUserId}
+                clearErrors={this.props.clearErrors}
+              />
+            </div>
           </div>
           {invite}
           {menu}
