@@ -9,12 +9,18 @@ function Modal({modal, closeModal}){
   if (!modal){
     return null;
   }
-  // debugger
-  modal = Object.keys(modal)[0]
-  let props = Object.values(modal)
-  let title = props[0]
-  let paperId = props[1]
-  let userId = props[2]
+
+  let title;
+  let paperId;
+  let userId;
+  if (typeof modal !== String){
+    let props = Object.values(modal)
+    modal = Object.keys(modal)[0]
+    // debugger
+    title = props[0][0]
+    paperId = props[0][1]
+    userId = props[0][2]
+  }
 
   let component;
   switch (modal) {
@@ -22,7 +28,7 @@ function Modal({modal, closeModal}){
       component = <DeskFromContainer />;
       break;
     case 'Add Description':
-    debugger
+    // debugger
       component = <PaperDescriptionContainer 
         title={title}
         paperId={paperId}

@@ -138,3 +138,30 @@
     background-color: rgb(255, 255, 255);
   }
 }
+
+.paper-description{
+  width: 600px;
+  height: 700px;
+  background-color: rgb(211, 211, 211);
+  z-index: 1;
+  margin-top: 600px;
+  font-size: 30px;
+  text-align: center;
+  h1{
+    padding: 10px 5px 0 5px;
+    font-family: serif;
+  }
+
+  textarea{
+    text-align: initial;
+    font-size: 22px;
+
+  }
+  
+  form{
+    padding: 10px;
+    border: 1px solid rgb(33, 107, 165);
+    margin: 50px;
+    box-shadow: 0px 1px grey;
+  }
+}
