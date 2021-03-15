@@ -4,11 +4,11 @@ import PaperDescritption from './paper_description';
 import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-  // debugger
-
-  return({
-
-    formType: 'Add Description'
+  const currUserId = state.session.currentUserId
+  const papers = state.entities.papers
+  return ({
+    currUserId,
+    papers
   })
 }
 

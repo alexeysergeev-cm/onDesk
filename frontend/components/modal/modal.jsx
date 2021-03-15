@@ -11,15 +11,15 @@ function Modal({modal, closeModal}){
   }
 
   let title;
+  let listId;
   let paperId;
-  let userId;
   if (typeof modal !== String){
     let props = Object.values(modal)
     modal = Object.keys(modal)[0]
     // debugger
     title = props[0][0]
-    paperId = props[0][1]
-    userId = props[0][2]
+    listId = props[0][1]
+    paperId = props[0][2]
   }
 
   let component;
@@ -31,8 +31,8 @@ function Modal({modal, closeModal}){
     // debugger
       component = <PaperDescriptionContainer 
         title={title}
+        listId={listId}
         paperId={paperId}
-        userId={userId}
       />;
       break;
     default:
