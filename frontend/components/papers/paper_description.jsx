@@ -32,10 +32,10 @@ class PaperDescription extends React.Component{
     const { papers, paperId } = this.props 
     let desc = '';
     debugger
-    for (let item of papers) {
-      debugger
+    for (let item of Object.values(papers)) {
       if (item.id === paperId){
         if (item.description !== null) desc = item.description;
+        debugger
       }
     }
 
@@ -45,7 +45,8 @@ class PaperDescription extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div>
             <textarea name="description" id="description" cols="40" rows="15" 
-                value={this.state.description}
+                // value={this.state.description}
+                value={desc}
                 onChange={this.update('description')}
               >{desc}</textarea>
           </div>
