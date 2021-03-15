@@ -9,13 +9,25 @@ function Modal({modal, closeModal}){
   if (!modal){
     return null;
   }
+  // debugger
+  modal = Object.keys(modal)[0]
+  let props = Object.values(modal)
+  let title = props[0]
+  let paperId = props[1]
+  let userId = props[2]
+
   let component;
   switch (modal) {
     case 'Create Desk':
       component = <DeskFromContainer />;
       break;
     case 'Add Description':
-      component = <PaperDescriptionContainer />;
+    debugger
+      component = <PaperDescriptionContainer 
+        title={title}
+        paperId={paperId}
+        userId={userId}
+      />;
       break;
     default:
       return null;

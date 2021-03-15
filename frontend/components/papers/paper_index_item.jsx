@@ -38,7 +38,7 @@ class PaperIndexItem extends React.Component{
               <h5>Paper Actions</h5>
               <hr className="Solid"/>
               <div onClick={this.titleUpdate}>Update Title</div>
-              <div onClick={() => openModal('Add Description')}>Add Description</div>
+              <div onClick={() => openModal({'Add Description': [title, listId, id]})}>Add Description</div>
               <div onClick={() => this.props.deletePaper(id)}>Delete Paper</div>
             </div>
           </div>

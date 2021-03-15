@@ -4,7 +4,7 @@ import PaperDescritption from './paper_description';
 import { closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-
+  // debugger
 
   return({
 
