@@ -14,6 +14,7 @@ class PaperDescription extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
+    this.addDesc = this.addDesc.bind(this)
   }
 
   handleSubmit(e){
@@ -27,17 +28,32 @@ class PaperDescription extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  addDesc(desc){
+    this.setState({description: desc})
+  }
+
+  // componentDidUpdate(){
+  //   const { papers, paperId } = this.props 
+  //   let desc = '';
+  //   debugger
+  //   for (let item of Object.values(papers)) {
+  //     if (item.id === paperId){
+  //       if (item.description !== null) this.addDesc(item.description);
+  //     }
+  //   }
+  // }
+
   render(){
     // debugger
-    const { papers, paperId } = this.props 
-    let desc = '';
-    debugger
-    for (let item of Object.values(papers)) {
-      if (item.id === paperId){
-        if (item.description !== null) desc = item.description;
-        debugger
-      }
-    }
+    // const { papers, paperId } = this.props 
+    // let desc = '';
+    // // debugger
+    // for (let item of Object.values(papers)) {
+    //   if (item.id === paperId){
+    //     if (item.description !== null) this.addDesc(item.description);
+    //   }
+    // }
+
 
     return(
       <div className='paper-description'>
@@ -45,10 +61,10 @@ class PaperDescription extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div>
             <textarea name="description" id="description" cols="40" rows="15" 
-                // value={this.state.description}
-                value={desc}
+                value={this.state.description}
+                // value={desc}
                 onChange={this.update('description')}
-              >{desc}</textarea>
+              ></textarea>
           </div>
           <button>Submit</button>
         </form>

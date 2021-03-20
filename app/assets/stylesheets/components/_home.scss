@@ -51,6 +51,9 @@
   width: 32px;
   height: 32px;
   padding: 0 26px;
+  i{
+    font-size: 20px;
+  }
  }
  
  .h3-home-a{
@@ -73,7 +76,7 @@ h3.h3-home{
   display: inline-block;
   height: 30px;
   width: 80px;
-  
+  font-size: 26px;
 }
 
  .float-right-home {
@@ -263,5 +266,8 @@ h3.h3-home{
   margin: 0 4px 0 0;
   width: 32px;
   height: 32px;
-  padding: 2px 10px 0 0
+  padding: 2px 10px 0 0;
+  i{
+    font-size: 20px;
+  }
 }
