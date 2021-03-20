@@ -13,13 +13,14 @@ function Modal({modal, closeModal}){
   let title;
   let listId;
   let paperId;
+  let description;
   if (typeof modal !== String){
     let props = Object.values(modal)
     modal = Object.keys(modal)[0]
-    // debugger
     title = props[0][0]
     listId = props[0][1]
     paperId = props[0][2]
+    description = props[0][3]
   }
 
   let component;
@@ -33,6 +34,7 @@ function Modal({modal, closeModal}){
         title={title}
         listId={listId}
         paperId={paperId}
+        description={description}
       />;
       break;
     default:

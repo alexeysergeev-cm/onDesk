@@ -7,7 +7,7 @@ class PaperDescription extends React.Component{
     this.state = {
       title: this.props.title,
       id: this.props.paperId,
-      description: '',
+      description: this.props.description || '',
       list_id: this.props.listId,
       author_id: this.props.currUserId,
     }
@@ -19,7 +19,6 @@ class PaperDescription extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    // debugger
     this.props.updatePaper(this.state)
       .then(this.props.closeModal)
   }
@@ -32,25 +31,14 @@ class PaperDescription extends React.Component{
     this.setState({description: desc})
   }
 
-  // componentDidUpdate(){
-  //   const { papers, paperId } = this.props 
-  //   let desc = '';
-  //   debugger
-  //   for (let item of Object.values(papers)) {
-  //     if (item.id === paperId){
-  //       if (item.description !== null) this.addDesc(item.description);
-  //     }
-  //   }
-  // }
 
   render(){
-    // debugger
-    // const { papers, paperId } = this.props 
-    // let desc = '';
-    // // debugger
-    // for (let item of Object.values(papers)) {
-    //   if (item.id === paperId){
-    //     if (item.description !== null) this.addDesc(item.description);
+    // const { papers, paperId } = this.props
+
+    // let desc = ''
+    // for (let paper of papers){
+    //   if (paper.id === paperId){
+    //     desc = paper.description
     //   }
     // }
 
@@ -62,7 +50,6 @@ class PaperDescription extends React.Component{
           <div>
             <textarea name="description" id="description" cols="40" rows="15" 
                 value={this.state.description}
-                // value={desc}
                 onChange={this.update('description')}
               ></textarea>
           </div>
