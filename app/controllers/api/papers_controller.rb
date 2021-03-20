@@ -11,7 +11,8 @@ class Api::PapersController < ApplicationController
 
   def update
     @paper = Paper.find_by(id: params[:id])
-    if @paper && current_user.id == @paper.author_id
+    # if @paper && current_user.id == @paper.author_id          // remove only author can edit
+    if @paper 
       if @paper.update(paper_params) && @paper.save
         # debugger
         render :show
@@ -23,7 +24,8 @@ class Api::PapersController < ApplicationController
 
   def destroy
     @paper = Paper.find(params[:id])
-    if @paper && @paper.author_id == current_user.id
+    # if @paper && @paper.author_id == current_user.id          // remove only author can destroy
+    if @paper 
       @paper.destroy
       render :show
     else
