@@ -112,19 +112,35 @@ h3.h3-home{
 	position: absolute;
 	display: none;
 	top: 30px;
-	right: 0;
+	right: 25px;
 	background-color: #fff;
 	border: 1px solid $silver;
 	border-radius: 3px;
 	padding: 10px;
-	width: 225px;
+	width: 180px;
 	z-index: 1;
 	color: $dark-blue;
 	font-family: $san-serif;
 	text-align: left;
-	box-shadow: -1px 4px 6px 1px rgba(0,0,0,0.09);
+	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
 	font-weight: initial;
   font-size: 14px;
+  cursor: default;
+
+  li{
+    padding: 5px;
+  }
+  
+  :first-child{
+    font-weight: bold;
+    font-size: 17px;  
+  }
+
+  :last-child:hover {
+    background-color: rgba($grey, 50%);
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 
 .btn-logout.active .home-dropdown{

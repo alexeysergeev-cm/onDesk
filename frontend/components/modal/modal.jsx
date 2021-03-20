@@ -10,6 +10,8 @@ function Modal({modal, closeModal}){
     return null;
   }
 
+
+  //pass props if modal comes as object
   let title;
   let listId;
   let paperId;

@@ -22,7 +22,7 @@ class PaperIndexItem extends React.Component{
     const { listId, openModal } = this.props
     return(
       <>
-        <div className='single-paper'>
+        <div className='single-paper' onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
           <div className='paper-title'>
             {title}
           </div>

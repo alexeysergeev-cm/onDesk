@@ -6,7 +6,6 @@ import { closeModal } from '../../actions/modal_actions';
 const mSTP = state => {
   const currUserId = state.session.currentUserId
   const papers = Object.values(state.entities.papers)
-  // debugger
   return ({
     currUserId,
     papers

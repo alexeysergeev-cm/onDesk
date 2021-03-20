@@ -14,7 +14,6 @@ class PaperDescription extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
-    this.addDesc = this.addDesc.bind(this)
   }
 
   handleSubmit(e){
@@ -27,22 +26,7 @@ class PaperDescription extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  addDesc(desc){
-    this.setState({description: desc})
-  }
-
-
   render(){
-    // const { papers, paperId } = this.props
-
-    // let desc = ''
-    // for (let paper of papers){
-    //   if (paper.id === paperId){
-    //     desc = paper.description
-    //   }
-    // }
-
-
     return(
       <div className='paper-description'>
         <h1>Description</h1>
