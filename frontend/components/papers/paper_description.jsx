@@ -32,12 +32,12 @@ class PaperDescription extends React.Component{
         <h1>Description</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <textarea name="description" id="description" cols="40" rows="15" 
+            <textarea name="description" id="description" cols="50" rows="20" 
                 value={this.state.description}
                 onChange={this.update('description')}
               ></textarea>
           </div>
-          <button>Submit</button>
+          <button>Save</button>
         </form>
       </div>
     )
