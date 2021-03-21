@@ -66,6 +66,10 @@
     div:first-of-type {
       color: darkblue;
     }
+    div:hover{
+      background-color: rgba($grey, 50%);
+      border-radius: 5px;
+    }
   }
 }
 

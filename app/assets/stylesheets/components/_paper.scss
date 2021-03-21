@@ -107,8 +107,18 @@
       padding-top: 5px;
       padding-bottom: 5px;
     }
+
     div:first-of-type {
+      color: blue;
+    }
+
+    div:nth-of-type(2){
       color: green;
+    }
+
+    div:hover{
+      background-color: rgba($grey, 50%);
+      border-radius: 5px;
     }
   }
 }
