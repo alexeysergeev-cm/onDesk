@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Create Acc' && !this.state.formChange){
       form = (<div className='session-form'> 
         <form>
-          <h1>Sign up for you account</h1>
+          <h1>Sign up for your account</h1>
           <input type="email" value={this.state.email}
             className='form-field inner-section'
               placeholder="Enter email"
