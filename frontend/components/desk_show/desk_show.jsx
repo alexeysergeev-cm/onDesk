@@ -22,7 +22,6 @@ class DeskShow extends React.Component{
     this.props.fetchDesk(this.props.deskId)
   }
 
-  //---titleUpdate
   titleUpdate(){
     let deskTitle = document.getElementsByClassName('desk-title');
     let updateForm = document.getElementsByClassName('udate-form-container');
@@ -30,20 +29,13 @@ class DeskShow extends React.Component{
     updateForm[0].classList.add('show')
   }
 
-
-  //--Invite DropDown
   clickInvite(e){
-    const $drop = document.getElementsByClassName('invite-dropdown')
-    const $xMark = document.getElementsByClassName('close-x invite')
-    if ($xMark && $drop[0].classList.contains('open')){
-      $drop[0].classList.remove('open')
-      return
+    e.stopPropagation();
+    let $dropInvite = document.getElementsByClassName('invite-dropdown')[0]
+
+    if (e.target.innerText === "Invite Another User" || e.target.offsetParent.classList.value === 'close-x invite'){
+      $dropInvite.classList.toggle('open')
     }
-    if (!$drop[0].classList.contains('open') ) {
-      $drop[0].classList.add('open')
-    } else {
-        $drop[0].classList.remove('open')
-      }
   }
 
   clickDropDown(e) {
@@ -108,9 +100,9 @@ class DeskShow extends React.Component{
 
     //-------invite Dropdown 
     let invite = (
-      <div className='invite-btn' id='show-invite' >
-        <div className="invite-text" id='show-invite' onClick={this.clickInvite}>
-          <span>Invite</span>
+      <div className='invite-btn' id='show-invite' onClick={this.clickInvite}>
+        <div className="invite-text" id='show-invite'>
+          <span>Invite Another User</span>
         </div>
         <ul className='invite-dropdown '>
           <div className='invite-pop-over'>
