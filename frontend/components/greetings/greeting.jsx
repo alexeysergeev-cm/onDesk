@@ -25,23 +25,18 @@ class Greeting extends React.Component{
       // debugger
       welcome = (
       <div className='btn-logout-home'>
-          <button className="btn-logout" onClick={this.clickDropDown}
-            >
+          <button className="btn-logout" onClick={this.clickDropDown}>
             <ul className='home-dropdown' >
-              <ul>
-                <li>{name}</li> 
-                <li className='shadowed-text'>{currentUser.email}</li>
+              <li>Welcome {name}</li> 
+              <li className='shadowed-text'>{currentUser.email}</li>
               <hr className="Solid"/>
-              </ul>
-              <li>Papers</li>
-              <li>Settings</li>
+              <li>Settings (coming soon)</li>
               <hr className="Solid"/>
               <li onClick={() => logout()}>Log Out</li>
             </ul>
           </button>
       </div>
       )
-      
     }
 
     

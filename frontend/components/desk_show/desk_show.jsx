@@ -32,7 +32,7 @@ class DeskShow extends React.Component{
 
   //--Invite DropDown
   clickInvite(e){
-    const $drop = document.getElementsByClassName('home-dropdown invite')
+    const $drop = document.getElementsByClassName('invite-dropdown')
     const $xMark = document.getElementsByClassName('close-x invite')
     if ($xMark && $drop[0].classList.contains('open')){
       $drop[0].classList.remove('open')
@@ -86,13 +86,10 @@ class DeskShow extends React.Component{
         <div className='desk-name-header-btn' id='show-menu' onClick={this.clickDropDown}>
             <span className='icon-list-items'></span>
             <span>Show Menu</span>
-            <ul className='home-dropdown' >
-              <ul>
-                <li>MENU</li>
-                <hr className="Solid" />
-              </ul>
-              <li>Papers</li>
-              <li>Settings</li>
+            <ul className='menu-dropdown' >
+              <li>MENU</li>
+              <hr className="Solid" />
+              <li>Settings (coming soon)</li>
               <hr className="Solid" />
               <li onClick={this.handleDeleteDesk}>Delete Desk</li>
             </ul>
@@ -105,7 +102,7 @@ class DeskShow extends React.Component{
         <div className="invite-text" id='show-invite' onClick={this.clickInvite}>
           <span>Invite</span>
         </div>
-        <ul className='home-dropdown invite'>
+        <ul className='invite-dropdown '>
           <div className='invite-pop-over'>
             <span >Invite To Desk</span>
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>

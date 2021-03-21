@@ -25,6 +25,7 @@ class ListIndexItem extends React.Component{
   //---titleUpdate
   titleUpdate(e){
     e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
+    e.target.offsetParent.offsetParent.lastChild.style.display = 'none'
     e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'
     e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus()
   }
@@ -32,6 +33,7 @@ class ListIndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.list
+    const { deskId } = this.props
     return(
       <>
         <div className='list-title-cont'>
@@ -41,9 +43,7 @@ class ListIndexItem extends React.Component{
           <div className='udate-list-container'>
               <ListEditContainer
                 listId={id}
-                // deskId={deskId}
-                // currUserId={currUserId}
-
+                deskId={deskId}
               />
           </div>
           <div className="list-extras">
@@ -51,7 +51,7 @@ class ListIndexItem extends React.Component{
             <div className="delete-list">
               <h5>List Actions</h5>  
               <hr className="Solid"/>
-              <div onClick={this.titleUpdate}>Update title</div>
+              <div onClick={this.titleUpdate}>Update Title</div>
               <div onClick={() => this.props.deleteList(id)}>Delete List</div>
             </div>
           </div>

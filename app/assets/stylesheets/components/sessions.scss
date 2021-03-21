@@ -101,6 +101,9 @@ h6{
   background-color: $light-grey;
   width: 100%;
   height: 1065px;
+  :first-child{
+    padding-top: 40px;
+  }
 }
 
 

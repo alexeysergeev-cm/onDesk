@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Search extends React.Component{
   constructor(props){
     super(props)
@@ -12,15 +13,16 @@ class Search extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     let newMemberId;
+    let email = this.state.query 
 
     this.props.fetchUser(this.state.query)
-    .then(() => Object.values(this.props.users).forEach(obj => { 
-      if (obj.email == this.state.query) newMemberId = obj.id 
-    }))
-    .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
+      .then(() => Object.values(this.props.users).forEach(obj => { 
+        if (obj.email === email) newMemberId = obj.id 
+      }))
+      .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
+      .then(this.setState({query: ""})) //clear input
 
     setTimeout(() => (this.props.clearMessage(), this.props.clearErrors()), 3000)
-
   }
 
   handleInputChange(field){

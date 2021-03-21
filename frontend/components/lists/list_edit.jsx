@@ -20,35 +20,28 @@ class EditList extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitList(this.state)
-    let lists = document.getElementsByClassName('edit-l-title')
+    this.props.updateList(this.state)
+    let lists = document.getElementsByClassName('udate-list-container')
     for (let item of lists){
       if (item.style.display === 'flex'){
         item.style.display = 'none'
         item.parentElement.firstChild.style.display = 'flex'
+        item.parentElement.lastChild.style.display = 'flex'
       }
     }
   }
 
   render(e){
-    
-    let input = document.getElementsByClassName('list-edit-input')[0]
-    if (input !== undefined) {
-      document.getElementsByTagName('body')[0]
-      .addEventListener('click', (e) => {
-        if (e.currentTarget !== input)
-          this.handleSubmit(e)
-        })
-    }
 
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input type='text'
             value={this.state.title}
             onChange={this.update('title')}
             className='list-edit-input'
             placeholder='Update title'
           />
+          <button>Update</button>
       </form>
     )
   }

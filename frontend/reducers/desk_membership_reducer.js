@@ -4,7 +4,6 @@ import { CLEAR_MESSAGE } from '../actions/clear_errors_actions'
 const membershipReducer = (state = {}, action) => {
   Object.freeze(state)
   let nextState = Object.assign({}, state);
-
   switch(action.type){
     case CREATE_MEMBERSHIP:
       return action.payload;

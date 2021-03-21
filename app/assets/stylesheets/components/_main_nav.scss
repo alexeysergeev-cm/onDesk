@@ -45,7 +45,7 @@
   color: $white;
   background-color: transparent; 
   font-family: $caveat;
-  font-size: x-large;
+  font-size: 34px;
   width: 130px;
   height: 50px;
   display: flex;
@@ -61,6 +61,8 @@
  .float-right {
     float: right;
     display: block;
+    font-size: 25px;
+
     .btn {
       background-color: transparent;
       padding: 5px;
