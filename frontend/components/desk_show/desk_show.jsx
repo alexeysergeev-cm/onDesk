@@ -15,6 +15,7 @@ class DeskShow extends React.Component{
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this)
     this.clickInvite = this.clickInvite.bind(this)
     this.titleUpdate = this.titleUpdate.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
   }
 
   componentDidMount(){
@@ -45,9 +46,11 @@ class DeskShow extends React.Component{
       }
   }
 
-  clickDropDown() {
-    const $drop = document.getElementById('show-menu')
-    $drop.classList.toggle('active')
+  clickDropDown(e) {
+    if (e.target.innerText === "Show Menu"){
+      const $drop = document.getElementById('show-menu')
+      $drop.classList.toggle('active')
+    } 
   }
 
 
@@ -56,6 +59,12 @@ class DeskShow extends React.Component{
       .then(() => this.props.history.push('/'))
     
     setTimeout(() => this.props.clearErrors(), 5000)
+  }
+
+  closeMenu(e){
+    if (e.target.offsetParent.className === 'menu-dropdown'){
+      document.getElementById('show-menu').classList.remove('active')
+    }
   }
 
   render(){
@@ -88,6 +97,7 @@ class DeskShow extends React.Component{
             <span>Show Menu</span>
             <ul className='menu-dropdown' >
               <li>MENU</li>
+              <i className="fa fa-times" onClick={this.closeMenu}></i>
               <hr className="Solid" />
               <li>Settings (coming soon)</li>
               <hr className="Solid" />

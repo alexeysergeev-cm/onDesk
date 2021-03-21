@@ -66,7 +66,19 @@
   
   li{
     padding: 5px;
-    
+  }
+  hr:first-of-type{
+    width: 156px;
+  }
+
+  i:first-of-type{
+    float: right;
+    right: -5px;
+    top: -33px;
+    position: relative;
+    padding: 5px 5px 0 5px;
+    color: $silver;
+    cursor: pointer;
   }
 
   :first-child{

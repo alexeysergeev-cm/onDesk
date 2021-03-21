@@ -135,6 +135,16 @@ h3.h3-home{
     font-size: 17px;  
   }
 
+  i:first-of-type{
+    float: right;
+    right: -5px;
+    top: -33px;
+    position: relative;
+    padding: 5px 5px 0 5px;
+    color: $silver;
+    cursor: pointer;
+  }
+
   :last-child:hover {
     background-color: rgba($grey, 50%);
     border-radius: 5px;
