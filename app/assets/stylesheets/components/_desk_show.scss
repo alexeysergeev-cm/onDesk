@@ -288,14 +288,17 @@
 
 .udate-form-container{
   display: none;
-  width: 125px;
-  height: 65px;
+  // width: 125px;
+  // height: 65px;
 }
 
 .udate-form-container.show{
   display: block;
   z-index: 1;
-
+  padding: 5px 5px 0;
+  form {
+    display: flex;
+  }
 }
 
 .desk-edit-input{
@@ -304,6 +307,8 @@
   padding: 3px;
   margin-bottom: 5px;
   border-radius: 5px;
+  margin: 0 5px 4px;
+
 }
 
 .desk-edit-input:focus{
@@ -315,18 +320,18 @@
 }
 
 .edit-submit{
+  color: $blue-home;
   font-size: 13px;
   border-radius: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  
-  background: linear-gradient(to left, rgb(211, 211, 211) 50%, $green 50%) right;
-  background-size: 200%;
-  transition: .5s ease-out;
+  background-color: rgba(white, 50%);
+  transition: background-color 0.5s;
+  margin-top: 2px;
 }
 
 .edit-submit:hover{
-  background-position: left;
+  background-color: rgba(white, 100%);
 }
 
 
