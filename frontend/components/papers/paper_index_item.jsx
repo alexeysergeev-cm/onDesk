@@ -29,6 +29,13 @@ class PaperIndexItem extends React.Component{
   render(){
     const { title, id, description } = this.props.paper
     const { listId, openModal } = this.props
+
+    let descIcon;
+    if (description !== null && description !== ''){
+      descIcon = <i className="fa fa-align-left" aria-hidden="true" 
+                    style={{fontSize: '15px', padding: '5px 2px'}}></i>
+    }
+
     return(
       <>
         <div className='single-paper' onClick={this.clickPaperItem}>
@@ -47,11 +54,15 @@ class PaperIndexItem extends React.Component{
               <h5>Paper Actions</h5>
               <hr className="Solid"/>
               <div onClick={this.titleUpdate}>Update Title</div>
-              <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>Add Description</div>
+              <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
+                  Add Description
+              </div>
               <div onClick={() => this.props.deletePaper(id)}>Delete Paper</div>
             </div>
           </div>
-          
+        </div>
+        <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
+          {descIcon}
         </div>
       </>
     )
