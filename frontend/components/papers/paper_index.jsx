@@ -30,7 +30,6 @@ class PaperIndex extends React.Component{
             </div>      
           </div>
         ))}
-        {/* <PaperFormContainer /> */}
       </div>
     )
   }

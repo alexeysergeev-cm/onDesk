@@ -20,6 +20,7 @@ class EditPaper extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
+    e.stopPropagation();
     this.props.updatePaper(this.state)
     let lists = document.getElementsByClassName('paper-edit-container')
     for (let item of lists){

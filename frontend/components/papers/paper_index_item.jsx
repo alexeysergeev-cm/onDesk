@@ -7,22 +7,31 @@ class PaperIndexItem extends React.Component{
 
 
     this.titleUpdate = this.titleUpdate.bind(this)
+    this.clickPaperItem = this.clickPaperItem.bind(this)
   }
 
   titleUpdate(e){
+    e.stopPropagation();
     e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
     e.target.offsetParent.offsetParent.lastChild.style.display = 'none'
     e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'
     e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus()
   }
 
+  clickPaperItem(e){
+    const { title, id, description } = this.props.paper
+    const { listId, openModal } = this.props
+    if (e.currentTarget.children[1].style.display !== 'flex' && e.target.innerText !== "Delete Paper"){
+      openModal({'Add Description': [title, listId, id, description]})
+    } 
+  }
 
   render(){
     const { title, id, description } = this.props.paper
     const { listId, openModal } = this.props
     return(
       <>
-        <div className='single-paper' onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
+        <div className='single-paper' onClick={this.clickPaperItem}>
           <div className='paper-title'>
             {title}
           </div>
