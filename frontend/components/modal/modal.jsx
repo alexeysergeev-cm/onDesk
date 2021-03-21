@@ -10,13 +10,12 @@ function Modal({modal, closeModal}){
     return null;
   }
 
-
   //pass props if modal comes as object
   let title;
   let listId;
   let paperId;
   let description;
-  if (typeof modal !== String){
+  if (typeof modal !== "string"){
     let props = Object.values(modal)
     modal = Object.keys(modal)[0]
     title = props[0][0]

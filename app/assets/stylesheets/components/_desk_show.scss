@@ -45,7 +45,41 @@
   padding-right: 8px;
 }
 
+.menu-dropdown{
+  position: absolute;
+	display: none;
+	top: 30px;
+	right: 30px;
+	background-color: #fff;
+	border: 1px solid $silver;
+	border-radius: 3px;
+	padding: 10px;
+	width: 180px;
+	z-index: 1;
+	color: $dark-blue;
+	font-family: $san-serif;
+	text-align: left;
+	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
+	font-weight: initial;
+  font-size: 14px;
+  cursor: default;
 
+  li{
+    padding: 5px;
+    
+  }
+
+  :first-child{
+    text-align: center;
+    color: rgb(94, 108, 132);
+  }
+
+  :last-child:hover {
+    background-color: rgba($orange, 50%);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
 
 
 #show-menu{
@@ -58,10 +92,9 @@
   padding-right: 5px;
 }
 
-.desk-name-header-btn.active .home-dropdown{
+.desk-name-header-btn.active .menu-dropdown{
 	display: block;
-  width: 150px;
-  height: 200px;
+  width: 160px;
 }
 
 //----INVITE
@@ -82,7 +115,32 @@
   
 }
 
-.home-dropdown.invite.open{
+.invite-dropdown{
+  position: absolute;
+	display: none;
+	top: 30px;
+	background-color: #fff;
+	border: 1px solid $silver;
+	border-radius: 3px;
+	padding: 10px;
+	width: 180px;
+	z-index: 1;
+	color: $dark-blue;
+	font-family: $san-serif;
+	text-align: left;
+	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
+	font-weight: initial;
+  font-size: 14px;
+  cursor: default;
+  button{
+    box-shadow: 0px 1px;
+  }
+  button:hover{
+    background-color: rgba($blue-home, 20%);
+  }
+}
+
+.invite-dropdown.open{
 	display: block;
   width: 250px;
   height: auto;
@@ -253,3 +311,6 @@
 .edit-submit:hover{
   background-position: left;
 }
+
+
+
