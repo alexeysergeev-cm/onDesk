@@ -8,9 +8,17 @@ class Greeting extends React.Component{
     this.clickDropDown = this.clickDropDown.bind(this)
   }
 
-  clickDropDown(){
-    const $drop = document.getElementsByClassName('btn-logout')
-    $drop[0].classList.toggle('active')
+  clickDropDown(e){
+    if (e.target.classList.value === 'btn-logout' ){
+      const $drop = document.getElementsByClassName('btn-logout')
+      $drop[0].classList.toggle('active')
+    }
+  }
+
+  closeMenu(e){
+    if (e.target.offsetParent.className === "home-dropdown"){
+      document.getElementsByClassName('btn-logout')[0].classList.remove('active')
+    }
   }
 
   render(){
@@ -21,13 +29,15 @@ class Greeting extends React.Component{
     
 
     if (currentUser){
-      name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
+      let splitName = currentUser.username.split(' ')[0]
+      name = splitName[0].toUpperCase() + splitName.slice(1).toLowerCase()
       // debugger
       welcome = (
       <div className='btn-logout-home'>
           <button className="btn-logout" onClick={this.clickDropDown}>
             <ul className='home-dropdown' >
               <li>Welcome {name}</li> 
+              <i className="fa fa-times" onClick={this.closeMenu}></i>
               <li className='shadowed-text'>{currentUser.email}</li>
               <hr className="Solid"/>
               <li>Settings (coming soon)</li>
@@ -56,6 +66,7 @@ class Greeting extends React.Component{
             <div className='float-right-home'>
               <button className='add-desk' onClick={() => openModal('Create Desk')}>
                 <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                <h1>Add a desk</h1>
               </button>
               {welcome}
             </div>

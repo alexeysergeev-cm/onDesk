@@ -15,13 +15,13 @@ class DeskShow extends React.Component{
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this)
     this.clickInvite = this.clickInvite.bind(this)
     this.titleUpdate = this.titleUpdate.bind(this)
+    this.closeMenu = this.closeMenu.bind(this)
   }
 
   componentDidMount(){
     this.props.fetchDesk(this.props.deskId)
   }
 
-  //---titleUpdate
   titleUpdate(){
     let deskTitle = document.getElementsByClassName('desk-title');
     let updateForm = document.getElementsByClassName('udate-form-container');
@@ -29,25 +29,20 @@ class DeskShow extends React.Component{
     updateForm[0].classList.add('show')
   }
 
-
-  //--Invite DropDown
   clickInvite(e){
-    const $drop = document.getElementsByClassName('invite-dropdown')
-    const $xMark = document.getElementsByClassName('close-x invite')
-    if ($xMark && $drop[0].classList.contains('open')){
-      $drop[0].classList.remove('open')
-      return
+    e.stopPropagation();
+    let $dropInvite = document.getElementsByClassName('invite-dropdown')[0]
+
+    if (e.target.innerText === "Invite Another User" || e.target.offsetParent.classList.value === 'close-x invite'){
+      $dropInvite.classList.toggle('open')
     }
-    if (!$drop[0].classList.contains('open') ) {
-      $drop[0].classList.add('open')
-    } else {
-        $drop[0].classList.remove('open')
-      }
   }
 
-  clickDropDown() {
-    const $drop = document.getElementById('show-menu')
-    $drop.classList.toggle('active')
+  clickDropDown(e) {
+    if (e.target.innerText === "Show Menu"){
+      const $drop = document.getElementById('show-menu')
+      $drop.classList.toggle('active')
+    } 
   }
 
 
@@ -56,6 +51,12 @@ class DeskShow extends React.Component{
       .then(() => this.props.history.push('/'))
     
     setTimeout(() => this.props.clearErrors(), 5000)
+  }
+
+  closeMenu(e){
+    if (e.target.offsetParent.className === 'menu-dropdown'){
+      document.getElementById('show-menu').classList.remove('active')
+    }
   }
 
   render(){
@@ -88,6 +89,7 @@ class DeskShow extends React.Component{
             <span>Show Menu</span>
             <ul className='menu-dropdown' >
               <li>MENU</li>
+              <i className="fa fa-times" onClick={this.closeMenu}></i>
               <hr className="Solid" />
               <li>Settings (coming soon)</li>
               <hr className="Solid" />
@@ -98,9 +100,9 @@ class DeskShow extends React.Component{
 
     //-------invite Dropdown 
     let invite = (
-      <div className='invite-btn' id='show-invite' >
-        <div className="invite-text" id='show-invite' onClick={this.clickInvite}>
-          <span>Invite</span>
+      <div className='invite-btn' id='show-invite' onClick={this.clickInvite}>
+        <div className="invite-text" id='show-invite'>
+          <span>Invite Another User</span>
         </div>
         <ul className='invite-dropdown '>
           <div className='invite-pop-over'>
