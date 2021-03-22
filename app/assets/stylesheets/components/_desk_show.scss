@@ -257,10 +257,15 @@
     background-color: $light-grey;
 }
 
+.desk-errors-container{
+  position: absolute;
+  top: 50px;
+  left: 350px;
+}
 
 .desk-errors {
-  background-color: white;
-  color: red;
+  background-color: rgba(0, 0, 128, 50%);
+  color: rgba(red, 90%);
   width: 400px;
   height: auto;
   padding: auto;
