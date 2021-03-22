@@ -65,6 +65,7 @@ class Greeting extends React.Component{
             <div className='float-right-home'>
               <button className='add-desk' onClick={() => openModal('Create Desk')}>
                 <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+                <h1>Add a desk</h1>
               </button>
               {welcome}
             </div>
