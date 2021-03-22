@@ -34,12 +34,13 @@
   min-height: 20px;
   display: flex;
   justify-content: space-between;
+  word-break: break-all;
 }
 
 .list-extras{
   padding-top: 3px;
   height: 28px;
-
+  padding-left: 2px;
   
   .delete-list{
     display: none;
