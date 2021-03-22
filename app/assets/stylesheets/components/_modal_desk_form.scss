@@ -19,7 +19,7 @@
 //---------__DESK FORM
 .desk-form-container{
   position: relative;
-  top: 60px;
+  top: 150px;
   margin-bottom: 80px;
 }
 
@@ -91,3 +91,15 @@
    color: $white;
  }
 
+.desk-background{
+  padding: 5px 5px 5px 0;
+  display: flex;
+  max-width: 330px;
+  flex-wrap: wrap;
+  
+  img{
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 5px 0;
+  }
+}
