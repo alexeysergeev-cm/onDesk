@@ -122,21 +122,23 @@ class DeskShow extends React.Component{
         <div className='desk-header-container'>
           <GreetingContainer />
         </div>
-        <div className='desk-name-header'>
-          <div className='desk-name-header-btn'>
-            <div className='desk-title' onClick={this.titleUpdate}>
-              {title}
+        <div style={{width: '100%', display: 'block', position: 'absolute', top: '40px'}}>
+          <div className='desk-name-header'>
+            <div className='desk-name-header-btn'>
+              <div className='desk-title' onClick={this.titleUpdate}>
+                {title}
+              </div>
+              <div className='udate-form-container'>
+                <DeskEditContainer 
+                  deskId={deskId}
+                  currUserId={currUserId}
+                  clearErrors={this.props.clearErrors}
+                />
+              </div>
             </div>
-            <div className='udate-form-container'>
-              <DeskEditContainer 
-                deskId={deskId}
-                currUserId={currUserId}
-                clearErrors={this.props.clearErrors}
-              />
-            </div>
+            {invite}
+            {menu}
           </div>
-          {invite}
-          {menu}
         </div>
         <div className='desk-errors-container'>
           <div className='desk-errors'>
