@@ -1,11 +1,12 @@
 .list-index-container{
   display: flex;
   margin: 5px;
+  margin-top: 55px;
 }
 
 
 .list-wrapper{
-  width: 272px;
+  min-width: 272px;
   margin: 6px 4px;
   height: 100%;
   box-sizing: border-box;
@@ -79,7 +80,7 @@
 }
 
 .list-form-cont{ 
-  width: 272px;
+  min-width: 272px;
   margin: 6px 4px;
   height: 100%;
   box-sizing: border-box;
@@ -124,7 +125,8 @@
   max-height: 100%;
   position: relative;
   white-space: normal;
-
+  width: 272px;
+  
   input{
     font-size: 20px;
     padding: 9px 11px 16px;
