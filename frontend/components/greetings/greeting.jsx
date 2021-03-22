@@ -29,7 +29,8 @@ class Greeting extends React.Component{
     
 
     if (currentUser){
-      name = currentUser.username[0].toUpperCase() + currentUser.username.slice(1)
+      let splitName = currentUser.username.split(' ')[0]
+      name = splitName[0].toUpperCase() + splitName.slice(1).toLowerCase()
       // debugger
       welcome = (
       <div className='btn-logout-home'>
