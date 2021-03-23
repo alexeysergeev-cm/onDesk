@@ -6,6 +6,7 @@ class Greeting extends React.Component{
   constructor(props){
     super(props)
     this.clickDropDown = this.clickDropDown.bind(this)
+    this.updatePhoto = this.updatePhoto.bind(this)
   }
 
   clickDropDown(e){
@@ -21,6 +22,10 @@ class Greeting extends React.Component{
     }
   }
 
+  updatePhoto(){
+
+  }
+
   render(){
     const { logout, currentUser, email, openModal } = this.props;
     let welcome;
@@ -34,11 +39,17 @@ class Greeting extends React.Component{
       // debugger
       welcome = (
       <div className='btn-logout-home'>
-          <button className="btn-logout" onClick={this.clickDropDown}>
+          <button className="btn-logout" onClick={this.clickDropDown}>{name[0]}
             <ul className='home-dropdown' >
               <li>Welcome {name}</li> 
               <i className="fa fa-times" onClick={this.closeMenu}></i>
               <li className='shadowed-text'>{currentUser.email}</li>
+              <hr className="Solid"/>
+              <form onSubmit={this.updatePhoto} className='add-photo'>
+                <label>Choose profile photo</label>
+                <input type="file" />
+                <button>submit</button>
+              </form>
               <hr className="Solid"/>
               <li>Settings (coming soon)</li>
               <hr className="Solid"/>

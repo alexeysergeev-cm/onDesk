@@ -101,10 +101,13 @@ h3.h3-home{
   width: 32px;
   padding: 4px 8px;
   border: 1px solid transparent;
-  background-image: url('tori.gif');
+  background-color: $grey;
   border-radius: 100%;
   background-size: cover;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 255, 255);
 }
 
 .home-dropdown {
@@ -298,4 +301,21 @@ h3.h3-home{
     font-family: $san-serif;
     padding: 10px;
   }
+}
+
+
+.add-photo{
+  text-align: center;
+  font-size: 15px;
+
+  label{
+    font-size: 15px !important;
+  }
+
+  input{
+    font-size: 11px;
+    width: 160px;
+    padding: 6px 0;
+  }
+
 }
