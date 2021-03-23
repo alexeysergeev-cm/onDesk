@@ -33,26 +33,44 @@ class Greeting extends React.Component{
   }
 
   updatePhoto(e){
-    const formData = new FormData();
-    debugger
+    e.preventDefault();
+
+    let formData = new FormData();
     if (this.state.photoFile) {
-      formData.append('user[photo]', this.state.photoFile);
+      formData.append('user[photo]', this.state.photoFile)
     }
+
+
+
     $.ajax({
       url: `/api/users/${this.props.currentUser.id}`,
       method: "PATCH",
       data: formData,
       contentType: false,
       processData: false
+    }).then(updatedUser => {
+      this.props.updateUser(updatedUser)
     })
+
+    document.getElementsByClassName('btn-logout')[0].classList.remove('active')
   }
 
   componentDidMount(){
-    if (this.props.currentUser.photoUrl) {
+    if (this.props.photoUrl) {
         $($('.btn-logout'))[0].firstChild.remove()
-        $($('.btn-logout'))[0].style.backgroundImage = `url(${this.props.currentUser.photoUrl})`
+        $($('.btn-logout'))[0].style.backgroundImage = `url(${this.props.photoUrl})`
     } 
   }
+
+  componentDidUpdate(){
+    if ($($('.btn-logout'))[0].firstChild.tagName === 'DIV'){
+      $($('.btn-logout'))[0].firstChild.remove()
+      $($('.btn-logout'))[0].style.backgroundImage = `url(${this.props.photoUrl})`
+    } else {
+      $($('.btn-logout'))[0].style.backgroundImage = `url(${this.props.photoUrl})`
+    }
+  }
+
 
   render(){
     const { logout, currentUser, email, openModal } = this.props;
@@ -76,7 +94,7 @@ class Greeting extends React.Component{
                 <form onSubmit={this.updatePhoto} className='add-photo'>
                   <label>Choose profile photo</label>
                   <input type="file" onChange={this.handleFile}/>
-                  <button>submit</button>
+                  <input type="submit" value="Submit"/>
                 </form>
                 <hr className="Solid"/>
                 <li>Settings (coming soon)</li>

@@ -1,6 +1,6 @@
 <% if logged_in? %>
   
-  <% if current_user.photo %>
+  <% if current_user.photo.attached? %>
     <script type='text/javascript'>
       window.currentUser = {
               "id": <%= current_user.id %>,
