@@ -56,15 +56,16 @@ class DeskForm extends React.Component{
 
 
   render(){
-    let defaultBackground = [<div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2401x1600/203ad19e43893965eaf4bc367b1c0458/photo-1591567462181-19db8b0fd818.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1440x1920/de30dbd911cb5dd88f8130ab68b8119d/photo-1596710216028-6e11b9c1a5e6.jpg" alt=""/></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2398x1600/31c25173aff1c30215f1f11dc10c6dde/photo-1528932860067-7e2e27b3185f.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1288x1920/5454b070c19ef0cf77c3a2e0ba91e6f9/photo-1552472947-2abd68d0d927.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1920/9d2eead0ddc23a92d7e2e24576363205/photo-1602623056709-8a613a29940c.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1536x1920/b567216700fb2072ce3dbc3ec428bd88/photo-1552679699-dafca9d2c58c.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/83d0104570a205a798ea33a5c6fcc9e3/photo-1528779794993-d2f7f51a53a4.jpg" /></div>,
-                            <div><img src="https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1536x1920/7fd0c6004a901817109fb465a92a07fd/photo-1552671641-8cbdd17c492e.jpg" /></div>,
-                            <div><img src="https://d2k1ftgv7pobq7.cloudfront.net/images/backgrounds/cosmos/medium.jpg"/></div>]
+    let defaultBackground = [<img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/water.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/space.jpg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/skyscraper.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/shark.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ocean.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains1.jpeg"/>,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ggbridge.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/forest.jpeg" />]
 
     return(
       <div className='desk-form-container'>
@@ -81,7 +82,9 @@ class DeskForm extends React.Component{
             </div>
           </div>
           <div className="desk-background" onClick={this.chooseBackground}>
-            {defaultBackground}
+            {defaultBackground.map((pic, i) => (
+              <div key={i}>{pic}</div>
+            ))}
           </div>
           <input type="submit" className='desk-submit' value={this.props.formType}/>
         </form>

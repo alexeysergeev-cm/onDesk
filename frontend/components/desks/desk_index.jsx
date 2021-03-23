@@ -79,7 +79,7 @@ class DeskIndex extends React.Component{
   render(){
     const { desks } = this.props
 
-    
+    // debugger
     if (!desks) return null;
 
     
@@ -108,7 +108,7 @@ class DeskIndex extends React.Component{
           <div className='desk-page'>
             {desks.map(desk => (
               <Link key={desk.id} to={`/${desk.id}/deskshow`}> 
-              <span className='desk-tile'>
+              <span className='desk-tile' style={{backgroundImage: `url(${desk.background_picture})`}}>
                 <div className='desk-tile-details'>
                   <DeskIndexItem 
                   desk={desk}
@@ -121,7 +121,7 @@ class DeskIndex extends React.Component{
           <div className='desk-page-projects'>
             {this.state.projects.map(desk => (
               <Link key={desk.id} to={`/${desk.id}/deskshow`}> 
-              <span className='desk-tile'>
+              <span className='desk-tile' style={{backgroundImage: `url(${desk.background_picture})`}}>
                 <div className='desk-tile-details'>
                   <DeskIndexItem 
                   desk={desk}

@@ -5,9 +5,7 @@ class Api::DesksController < ApplicationController
   end
 
   def create
-    debugger
     @desk = current_user.desks.new(desk_params)
-    debugger
     if @desk.save 
       render :show
     else

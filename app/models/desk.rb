@@ -14,5 +14,5 @@ class Desk < ApplicationRecord
     source: :papers,
     dependent: :destroy
 
-  has_one_attached :background_picture
+  # has_one_attached :background_picture
 end
