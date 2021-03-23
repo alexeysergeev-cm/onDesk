@@ -19,7 +19,7 @@
 //---------__DESK FORM
 .desk-form-container{
   position: relative;
-  top: 60px;
+  top: 150px;
   margin-bottom: 80px;
 }
 
@@ -28,7 +28,7 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/2dcfe02cc44fac3aaca8996f33e8cc43/photo-1528920304568-7aa06b3dda8b.jpg');
+  background-image: url('https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg');
   background-size: cover;
   background-position: 50%;
   border-radius: 3px;
@@ -91,3 +91,27 @@
    color: $white;
  }
 
+.desk-background{
+  padding: 5px 5px 5px 0;
+  display: flex;
+  max-width: 330px;
+  flex-wrap: wrap;
+  
+  div{
+    height: 55px;
+  }
+
+  img{
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 5px 0;
+  }
+
+  i{
+    position: relative;
+    z-index: 1;
+    top: -38px;
+    left: 18px;
+    color: rgb(240, 248, 255);
+  }
+}

@@ -6,11 +6,11 @@ class DeskForm extends React.Component{
     super(props)
     this.state = {
       title: '',
-      id: ''
+      background_picture: '', 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
-
+    this.chooseBackground = this.chooseBackground.bind(this)
   }
 
   handleSubmit(e){
@@ -33,7 +33,40 @@ class DeskForm extends React.Component{
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
+  componentDidMount(){
+    let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
+    let defaultItem = $('.desk-background').children()[0]
+    $(defaultItem).append(check)
+  }
+
+
+  chooseBackground(e){
+    let allPics = e.target.parentElement.parentElement.children
+    for (let pic of allPics) {
+      if (pic.children.length > 1){
+        pic.lastElementChild.remove()
+      }
+    }
+    let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
+    $(e.target.parentElement).append(check)
+    document.getElementsByClassName('desk-form-box')[0].style.backgroundImage = `url(${e.target["currentSrc"]})`
+    this.setState({background_picture: e.target["currentSrc"]})
+  }
+
+
+
   render(){
+    let defaultBackground = [<img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/water.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/space.jpg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/skyscraper.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/shark.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ocean.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains1.jpeg"/>,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ggbridge.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/forest.jpeg" />]
+
     return(
       <div className='desk-form-container'>
         <form onSubmit={this.handleSubmit}>
@@ -47,6 +80,11 @@ class DeskForm extends React.Component{
                 />
               <div onClick={this.props.closeModal} className="close-x"><i className="fa fa-times"></i></div>
             </div>
+          </div>
+          <div className="desk-background" onClick={this.chooseBackground}>
+            {defaultBackground.map((pic, i) => (
+              <div key={i}>{pic}</div>
+            ))}
           </div>
           <input type="submit" className='desk-submit' value={this.props.formType}/>
         </form>
