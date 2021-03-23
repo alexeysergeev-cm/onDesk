@@ -16,7 +16,7 @@ class Greeting extends React.Component{
   }
 
   clickDropDown(e){
-    if (e.target.classList.value === 'btn-logout' ){
+    if (e.target.classList.value === 'btn-logout' || e.target.parentElement.className === "btn-logout"){
       const $drop = document.getElementsByClassName('btn-logout')
       $drop[0].classList.toggle('active')
     }
@@ -67,7 +67,7 @@ class Greeting extends React.Component{
       welcome = (
         <div className='btn-logout-home'>
             <button className="btn-logout" onClick={this.clickDropDown}>
-              <div>{name[0]}</div>
+              <div onClick={this.clickDropDown}>{name[0]}</div>
               <ul className='home-dropdown' >
                 <li>Welcome {name}</li> 
                 <i className="fa fa-times" onClick={this.closeMenu}></i>
