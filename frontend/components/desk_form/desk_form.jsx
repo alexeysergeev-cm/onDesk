@@ -6,7 +6,7 @@ class DeskForm extends React.Component{
     super(props)
     this.state = {
       title: '',
-      id: ''
+      background_picture: '', 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
@@ -15,9 +15,6 @@ class DeskForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    // const formData = new formData()
-    // formData.append()
-
     this.props.createDesk(this.state)
       .then(this.props.closeModal)
       .then(() => this.props.history.push(`/${this.props.lastId}/deskshow`))
@@ -53,6 +50,7 @@ class DeskForm extends React.Component{
     let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
     $(e.target.parentElement).append(check)
     document.getElementsByClassName('desk-form-box')[0].style.backgroundImage = `url(${e.target["currentSrc"]})`
+    this.setState({background_picture: e.target["currentSrc"]})
   }
 
 

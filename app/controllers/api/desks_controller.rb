@@ -5,7 +5,9 @@ class Api::DesksController < ApplicationController
   end
 
   def create
+    debugger
     @desk = current_user.desks.new(desk_params)
+    debugger
     if @desk.save 
       render :show
     else
@@ -42,7 +44,7 @@ class Api::DesksController < ApplicationController
 
   private
   def desk_params
-    params.require(:desk).permit(:title, :author_id)
+    params.require(:desk).permit(:title, :author_id, :background_picture)
   end
 
 end
