@@ -62,6 +62,16 @@ class DeskShow extends React.Component{
   render(){
     const { title, deskErr, deskId, currUserId } = this.props
 
+    let background;
+    if (this.props.desk[deskId]){
+      if (this.props.desk[deskId].background_picture){
+        background = this.props.desk[deskId].background_picture
+      } else {
+        debugger
+        background = "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg"
+      }
+    }
+
     //----errors
     let error = deskErr[0];
     if (deskErr.length) {
@@ -118,7 +128,7 @@ class DeskShow extends React.Component{
     )
   
     return(
-      <div className='desk-show-container'>
+      <div className='desk-show-container' style={{backgroundImage: `url(${background})`}}>
         <div className='desk-header-container'>
           <GreetingContainer />
         </div>
