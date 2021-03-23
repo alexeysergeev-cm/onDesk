@@ -38,3 +38,10 @@ export const logout = () => dispatch => (
     .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
 )
 
+
+export const update = (user) => dispatch => (
+  dispatch(receiveCurrentUser(user))
+)
+
+
+

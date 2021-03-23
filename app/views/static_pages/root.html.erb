@@ -1,11 +1,25 @@
 <% if logged_in? %>
-  <script type='text/javascript'>
-    window.currentUser = {
-            "id": <%= current_user.id %>,
-            "username": "<%= current_user.username %>",
-            "email": "<%= current_user.email %>"
-          }
-  </script>
+  
+  <% if current_user.photo.attached? %>
+    <script type='text/javascript'>
+      window.currentUser = {
+              "id": <%= current_user.id %>,
+              "username": "<%= current_user.username %>",
+              "email": "<%= current_user.email %>",
+              "photoUrl": "<%= url_for(current_user.photo) %>"
+      }
+    </script>
+  <% else %>
+    <script type='text/javascript'>
+      window.currentUser = {
+              "id": <%= current_user.id %>,
+              "username": "<%= current_user.username %>",
+              "email": "<%= current_user.email %>",
+      }
+    </script>
+  <% end %>
+  
+  
 <% end %>
 
 

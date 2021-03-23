@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :lists, 
     foreign_key: :author_id
 
+  has_one_attached :photo
   #SPIRE
 
   def self.find_by_credentials(email, pw)
