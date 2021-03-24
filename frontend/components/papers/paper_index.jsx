@@ -24,6 +24,7 @@ class PaperIndex extends React.Component{
   }
 
   handleOnDragEnd(result) {
+    if (!result.destination) return;
     // console.log(result)
     // debugger
     const items = this.state.paperOrder;
