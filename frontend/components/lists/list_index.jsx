@@ -3,6 +3,7 @@ import ListIndexItem from './list_index_item'
 import ListFormContainer from './list_form_container'
 
 class ListIndex extends React.Component{
+  
 
   render(){
     const { lists, deskId } = this.props
