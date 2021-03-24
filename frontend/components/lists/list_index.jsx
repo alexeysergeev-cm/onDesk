@@ -52,7 +52,7 @@ class ListIndex extends React.Component{
                         {this.props.desk.list_order.map((listId, i) => {
                           if (lists[listId]){
                             return (
-                               <Draggable key={i} draggableId={listId} index={i}>
+                               <Draggable key={lists[listId].id} draggableId={listId} index={i}>
                                   {(provided) => (
                                     <div className='list-wrapper' 
                                       ref={provided.innerRef}{...provided.draggableProps} {...provided.dragHandleProps}>

@@ -21,7 +21,8 @@ class Api::DesksController < ApplicationController
   def update
     # debugger
     @desk = Desk.find_by(id: params[:id])
-    if @desk && current_user.id == @desk.author_id
+    # if @desk && current_user.id == @desk.author_id        //remove only desk author can update
+    if @desk
       if @desk.update(desk_params)
         render :show
       end

@@ -29,10 +29,9 @@ class PaperIndex extends React.Component{
             {(provided) => (
               <ul className="paper-droppable-container" 
                 {...provided.droppableProps} ref={provided.innerRef}>
-
                 {organizedPapers.map((paper, i) => {
                     return (
-                      <Draggable key={i} draggableId={(paper.id).toString()} index={i}>
+                      <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
                         {(provided) => (
                           <div className='paper-wrapper' 
                             ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
