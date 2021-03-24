@@ -8,7 +8,7 @@ class ListForm extends React.Component{
     super(props)
     this.state = {
       title: '',
-      desk_id: '',
+      desk_id: this.props.deskId,
       author_id: this.props.currentUserId
     }
 
@@ -24,14 +24,19 @@ class ListForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    const deskId = parseInt(this.props.deskId)
     let g = 'created'
+    let desk = this.props.desk
 
-    this.setState({desk_id: deskId}, function(){
-      this.props.createList(this.state)
-        .then(() => this.handleClick(g))
-        .then(() => this.setState({title: ''}))
-    })
+    this.props.createList(this.state)
+    .then((newList) => {
+        debugger
+        this.props.updateDesk({
+                id: this.props.deskId,
+                list_order: desk.list_order.concat([newList.list.id.toString()])
+            })
+      })
+      .then(() => this.handleClick(g))
+      .then(() => this.setState({title: ''}))
   }
 
   handleClick(e){

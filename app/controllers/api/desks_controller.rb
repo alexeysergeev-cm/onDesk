@@ -19,6 +19,7 @@ class Api::DesksController < ApplicationController
   end
 
   def update
+    debugger
     @desk = Desk.find_by(id: params[:id])
     if @desk && current_user.id == @desk.author_id
       if @desk.update(desk_params)
@@ -42,7 +43,7 @@ class Api::DesksController < ApplicationController
 
   private
   def desk_params
-    params.require(:desk).permit(:title, :author_id, :background_picture)
+    params.require(:desk).permit(:title, :author_id, :background_picture, list_order: [])
   end
 
 end
