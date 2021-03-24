@@ -1,7 +1,7 @@
 import React from 'react'
 // import PaperFormContainer from './paper_form_container'
 import PaperIndexItem from './paper_index_item'
-
+import { DragDropContext, Droppable, Draggable  } from 'react-beautiful-dnd';
 
 class PaperIndex extends React.Component{
 
@@ -17,20 +17,34 @@ class PaperIndex extends React.Component{
     })
 
     return(
-      <div className="paper-index-container">
-        {organizedPapers.map(paper => (
-          <div key={paper.id} className='paper-wrapper'>
-            <div className='paper-item'>
-              <PaperIndexItem
-                paper={paper}
-                listId={list_id}
-                deletePaper={this.props.deletePaper}
-                openModal={openModal}
-                />
-            </div>      
-          </div>
-        ))}
-      </div>
+      <DragDropContext>
+        <div className="paper-index-container">
+          <Droppable droppableId={list_id.toString()}>
+            {(provided) => (
+              <ul className="paper-droppable-container" 
+                {...provided.droppableProps} ref={provided.innerRef}>
+
+                {organizedPapers.map((paper, i) => (
+                  <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
+                    {(provided) => (
+                      <div className='paper-wrapper' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <div className='paper-item'>
+                          <PaperIndexItem
+                            paper={paper}
+                            listId={list_id}
+                            deletePaper={this.props.deletePaper}
+                            openModal={openModal}
+                            />
+                        </div>      
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+              </ul>
+            )}
+          </Droppable >
+        </div>
+      </DragDropContext>
     )
   }
 }
