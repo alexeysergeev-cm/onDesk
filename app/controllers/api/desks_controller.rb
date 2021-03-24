@@ -19,7 +19,7 @@ class Api::DesksController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     @desk = Desk.find_by(id: params[:id])
     if @desk && current_user.id == @desk.author_id
       if @desk.update(desk_params)

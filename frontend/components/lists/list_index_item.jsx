@@ -68,6 +68,7 @@ class ListIndexItem extends React.Component{
             {/* {form} */}
             <PaperForm 
               listId={id}
+              list={this.props.list}
             />
           </div>
         </div>

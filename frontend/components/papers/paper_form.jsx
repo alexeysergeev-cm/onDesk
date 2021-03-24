@@ -3,10 +3,9 @@ import React from 'react'
 class PaperForm extends React.Component{
   constructor(props){
     super(props)
-    super(props)
     this.state = {
       title: '',
-      list_id: '',
+      list_id: this.props.listId,
       author_id: this.props.currentUserId
     }
 
@@ -42,13 +41,20 @@ class PaperForm extends React.Component{
     let listName = e.target.parentElement.parentElement.parentElement.parentElement.firstChild.innerText
     let listId = this.props.listId
 
+    let list = this.props.list
+    let updateList = this.props.updateList
     let g = 'created'
-   
-    this.setState({list_id: listId}, function(){
-      this.props.createPaper(this.state)
-        .then(() => this.handleClick(g))
-        .then(() => this.setState({title: ''}))
-    })
+    debugger
+    this.props.createPaper(this.state)
+      .then((newPaper) => {
+          debugger
+          updateList({
+                  id: listId,
+                  paper_order: list.paper_order.concat([newPaper.paper.id.toString()])
+              })
+        })
+      .then(() => this.handleClick(g))
+      .then(() => this.setState({title: ''}))
   }
 
   render(){
