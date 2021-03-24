@@ -6,35 +6,33 @@ import { DragDropContext, Droppable, Draggable  } from 'react-beautiful-dnd';
 class ListIndex extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      paperOrder: []
-    }
 
     this.handleOnDragEnd = this.handleOnDragEnd.bind(this)
   }
 
   handleOnDragEnd(result) {
-    // debugger
     if (!result.destination) return;
-    // console.log(result)
 
     if (result.type === "list"){
       const deskId = this.props.desk.id
       const items = this.props.desk.list_order
       const [reorderedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 0, reorderedItem);
-      debugger
       this.props.updateDesk({
         id: deskId,
         list_order: items
       })
-    }
-
-    const items = this.state.paperOrder;
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-
-    this.setState({paperOrder: items})
+    } else if (result.type === "paper"){
+      const papers = this.props.lists[result.source.droppableId].paper_order
+      // debugger
+      const [reorderedItem] = papers.splice(result.source.index, 1);
+      papers.splice(result.destination.index, 0, reorderedItem);
+      // debugger
+      this.props.updateList({
+        id: result.source.droppableId,
+        paper_order: papers
+      })
+    } 
   }
 
   render(){
@@ -63,6 +61,8 @@ class ListIndex extends React.Component{
                                                   list={lists[listId]}
                                                   deskId={deskId}
                                                   deleteList={this.props.deleteList}
+                                                  updateList={this.props.updateList}
+                                                  desk={desk}
                                           />
                                       </div>      
                                     </div>   

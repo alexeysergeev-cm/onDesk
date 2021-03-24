@@ -11,7 +11,6 @@ class Api::ListsController < ApplicationController
   end
 
   def update
-    debugger
     @list = List.find_by(id: params[:id])
     # if @list && current_user.id == @list.author_id        //remove author only can update
     if @list 
@@ -37,7 +36,7 @@ class Api::ListsController < ApplicationController
 
   private
   def list_params
-    params[:list][:paper_order] = [] if params[:list][:paper_order] == nil
+    # params[:list][:paper_order] = [] if params[:list][:paper_order] == nil
     params.require(:list).permit(:title, :desk_id, :author_id, paper_order: [])
   end
 end

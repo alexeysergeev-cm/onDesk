@@ -33,7 +33,7 @@ class ListIndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.list
-    const { deskId } = this.props
+    const { deskId, updateList, desk } = this.props
     return(
       <>
         <div className='list-title-cont'>
@@ -58,6 +58,9 @@ class ListIndexItem extends React.Component{
         </div>
         <PaperIndex 
           list_id={id}
+          updateList={updateList}
+          list={this.props.list}
+          desk={desk}
         />
         <div className='open-paper-composer'>
           <span className="paper-new-click" onClick={this.handleClick}>

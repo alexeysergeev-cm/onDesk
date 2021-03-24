@@ -44,10 +44,8 @@ class PaperForm extends React.Component{
     let list = this.props.list
     let updateList = this.props.updateList
     let g = 'created'
-    debugger
     this.props.createPaper(this.state)
       .then((newPaper) => {
-          debugger
           updateList({
                   id: listId,
                   paper_order: list.paper_order.concat([newPaper.paper.id.toString()])

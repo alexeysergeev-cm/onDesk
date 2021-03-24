@@ -8,43 +8,47 @@ class PaperIndex extends React.Component{
 
   render(){
     const { papers, list_id, openModal } = this.props
-    if (!papers) return null
 
-
+    if (!papers) return null    
+  
     let organizedPapers = []; 
-    this.props.papers.forEach(paper => {
-      if (paper.list_id === this.props.list_id){
-        organizedPapers.push(paper)
-      }
+    this.props.list.paper_order.forEach(paperId =>{
+
+        if (papers[paperId]){
+          if (papers[paperId].list_id === this.props.list_id){
+            organizedPapers.push(papers[paperId])
+          }
+        }
     })
 
 
-    
-    
-  
     return(
       <div className="paper-index-container">
-          <Droppable droppableId={list_id.toString()}>
+          <Droppable droppableId={(this.props.list_id).toString()}
+                          type="paper">
             {(provided) => (
               <ul className="paper-droppable-container" 
                 {...provided.droppableProps} ref={provided.innerRef}>
 
-                {organizedPapers.map((paper, i) => (
-                  <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
-                    {(provided) => (
-                      <div className='paper-wrapper' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                        <div className='paper-item'>
-                          <PaperIndexItem
-                            paper={paper}
-                            listId={list_id}
-                            deletePaper={this.props.deletePaper}
-                            openModal={openModal}
-                            />
-                        </div>      
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
+                {organizedPapers.map((paper, i) => {
+                    return (
+                      <Draggable key={i} draggableId={(paper.id).toString()} index={i}>
+                        {(provided) => (
+                          <div className='paper-wrapper' 
+                            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                            <div className='paper-item'>
+                              <PaperIndexItem
+                                paper={paper}
+                                listId={list_id}
+                                deletePaper={this.props.deletePaper}
+                                openModal={openModal}
+                                />
+                            </div>      
+                          </div>
+                        )}
+                      </Draggable>
+                    )
+                 })}
                 {provided.placeholder}
               </ul>
             )}
