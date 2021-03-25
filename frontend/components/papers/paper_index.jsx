@@ -47,7 +47,6 @@ class PaperIndex extends React.Component{
                                 snapshot.isDragging,
                                 provided.draggableProps.style
                               )}
-                              // isDragging={snapshot.isDragging}
                             >
                               <div className='paper-item'>
                                 <PaperIndexItem

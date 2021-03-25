@@ -14,6 +14,7 @@ class ListIndex extends React.Component{
     if (!result.destination) return;
 
     if (result.type === "list"){
+
       const deskId = this.props.desk.id
       const items = this.props.desk.list_order
       const author_id = this.props.desk.list_order
@@ -24,7 +25,9 @@ class ListIndex extends React.Component{
         list_order: items,
         author_id: author_id,
       })
+
     } else if (result.type === "paper"){
+
       if (result.source.droppableId === result.destination.droppableId){
         const papers = this.props.lists[result.source.droppableId].paper_order
         const [reorderedItem] = papers.splice(result.source.index, 1);
@@ -33,9 +36,11 @@ class ListIndex extends React.Component{
           id: result.source.droppableId,
           paper_order: papers
         })
+
       } else {
+
         const startList = this.props.lists[result.source.droppableId].paper_order
-        startList.splice(result.source.index, 0);
+        startList.splice(result.source.index, 1);
          this.props.updateList({
           id: result.source.droppableId,
           paper_order: startList
