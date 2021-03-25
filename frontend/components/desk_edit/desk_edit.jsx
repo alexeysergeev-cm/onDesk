@@ -6,7 +6,7 @@ class EditDesk extends React.Component{
     this.state = {
       title: '',
       id: this.props.deskId,
-      author_id: this.props.currUserId
+      // author_id: this.props.currUserId
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
@@ -30,8 +30,6 @@ class EditDesk extends React.Component{
 
 
   render(){
-    // const { desk, formType, submitEvent } = this.props;
-    // if (!desk) return null;
     return(
       <form onSubmit={this.handleSubmit}>
         <div className='update-desk-container show'>

@@ -14,12 +14,11 @@ class Api::DesksController < ApplicationController
   end
 
   def show
-    @desk = Desk.includes(:lists, :papers).find(params[:id])
+    @desk = Desk.includes(:lists, :papers).find_by(id: params[:id])
     # debugger
   end
 
   def update
-    # debugger
     @desk = Desk.find_by(id: params[:id])
     # if @desk && current_user.id == @desk.author_id        //remove only desk author can update
     if @desk
@@ -44,7 +43,6 @@ class Api::DesksController < ApplicationController
 
   private
   def desk_params
-    params[:desk][:list_order] = [] if params[:desk][:list_order] == nil
     params.require(:desk).permit(:title, :author_id, :background_picture, list_order: [])
   end
 

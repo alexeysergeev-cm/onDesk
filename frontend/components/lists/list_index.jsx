@@ -16,11 +16,13 @@ class ListIndex extends React.Component{
     if (result.type === "list"){
       const deskId = this.props.desk.id
       const items = this.props.desk.list_order
+      const author_id = this.props.desk.list_order
       const [reorderedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 0, reorderedItem);
       this.props.updateDesk({
         id: deskId,
-        list_order: items
+        list_order: items,
+        author_id: author_id,
       })
     } else if (result.type === "paper"){
       if (result.source.droppableId === result.destination.droppableId){
