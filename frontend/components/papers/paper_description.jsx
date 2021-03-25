@@ -1,4 +1,6 @@
 import React from 'react';
+import CommentsIndexContainer from '../comments/comment_index_container'
+
 
 class PaperDescription extends React.Component{
 
@@ -32,13 +34,17 @@ class PaperDescription extends React.Component{
         <h1>Description</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <textarea name="description" id="description" cols="50" rows="20" 
+            <textarea name="description" id="description" cols="50" rows="10" 
                 value={this.state.description}
                 onChange={this.update('description')}
               ></textarea>
           </div>
           <button>Save</button>
         </form>
+        <CommentsIndexContainer 
+                    paperId={this.props.paperId}
+                    authorId={this.props.currUserId}
+        />
       </div>
     )
   }

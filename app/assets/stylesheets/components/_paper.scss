@@ -165,11 +165,14 @@
   font-family: $san-serif;
   border-radius: 5px;
 
-  h1{
-    padding: 30px 5px 0 5px;
+  h1:first-child{
+    font-size: 22px;
+    font-family: sans-serif;
+    text-align: start;  
+    padding: 30px 0 5px 37px;
   }
 
-  div{
+  div:first-child{
     border: 1px solid rgb(33, 107, 165);
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
