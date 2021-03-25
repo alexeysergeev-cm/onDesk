@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 import PaperIndexItem from './paper_index_item'
 import { DragDropContext, Droppable, Draggable  } from 'react-beautiful-dnd';
 
+
+
+const getItemStyle = (isDragging, draggableStyle) => ({
+  ...draggableStyle,
+  background: isDragging ? 'lightgreen' : 'white',    
+});
+
 class PaperIndex extends React.Component{
   
 
@@ -10,10 +17,10 @@ class PaperIndex extends React.Component{
     const { papers, list_id, openModal } = this.props
 
     if (!papers) return null    
-  
-    let organizedPapers = []; 
-    this.props.list.paper_order.forEach(paperId =>{
 
+
+    let organizedPapers = []; 
+    this.props.list.paper_order.forEach(paperId => {
         if (papers[paperId]){
           if (papers[paperId].list_id === this.props.list_id){
             organizedPapers.push(papers[paperId])
@@ -21,19 +28,27 @@ class PaperIndex extends React.Component{
         }
     })
 
-
     return(
-      <Droppable droppableId={(this.props.list_id).toString()}
+      <Droppable droppableId={(list_id).toString()}
               type="paper">
               {(provided) => (
                 <div className="paper-index-container"
-                {...provided.droppableProps} ref={provided.innerRef}>
+                    {...provided.droppableProps} ref={provided.innerRef}>
+
                   {organizedPapers.map((paper, i) => {
                       return (
                         <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
-                          {(provided) => (
+                          {(provided, snapshot) => (
                             <div className='paper-wrapper' 
-                              ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              ref={provided.innerRef} 
+                              style={getItemStyle(
+                                snapshot.isDragging,
+                                provided.draggableProps.style
+                              )}
+                              // isDragging={snapshot.isDragging}
+                            >
                               <div className='paper-item'>
                                 <PaperIndexItem
                                   paper={paper}
