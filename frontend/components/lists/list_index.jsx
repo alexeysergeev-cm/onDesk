@@ -23,15 +23,35 @@ class ListIndex extends React.Component{
         list_order: items
       })
     } else if (result.type === "paper"){
-      const papers = this.props.lists[result.source.droppableId].paper_order
-      // debugger
-      const [reorderedItem] = papers.splice(result.source.index, 1);
-      papers.splice(result.destination.index, 0, reorderedItem);
-      // debugger
-      this.props.updateList({
-        id: result.source.droppableId,
-        paper_order: papers
-      })
+      if (result.source.droppableId === result.destination.droppableId){
+        const papers = this.props.lists[result.source.droppableId].paper_order
+        const [reorderedItem] = papers.splice(result.source.index, 1);
+        papers.splice(result.destination.index, 0, reorderedItem);
+        this.props.updateList({
+          id: result.source.droppableId,
+          paper_order: papers
+        })
+      } else {
+        const startList = this.props.lists[result.source.droppableId].paper_order
+        startList.splice(result.source.index, 0);
+         this.props.updateList({
+          id: result.source.droppableId,
+          paper_order: startList
+        })
+
+        const finishList = this.props.lists[result.destination.droppableId].paper_order
+        finishList.splice(result.destination.index, 0, result.draggableId);
+         this.props.updateList({
+          id: result.destination.droppableId,
+          paper_order: finishList
+        })
+
+        // debugger
+        this.props.updatePaper({
+          id: this.props.papers[result.draggableId].id,
+          list_id: result.destination.droppableId
+        })
+      }
     } 
   }
 

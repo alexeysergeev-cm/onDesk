@@ -44,6 +44,7 @@ class Api::DesksController < ApplicationController
 
   private
   def desk_params
+    params[:desk][:list_order] = [] if params[:desk][:list_order] == nil
     params.require(:desk).permit(:title, :author_id, :background_picture, list_order: [])
   end
 

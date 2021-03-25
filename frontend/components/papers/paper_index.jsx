@@ -23,36 +23,34 @@ class PaperIndex extends React.Component{
 
 
     return(
-      <div className="paper-index-container">
-          <Droppable droppableId={(this.props.list_id).toString()}
-                          type="paper">
-            {(provided) => (
-              <ul className="paper-droppable-container" 
+      <Droppable droppableId={(this.props.list_id).toString()}
+              type="paper">
+              {(provided) => (
+                <div className="paper-index-container"
                 {...provided.droppableProps} ref={provided.innerRef}>
-                {organizedPapers.map((paper, i) => {
-                    return (
-                      <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
-                        {(provided) => (
-                          <div className='paper-wrapper' 
-                            ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                            <div className='paper-item'>
-                              <PaperIndexItem
-                                paper={paper}
-                                listId={list_id}
-                                deletePaper={this.props.deletePaper}
-                                openModal={openModal}
-                                />
-                            </div>      
-                          </div>
-                        )}
-                      </Draggable>
-                    )
-                 })}
-                {provided.placeholder}
-              </ul>
-            )}
-          </Droppable >
-      </div>
+                  {organizedPapers.map((paper, i) => {
+                      return (
+                        <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
+                          {(provided) => (
+                            <div className='paper-wrapper' 
+                              ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                              <div className='paper-item'>
+                                <PaperIndexItem
+                                  paper={paper}
+                                  listId={list_id}
+                                  deletePaper={this.props.deletePaper}
+                                  openModal={openModal}
+                                  />
+                              </div>      
+                            </div>
+                          )}
+                        </Draggable>
+                      )
+                  })}
+                  {provided.placeholder}
+                </div>
+              )}
+      </Droppable >
     )
   }
 }

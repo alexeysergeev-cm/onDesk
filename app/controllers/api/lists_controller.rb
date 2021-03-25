@@ -36,7 +36,7 @@ class Api::ListsController < ApplicationController
 
   private
   def list_params
-    # params[:list][:paper_order] = [] if params[:list][:paper_order] == nil
+    params[:list][:paper_order] = [] if params[:list][:paper_order] == nil
     params.require(:list).permit(:title, :desk_id, :author_id, paper_order: [])
   end
 end
