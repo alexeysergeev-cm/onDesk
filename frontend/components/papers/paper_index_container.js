@@ -4,7 +4,6 @@ import { deletePaper } from '../../actions/paper_actions'
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
-  // debugger
   return ({
     papers: state.entities.papers
   })

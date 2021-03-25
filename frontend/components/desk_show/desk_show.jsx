@@ -67,7 +67,6 @@ class DeskShow extends React.Component{
       if (this.props.desk[deskId].background_picture){
         background = this.props.desk[deskId].background_picture
       } else {
-        // debugger
         background = "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg"
       }
     }

@@ -5,7 +5,7 @@ class Api::DesksController < ApplicationController
   end
 
   def create
-    @desk = current_user.desks.new(desk_params)
+    @desk = Desk.new(desk_params)
     if @desk.save 
       render :show
     else
@@ -15,12 +15,10 @@ class Api::DesksController < ApplicationController
 
   def show
     @desk = Desk.includes(:lists, :papers).find_by(id: params[:id])
-    # debugger
   end
 
   def update
     @desk = Desk.find_by(id: params[:id])
-    # debugger
     # if @desk && current_user.id == @desk.author_id        //remove only desk author can update
     if @desk
       if @desk.update(desk_params)

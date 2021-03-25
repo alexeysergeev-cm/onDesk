@@ -7,7 +7,9 @@ import { closeModal } from '../../actions/modal_actions';
 const mSTP = state => {
   let keys = Object.keys(state.entities.desks)
   let lastId = keys[keys.length - 1]
+  const currentUserId = state.session.currentUserId
   return({
+    currentUserId,
     lastId,
     formType: 'Create Desk'
   })

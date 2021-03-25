@@ -10,15 +10,12 @@ const mSTP = (state, ownParams) => {
   const deskErr = state.errors.desk
   const currUserId = state.session.currentUserId
   const desk = state.entities.desks
-  // const background = state.entities.desks[deskId].background_picture
-  // debugger
   return({
     deskId,
     title,
     deskErr,
     currUserId,
     desk
-    // background
   }) 
 }
 

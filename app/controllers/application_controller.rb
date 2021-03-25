@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
     return nil unless session[:session_token]
     @current_user ||= User.find_by(session_token: session[:session_token]) #we find user
-    # return @current_user
   end
 
   def require_logged_in!

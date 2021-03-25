@@ -3,10 +3,10 @@ import { fetchDesk, updateDesk } from '../../actions/desk_actions';
 import EditDesk from './desk_edit';
 
 const mSTP = (state, ownParams) => {
-  // return({
-  //   desk: state.entities.desks[ownParams.match.props.deskId],
-  //   formType: 'Update Desk'
-  // })
+  const errors = state.errors.desk
+  return({
+    errors, 
+  })
 }
 
 const mDTP = (dispatch) => ({
@@ -14,4 +14,4 @@ const mDTP = (dispatch) => ({
   submitDesk: (desk) => dispatch(updateDesk(desk))
 })
 
-export default connect(null, mDTP)(EditDesk)
+export default connect(mSTP, mDTP)(EditDesk)

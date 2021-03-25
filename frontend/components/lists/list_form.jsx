@@ -29,7 +29,6 @@ class ListForm extends React.Component{
 
     this.props.createList(this.state)
     .then((newList) => {
-        // debugger
         this.props.updateDesk({
                 id: this.props.deskId,
                 list_order: desk.list_order.concat([newList.list.id.toString()])

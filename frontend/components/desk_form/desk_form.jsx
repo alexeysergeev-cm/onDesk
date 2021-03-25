@@ -7,6 +7,7 @@ class DeskForm extends React.Component{
     this.state = {
       title: '',
       background_picture: '', 
+      author_id: this.props.currentUserId
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
