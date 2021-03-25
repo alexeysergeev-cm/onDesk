@@ -13,7 +13,6 @@ const listsReducer = (state = {}, action) => {
       delete nextState[action.listId]
       return nextState
     case RECEIVE_DESK: //show desk with all lists
-    // debugger
       return Object.assign(nextState, action.payload.lists)
     default:
       return state;

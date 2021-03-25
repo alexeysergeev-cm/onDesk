@@ -67,7 +67,7 @@ class DeskShow extends React.Component{
       if (this.props.desk[deskId].background_picture){
         background = this.props.desk[deskId].background_picture
       } else {
-        debugger
+        // debugger
         background = "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg"
       }
     }
@@ -157,6 +157,7 @@ class DeskShow extends React.Component{
         </div>
         <ListIndexContainer 
           deskId={deskId}
+          desk={this.props.desk[deskId]}
         />
       </div>
     )

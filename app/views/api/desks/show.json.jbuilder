@@ -6,7 +6,7 @@ json.lists do
   @desk.lists.to_a.each do |listy|
       json.set! listy.id do 
         # json.partial! '/api/lists/list', list: list
-        json.extract! listy, :id, :title, :desk_id, :author_id
+        json.extract! listy, :id, :title, :desk_id, :author_id, :paper_order
       end
   end
 end

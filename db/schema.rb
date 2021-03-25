@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_035734) do
+ActiveRecord::Schema.define(version: 2021_03_24_174811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_035734) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "background_picture"
+    t.string "list_order", default: [], array: true
     t.index ["author_id"], name: "index_desks_on_author_id"
     t.index ["title"], name: "index_desks_on_title"
   end
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_035734) do
     t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "paper_order", default: [], array: true
     t.index ["title", "author_id"], name: "index_lists_on_title_and_author_id"
   end
 

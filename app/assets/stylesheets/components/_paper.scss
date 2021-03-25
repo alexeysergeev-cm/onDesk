@@ -1,6 +1,8 @@
 .paper-index-container{
   margin: 0 4px;
   padding: 0 4px;
+  min-height: 1px;
+  height: auto;
 }
 
 .paper-wrapper{
@@ -16,6 +18,7 @@
   padding: 4px 10px;
   color: rgb(23, 43, 77);
   word-break: break-all;
+  cursor: pointer;
 }
 
 .paper-form{

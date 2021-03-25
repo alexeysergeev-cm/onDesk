@@ -12,6 +12,7 @@ class Api::PapersController < ApplicationController
   def update
     @paper = Paper.find_by(id: params[:id])
     # if @paper && current_user.id == @paper.author_id          // remove only author can edit
+    # debugger
     if @paper 
       if @paper.update(paper_params) && @paper.save
         # debugger
@@ -36,6 +37,6 @@ class Api::PapersController < ApplicationController
 
   private
   def paper_params
-    params.require(:paper).permit(:title, :list_id, :author_id, :description)
+    params.require(:paper).permit(:id, :title, :list_id, :author_id, :description)
   end
 end

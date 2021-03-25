@@ -3,7 +3,6 @@ import { fetchDesk, updateDesk } from '../../actions/desk_actions';
 import EditDesk from './desk_edit';
 
 const mSTP = (state, ownParams) => {
-  // debugger 
   // return({
   //   desk: state.entities.desks[ownParams.match.props.deskId],
   //   formType: 'Update Desk'
