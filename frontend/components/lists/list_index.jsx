@@ -85,7 +85,7 @@ class ListIndex extends React.Component{
                                                   deleteList={this.props.deleteList}
                                                   updateList={this.props.updateList}
                                                   desk={desk}
-                                          />
+                                        />
                                       </div>      
                                     </div>   
                                   )}
