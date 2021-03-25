@@ -5,7 +5,6 @@ const _errors ={
 }
 
 const sessionErrorsReducer = (state = _errors, action) => {
-  // debugger 
   Object.freeze(state);
   let nextState = Object.assign({}, state);
 

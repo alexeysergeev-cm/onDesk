@@ -25,7 +25,6 @@ class EditDesk extends React.Component{
     deskTitle[0].classList.remove('hide')
     updateForm[0].classList.remove('show')
 
-    debugger
     setTimeout(() => this.props.clearErrors(), 5000)
   }
 

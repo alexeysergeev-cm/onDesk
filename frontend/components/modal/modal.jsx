@@ -30,7 +30,6 @@ function Modal({modal, closeModal}){
       component = <DeskFromContainer />;
       break;
     case 'Add Description':
-    // debugger
       component = <PaperDescriptionContainer 
         title={title}
         listId={listId}
