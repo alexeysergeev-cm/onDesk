@@ -10,7 +10,7 @@ class CommentIndex extends React.Component{
 
     return(
       <div className='comments-container'>
-        <h1>Activity</h1>
+        <h1 className='activ'>Activity</h1>
         <CommentForm 
             paperId={paperId}
             authorId={authorId}

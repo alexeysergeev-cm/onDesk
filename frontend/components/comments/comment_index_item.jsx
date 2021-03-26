@@ -7,6 +7,9 @@ class CommentIndexItem extends React.Component{
       <div className='comment-item'>
         <div className="comment-author">
           {this.props.comment.username}
+          <div className="time">
+            {this.props.comment.time}
+          </div>
         </div>
         <div className='comment-body'>
           {this.props.comment.body}

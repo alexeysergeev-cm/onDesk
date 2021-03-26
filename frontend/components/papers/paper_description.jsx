@@ -31,6 +31,10 @@ class PaperDescription extends React.Component{
   render(){
     return(
       <div className='paper-description'>
+        <div className='paper-title-desc'>
+          <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+          {this.props.title}
+        </div>
         <h1>Description</h1>
         <form onSubmit={this.handleSubmit} className='paper-create'>
           <div className='desc-div'>
