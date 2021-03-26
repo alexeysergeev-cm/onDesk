@@ -12,8 +12,8 @@ const commentsReducer = (state = {}, action) => {
     case REMOVE_COMMENT:
       delete nextState[action.commentId]
       return nextState
-    case RECEIVE_DESK: //show desk with all papers
-      return Object.assign(nextState, action.payload.comments)
+    case RECEIVE_DESK: 
+      return Object.assign({}, action.payload.comments)
     default:
       return state;
   }

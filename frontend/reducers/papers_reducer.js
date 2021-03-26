@@ -12,8 +12,8 @@ const papersReducer = (state = {}, action) => {
     case REMOVE_PAPER:
       delete nextState[action.paperId]
       return nextState
-    case RECEIVE_DESK: //show desk with all papers
-      return Object.assign(nextState, action.payload.papers)
+    case RECEIVE_DESK: 
+      return Object.assign({}, action.payload.papers)
     default:
       return state;
   }

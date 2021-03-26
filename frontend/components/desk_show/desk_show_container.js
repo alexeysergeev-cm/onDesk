@@ -5,11 +5,12 @@ import { selectDesk } from '../../reducers/selectors';
 import { clearErrors } from '../../actions/clear_errors_actions'
 
 const mSTP = (state, ownParams) => {
-  const deskId = parseInt(ownParams.match.params.deskId)
+  const deskId = ownParams.match.params.deskId
   const title = selectDesk(state.entities, deskId)
   const deskErr = state.errors.desk
   const currUserId = state.session.currentUserId
   const desk = state.entities.desks
+  
   return({
     deskId,
     title,

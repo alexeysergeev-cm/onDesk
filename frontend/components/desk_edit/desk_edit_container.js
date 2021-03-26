@@ -5,7 +5,7 @@ import EditDesk from './desk_edit';
 const mSTP = (state, ownParams) => {
   const errors = state.errors.desk
   return({
-    errors, 
+    errors
   })
 }
 

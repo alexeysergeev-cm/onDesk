@@ -4,10 +4,9 @@ class EditDesk extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title: '',
-      id: this.props.deskId,
-      // author_id: this.props.currUserId
+      title: ''
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
   }
@@ -18,7 +17,11 @@ class EditDesk extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitDesk(this.state)
+    this.props.submitDesk({
+      title: this.state.title, 
+      id: this.props.deskId
+    })
+    .then(this.setState({title: ''}))
 
     let deskTitle = document.getElementsByClassName('desk-title');
     let updateForm = document.getElementsByClassName('udate-form-container');
