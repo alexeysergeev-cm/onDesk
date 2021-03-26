@@ -6,7 +6,8 @@ class CommentIndex extends React.Component{
 
 
   render(){
-    const { paperId, authorId, comments, createComment, updateComment, deleteComment } = this.props
+    const { paperId, authorId, comments, 
+      createComment, updateComment, deleteComment } = this.props
 
     return(
       <div className='comments-container'>
@@ -21,7 +22,6 @@ class CommentIndex extends React.Component{
         />
         <div className='comments-box'>
           {Object.values(comments).reverse().map((comment, i) => {
-            // debugger
             if (comment.paper_id === paperId){
               return(
                 <div key={comment.id}>

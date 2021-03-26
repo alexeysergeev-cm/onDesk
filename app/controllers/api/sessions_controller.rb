@@ -6,11 +6,9 @@ class Api::SessionsController < ApplicationController
                                     )
     if @user 
       login!(@user)
-      # redirect_to '/'
       render '/api/users/show'
     else
       render json: ["There isn't an account for this email"], status: 404
-      # flash.now[:errors] = ['Invalid username or password.']
     end
   end
 
