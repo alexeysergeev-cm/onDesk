@@ -8,5 +8,29 @@
     text-align: start;
     padding: 5px 0 5px 37px;
   }
+}
 
+.comment-create{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px !important;
+  width: auto;
+  margin: 0 40px;
+  padding: 0;
+  border: 1px solid rgb(0, 0, 255);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+
+  input{
+    font-size: 16px;
+    text-align: initial;  
+    width: 75%;
+
+  }
+
+  button{
+    padding: 4px;
+    font-size: 14px;
+    margin: 0;
+  }
 }

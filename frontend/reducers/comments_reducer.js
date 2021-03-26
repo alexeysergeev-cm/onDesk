@@ -1,5 +1,5 @@
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
-// import { RECEIVE_DESK } from '../actions/desk_actions';
+import { RECEIVE_DESK } from '../actions/desk_actions';
 
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,8 +12,8 @@ const commentsReducer = (state = {}, action) => {
     case REMOVE_COMMENT:
       delete nextState[action.commentId]
       return nextState
-    // case RECEIVE_DESK: //show desk with all papers
-      // return Object.assign(nextState, action.payload.papers)
+    case RECEIVE_DESK: //show desk with all papers
+      return Object.assign(nextState, action.payload.comments)
     default:
       return state;
   }

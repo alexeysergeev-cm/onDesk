@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import CommentIndex from './comment_index'
-// import { deletePaper } from '../../actions/paper_actions'
-// import { openModal } from '../../actions/modal_actions';
+import { createComment, updateComment, deleteComment } from '../../actions/comment_actions'
 
 const mSTP = state => {
+  debugger
   return ({
     comments: state.entities.comments
   })
 }
 
 const mDTP = dispatch => ({
-  // deletePaper: (paperId) => dispatch(deletePaper(paperId))
+  createComment: (comment) => dispatch(createComment(comment)),
+  updateComment: (comment) => dispatch(updateComment(comment)),
+  deleteComment: (commentId) => dispatch(deleteComment(commentId)),
 })
 
 export default connect(mSTP, mDTP)(CommentIndex)
