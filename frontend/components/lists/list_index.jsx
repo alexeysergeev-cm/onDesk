@@ -53,7 +53,6 @@ class ListIndex extends React.Component{
           paper_order: finishList
         })
 
-        // debugger
         this.props.updatePaper({
           id: this.props.papers[result.draggableId].id,
           list_id: result.destination.droppableId
