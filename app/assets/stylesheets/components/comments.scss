@@ -6,7 +6,11 @@
     font-size: 22px;
     font-family: sans-serif;
     text-align: start;
-    padding: 5px 0 5px 37px;
+    padding: 5px 5px 5px 37px;
+
+    i{
+      padding-right: 15px;
+    }
   }
 }
 
@@ -14,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px !important;
-  width: auto;
+  width: 500px;
   margin: 0 40px;
   padding: 0;
   border: 1px solid rgb(0, 0, 255);
@@ -66,4 +70,9 @@
 .time{
   padding-left: 25px;
   font-size: 15px;
+}
+
+.comments-box{
+  height: 171px;
+  overflow: auto;
 }

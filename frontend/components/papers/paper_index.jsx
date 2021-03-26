@@ -14,7 +14,7 @@ class PaperIndex extends React.Component{
   
 
   render(){
-    const { papers, list_id, openModal } = this.props
+    const { papers, list_id, openModal, comments } = this.props
 
     if (!papers) return null    
 
@@ -54,6 +54,7 @@ class PaperIndex extends React.Component{
                                   listId={list_id}
                                   deletePaper={this.props.deletePaper}
                                   openModal={openModal}
+                                  comments={comments}
                                   />
                               </div>      
                             </div>

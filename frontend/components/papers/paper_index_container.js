@@ -5,7 +5,8 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => {
   return ({
-    papers: state.entities.papers
+    papers: state.entities.papers,
+    comments: state.entities.comments
   })
 }
 

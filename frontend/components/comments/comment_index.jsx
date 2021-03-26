@@ -10,28 +10,32 @@ class CommentIndex extends React.Component{
 
     return(
       <div className='comments-container'>
-        <h1 className='activ'>Activity</h1>
+        <h1 className='activ'>
+          <i className="fa fa-comments-o" aria-hidden="true"></i>
+          Activity
+        </h1>
         <CommentForm 
             paperId={paperId}
             authorId={authorId}
             createComment={createComment}
         />
-
-        {Object.values(comments).map((comment, i) => {
-          // debugger
-          if (comment.paper_id === paperId){
-            return(
-              <div key={comment.id}>
-                <CommentIndexItem 
-                      comment={comment}
-                      authorId={authorId}
-                      updateComment={updateComment}
-                      deleteComment={deleteComment}
-                />
-              </div>
-            )
-          }
-        })}
+        <div className='comments-box'>
+          {Object.values(comments).reverse().map((comment, i) => {
+            // debugger
+            if (comment.paper_id === paperId){
+              return(
+                <div key={comment.id}>
+                  <CommentIndexItem 
+                        comment={comment}
+                        authorId={authorId}
+                        updateComment={updateComment}
+                        deleteComment={deleteComment}
+                  />
+                </div>
+              )
+            }
+          })}
+        </div>
       </div>
     )
   }

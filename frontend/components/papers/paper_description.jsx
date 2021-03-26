@@ -35,7 +35,10 @@ class PaperDescription extends React.Component{
           <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
           {this.props.title}
         </div>
-        <h1>Description</h1>
+        <h1>
+          <i className="fa fa-align-left" aria-hidden="true"></i>
+          Description
+        </h1>
         <form onSubmit={this.handleSubmit} className='paper-create'>
           <div className='desc-div'>
             <textarea name="description" id="description" cols="50" rows="10" 
