@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :desk_memberships, only: [:create]
     resources :lists, only: [:create, :index, :destroy, :update]
     resources :papers, only: [:create, :destroy, :update]
+    resources :comments, only: [:create, :destroy, :update]
   end
   
 end

@@ -13,6 +13,10 @@ class Desk < ApplicationRecord
     through: :lists,
     source: :papers,
     dependent: :destroy
+  
+  has_many :comments,
+    through: :papers,
+    source: :comments,
+    dependent: :destroy
 
-  # has_one_attached :background_picture
 end

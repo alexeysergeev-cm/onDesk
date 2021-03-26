@@ -28,13 +28,22 @@ class PaperIndexItem extends React.Component{
 
   render(){
     const { title, id, description } = this.props.paper
-    const { listId, openModal } = this.props
+    const { listId, openModal, comments } = this.props
 
     let descIcon;
     if (description !== null && description !== ''){
       descIcon = <i className="fa fa-align-left" aria-hidden="true" 
-                    style={{fontSize: '15px', padding: '5px 2px'}}></i>
+                    style={{fontSize: '15px', padding: '5px 8px 5px 2px'}}></i>
     }
+    let chat;
+    for (let item in comments){
+      if (comments[item].paper_id === id){
+        chat = <i className="fa fa-comment-o" aria-hidden="true"
+                  style={{fontSize: '15px', padding: '3px 2px'}}></i>
+        break
+      }
+    }
+
 
     return(
       <>
@@ -63,6 +72,7 @@ class PaperIndexItem extends React.Component{
         </div>
         <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
           {descIcon}
+          {chat}
         </div>
       </>
     )

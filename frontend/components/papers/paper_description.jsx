@@ -1,4 +1,6 @@
 import React from 'react';
+import CommentsIndexContainer from '../comments/comment_index_container'
+
 
 class PaperDescription extends React.Component{
 
@@ -29,16 +31,27 @@ class PaperDescription extends React.Component{
   render(){
     return(
       <div className='paper-description'>
-        <h1>Description</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <textarea name="description" id="description" cols="50" rows="20" 
+        <div className='paper-title-desc'>
+          <i className="fa fa-paper-plane-o" aria-hidden="true"></i>
+          {this.props.title}
+        </div>
+        <h1>
+          <i className="fa fa-align-left" aria-hidden="true"></i>
+          Description
+        </h1>
+        <form onSubmit={this.handleSubmit} className='paper-create'>
+          <div className='desc-div'>
+            <textarea name="description" id="description" cols="50" rows="10" 
                 value={this.state.description}
                 onChange={this.update('description')}
               ></textarea>
           </div>
           <button>Save</button>
         </form>
+        <CommentsIndexContainer 
+                    paperId={this.props.paperId}
+                    authorId={this.props.currUserId}
+        />
       </div>
     )
   }

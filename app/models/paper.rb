@@ -7,4 +7,6 @@ class Paper < ApplicationRecord
   belongs_to :list,
     class_name: :List
   
+  has_many :comments,
+    dependent: :destroy
 end
