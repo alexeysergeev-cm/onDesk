@@ -18,7 +18,7 @@ class CommentIndex extends React.Component{
         />
 
         {Object.values(comments).map((comment, i) => {
-          debugger
+          // debugger
           if (comment.paper_id === paperId){
             return(
               <div key={comment.id}>

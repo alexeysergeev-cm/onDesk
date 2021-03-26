@@ -34,3 +34,28 @@
     margin: 0;
   }
 }
+
+.comment-item{
+  width: 518px;
+  margin: 5px 40px;
+}
+
+.comment-body{
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: initial;
+  width: fit-content;
+  color: rgb(23, 43, 77);
+  border: 1px solid $grey;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: $white;
+
+}
+
+.comment-author{
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: initial;
+  width: fit-content;
+}

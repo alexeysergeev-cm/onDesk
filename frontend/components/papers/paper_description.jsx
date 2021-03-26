@@ -33,7 +33,7 @@ class PaperDescription extends React.Component{
       <div className='paper-description'>
         <h1>Description</h1>
         <form onSubmit={this.handleSubmit} className='paper-create'>
-          <div>
+          <div className='desc-div'>
             <textarea name="description" id="description" cols="50" rows="10" 
                 value={this.state.description}
                 onChange={this.update('description')}

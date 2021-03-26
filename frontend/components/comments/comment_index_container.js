@@ -3,7 +3,6 @@ import CommentIndex from './comment_index'
 import { createComment, updateComment, deleteComment } from '../../actions/comment_actions'
 
 const mSTP = state => {
-  debugger
   return ({
     comments: state.entities.comments
   })
