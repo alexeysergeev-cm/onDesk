@@ -3,8 +3,10 @@ import CommentIndex from './comment_index'
 import { createComment, updateComment, deleteComment } from '../../actions/comment_actions'
 
 const mSTP = state => {
+  const currUserId = state.session.currentUserId
   return ({
-    comments: state.entities.comments
+    comments: state.entities.comments,
+    currUserId
   })
 }
 

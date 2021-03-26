@@ -12,7 +12,6 @@ class Api::ListsController < ApplicationController
 
   def update
     @list = List.find_by(id: params[:id])
-    # if @list && current_user.id == @list.author_id        //remove author only can update
     if @list 
       if @list.update(list_params)
         render :show
@@ -24,7 +23,6 @@ class Api::ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    # if @list && @list.author_id == current_user.id       //remove author can only delete 
     if @list 
       @list.destroy
       render :show

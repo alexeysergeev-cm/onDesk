@@ -22,6 +22,12 @@ class DeskShow extends React.Component{
     this.props.fetchDesk(this.props.deskId)
   }
 
+  componentDidUpdate(nextProps){
+    if (this.props.location.pathname !== nextProps.location.pathname){
+      this.props.fetchDesk(this.props.deskId)
+    }
+  }
+
   titleUpdate(){
     let deskTitle = document.getElementsByClassName('desk-title');
     let updateForm = document.getElementsByClassName('udate-form-container');

@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def update
-    @comment = comment.find_by(id: params[:id])
+    @comment = Comment.find_by(id: params[:id])
     if @comment && current_user.id == @comment.author_id        
       if @comment.update(comment_params) && @comment.save
         render :show
@@ -21,7 +21,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     if @comment && @comment.author_id == current_user.id
       @comment.destroy
       render :show

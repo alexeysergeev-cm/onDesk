@@ -1,4 +1,4 @@
-import {RECEIVE_LIST, REMOVE_LIST} from '../actions/list_actions';
+import { RECEIVE_LIST, REMOVE_LIST } from '../actions/list_actions';
 import { RECEIVE_DESK } from '../actions/desk_actions';
 
 const listsReducer = (state = {}, action) => {
@@ -12,8 +12,8 @@ const listsReducer = (state = {}, action) => {
     case REMOVE_LIST:
       delete nextState[action.listId]
       return nextState
-    case RECEIVE_DESK: //show desk with all lists
-      return Object.assign(nextState, action.payload.lists)
+    case RECEIVE_DESK: 
+      return Object.assign({}, action.payload.lists)
     default:
       return state;
   }
