@@ -62,21 +62,16 @@ class DeskIndex extends React.Component{
         <div className='home-sticky-container'>
           <nav className='home-left-sidebar'>
             <div className='li-items'>
-              {/* <li className='li-h active' href='/'> */}
-                <a onClick={this.handleClick}><li className='li-h active' href='/'>All Desks</li></a> 
-                {/* </li> */}
-              <div className='shadowed-text big'>Find me on</div>
-
-              <a href="https://angel.co/u/alexey-sergeev-cm"><li className='li-h'>Angel List<i className="fa fa-angellist" aria-hidden="true"></i></li></a>
-              <a href="https://github.com/alexeysergeev-cm"><li className='li-h'>Github <i className="fa fa-github" aria-hidden="true"></i></li></a>
-              <a href="https://www.linkedin.com/in/alexey-sergeev-cm"><li className='li-h'>LinkedIn <i className="fa fa-linkedin-square" aria-hidden="true"></i></li></a>
-
-            </div>
-            <div className='li-items'>
               <div className='shadowed-text big'>Projects</div> 
+              <a href='/' onClick={this.handleClick}><li className='li-h active'>All Desks</li></a> 
               <li className='li-h' onClick={this.handleClick}>Created By You</li>
               <li className='li-h' onClick={this.handleClick}>Shared With You</li>
             </div>
+
+            <div className='shadowed-text big'>Find me on</div>
+            <a href="https://angel.co/u/alexey-sergeev-cm"><li className='li-h'>Angel List<i className="fa fa-angellist" aria-hidden="true"></i></li></a>
+            <a href="https://github.com/alexeysergeev-cm"><li className='li-h'>Github <i className="fa fa-github" aria-hidden="true"></i></li></a>
+            <a href="https://www.linkedin.com/in/alexey-sergeev-cm"><li className='li-h'>LinkedIn <i className="fa fa-linkedin-square" aria-hidden="true"></i></li></a>
           </nav>
 
           <div className='desk-page'>

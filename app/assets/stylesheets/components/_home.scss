@@ -25,43 +25,67 @@
   
  }
 
-//  .float-left-home{
-//    display: flex;
-//    flex-grow: 1;
-//    flex-basis: 100%;
-//  }
 
 .float-left-home {
+  display: flex;
   float: left;
   color: $white;
   background-color: transparent; 
-  font-family: $caveat;
-  width: 130px;
   height: 32px;
+  margin-left: 15px;
+
+  a:first-of-type {
+    padding: 5px;
+    font-size: 18px;
+    font-family: sans-serif;
+    display: flex;
+    background-color: rgba(0, 0, 255, 12%);
+    border: 1px solid darkgray;
+    border-radius: 3px;
+    transition: background-color 0.5s;
+    box-shadow: 0px 1px grey;
+
+    i{
+      padding-right: 5px;
+      padding-top: 2px;
+    }
+  }
+
+  a:first-of-type:hover {
+    background-color: rgba(0, 0, 255, 30%);
+  }
 }
- .search{
+
+.search{
+  display: flex;
+  justify-content: space-between;
   border-radius: 3px;
   color: $white;
   font-family: $caveat;
   align-items: center;
-  justify-content: center;
-  display: flex;
   font-weight: 700;
   margin: 0 4px 0 0;
-  width: 32px;
+  width: 150px;
   height: 32px;
-  padding: 0 26px;
+  padding: 0 15px;
+  cursor: pointer;
+
+  div{
+    font-family: sans-serif;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+
   i{
     font-size: 20px;
   }
- }
+}
  
  .h3-home-a{
   display: flex;
   position: relative;
   flex-shrink: 0;
-  height: 30px;
-  margin-bottom: 5px;
+  margin-left: -150px;
 }
 
 .nav-bar-logo.home-logo{
@@ -75,7 +99,7 @@ h3.h3-home{
   display: inline-block;
   height: 30px;
   width: 80px;
-  font-size: 26px;
+  font-size: 32px;
 }
 
  .float-right-home {
@@ -174,7 +198,6 @@ h3.h3-home{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  // justify-content: center;
 }
 
 .home-left-sidebar{
@@ -249,8 +272,6 @@ h3.h3-home{
   padding: 8px;
   border-radius: 3px;
   display: block;
-  // background-color: $green;
-  // background-image: url('https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg');
   background-size: cover;
   background-position: 50%;
   color: $white;
@@ -297,7 +318,13 @@ h3.h3-home{
   i{
     font-size: 31px;
     padding-right: 10px;
+    transition: color 0.4s;
   }
+
+  i:hover {
+    color: rgba(0, 0, 255, 30%);
+  }
+
   h1{
     font-family: $san-serif;
     padding: 10px;
