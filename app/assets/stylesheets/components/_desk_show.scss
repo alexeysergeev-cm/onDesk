@@ -54,6 +54,10 @@
   border: 1px solid rgb(107, 142, 35);
 }
 
+.desk-name-header-btn:hover{
+  background-color: rgba(255, 255, 255, 40%)
+}
+
 .menu-dropdown{
   position: absolute;
 	display: none;
@@ -147,6 +151,10 @@
 
   box-shadow: 0px 1px lightsteelblue;
   border: 1px solid rgb(107, 142, 35);
+}
+
+.invite-btn:hover{
+  background-color: rgba(255, 255, 255, 40%)
 }
 
 
