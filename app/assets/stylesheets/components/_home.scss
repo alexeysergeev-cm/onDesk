@@ -43,7 +43,8 @@
     border: 1px solid;
     border-radius: 3px;
     transition: background-color 0.5s;
-
+    box-shadow: 0px 1px grey;
+    
     i{
       padding-right: 5px;
       padding-top: 2px;
@@ -54,28 +55,37 @@
     background-color: rgba(0, 0, 255, 50%);
   }
 }
- .search{
+
+.search{
+  display: flex;
+  justify-content: space-between;
   border-radius: 3px;
   color: $white;
   font-family: $caveat;
   align-items: center;
-  justify-content: center;
-  display: flex;
   font-weight: 700;
   margin: 0 4px 0 0;
-  width: 32px;
+  width: 150px;
   height: 32px;
-  padding: 0 26px;
+  padding: 0 15px;
+  cursor: pointer;
+
+  div{
+    font-family: sans-serif;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+
   i{
     font-size: 20px;
   }
- }
+}
  
  .h3-home-a{
   display: flex;
   position: relative;
   flex-shrink: 0;
-  margin-left: -100px;
+  margin-left: -150px;
 }
 
 .nav-bar-logo.home-logo{

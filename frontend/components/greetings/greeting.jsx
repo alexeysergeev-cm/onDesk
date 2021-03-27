@@ -13,6 +13,7 @@ class Greeting extends React.Component{
     this.updatePhoto = this.updatePhoto.bind(this)
     
     this.handleFile = this.handleFile.bind(this);
+    this.comingSoon = this.comingSoon.bind(this)
   }
 
   clickDropDown(e){
@@ -40,8 +41,6 @@ class Greeting extends React.Component{
       formData.append('user[photo]', this.state.photoFile)
     }
 
-
-
     $.ajax({
       url: `/api/users/${this.props.currentUser.id}`,
       method: "PATCH",
@@ -53,6 +52,14 @@ class Greeting extends React.Component{
     })
 
     document.getElementsByClassName('btn-logout')[0].classList.remove('active')
+  }
+
+  comingSoon(){
+    let div = $("<div style={{fontFamily: 'sans-serif'}}>Coming soon</div>")
+    $('.search').append(div)
+    setTimeout(() => {
+      $('.search').find(':nth-child(2)').remove()
+    }, 2000)
   }
 
   componentDidMount(){
@@ -113,7 +120,7 @@ class Greeting extends React.Component{
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
               <a href="/"> <i className="fa fa-table" aria-hidden="true"></i>All desks</a>
-              <a className='search' href='/'><i className="fa fa-search"></i></a>
+              <a className='search' onClick={this.comingSoon}><i className="fa fa-search"></i></a>
             </div>
             <a href="/" className='h3-home-a'>
               <img src={window.logo} className='nav-bar-logo home-logo' />
@@ -122,7 +129,6 @@ class Greeting extends React.Component{
             <div className='float-right-home'>
               <button className='add-desk' onClick={() => openModal('Create Desk')}>
                 <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-                {/* <h1>Add a desk</h1> */}
               </button>
               {welcome}
             </div>
