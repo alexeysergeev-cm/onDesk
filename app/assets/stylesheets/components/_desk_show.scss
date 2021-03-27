@@ -48,6 +48,9 @@
   padding-left: 7px;
   padding-right: 8px;
   margin-left: 5px;
+
+  box-shadow: 0px 1px lightsteelblue;
+  border: 1px solid rgb(107, 142, 35);
 }
 
 .menu-dropdown{
@@ -115,6 +118,9 @@
   padding: 5px;
   margin-top: 2px;
   margin-right: 20px;
+
+  box-shadow: 0px 1px lightsteelblue;
+  border: 1px solid rgb(107, 142, 35);
 }
 
 
@@ -139,6 +145,9 @@
   padding: 5px;
   font-weight: 700; 
   margin: 2px 10px;
+
+  box-shadow: 0px 1px lightsteelblue;
+  border: 1px solid rgb(107, 142, 35);
 }
 
 .invite-dropdown{
@@ -254,12 +263,12 @@
 }
 
 .invite-acc-btn{
-   color: $blue-home;
-    padding: 6px 12px;
-    margin: 7px 0;
-    border: 1px solid $blue-home;
-    border-radius: 5px;
-    background-color: $light-grey;
+  color: $blue-home;
+  padding: 6px 12px;
+  margin: 7px 0;
+  border: 1px solid $blue-home;
+  border-radius: 5px;
+  background-color: $light-grey;
 }
 
 .desk-errors-container{
