@@ -39,12 +39,12 @@
     font-size: 18px;
     font-family: sans-serif;
     display: flex;
-    background-color: rgba(0, 0, 255, 20%);
+    background-color: rgba(0, 0, 255, 12%);
     border: 1px solid;
     border-radius: 3px;
     transition: background-color 0.5s;
     box-shadow: 0px 1px grey;
-    
+
     i{
       padding-right: 5px;
       padding-top: 2px;
@@ -52,7 +52,7 @@
   }
 
   a:first-of-type:hover {
-    background-color: rgba(0, 0, 255, 50%);
+    background-color: rgba(0, 0, 255, 30%);
   }
 }
 
@@ -273,8 +273,6 @@ h3.h3-home{
   padding: 8px;
   border-radius: 3px;
   display: block;
-  // background-color: $green;
-  // background-image: url('https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg');
   background-size: cover;
   background-position: 50%;
   color: $white;
@@ -321,11 +319,11 @@ h3.h3-home{
   i{
     font-size: 31px;
     padding-right: 10px;
-    transition: color 0.5s;
+    transition: color 0.2s;
   }
 
   i:hover {
-    color: rgba(0, 0, 255, 50%);
+    color: rgba(0, 0, 255, 30%);
   }
 
   h1{

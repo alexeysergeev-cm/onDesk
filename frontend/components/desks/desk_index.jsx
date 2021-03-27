@@ -63,7 +63,7 @@ class DeskIndex extends React.Component{
           <nav className='home-left-sidebar'>
             <div className='li-items'>
               <div className='shadowed-text big'>Projects</div> 
-              <a onClick={this.handleClick}><li className='li-h active' href='/'>All Desks</li></a> 
+              <a href='/' onClick={this.handleClick}><li className='li-h active'>All Desks</li></a> 
               <li className='li-h' onClick={this.handleClick}>Created By You</li>
               <li className='li-h' onClick={this.handleClick}>Shared With You</li>
             </div>
