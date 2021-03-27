@@ -19,6 +19,7 @@
   color: rgb(23, 43, 77);
   word-break: break-all;
   cursor: pointer;
+  font-family: $san-serif;
 }
 
 .paper-form{
@@ -76,7 +77,7 @@
 
 .single-paper{
   flex: 0 0 auto;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   min-height: 20px;
   display: flex;
@@ -212,7 +213,7 @@
 .paper-title-desc{
   padding: 15px 5px 0;
   text-align: center;
-  font-family: serif;
+  font-family: $san-serif;
 
   i{
     padding-right: 15px;

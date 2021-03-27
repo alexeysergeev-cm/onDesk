@@ -48,7 +48,8 @@
   padding-left: 7px;
   padding-right: 8px;
   margin-left: 5px;
-
+  cursor: pointer;
+  
   box-shadow: 0px 1px lightsteelblue;
   border: 1px solid rgb(107, 142, 35);
 }
@@ -111,13 +112,11 @@
 
 #show-menu{
   float: right;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  margin-right: 7px;
   cursor: pointer;
   padding: 5px;
-  margin-top: 2px;
-  margin-right: 20px;
+  margin-right: 25px;
 
   box-shadow: 0px 1px lightsteelblue;
   border: 1px solid rgb(107, 142, 35);
@@ -149,6 +148,7 @@
   box-shadow: 0px 1px lightsteelblue;
   border: 1px solid rgb(107, 142, 35);
 }
+
 
 .invite-dropdown{
   position: absolute;
@@ -210,12 +210,14 @@
 
 #show-invite{
   float: left;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
   padding-left: 5px;
   padding-right: 5px;
 }
+
+
 
 .invite-input{
   background-color: $white;

@@ -36,6 +36,7 @@
   display: flex;
   justify-content: space-between;
   word-break: break-all;
+  font-family: $san-serif;
 }
 
 .list-extras{
@@ -89,8 +90,9 @@
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
+  font-family: $san-serif;
   
   span{
     background-color: rgba(158, 144, 156, 60%);
@@ -136,7 +138,7 @@
   }
 
   button {
-    font-size: 20px;
+    font-size: 18px;
     background-color: $green;
     margin: 0px 5px 10px 9px;
     border-radius: 5px;
@@ -161,6 +163,7 @@
 .open-paper-composer{
   min-height: 34px;
   margin-top: 10px;
+  font-family: $san-serif;
 
   .paper-new-click{
     padding: 5px 5px 5px 5px;
