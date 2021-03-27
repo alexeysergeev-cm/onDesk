@@ -40,7 +40,7 @@
     font-family: sans-serif;
     display: flex;
     background-color: rgba(0, 0, 255, 12%);
-    border: 1px solid;
+    border: 1px solid darkgray;
     border-radius: 3px;
     transition: background-color 0.5s;
     box-shadow: 0px 1px grey;
@@ -198,7 +198,6 @@ h3.h3-home{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  // justify-content: center;
 }
 
 .home-left-sidebar{
@@ -319,7 +318,7 @@ h3.h3-home{
   i{
     font-size: 31px;
     padding-right: 10px;
-    transition: color 0.2s;
+    transition: color 0.4s;
   }
 
   i:hover {
