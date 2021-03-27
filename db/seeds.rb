@@ -66,19 +66,213 @@ DeskMembership.destroy_all
 desk_memberships = [
     {
         user_id: users[4].id,
-        desk_id: desk[0].id,
+        desk_id: desks[0].id,
     },
     {
         user_id: users[0].id,
-        desk_id: desk[1].id,
+        desk_id: desks[1].id,
     },
     {
         user_id: users[0].id,
-        desk_id: desk[2].id,,
+        desk_id: desks[2].id,,
     },
     {
         user_id: users[0].id,
-        desk_id: desk[3].id,,
+        desk_id: desks[3].id,
     },
 ]
 DeskMembership.create(desk_memberships)
+
+List.destroy_all
+lists = [
+    {
+        title: 'Brainstorming',
+        desk_id: desks[0].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Potential Team',
+        desk_id: desks[0].id,
+        author_id: users[4].id,
+    },
+    {
+        title: 'To Do',
+        desk_id: desks[1].id,
+        author_id: users[1].id,
+    },
+    {
+        title: 'List of Engineers',
+        desk_id: desks[1].id,
+        author_id: users[1].id,
+    },
+    {
+        title: 'End Goal',
+        desk_id: desks[1].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Items to Pack',
+        desk_id: desks[2].id,
+        author_id: users[2].id,
+    },
+    {
+        title: 'Activities',
+        desk_id: desks[2].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Guest List',
+        desk_id: desks[3].id,
+        author_id: users[3].id,
+    },
+    {
+        title: 'Place to Celebrate',
+        desk_id: desks[3].id,
+        author_id: users[3].id,
+    },
+    {
+        title: 'Food List',
+        desk_id: desks[3].id,
+        author_id: users[3].id,
+    },
+]
+List.create(lists)
+
+Paper.destroy_all
+papers = [
+    {
+        title: 'Dating app',
+        list_id: lists[0].id,
+        author_id: users[0].id,
+        description: 'Have to watch out for competition. We need a breakthrough idea.'
+    },
+    {
+        title: 'Construction app',
+        list_id: lists[0].id,
+        author_id: users[4].id,
+    },
+    {
+        title: 'John Johnson (Data Scientist)',
+        list_id: lists[1].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Recruit Engineers',
+        list_id: lists[2].id,
+        author_id: users[1].id,
+    },
+    {
+        title: 'Risks of the mission',
+        list_id: lists[2].id,
+        author_id: users[0].id,
+        description: 'Posibility of fail and lose billions...'
+    },
+    {
+        title: 'Rewards of the mission',
+        list_id: lists[2].id,
+        author_id: users[1].id,
+        description: 'Contribute to science and humanity. Change the world! I guess change 2 worlds.'
+    },
+    {
+        title: 'Mike Tison',
+        list_id: lists[3].id,
+        author_id: users[1].id,
+    },
+    {
+        title: 'Create Life on Mars',
+        list_id: lists[4].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Sandals',
+        list_id: lists[5].id,
+        author_id: users[2].id,
+    },
+    {
+        title: 'Sun block',
+        list_id: lists[5].id,
+        author_id: users[2].id,
+    },
+    {
+        title: 'Surf at Waiki beach',
+        list_id: lists[6].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Cliff jumping',
+        list_id: lists[6].id,
+        author_id: users[2].id,
+    },
+    {
+        title: 'Hiking',
+        list_id: lists[6].id,
+        author_id: users[2].id,
+    },
+    {
+        title: 'Dora Smith',
+        list_id: lists[7].id,
+        author_id: users[3].id,
+    },
+    {
+        title: 'Stephanie Souzicki',
+        list_id: lists[7].id,
+        author_id: users[3].id,
+    },
+    {
+        title: 'San Francisco',
+        list_id: lists[8].id,
+        author_id: users[3].id,
+    },
+    {
+        title: 'Hawaii',
+        list_id: lists[8].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Raviolli',
+        list_id: lists[9].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Cheescake',
+        list_id: lists[9].id,
+        author_id: users[0].id,
+    },
+    {
+        title: 'Sushi',
+        list_id: lists[9].id,
+        author_id: users[3].id,
+    },
+
+]
+Paper.create(papers)
+
+Comment.destroy_all
+comments = [
+    {
+        body: 'This seems interesting',
+        paper_id: papers[1].id,
+        author_id: users[0].id,
+    },
+    {
+        body: 'Very knoledgable and respectable person',
+        paper_id: papers[2].id,
+        author_id: users[4].id,
+    },
+    {
+        body: 'I love that!',
+        paper_id: papers[5].id,
+        author_id: users[1].id,
+    },
+    {
+        body: 'I know couple great spots for that',
+        paper_id: papers[11].id,
+        author_id: users[2].id,
+    },
+    {
+        body: 'I love Sushi!',
+        paper_id: papers[19].id,
+        author_id: users[3].id,
+    },
+]
+Comment.create(comments)
