@@ -15,8 +15,12 @@ onDesk is built using the following stack & libraries:
 ### *Backend*
 1. _Ruby on Rails_
    * Ruby on Rails is a server-side web application framework written in Ruby. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
-3. _PostgreSQL_
+2. _PostgreSQL_
    * PostgreSQL is a relational database management system emphasizing extensibility and SQL compliance. 
+3. _Ajax_
+   * web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page.
+4. AWS S3
+   * Amazon S3 is a storage service that provides object storage through a web service interface.
 
 ### *Frontend*
 
@@ -35,3 +39,21 @@ onDesk is built using the following stack & libraries:
 ### *Hosting*
 1. Heroku
    * Heroku is a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
+
+## Features
+
+Logged-in users have access to all of the projects, including personal and team ones. Users can choose a desired background for their desk to enhance UX.
+```javascript 
+chooseBackground(e){
+  let allPics = e.target.parentElement.parentElement.children
+  for (let pic of allPics) {
+    if (pic.children.length > 1){
+      pic.lastElementChild.remove()
+    }
+  }
+  let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
+  $(e.target.parentElement).append(check)
+  document.getElementsByClassName('desk-form-box')[0].style.backgroundImage = `url(${e.target["currentSrc"]})`
+  this.setState({background_picture: e.target["currentSrc"]})
+}
+```
