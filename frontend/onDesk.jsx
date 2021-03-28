@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   
-  window.createDesk = createDesk;
-  window.fetchDesks = fetchDesks;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch; 
+  // window.createDesk = createDesk;
+  // window.fetchDesks = fetchDesks;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch; 
 
 
   const rootEl = document.getElementById('root');
@@ -35,6 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.login = login
   // window.signup = signup
   // window.logout = logout
-  window.fetchUser = fetchUser
-  window.createMembership = createMembership
+  // window.fetchUser = fetchUser
+  // window.createMembership = createMembership
 })
