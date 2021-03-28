@@ -6,7 +6,7 @@ Inspired by Trello, onDesk is a collaboration tool that organizes your projects 
 
 ## [Live Link](https://ondesk.herokuapp.com/#/)
 
-![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/gif.gif)
+![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/intro.gif)
 
 ## Technologies
 
@@ -20,7 +20,7 @@ onDesk is built using the following stack & libraries:
 3. _Ajax_
    * web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page.
 4. AWS S3
-   * Amazon S3 is a storage service that provides object storage through a web service interface.
+   * Amazon S3 is a storage service that provides object storage through a web service interface. onDesk uses AWS to store background and profile pictures.
 
 ### *Frontend*
 
@@ -42,7 +42,8 @@ onDesk is built using the following stack & libraries:
 
 ## Features
 
-Logged-in users have access to all of the projects, including personal and team ones. Users can choose a desired background for their desk to enhance UX.
+Logged-in users have access to all of the projects, including personal and team ones. Utilizing `JQuery` and `DOM` manipulation, users can choose a desired background for their desk to offer enhanced UX.
+
 ```javascript 
 chooseBackground(e){
   let allPics = e.target.parentElement.parentElement.children
@@ -57,3 +58,55 @@ chooseBackground(e){
   this.setState({background_picture: e.target["currentSrc"]})
 }
 ```
+![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/create_desk.gif)
+
+
+
+Users are able to create lists and papers and move them around by dragging and dropping. This feature is implemented using `react-beautiful-dnd` to deliver a better UX. 
+
+```javascript
+<Droppable droppableId={(list_id).toString()}
+        type="paper">
+        {(provided) => (
+          <div className="paper-index-container"
+              {...provided.droppableProps} ref={provided.innerRef}>
+
+            {organizedPapers.map((paper, i) => {
+                return (
+                  <Draggable key={paper.id} draggableId={(paper.id).toString()} index={i}>
+                    {(provided, snapshot) => (
+                      <div className='paper-wrapper' 
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        ref={provided.innerRef} 
+                        style={getItemStyle(
+                          snapshot.isDragging,
+                          provided.draggableProps.style
+                        )}
+                      >
+                        <div className='paper-item'>
+                          <PaperIndexItem
+                            paper={paper}
+                            listId={list_id}
+                            deletePaper={this.props.deletePaper}
+                            openModal={openModal}
+                            comments={comments}
+                            />
+                        </div>      
+                      </div>
+                    )}
+                  </Draggable>
+                )
+            })}
+            {provided.placeholder}
+          </div>
+        )}
+</Droppable >
+```
+![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/dnd.gif)
+
+## Coming soon
+
+* implement search bar to enable users to find their desks/lists/papers.
+* papers due-dates
+* implement caching
