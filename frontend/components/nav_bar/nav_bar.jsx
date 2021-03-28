@@ -33,7 +33,6 @@ class NavBar  extends  React.Component{
             <p className='lead'>onDesk’s desks, lists, and papers enable teams to organize and prioritize projects in a fun, flexible, and rewarding way.</p> 
           </div>
           <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/308998dcb3ed5ab3d01217a4d24ffa03/hero-a.svg" />
-          <img src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/product/89d378b845766a8f0c48e955336266f8/board.png" />
         </div>
       </header>
     );
