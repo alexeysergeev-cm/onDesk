@@ -243,7 +243,7 @@ papers = [
     },
     {
         id: 31,
-        title: 'Surf at Waiki beach',
+        title: 'Surf at Waikiki beach',
         list_id: lists[6][:id],
         author_id: users[0][:id],
     },
