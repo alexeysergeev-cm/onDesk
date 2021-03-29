@@ -4,7 +4,7 @@
 
 Inspired by Trello, onDesk is a collaboration tool that organizes your projects and ideas into desks. Each desk contains lists of papers which tells you and your team where the project stands, what needs to be completed & many more. In general, onDesk allows to capture the bigger picture of your projects.
 
-## [Live Link](https://ondesk.herokuapp.com/#/)
+## [Live Link](https://ondesk.herokuapp.com/)
 
 ![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/intro.gif)
 
@@ -12,7 +12,7 @@ Inspired by Trello, onDesk is a collaboration tool that organizes your projects 
 
 onDesk is built using the following stack & libraries:
 
-### *Backend*
+### **Backend**
 1. _Ruby on Rails_
    * Ruby on Rails is a server-side web application framework written in Ruby. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
 2. _PostgreSQL_
@@ -22,7 +22,7 @@ onDesk is built using the following stack & libraries:
 4. AWS S3
    * Amazon S3 is a storage service that provides object storage through a web service interface. onDesk uses AWS to store background and profile pictures.
 
-### *Frontend*
+### **Frontend**
 
 1. _Javascript_
 2. _React_
@@ -36,13 +36,13 @@ onDesk is built using the following stack & libraries:
 6. _Webpack_
    * Webpack is a module bundler. It allows you to write your code in as many separate files as you need and creates a single output file for you to import into         your html file.
 
-### *Hosting*
+### **Hosting**
 1. Heroku
    * Heroku is a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
 
 ## Features
 
-Logged-in users have access to all of the projects, including personal and team ones. Utilizing `JQuery` and `DOM` manipulation, users can choose a desired background for their desk to offer enhanced UX.
+Logged-in users have access to all of the projects, including personal and team ones. Utilizing `JQuery` and `DOM` manipulation, users can choose a desired background for their desk to offer an enhanced UX.
 
 ```javascript 
 chooseBackground(e){
@@ -62,7 +62,7 @@ chooseBackground(e){
 
 
 
-Users are able to create lists and papers and move them around by dragging and dropping. This feature is implemented using `react-beautiful-dnd` to deliver a better UX. 
+Users are able to do a full CRUD cycle with lists and papers, additionally move them around by dragging and dropping. The Drag and Drop feature is implemented by using `react-beautiful-dnd` to deliver a better UX. 
 
 ```javascript
 <Droppable droppableId={(list_id).toString()}
@@ -105,8 +105,13 @@ Users are able to create lists and papers and move them around by dragging and d
 ```
 ![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/dnd.gif)
 
+
 ## Coming soon
 
-* implement search bar to enable users to find their desks/lists/papers.
-* papers due-dates
-* implement caching
+* Search bar 
+   * enable users to find their desks/lists/papers.
+* Due dates
+* Caching
+   * improve load time
+* Desk Settings
+* Hotkeys
