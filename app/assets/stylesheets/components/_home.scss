@@ -43,8 +43,8 @@
     border-radius: 3px;
     transition: background-color 0.3s;
 
-    box-shadow: 0px 1px lightsteelblue;
-    border: 1px solid rgb(107, 142, 35);
+    box-shadow: 0px 1px 4px 1px lightsteelblue;
+    border: 1px solid black;
 
     i{
       padding-right: 5px;
@@ -206,7 +206,7 @@ h3.h3-home{
   margin-top: 70px;
   margin-right: 15px;
   padding: 0 16px;
-  width: 240px;
+  min-width: 240px;
   float: left;
 }
 
@@ -232,6 +232,7 @@ h3.h3-home{
 }
 
 .li-h{
+  font-family: sans-serif;
   margin-bottom: 4px;
   min-width: 200px;
   height: 20px;
@@ -254,6 +255,8 @@ h3.h3-home{
   background-color: $silver;
   border-radius: 4px;
   cursor: pointer;
+  min-width: 200px;
+
 }
 
 .shadowed-text.big{
