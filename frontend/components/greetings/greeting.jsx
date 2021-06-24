@@ -119,7 +119,9 @@ class Greeting extends React.Component{
         <header className="fixed-top-home">
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
-              <a href="/"> <i className="fa fa-table" aria-hidden="true"></i>All desks</a>
+              {/* <a href="/"> <i className="fa fa-table" aria-hidden="true"></i>All desks</a> */}
+              {/* <a href="/"> <i class="fa fa-file" aria-hidden="true"></i>All desks</a> */}
+              <a href="/"> <i class="fa fa-file" aria-hidden="true"></i>Hey</a>
               <a className='search' onClick={this.comingSoon}><i className="fa fa-search"></i></a>
             </div>
             <a href="/" className='h3-home-a'>
