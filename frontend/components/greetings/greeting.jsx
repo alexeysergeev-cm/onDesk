@@ -113,6 +113,17 @@ class Greeting extends React.Component{
       )
     }
 
+    const defaultBackground = [<img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/water.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/space.jpg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/skyscraper.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/shark.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ocean.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains1.jpeg"/>,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ggbridge.jpeg" />,
+                            <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/forest.jpeg" />]
+
     
     return(
       <>
@@ -127,7 +138,7 @@ class Greeting extends React.Component{
               <h3 className='h3-home'>onDesk</h3>
             </a>
             <div className='float-right-home'>
-              <button className='add-desk' onClick={() => openModal('Create Desk')}>
+              <button className='add-desk' onClick={() => openModal(['Create Desk', defaultBackground])}>
                 <i className="fa fa-plus-square-o" aria-hidden="true"></i>
               </button>
               {welcome}

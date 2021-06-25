@@ -10,6 +10,12 @@ function Modal({modal, closeModal}){
     return null;
   }
 
+  let backgroundPics;
+  if(modal[0] === 'Create Desk'){
+    backgroundPics = modal[1]
+    modal = 'Create Desk';
+  }
+  // debugger
   //pass props if modal comes as object
   let title;
   let listId;
@@ -27,7 +33,9 @@ function Modal({modal, closeModal}){
   let component;
   switch (modal) {
     case 'Create Desk':
-      component = <DeskFromContainer />;
+      component = <DeskFromContainer 
+        backgroundPics={backgroundPics}
+      />;
       break;
     case 'Add Description':
       component = <PaperDescriptionContainer 
