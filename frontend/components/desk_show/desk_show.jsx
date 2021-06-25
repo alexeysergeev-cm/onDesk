@@ -121,7 +121,7 @@ class DeskShow extends React.Component{
         </div>
         <ul className='invite-dropdown '>
           <div className='invite-pop-over'>
-            <span >Invite To Desk</span>
+            <span style={{'fontSize': '16px'}}>Invite To Desk</span>
             <div className="close-x invite" onClick={this.clickInvite}><i className="fa fa-times" ></i></div>
           </div>
           <hr className="Solid" />

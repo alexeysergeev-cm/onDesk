@@ -55,7 +55,8 @@
 }
 
 .desk-name-header-btn:hover{
-  background-color: rgba(255, 255, 255, 40%)
+  background-color: rgba(white, 20%);
+  border: 1px solid white;
 }
 
 .menu-dropdown{
@@ -71,7 +72,7 @@
 	z-index: 1;
 	color: $dark-blue;
 	font-family: $san-serif;
-	text-align: left;
+	text-align: center;
 	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
 	font-weight: initial;
   font-size: 14px;
@@ -99,17 +100,11 @@
     color: rgb(94, 108, 132);
   }
 
-  :last-child{
-    transition: padding-left 0.5s;
-    // transition: transform 250ms;
-  }
 
   :last-child:hover {
     background-color: rgba($orange, 50%);
     border-radius: 5px;
     cursor: pointer;
-    padding-left: 40px;
-    // transform: translateX(10px);
   }
 }
 
@@ -121,9 +116,14 @@
   cursor: pointer;
   padding: 5px;
   margin-right: 25px;
-
+  margin-top: 4px;
   box-shadow: 0px 1px lightsteelblue;
   border: 1px solid rgb(107, 142, 35);
+}
+
+#show-menu:hover{
+  background-color: rgba(white, 20%);
+  border: 1px solid white;
 }
 
 
@@ -154,7 +154,8 @@
 }
 
 .invite-btn:hover{
-  background-color: rgba(255, 255, 255, 40%)
+  background-color: rgba(white, 20%);
+  border: 1px solid white;
 }
 
 
@@ -170,10 +171,10 @@
 	z-index: 1;
 	color: $dark-blue;
 	font-family: $san-serif;
-	text-align: left;
+	text-align: center;
 	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
 	font-weight: initial;
-  font-size: 14px;
+  font-size: 12px;
   cursor: default;
   button{
     box-shadow: 0px 1px;
@@ -199,7 +200,7 @@
   margin-bottom: 8px;
   text-align: center;
   color: rgb(94, 108, 132);
-
+  margin-top: 10px;
 }
 
 .close-x.invite{
@@ -223,6 +224,7 @@
   cursor: pointer;
   padding-left: 5px;
   padding-right: 5px;
+  margin-top: 4px;
 }
 
 
@@ -316,7 +318,9 @@
 //-----UPDATE DESK NAME 
 
 .desk-title{
-  padding: 5px;
+  width: 200px;
+  padding: 9px 0;
+  text-align: center;
 }
 
 .desk-title.hide{
@@ -332,7 +336,7 @@
 .udate-form-container.show{
   display: block;
   z-index: 1;
-  padding: 5px 5px 0;
+  padding: 4px 2px 0 0;
   form {
     display: flex;
   }
@@ -345,8 +349,8 @@
   margin-bottom: 5px;
   border-radius: 5px;
   margin: 0 5px 4px;
-
-}
+  background: rgba(255, 255, 255, 0.54);
+} 
 
 .desk-edit-input:focus{
   background: rgba(255, 255, 255, 0.24);

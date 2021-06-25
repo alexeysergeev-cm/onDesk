@@ -101,7 +101,7 @@ class Greeting extends React.Component{
                 <form onSubmit={this.updatePhoto} className='add-photo'>
                   <label>Choose profile picture</label>
                   <input type="file" onChange={this.handleFile}/>
-                  <input type="submit" value="Submit"/>
+                  <input type="submit" value="Submit Picture"/>
                 </form>
                 <hr className="Solid"/>
                 <li style={{'border': '1px solid black', 'padding': '8px 0'}}>Settings (coming soon)</li>
