@@ -45,7 +45,7 @@
     transition: all 0.3s;
 
     box-shadow: 0px 1px 4px 1px lightsteelblue;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
     i{
       padding-right: 5px;
@@ -104,7 +104,10 @@ h3.h3-home{
   height: 30px;
   width: 80px;
   font-size: 28px;
+
 }
+
+
 
 .float-right-home {
   float: right;
@@ -330,12 +333,20 @@ h3.h3-home{
 
   i{
     font-size: 31px;
-    padding-right: 10px;
-    transition: transform 0.3s;
+    margin-right: 20px;
+    transition: all 0.5s;
+    width: 25px;
+    border-radius: 5px;
   }
 
   i:hover {
     transform: scale(0.9);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 1px 5px 2px white;;
+    // background: linear-gradient(
+    // 45deg, rgb(0, 0, 0), rgba(0, 0, 0, 0%));
+    width: 50px;
+    margin-left: -25px;
   }
 
   h1{
@@ -343,7 +354,9 @@ h3.h3-home{
     padding: 10px;
   }
 }
-
+// .add-desk:hover{
+//   background-color: rgba(255, 255, 255, 0.7);
+// }
 
 .add-photo{
   text-align: center;
