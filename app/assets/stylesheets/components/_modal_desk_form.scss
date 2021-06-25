@@ -115,3 +115,10 @@
     color: rgb(240, 248, 255);
   }
 }
+
+@media (max-height: 900px) {
+  .modal-child{
+    left: 50%;
+    top: -60px;
+  }
+}

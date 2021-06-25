@@ -158,20 +158,21 @@
 
 .paper-description{
   width: 600px;
-  height: 700px;
+  height: 600px;
   background-color: rgb(211, 211, 211);
   z-index: 1;
   margin-top: 700px;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   font-family: $san-serif;
   border-radius: 5px;
+  overflow: auto;
 
   h1:first-of-type {
     i{
       padding-right: 15px;
     }
-    font-size: 22px;
+    font-size: 20px;
     font-family: sans-serif;
     text-align: start;  
     padding: 30px 0 5px 42px;
@@ -219,7 +220,34 @@
 
   i{
     padding-right: 15px;
-    font-size: 27px;
+    font-size: 20px;
   }
+}
+
+@media (max-height: 900px){
+  .paper-description{
+    width: 300px;
+    height: 400px;
+    overflow: auto;
+    font-size: 20px;
+
+    i{
+      font-size: 20px;
+    }
+  }
+  .paper-create{
+    width: 200px;
+    height: 300px;
+  }
+  .paper-description {
+    h1:first-of-type {
+
+      font-size: 15px;
+    }
+    button{
+      font-size: 12px;
+    }
+  }
+
 }
 

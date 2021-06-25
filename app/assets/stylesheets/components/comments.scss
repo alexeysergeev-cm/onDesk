@@ -3,7 +3,7 @@
 .comments-container{
   
   h1.activ{
-    font-size: 22px;
+    font-size: 20px;
     font-family: sans-serif;
     text-align: start;
     padding: 5px 5px 5px 37px;
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px !important;
-  width: 500px;
+  height: 25px;
   margin: 0 40px;
   padding: 0;
   border: 1px solid rgb(0, 0, 255);
@@ -34,7 +34,7 @@
 
   button{
     padding: 4px;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
   }
 }
@@ -125,5 +125,28 @@
       margin-top: 0;
       margin-right: 0;
     }
+  }
+}
+
+@media (max-height: 900px) {
+   .comments-container {
+    
+    h1.activ {
+      font-size: 15px;
+    }
+  }
+
+  .comment-create{
+    input{
+      font-size: 12px;
+      width: 45%;
+    }
+    button{
+      font-size: 9px;
+    }
+  }
+  .comment-body{
+    font-size: 13px;
+    width: 38.3%;
   }
 }
