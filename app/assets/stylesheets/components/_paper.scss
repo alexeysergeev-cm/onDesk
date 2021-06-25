@@ -77,7 +77,7 @@
 
 .single-paper{
   flex: 0 0 auto;
-  font-size: 18px;
+  font-size: 17px;
   position: relative;
   min-height: 20px;
   display: flex;
@@ -100,13 +100,15 @@
     cursor: pointer;
     text-align: center;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(139, 0, 0);
     margin-top: -13px;
     h5{
       margin: 10px;
       color: rgb(112, 128, 144);
       cursor: default;
+      font-size: 16px;
+
     }
     div {
       padding-top: 5px;
