@@ -338,7 +338,7 @@ h3.h3-home{
   i{
     font-size: 31px;
     margin-right: 20px;
-    transition: all 0.5s;
+    transition: all 0.5s, padding-left 1.3s;
     width: 25px;
     border-radius: 5px;
   }
@@ -350,6 +350,7 @@ h3.h3-home{
     border: 1px solid white;
     width: 50px;
     margin-left: -25px;
+    padding-left: 20px;
   }
 
   h1{
