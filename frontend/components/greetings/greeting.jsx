@@ -94,17 +94,17 @@ class Greeting extends React.Component{
             <button className="btn-logout" onClick={this.clickDropDown}>
               <div onClick={this.clickDropDown}>{name[0]}</div>
               <ul className='home-dropdown' >
-                <li>Welcome {name}</li> 
+                <li style={{'fontWeight': '600'}}>Welcome {name}</li> 
                 <i className="fa fa-times" onClick={this.closeMenu}></i>
                 <li className='shadowed-text'>{currentUser.email}</li>
                 <hr className="Solid"/>
                 <form onSubmit={this.updatePhoto} className='add-photo'>
-                  <label>Choose profile photo</label>
+                  <label>Choose profile picture</label>
                   <input type="file" onChange={this.handleFile}/>
                   <input type="submit" value="Submit"/>
                 </form>
                 <hr className="Solid"/>
-                <li>Settings (coming soon)</li>
+                <li style={{'border': '1px solid black', 'padding': '8px 0'}}>Settings (coming soon)</li>
                 <hr className="Solid"/>
                 <li onClick={() => logout()}>Log Out</li>
               </ul>

@@ -149,11 +149,11 @@ h3.h3-home{
 	border: 1px solid $silver;
 	border-radius: 3px;
 	padding: 10px;
-	width: 180px;
+	width: 250px;
 	z-index: 1;
 	color: $dark-blue;
 	font-family: $san-serif;
-	text-align: left;
+	text-align: center;
 	box-shadow: 5px 4px 16px 0px rgba(0, 0, 0, 80%);
 	font-weight: initial;
   font-size: 14px;
@@ -175,6 +175,11 @@ h3.h3-home{
     padding: 5px 5px 0 5px;
     color: $silver;
     cursor: pointer;
+  }
+
+  :last-child{
+    border: 1px solid black;
+    padding: 8px;
   }
 
   :last-child:hover {
@@ -359,15 +364,23 @@ h3.h3-home{
 .add-photo{
   text-align: center;
   font-size: 15px;
+  font-family: sans-serif;
+
 
   label{
     font-size: 15px !important;
+    font-weight: 600;
   }
 
   input{
     font-size: 11px;
     width: 160px;
-    padding: 6px 0;
+    padding: 8px 0;
+  }
+  input:last-of-type{
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid black;
   }
 
 }
