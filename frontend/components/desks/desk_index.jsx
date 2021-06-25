@@ -72,7 +72,7 @@ class DeskIndex extends React.Component{
             <a href="https://angel.co/u/alexey-sergeev-cm" target='none'><li className='li-h'>Angel List<i className="fa fa-angellist" aria-hidden="true"></i></li></a>
             <a href="https://github.com/alexeysergeev-cm" target='none'><li className='li-h'>Github <i className="fa fa-github" aria-hidden="true"></i></li></a>
             <a href="https://www.linkedin.com/in/alexey-sergeev-cm" target='none'><li className='li-h'>LinkedIn <i className="fa fa-linkedin-square" aria-hidden="true"></i></li></a>
-            <a href="https://https://alexeysergeev-cm.github.io" target='none'><li className='li-h'>Portfolio <i class="fa fa-user" aria-hidden="true"></i></li></a>
+            <a href="https://alexeysergeev-cm.github.io" target='none'><li className='li-h'>Portfolio <i class="fa fa-user" aria-hidden="true"></i></li></a>
           </nav>
 
           <div className='desk-page'>
@@ -103,8 +103,9 @@ class DeskIndex extends React.Component{
             ))}
           </div>
         </div>
-        <footer>
-              
+        <footer id='main-footer'>
+            <div>Developed by</div>
+            <div>Alexey Sergeev</div>
         </footer>
       </div>
     )

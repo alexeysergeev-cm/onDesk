@@ -371,3 +371,19 @@ h3.h3-home{
   }
 
 }
+
+#main-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  div:first-of-type{
+    font-size: 12px;
+  }
+  :last-child{
+    font-weight: bold;
+  }
+}
