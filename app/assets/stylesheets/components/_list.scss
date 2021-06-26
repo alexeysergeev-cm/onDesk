@@ -30,7 +30,7 @@
 
 .list-title-cont{
   flex: 0 0 auto;
-  padding: 10px 14px 5px;
+  padding: 15px 24px 5px;
   font-size: 20px;
   position: relative;
   min-height: 20px;
@@ -38,6 +38,10 @@
   justify-content: space-between;
   word-break: break-all;
   font-family: sans-serif;
+}
+
+.list-title{
+  font-weight: 600;
 }
 
 .list-extras{
@@ -185,10 +189,14 @@
 
 .udate-list-container{
   display: none;
-  font-size: 18px;
+  font-size: 16px;
 
   form{
     display: flex;
+
+    input{
+      padding: 5px;
+    }
   }
   button{
     background-color: rgb(255, 255, 255);
