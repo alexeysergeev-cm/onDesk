@@ -62,6 +62,8 @@ class Greeting extends React.Component{
     //   $('.search').find(':nth-child(2)').remove()
     // }, 2000)
     // return <SearchBar />
+    // debugger
+    document.getElementsByClassName('search-bar')[0].classList.toggle('go')
   }
 
   componentDidMount(){
