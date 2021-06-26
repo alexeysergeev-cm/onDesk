@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :papers, only: [:create, :destroy, :update]
     resources :comments, only: [:create, :destroy, :update]
 
-    # resources :search, only: [:index]
+    resources :search, only: [:index]
   end
   
 end

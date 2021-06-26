@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import SearchBar from '../search_bar/search_bar';
 
 class Greeting extends React.Component{
 
@@ -55,11 +56,12 @@ class Greeting extends React.Component{
   }
 
   comingSoon(){
-    let div = $("<div style={{fontFamily: 'sans-serif'}}>Coming soon</div>")
-    $('.search').append(div)
-    setTimeout(() => {
-      $('.search').find(':nth-child(2)').remove()
-    }, 2000)
+    // let div = $("<div style={{fontFamily: 'sans-serif'}}>Coming soon</div>")
+    // $('.search').append(div)
+    // setTimeout(() => {
+    //   $('.search').find(':nth-child(2)').remove()
+    // }, 2000)
+    // return <SearchBar />
   }
 
   componentDidMount(){
@@ -131,7 +133,10 @@ class Greeting extends React.Component{
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
               <a href="/"> <i class="fa fa-window-restore" aria-hidden="true"></i>All Desks</a>
-              <a className='search' onClick={this.comingSoon}><i className="fa fa-search"></i></a>
+              <div className='search' onClick={this.comingSoon}><i className="fa fa-search"></i></div>
+              <div className='search-bar'>
+                <SearchBar />
+              </div>
             </div>
             <a href="/" className='h3-home-a'>
               <img src={window.logo} className='nav-bar-logo home-logo' />

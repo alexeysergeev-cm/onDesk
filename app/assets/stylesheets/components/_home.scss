@@ -68,10 +68,7 @@
   font-family: $caveat;
   align-items: center;
   font-weight: 700;
-  margin: 0 4px 0 0;
-  width: 150px;
-  height: 32px;
-  padding: 0 15px;
+  margin: 0 10px 0 25px;
   cursor: pointer;
 
   div{
@@ -400,4 +397,12 @@ h3.h3-home{
   :last-child{
     font-weight: bold;
   }
+}
+
+.search-bar{
+  background: rgba(0, 255, 255, 60%);
+  height: 28px;
+  padding: 6px 0px 5px 10px;
+  margin-top: 2px;
+  border-radius: 5px;
 }
