@@ -24,6 +24,7 @@ class ListIndexItem extends React.Component{
 
   //---titleUpdate
   titleUpdate(e){
+    //find children or parents to manipulate DOM
     e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
     e.target.offsetParent.offsetParent.lastChild.style.display = 'none'
     e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'

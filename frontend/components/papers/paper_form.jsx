@@ -25,6 +25,7 @@ class PaperForm extends React.Component{
         }
       }
     } else {
+      //find Parent
       e.currentTarget.parentElement.parentElement.parentElement.parentElement.lastChild.style.display = 'none'
       e.currentTarget.parentElement.parentElement.parentElement.parentElement.firstChild.style.display = 'flex'
     }
