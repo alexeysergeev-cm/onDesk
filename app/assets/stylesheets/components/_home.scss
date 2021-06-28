@@ -36,7 +36,7 @@
   width: 304px;
 
 
-  a:first-of-type {
+  .all-desks-link {
     padding: 6px 5px 0 5px;
     font-size: 16px;
     font-family: sans-serif;
@@ -428,12 +428,19 @@ h3.h3-home{
   border-radius: 2px;
   top: 35px;
   left: 175px;
-  width: 170px;
+  min-width: 175px;
   padding: 10px;
+
+  p{
+    padding: 10px 5px;
+  }
+
+  p > a:first-of-type{
+    border: 1px solid rgba(0, 0, 0, 0%);
+  }
 }
 
 
-.search-item{
-  padding: 10px 5px;
-}
+
+
 

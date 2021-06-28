@@ -127,7 +127,7 @@ class Greeting extends React.Component{
         <header className="fixed-top-home">
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
-              <a href="/"> <i class="fa fa-window-restore" aria-hidden="true"></i>All Desks</a>
+              <a href="/" className='all-desks-link'> <i className="fa fa-window-restore" aria-hidden="true"></i>All Desks</a>
               <div className='search' onClick={this.showSearchBar}><i className="fa fa-search"></i></div>
               <div className='search-bar'>
                 <SearchBar />

@@ -5,8 +5,12 @@ class Api::SearchBarsController < ApplicationController
   end
   
   def search
-    return if params[:q] === '';
-    @desks = Desk.where('title LIKE ?', '%' + params[:q] + '%');
-    render :index
+    if params[:q] === '' 
+      @desks = [];
+      render :index
+    else
+      @desks = Desk.where('title LIKE ?', '%' + params[:q] + '%');
+      render :index
+    end
   end
 end

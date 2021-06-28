@@ -7,6 +7,7 @@ const searchReducer = (state = {}, action) => {
 
   switch (action.type) {
     case SEARCH_ITEMS:
+      debugger
       return action.items;
     default:
       return state;
