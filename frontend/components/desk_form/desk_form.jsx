@@ -35,7 +35,7 @@ class DeskForm extends React.Component{
   }
 
   componentDidMount(){
-    let check = $("<i className='fa fa-check' aria-hidden='true'></i>")
+    let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
     let defaultItem = $('.desk-background').children()[0]
     $(defaultItem).append(check)
   }
@@ -48,7 +48,7 @@ class DeskForm extends React.Component{
         pic.lastElementChild.remove()
       }
     }
-    let check = $("<i className='fa fa-check' aria-hidden='true'></i>")
+    let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
     $(e.target.parentElement).append(check)
     document.getElementsByClassName('desk-form-box')[0].style.backgroundImage = `url(${e.target["currentSrc"]})`
     this.setState({background_picture: e.target["currentSrc"]})
