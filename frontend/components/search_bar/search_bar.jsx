@@ -24,10 +24,9 @@ const searchBar = () => {
         <input 
           placeholder='Search for...' 
           onChange={event => setWord(event.target.value)}
-
         />
-        
       </form>
+      
       {items.length ? ( 
         <div className='search-results'>
           {items.map((item, i)=> {
