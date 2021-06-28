@@ -423,7 +423,7 @@ h3.h3-home{
   position: absolute;
   z-index: 1;
   color: rgb(0, 0, 0);
-  background: rgba(0, 255, 255, 70%);
+  background: rgba(0, 255, 255, 95%);
   box-shadow: 0px 1px 1px 0px;
   border-radius: 2px;
   top: 35px;
@@ -437,6 +437,13 @@ h3.h3-home{
 
   p > a:first-of-type{
     border: 1px solid rgba(0, 0, 0, 0%);
+  }
+
+  h2{
+    padding: 10px 5px;
+    text-align: center;
+    font-size: large;
+    color: rgb(105, 105, 105);
   }
 }
 

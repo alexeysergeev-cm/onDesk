@@ -14,3 +14,21 @@ if !@desks.nil?
     end
   end
 end
+
+if !@lists.nil?
+  json.lists do
+    json.array!(@lists) do |list|
+      json.id list.id
+      json.title list.title
+    end
+  end
+end
+
+if !@papers.nil?
+  json.papers do
+    json.array!(@papers) do |paper|
+      json.id paper.id
+      json.title paper.title
+    end
+  end
+end

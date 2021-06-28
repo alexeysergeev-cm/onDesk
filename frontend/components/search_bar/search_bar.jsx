@@ -11,8 +11,12 @@ const searchBar = () => {
 
   useEffect(() => {
     // debugger
-    dispatch(searchItems(word)).then(res => setItems([...res.items.desks]))
-    // debugger
+    dispatch(searchItems(word)).then(res => {
+      const desks = res.items.desks.length ? ['Desks', ...res.items.desks] : [];
+      const lists = res.items.lists.length ? ['Lists', ...res.items.lists] : [];
+      const papers = res.items.papers.length ?['Papers', ...res.items.papers] : [];
+      setItems([...desks, ...lists, ...papers])
+    })
   }, [word])
 
   return(
@@ -27,6 +31,10 @@ const searchBar = () => {
       </form>
       {items.length ? ( <div className='search-results'>
                         {items.map((item, i)=> {
+
+                          if (typeof item === 'string'){
+                            return (<h2 key={i}>{item}</h2>)
+                          }
                           return (
                             // <p key={i} className='search-item'>{item.title}</p>
                             <p key={item.id}>
