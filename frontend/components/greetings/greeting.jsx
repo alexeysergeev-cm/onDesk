@@ -14,7 +14,7 @@ class Greeting extends React.Component{
     this.updatePhoto = this.updatePhoto.bind(this)
     
     this.handleFile = this.handleFile.bind(this);
-    this.comingSoon = this.comingSoon.bind(this)
+    this.showSearchBar = this.showSearchBar.bind(this)
   }
 
   clickDropDown(e){
@@ -55,14 +55,7 @@ class Greeting extends React.Component{
     document.getElementsByClassName('btn-logout')[0].classList.remove('active')
   }
 
-  comingSoon(){
-    // let div = $("<div style={{fontFamily: 'sans-serif'}}>Coming soon</div>")
-    // $('.search').append(div)
-    // setTimeout(() => {
-    //   $('.search').find(':nth-child(2)').remove()
-    // }, 2000)
-    // return <SearchBar />
-    // debugger
+  showSearchBar(){
     document.getElementsByClassName('search-bar')[0].classList.toggle('go')
   }
 
@@ -135,7 +128,7 @@ class Greeting extends React.Component{
           <nav className="nav-bar-home loggedIn">
             <div className='float-left-home'>
               <a href="/"> <i class="fa fa-window-restore" aria-hidden="true"></i>All Desks</a>
-              <div className='search' onClick={this.comingSoon}><i className="fa fa-search"></i></div>
+              <div className='search' onClick={this.showSearchBar}><i className="fa fa-search"></i></div>
               <div className='search-bar'>
                 <SearchBar />
               </div>

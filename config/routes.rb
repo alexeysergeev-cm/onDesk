@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :lists, only: [:create, :index, :destroy, :update]
     resources :papers, only: [:create, :destroy, :update]
     resources :comments, only: [:create, :destroy, :update]
-
-    resources :search, only: [:index]
   end
+
+  #create a search route, 
+  #route                       controller#method
+  get "/api/search", to: "api/search_bars#search"
   
 end

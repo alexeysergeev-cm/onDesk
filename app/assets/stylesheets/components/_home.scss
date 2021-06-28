@@ -418,3 +418,22 @@ h3.h3-home{
 
 
 
+.search-results{
+  display: block;
+  position: absolute;
+  z-index: 1;
+  color: rgb(0, 0, 0);
+  background: rgba(0, 255, 255, 70%);
+  box-shadow: 0px 1px 1px 0px;
+  border-radius: 2px;
+  top: 35px;
+  left: 175px;
+  width: 170px;
+  padding: 10px;
+}
+
+
+.search-item{
+  padding: 10px 5px;
+}
+

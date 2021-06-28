@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // window.createDesk = createDesk;
   // window.fetchDesks = fetchDesks;
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.dispatch = store.dispatch; 
 
 
