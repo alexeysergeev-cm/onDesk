@@ -18,7 +18,7 @@ end
 if !@lists.nil?
   json.lists do
     json.array!(@lists) do |list|
-      json.id list.id
+      json.id list.desk_id
       json.title list.title
     end
   end
@@ -27,7 +27,13 @@ end
 if !@papers.nil?
   json.papers do
     json.array!(@papers) do |paper|
-      json.id paper.id
+      #need to get desk id!
+      List.all.each do |list|
+        if list.id == paper.list_id
+          json.id list.desk_id
+        end
+      end
+      
       json.title paper.title
     end
   end

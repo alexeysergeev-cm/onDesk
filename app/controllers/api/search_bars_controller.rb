@@ -11,9 +11,9 @@ class Api::SearchBarsController < ApplicationController
       @papers = [];
       render :index
     else
-      @desks = Desk.where('title LIKE ?', '%' + params[:q] + '%');
-      @lists = List.where('title LIKE ?', '%' + params[:q] + '%');
-      @papers = Paper.where('title LIKE ?', '%' + params[:q] + '%');
+      @desks = Desk.where('lower(title) LIKE ?', '%' + params[:q].downcase + '%');
+      @lists = List.where('lower(title) LIKE ?', '%' + params[:q].downcase + '%');
+      @papers = Paper.where('lower(title) LIKE ?', '%' + params[:q].downcase + '%');
       render :index
     end
   end
