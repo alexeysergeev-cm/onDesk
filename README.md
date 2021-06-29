@@ -60,7 +60,60 @@ chooseBackground(e){
 ```
 ![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/create_desk.gif)
 
+Search bar feature enables users to quickly search Database for Desks, Lists, and Paper. Component is built using React Hooks.
 
+```javascript
+const searchBar = () => {
+  const [word, setWord] = useState('');
+  const [items, setItems] = useState([]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchItems(word)).then(res => {
+      const desks = res.items.desks.length ? ['Desks', ...res.items.desks] : [];
+      const lists = res.items.lists.length ? ['Lists', ...res.items.lists] : [];
+      const papers = res.items.papers.length ?['Papers', ...res.items.papers] : [];
+      setItems([...desks, ...lists, ...papers])
+    })
+  }, [word])
+
+  const removeSearch = () => {
+    document.getElementsByClassName('search-bar')[0].classList.toggle('go')
+    document.getElementsByClassName('search-results')[0].style.display = 'none'
+  }
+
+  return(
+    <>
+      <input 
+        placeholder='Search for...' 
+        onChange={event => setWord(event.target.value)}
+      />
+      
+      {items.length ? ( 
+        <div className='search-results'>
+          {items.map((item, i)=> {
+            if (typeof item === 'string'){
+              return (<h2 key={i}>{item}</h2>)
+            }
+            return (
+              <p key={i}>
+                <Link to={`/${item.id}/deskshow`} onClick={removeSearch}>
+                  {item.title}
+                </Link>
+              </p>
+            )
+          })}
+        </div> ) : ( <></> )
+        }
+    </>
+  )
+
+}
+
+export default searchBar;
+```
+
+![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/search_bar.gif)
 
 Users are able to do a full CRUD cycle with lists and papers, additionally move them around by dragging and dropping. The Drag and Drop feature is implemented by using `react-beautiful-dnd` to deliver a better UX. 
 
