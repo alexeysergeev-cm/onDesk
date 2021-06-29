@@ -17,10 +17,10 @@ const searchBar = () => {
     })
   }, [word])
 
-  // const removeSearch = () => {
-  //   document.getElementsByClassName('search-bar')[0].classList.toggle('go')
-  //   document.getElementsByClassName('search-results')[0].style.display = 'none'
-  // }
+  const removeSearch = () => {
+    document.getElementsByClassName('search-bar')[0].classList.toggle('go')
+    document.getElementsByClassName('search-results')[0].style.display = 'none'
+  }
 
   return(
     <>
@@ -38,8 +38,8 @@ const searchBar = () => {
             }
             return (
               <p key={i}>
-                {/* <Link to={`/${item.id}/deskshow`} onClick={removeSearch}> */}
-                <Link to={`/${item.id}/deskshow`} >
+                <Link to={`/${item.id}/deskshow`} onClick={removeSearch}>
+                {/* <Link to={`/${item.id}/deskshow`} > */}
                   {item.title}
                 </Link>
               </p>

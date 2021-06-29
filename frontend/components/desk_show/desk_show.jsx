@@ -20,18 +20,6 @@ class DeskShow extends React.Component{
 
   componentDidMount(){
     this.props.fetchDesk(this.props.deskId)
-      .then( res => {
-
-        const { deskId } = this.props
-        let background;
-        if (this.props.desk[deskId]){
-          background = this.props.desk[deskId].background_picture || "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
-          // debugger
-          if(document.getElementsByClassName('desk-show-container')[0]){
-            document.getElementsByClassName('desk-show-container')[0].style.backgroundImage = `url(${background})`
-          }
-        }
-      })
   }
 
   componentDidUpdate(nextProps){
@@ -80,14 +68,15 @@ class DeskShow extends React.Component{
   render(){
     const { title, deskErr, deskId, currUserId } = this.props
 
-    // let background;
-    // if (this.props.desk[deskId]){
-    //   background = this.props.desk[deskId].background_picture || "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
-    //   // debugger
-    //   // if(document.getElementsByClassName('desk-show-container')[0]){
-    //   //   document.getElementsByClassName('desk-show-container')[0].style.backgroundImage = `url(${background})`
-    //   // }
-    // }
+
+    //--set background
+    let background;
+    if (this.props.desk[deskId]){
+      background = this.props.desk[deskId].background_picture || "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
+      if(document.getElementsByClassName('desk-show-container')[0]){
+        document.getElementsByClassName('desk-show-container')[0].style.backgroundImage = `url(${background})`
+      }
+    }
 
     //----errors
     let error = deskErr[0];
@@ -95,7 +84,6 @@ class DeskShow extends React.Component{
       let $error = document.getElementsByClassName('desk-errors')
       $error[0].classList.add('err-on')
     } 
-    //--- 
 
 
     //turning greating header` background to transparent
@@ -146,7 +134,7 @@ class DeskShow extends React.Component{
   
     return(
       <div className='desk-show-container' >
-      {/* <div className='desk-show-container' style={{backgroundImage: `url(${background})`}}> */}
+      {/* <div className='desk-show-container' style={ { backgroundImage: `url(${background})` } }> */}
         <div className='desk-header-container'>
           <GreetingContainer />
         </div>
