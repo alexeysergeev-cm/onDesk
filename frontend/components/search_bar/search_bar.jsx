@@ -8,7 +8,6 @@ const searchBar = () => {
   const [items, setItems] = useState([]);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     dispatch(searchItems(word)).then(res => {
       const desks = res.items.desks.length ? ['Desks', ...res.items.desks] : [];
@@ -18,14 +17,17 @@ const searchBar = () => {
     })
   }, [word])
 
+  // const removeSearch = () => {
+  //   document.getElementsByClassName('search-bar')[0].classList.toggle('go')
+  //   document.getElementsByClassName('search-results')[0].style.display = 'none'
+  // }
+
   return(
     <>
-      <form>
-        <input 
-          placeholder='Search for...' 
-          onChange={event => setWord(event.target.value)}
-        />
-      </form>
+      <input 
+        placeholder='Search for...' 
+        onChange={event => setWord(event.target.value)}
+      />
       
       {items.length ? ( 
         <div className='search-results'>
@@ -36,7 +38,8 @@ const searchBar = () => {
             }
             return (
               <p key={i}>
-                <Link to={`/${item.id}/deskshow`}>
+                {/* <Link to={`/${item.id}/deskshow`} onClick={removeSearch}> */}
+                <Link to={`/${item.id}/deskshow`} >
                   {item.title}
                 </Link>
               </p>

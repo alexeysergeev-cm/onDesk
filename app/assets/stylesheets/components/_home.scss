@@ -199,10 +199,7 @@ h3.h3-home{
 
 
 //Desks -----
-.home-container{
-  // width: 100%;
-  // height: 2025px;
-}
+
 
 .home-sticky-container{
   display: flex;
@@ -439,6 +436,7 @@ h3.h3-home{
     border: 1px solid rgba(0, 0, 0, 0%);
     padding: 5px;
     border-radius: 3px;
+    display: block;
   }
 
   h2{
