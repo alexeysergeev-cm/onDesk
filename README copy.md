@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+1) rails server
+2) bundle exec guard
+3) npm run start
