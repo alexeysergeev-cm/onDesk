@@ -6,3 +6,5 @@ bundle.js.map
 npm-debug.log
 /public/assets
 bundle.js*
+
+/tmp/*
