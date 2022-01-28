@@ -1,57 +1,54 @@
-
-
- .home-home {
-   padding-top: 84px;
-   top: 0;
-   right: 0;
-   right: 0;
-   left: 0;
-   z-index: 1030; 
-   display: block;
+.home-home {
+  padding-top: 84px;
+  top: 0;
+  right: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  display: block;
   font-family: $san-serif;
   color: $dark-blue;
   background-color: $light-blue;
   display: block;
-  position:absolute;
-  height:auto;
- }
+  position: absolute;
+  height: 100%;
+}
 
- .fixed-top{
+.fixed-top {
   display: block;
   position: fixed;
   top: 0;
-   right: 0;
-   right: 0;
-   left: 0;
-   z-index: 1030; 
-   display: block;
+  right: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  display: block;
   font-family: $san-serif;
   color: $dark-blue;
   background-color: $light-blue;
- }
+}
 
- .nav-bar{
-   position: relative;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 6px;
-   -webkit-box-pack: justify;
+.nav-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  -webkit-box-pack: justify;
+}
 
- }
-
- .float-left {
+.float-left {
   float: left;
   color: $white;
-  background-color: transparent; 
+  background-color: transparent;
   font-family: $caveat;
   font-size: 34px;
   width: 130px;
   height: 50px;
   display: flex;
- }
+}
 
-.nav-bar-logo{
+.nav-bar-logo {
   width: 30px;
   height: 30px;
   padding: 5px 1px 5px 5px;
@@ -83,37 +80,42 @@
     background-color: $white;
     border-radius: 5px;
   }
-  
+
   .btn-sm:hover {
     text-decoration: underline;
   }
 }
 
- .intro-container{
-   padding-right: 15px;
-   padding-left: 15px;
-   margin-right: auto;
-   margin-left: auto;
- }
+.intro-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
- .intro-text{
+.intro-text {
   text-align: left;
   color: $white;
   padding-right: 30px;
-   padding-left: 30px;
-   margin-right: auto;
-   margin-left: auto;
- }
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-.intro-text-big{
+.intro-text-big {
   font-size: 48px;
   font-family: $san-serif;
 }
 
-.lead{
+.lead {
   font-family: $san-serif;
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 24px;
   margin-top: 0;
+}
+
+.img-trello {
+  margin: auto;
+  display: block;
 }
