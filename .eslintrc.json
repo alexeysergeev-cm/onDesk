@@ -6,7 +6,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:prettier/recommend"
+        "plugin:prettier/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -24,5 +24,10 @@
         "react-hooks/rules-of-hooks": "error", 
         "react-hooks/exhaustive-deps": "warn" ,
         "prettier/prettier": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "^17.0.2"
+        }
     }
 }
