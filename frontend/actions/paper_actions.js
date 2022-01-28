@@ -1,33 +1,27 @@
-import * as PaperUtil from '../util/paper_api_util';
+import * as PaperUtil from "../util/paper_api_util";
 
 export const RECEIVE_PAPER = "RECEIVE_PAPER";
 export const REMOVE_PAPER = "REMOVE_PAPER";
 
 const receivePaper = (paper) => {
-  return({
+  return {
     type: RECEIVE_PAPER,
-    paper
-  })
-}
+    paper,
+  };
+};
 
 const removePaper = (paperId) => {
-  return({
+  return {
     type: REMOVE_PAPER,
-    paperId
-  })
-}
+    paperId,
+  };
+};
 
-export const createPaper = (paper) => dispatch => (
-  PaperUtil.createPaper(paper)
-    .then((paper) => dispatch(receivePaper(paper)))
-)
+export const createPaper = (paper) => (dispatch) =>
+  PaperUtil.createPaper(paper).then((paper) => dispatch(receivePaper(paper)));
 
-export const updatePaper = (paper) => dispatch => (
-  PaperUtil.updatePaper(paper)
-    .then((paper) => dispatch(receivePaper(paper)))
-)
+export const updatePaper = (paper) => (dispatch) =>
+  PaperUtil.updatePaper(paper).then((paper) => dispatch(receivePaper(paper)));
 
-export const deletePaper = (paperId) => dispatch => (
-  PaperUtil.deletePaper(paperId)
-    .then(() => dispatch(removePaper(paperId)))
-)
+export const deletePaper = (paperId) => (dispatch) =>
+  PaperUtil.deletePaper(paperId).then(() => dispatch(removePaper(paperId)));

@@ -1,58 +1,52 @@
-import * as DeskUtil from '../util/desk_api_util'
+import * as DeskUtil from "../util/desk_api_util";
 
-export const RECEIVE_DESKS = 'RECEIVE_DESKS'
-export const RECEIVE_DESK = 'RECEIVE_DESK'
-export const RECEIVE_DESK_ERRORS = 'RECEIVE_DESK_ERRORS'
-export const REMOVE_DESK = 'REMOVE_DESK'
+export const RECEIVE_DESKS = "RECEIVE_DESKS";
+export const RECEIVE_DESK = "RECEIVE_DESK";
+export const RECEIVE_DESK_ERRORS = "RECEIVE_DESK_ERRORS";
+export const REMOVE_DESK = "REMOVE_DESK";
 
 const receiveDesks = (desks) => ({
   type: RECEIVE_DESKS,
-  desks
-})
+  desks,
+});
 
 const receiveDesk = (payload) => ({
   type: RECEIVE_DESK,
-  payload
-})
+  payload,
+});
 
-const receiveDeskErrors = (errors) => ({ //array
+const receiveDeskErrors = (errors) => ({
+  //array
   type: RECEIVE_DESK_ERRORS,
-  errors
-})
+  errors,
+});
 
 const removeDesk = (deskId) => ({
   type: REMOVE_DESK,
-  deskId
-})
+  deskId,
+});
 
-
-export const fetchDesks = () => dispatch => (
+export const fetchDesks = () => (dispatch) =>
   DeskUtil.fetchDesks()
     .then((desks) => dispatch(receiveDesks(desks)))
-    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)))
-)
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));
 
-export const fetchDesk = (id) => dispatch => (
+export const fetchDesk = (id) => (dispatch) =>
   DeskUtil.fetchDesk(id)
     .then((payload) => dispatch(receiveDesk(payload)))
-    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
-)
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));
 
-export const createDesk = (desk) => dispatch => (
+export const createDesk = (desk) => (dispatch) =>
   DeskUtil.createDesk(desk)
-    .then(createdDesk => dispatch(receiveDesk(createdDesk)))
-    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
-)
+    .then((createdDesk) => dispatch(receiveDesk(createdDesk)))
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));
 
-export const updateDesk = (desk) => dispatch => (
+export const updateDesk = (desk) => (dispatch) =>
   DeskUtil.updateDesk(desk)
     .then((updatedDesk) => dispatch(receiveDesk(updatedDesk)))
-    .fail(errors => dispatch(receiveDeskErrors(errors.responseJSON)))
-)
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));
 
-export const deleteDesk = (deskId) => dispatch => (
+export const deleteDesk = (deskId) => (dispatch) =>
   DeskUtil.deleteDesk(deskId)
     .then(() => dispatch(removeDesk(deskId)))
-    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)))
-)
-
+    .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));

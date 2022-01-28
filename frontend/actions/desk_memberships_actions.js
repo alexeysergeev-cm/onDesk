@@ -1,24 +1,22 @@
-import * as DeskMembershipsApiUtil from '../util/desk_memberships_api_util' 
+import * as DeskMembershipsApiUtil from "../util/desk_memberships_api_util";
 
-
-
-export const CREATE_MEMBERSHIP = "CREATE_MEMBERSHIP"
-export const RECEIVE_MEMBERSHIP_ERRORS = 'RECEIVE_MEMBERSHIP_ERRORS'
+export const CREATE_MEMBERSHIP = "CREATE_MEMBERSHIP";
+export const RECEIVE_MEMBERSHIP_ERRORS = "RECEIVE_MEMBERSHIP_ERRORS";
 
 const receiveMembership = (payload) => {
-  return({
+  return {
     type: CREATE_MEMBERSHIP,
-    payload
-  })
-}
+    payload,
+  };
+};
 
-const receiveMembershipErrors = (errors) => ({ //array
+const receiveMembershipErrors = (errors) => ({
+  //array
   type: RECEIVE_MEMBERSHIP_ERRORS,
-  errors
-})
+  errors,
+});
 
-export const createMembership = (payload) => dispatch => (
+export const createMembership = (payload) => (dispatch) =>
   DeskMembershipsApiUtil.createMembership(payload)
     .then((desk_user_ids) => dispatch(receiveMembership(desk_user_ids)))
-    .fail((errors) => dispatch(receiveMembershipErrors(errors.responseJSON)))
-)
+    .fail((errors) => dispatch(receiveMembershipErrors(errors.responseJSON)));
