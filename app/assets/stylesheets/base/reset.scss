@@ -1,10 +1,32 @@
 /* PHASE 0: Reset */
 
-html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
-fieldset, label, input, textarea,
-span, article, footer, time, small {
+html,
+body,
+header,
+nav,
+h1,
+a,
+ul,
+li,
+strong,
+main,
+button,
+i,
+section,
+img,
+div,
+h2,
+p,
+form,
+fieldset,
+label,
+input,
+textarea,
+span,
+article,
+footer,
+time,
+small {
   margin: 0;
   padding: 0;
   border: 0;
@@ -58,13 +80,19 @@ input[type="submit"] {
   clear: both;
 }
 
-
 // .document-container{
 //   overflow: auto;
 //   min-height: 1000px;
 //    background-color: rgb(250, 251, 252);
 // }
 
-html, body {
-    overflow: auto;
+html,
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+#root,
+.document-container {
+  height: 100%;
 }
