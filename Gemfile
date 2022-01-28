@@ -58,6 +58,7 @@ group :development do
   gem 'guard'
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
+  
 end
 
 group :test do
@@ -70,3 +71,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'awesome_print'
