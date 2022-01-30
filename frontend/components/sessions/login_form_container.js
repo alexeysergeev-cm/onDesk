@@ -7,10 +7,12 @@ const mSTP = (state, ownProps) => ({
   formType: 'Log In'
 })
 
-const mDTP = (dispatch, ownProps) => ({
-  processForm: (currentUser) => dispatch(login(currentUser)),
-  demoUser: (currentUser) => dispatch(login(currentUser))
-})
+const mDTP = (dispatch, ownProps) => {
+  return {
+    processForm: (currentUser) => dispatch(login(currentUser)),
+    demoUser: (currentUser) => dispatch(login(currentUser))
+  }
+}
 
 
 export default connect(mSTP, mDTP)(SessionForm)

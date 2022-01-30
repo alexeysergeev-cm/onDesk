@@ -75,7 +75,7 @@ class DeskForm extends React.Component{
           </div>
           <div className="desk-background" onClick={this.chooseBackground}>
             {backgroundPics.map((pic, i) => (
-              <div key={i}>{pic}</div>
+              <div key={i} className=''>{pic}</div>
             ))}
           </div>
           <input type="submit" className='desk-submit' value={this.props.formType}/>
