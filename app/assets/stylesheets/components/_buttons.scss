@@ -1,0 +1,21 @@
+.btn {
+  background-color: transparent;
+  padding: 5px;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-create {
+  background: #6ca3c2;
+  color: white;
+  font-size: 14px;
+  margin: 0 10px 0 0;
+}
+
+.btn-create:hover {
+  background: #72b3d8;
+}
