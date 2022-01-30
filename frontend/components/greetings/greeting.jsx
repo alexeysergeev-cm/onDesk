@@ -175,7 +175,6 @@ class Greeting extends React.Component {
               >
                 Create
               </a>
-
               {welcome}
             </div>
           </nav>

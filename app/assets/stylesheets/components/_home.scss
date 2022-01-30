@@ -366,20 +366,18 @@ h3.h3-home {
 }
 
 .search-bar {
-  height: 28px;
-  padding: 6px 0px 5px 10px;
-  margin-top: 2px;
   border-radius: 5px;
-  width: 0;
-  transition: all 1s;
   overflow: auto;
-  background: none;
-}
-
-.search-bar.go {
   background: rgba(0, 255, 255, 60%);
   width: 150px;
+  align-self: center;
+
+  input {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
 }
+
 
 .search-results {
   display: block;
