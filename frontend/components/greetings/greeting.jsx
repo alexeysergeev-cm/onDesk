@@ -60,21 +60,7 @@ class Greeting extends React.Component {
   }
 
   showSearchBar() {
-    document.getElementsByClassName("search-bar")[0].classList.toggle("go");
-    const searchResultDiv =
-      document.getElementsByClassName("search-results")[0] || null;
-
-    if (
-      document.getElementsByClassName("search-bar")[0].classList.length === 2
-    ) {
-      if (searchResultDiv) {
-        searchResultDiv.style.display = "block";
-      }
-    } else {
-      if (searchResultDiv) {
-        searchResultDiv.style.display = "none";
-      }
-    }
+    document.querySelector(".search-bar").firstChild.focus();
   }
 
   componentDidMount() {
