@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Redirect } from 'react-router'
 import { Link, Route} from 'react-router-dom'
 import GreetingContainer from '../greetings/greeting_container'
@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
   demoUser(e){
     e.preventDefault()
     this.props.demoUser({email: 'tori@io.com', password: '123456'})
-      .then(() => this.setState({ redirect: true }))
+      // .then(() => this.setState({ redirect: true }))
   }
 
   render(){

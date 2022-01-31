@@ -1,23 +1,22 @@
-import * as UsersApiUtil from '../util/users_api_util';
+import * as UsersApiUtil from "../util/users_api_util";
 
-export const FIND_USER = 'FIND_USER';
-export const RECEIVE_INVITE_ERRORS = 'RECEIVE_INVITE_ERRORS'
+export const FIND_USER = "FIND_USER";
+export const RECEIVE_INVITE_ERRORS = "RECEIVE_INVITE_ERRORS";
 
 const findUser = (user) => {
-  return({
+  return {
     type: FIND_USER,
-    user
-  })
-}
+    user,
+  };
+};
 
-const receiveErrors = (errors) => ({ //array
+const receiveErrors = (errors) => ({
+  //array
   type: RECEIVE_INVITE_ERRORS,
-  errors
-})
+  errors,
+});
 
-
-export const fetchUser = (email) => dispatch => (
+export const fetchUser = (email) => (dispatch) =>
   UsersApiUtil.fetchUser(email)
     .then((user) => dispatch(findUser(user)))
-    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)))
-)
+    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));

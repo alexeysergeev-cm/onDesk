@@ -99,6 +99,7 @@
   
   div{
     height: 55px;
+    position: relative;
   }
 
   img{
@@ -108,10 +109,10 @@
   }
 
   i{
-    position: relative;
+    position: absolute;
     z-index: 1;
-    top: -38px;
-    left: 18px;
+    top: 38%;
+    left: 29%;
     color: rgb(240, 248, 255);
   }
 }
