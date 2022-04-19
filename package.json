@@ -16,6 +16,7 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2"
   },
@@ -49,10 +50,13 @@
   "homepage": "https://github.com/alexeysergeev-cm/onDesk#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
+    "css-loader": "^6.7.1",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0"
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0"
   }
 }

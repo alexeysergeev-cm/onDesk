@@ -5,7 +5,7 @@ import listsReducer from './lists_reducer';
 import papersReducer from  './papers_reducer';
 import commentsReducer from './comments_reducer';
 import searchReducer from './search_reducer';
-
+import membershipReducer from './desk_membership_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -13,8 +13,8 @@ const entitiesReducer = combineReducers({
   lists: listsReducer,
   papers: papersReducer,
   comments: commentsReducer,
-  searchItems: searchReducer
-
+  searchItems: searchReducer,
+  deskMembers: membershipReducer
 })
 
 export default entitiesReducer;
