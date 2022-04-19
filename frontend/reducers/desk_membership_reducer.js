@@ -12,7 +12,6 @@ const membershipReducer = (state = {}, action) => {
     case CLEAR_MESSAGE:
       return "";
     case RECEIVE_DESK:
-      console.log(action.payload.desk_memberships);
       return Object.assign({}, action.payload.desk_memberships);
     default:
       return state;

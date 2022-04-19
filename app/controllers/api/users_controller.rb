@@ -39,6 +39,7 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = selected_user
+    # render :show
   end
 
   private

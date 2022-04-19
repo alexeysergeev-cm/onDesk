@@ -5,7 +5,7 @@ end
 json.lists do 
   @desk.lists.to_a.each do |listy|
       json.set! listy.id do 
-        json.partial! '/api/lists/list', list: listy     #use listy coz 'list' is reserved word D:
+        json.partial! '/api/lists/list', list: listy     #use listy coz 'list' is a reserved word D:
       end
   end
 end

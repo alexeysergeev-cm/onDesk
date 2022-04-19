@@ -11,7 +11,6 @@ const findUser = (user) => {
 };
 
 const receiveErrors = (errors) => ({
-  //array
   type: RECEIVE_INVITE_ERRORS,
   errors,
 });

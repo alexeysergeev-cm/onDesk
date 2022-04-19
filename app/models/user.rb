@@ -4,6 +4,13 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  PHOTO_COLORS = ["#EA7AF4", "#B43E8F", "#6200B3", "#3B0086", "#290628", "#060F29", "#3EAFB5", "#3EB57D", "#71B53E", "#B5B13E", "#B5B13E"]
+  
+  before_create do
+    self.color = PHOTO_COLORS.sample
+  end
+
+
   after_initialize :ensure_session_token
   attr_reader :password
 

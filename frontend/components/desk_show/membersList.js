@@ -6,8 +6,6 @@ import { useEventListener } from "../../hooks/useEventListener";
 import "./memberList.scss";
 import classnames from "classnames"
 
-const COLORS = ["#6157bf", "#cabd30", "#d92828", "#77b974"];
-
 function MembersList({ data }) {
   const [members, setMembers] = useState([]);
 
@@ -23,8 +21,7 @@ function MembersList({ data }) {
               "with-image": !!member.photoUrl
             })}
             style={{
-              backgroundColor:
-                COLORS[Math.floor(Math.random() * COLORS.length)],
+              backgroundColor: member.color,
               backgroundImage: `url(${member.photoUrl})`,
             }}
           >
