@@ -14,7 +14,7 @@ class Api::DesksController < ApplicationController
   end
 
   def show
-    @desk = Desk.includes(:lists, :papers, :comments).find_by(id: params[:id])
+    @desk = Desk.includes(:lists, :papers, :comments, :desk_memberships).find_by(id: params[:id])
   end
 
   def update
