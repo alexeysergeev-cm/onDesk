@@ -96,7 +96,11 @@ class Greeting extends React.Component {
 
       welcome = (
         <div className="btn-logout-home">
-          <button className="btn-logout" onClick={this.clickDropDown}>
+          <button
+            className="btn-logout"
+            style={{ backgroundColor: this.props.currentUser.color }}
+            onClick={this.clickDropDown}
+          >
             <div onClick={this.clickDropDown}>{name[0]}</div>
             <ul className="home-dropdown">
               <li style={{ fontWeight: "600" }}>Welcome {name}</li>

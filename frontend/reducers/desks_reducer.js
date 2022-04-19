@@ -8,8 +8,6 @@ const desksReducer = (state = {}, action) => {
     case RECEIVE_DESKS:
       return action.desks;
     case RECEIVE_DESK:   
-      // nextState[action.payload.desk.id] = action.payload.desk;
-      // return nextState
       return {[action.payload.desk.id]: action.payload.desk}
     case REMOVE_DESK:
       delete nextState[action.deskId]

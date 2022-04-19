@@ -29,6 +29,7 @@ const searchBar = () => {
 
   useEffect(() => {
     dispatch(searchItems(word)).then((res) => {
+      if (!res.items) return;
       const desks = res.items.desks.length ? ["Desks", ...res.items.desks] : [];
       const lists = res.items.lists.length ? ["Lists", ...res.items.lists] : [];
       const papers = res.items.papers.length

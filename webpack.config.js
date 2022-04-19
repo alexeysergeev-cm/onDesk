@@ -19,11 +19,32 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx", "*"],
+    extensions: [".js", ".jsx", "*", ".css"],
   },
   plugins: [
     new webpack.ProvidePlugin({

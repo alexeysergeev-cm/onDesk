@@ -5,7 +5,7 @@ import GreetingContainer from '../greetings/greeting_container'
 import SearchContainer from './search_container';
 import DeskEditContainer from '../desk_edit/desk_edit_container';
 import ListIndexContainer from '../lists/list_index_container'
-
+import MembersList from './membersList';
 
 
 class DeskShow extends React.Component{
@@ -131,21 +131,27 @@ class DeskShow extends React.Component{
         </ul>
       </div>
     )
-  
-    return(
-      <div className='desk-show-container' >
-      {/* <div className='desk-show-container' style={ { backgroundImage: `url(${background})` } }> */}
-        <div className='desk-header-container'>
+    return (
+      <div className="desk-show-container">
+        {/* <div className='desk-show-container' style={ { backgroundImage: `url(${background})` } }> */}
+        <div className="desk-header-container">
           <GreetingContainer />
         </div>
-        <div style={{width: '100%', display: 'block', position: 'absolute', top: '40px'}}>
-          <div className='desk-name-header'>
-            <div className='desk-name-header-btn'>
-              <div className='desk-title' onClick={this.titleUpdate}>
+        <div
+          style={{
+            width: "100%",
+            display: "block",
+            position: "absolute",
+            top: "40px",
+          }}
+        >
+          <div className="desk-name-header">
+            <div className="desk-name-header-btn">
+              <div className="desk-title" onClick={this.titleUpdate}>
                 {title}
               </div>
-              <div className='udate-form-container'>
-                <DeskEditContainer 
+              <div className="udate-form-container">
+                <DeskEditContainer
                   deskId={deskId}
                   currUserId={currUserId}
                   clearErrors={this.props.clearErrors}
@@ -153,20 +159,16 @@ class DeskShow extends React.Component{
               </div>
             </div>
             {invite}
+            <MembersList data={this.props.deskMembers} />
             {menu}
           </div>
         </div>
-        <div className='desk-errors-container'>
-          <div className='desk-errors'>
-            {error}
-          </div>
+        <div className="desk-errors-container">
+          <div className="desk-errors">{error}</div>
         </div>
-        <ListIndexContainer 
-          deskId={deskId}
-          desk={this.props.desk[deskId]}
-        />
+        <ListIndexContainer deskId={deskId} desk={this.props.desk[deskId]} />
       </div>
-    )
+    );
   }
 }
 
