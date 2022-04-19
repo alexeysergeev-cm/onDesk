@@ -18,11 +18,11 @@ function MembersList({ data }) {
           <button
             key={member.id}
             className={classnames("button is-info is-light member-icon", {
-              "with-image": !!member.photoUrl
+              "with-image": !!member.photoUrl,
             })}
             style={{
               backgroundColor: member.color,
-              backgroundImage: `url(${member.photoUrl})`,
+              backgroundImage: member.photoUrl ? `url(${member.photoUrl})` : "",
             }}
           >
             {!member.photoUrl ? (
@@ -30,9 +30,7 @@ function MembersList({ data }) {
                 {member.username.split(" ")[0][0] +
                   member.username.split(" ")[1][0]}
               </>
-            ) : (
-              null
-            )}
+            ) : null}
           </button>
         );
       })}
