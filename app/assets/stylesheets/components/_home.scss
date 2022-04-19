@@ -302,7 +302,6 @@ h3.h3-home {
   margin-top: 32px;
 }
 
-
 .add-photo {
   text-align: center;
   font-size: 15px;
@@ -344,13 +343,14 @@ h3.h3-home {
 .search-bar {
   border-radius: 5px;
   overflow: hidden;
-  background: rgba(0, 255, 255, 60%);
+  background: #ffffff;
   width: 150px;
   align-self: center;
 
   input {
     font-size: 14px;
     padding: 5px 8px;
+    color: #000;
   }
 }
 
@@ -358,17 +358,17 @@ h3.h3-home {
   position: absolute;
   z-index: 1;
   color: rgb(0, 0, 0);
-  background: rgba(0, 255, 255, 95%);
-  box-shadow: 0px 1px 1px 0px;
-  border-radius: 2px;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
   top: 35px;
   left: 175px;
-  min-width: 200px;
+  min-width: 250px;
   padding: 10px;
   max-height: 500px;
   overflow: auto;
   font-size: 16px;
-  cursor: default;
+  cursor: pointer;
 
   a {
     display: block;
@@ -376,7 +376,7 @@ h3.h3-home {
   }
 
   a:hover {
-    background-color: rgb(28, 151, 222);
+    background-color: #036aa74a;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -391,4 +391,9 @@ h3.h3-home {
 
 .hide {
   display: none;
+}
+
+// hide scrollbar
+.search-results::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
