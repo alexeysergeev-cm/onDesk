@@ -4,12 +4,8 @@ import React from 'react';
 class EditList extends React.Component{
   constructor(props){
     super(props)
-    this.state = {
-      title: '',
-      id: this.props.listId,
-      desk_id: this.props.deskId,
-      author_id: this.props.currUserId
-    }
+    this.state = this.props.list
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this)
   }
@@ -32,11 +28,10 @@ class EditList extends React.Component{
   }
 
   render(e){
-
     return(
       <form onSubmit={this.handleSubmit}>
         <input type='text'
-            value={this.state.title}
+            value={this.state?.title || ""}
             onChange={this.update('title')}
             className='list-edit-input'
             placeholder='Update title'

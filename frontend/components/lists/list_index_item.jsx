@@ -34,50 +34,45 @@ class ListIndexItem extends React.Component{
 
   render(){
     const { title, id } = this.props.list
-    const { deskId, updateList, desk } = this.props
-    return(
+    const { updateList, desk } = this.props
+
+    return (
       <>
-        <div className='list-title-cont'>
-          <div className="list-title">
-            {title}
-          </div>
-          <div className='udate-list-container'>
-              <ListEditContainer
-                listId={id}
-                deskId={deskId}
-              />
+        <div className="list-title-cont">
+          <div className="list-title">{title}</div>
+          <div className="udate-list-container">
+            <ListEditContainer
+              list={this.props.list}
+            />
           </div>
           <div className="list-extras">
-            <i className="fa fa-ellipsis-h" aria-hidden="true" ></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
             <div className="delete-list">
-              <h5>List Actions</h5>  
-              <hr className="Solid"/>
+              <h5>List Actions</h5>
+              <hr className="Solid" />
               <div onClick={this.titleUpdate}>Update Title</div>
               <div onClick={() => this.props.deleteList(id)}>Delete List</div>
             </div>
           </div>
         </div>
-        <PaperIndex 
+        <PaperIndex
           list_id={id}
           updateList={updateList}
           list={this.props.list}
           desk={desk}
         />
-        <div className='open-paper-composer'>
+        <div className="open-paper-composer">
           <span className="paper-new-click" onClick={this.handleClick}>
             <i className="fa fa-plus-square-o" aria-hidden="true"></i>
             Add a paper
-          </span>        
+          </span>
           <div className="paper-form">
             {/* {form} */}
-            <PaperForm 
-              listId={id}
-              list={this.props.list}
-            />
+            <PaperForm listId={id} list={this.props.list} />
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 

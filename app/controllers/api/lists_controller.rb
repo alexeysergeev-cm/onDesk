@@ -1,7 +1,6 @@
 class Api::ListsController < ApplicationController
-
+  before_action :require_logged_in!
   def create
-    
     @list = current_user.lists.new(list_params)
     if @list.save 
       render :show
@@ -12,10 +11,8 @@ class Api::ListsController < ApplicationController
 
   def update
     @list = List.find_by(id: params[:id])
-    if @list 
-      if @list.update(list_params)
+    if @list && @list.update(list_params)
         render :show
-      end
     else  
       render json: ["Only a list's author can update the title"], status: 401
     end
@@ -23,8 +20,7 @@ class Api::ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    if @list 
-      @list.destroy
+    if @list && @list.destroy
       render :show
     else
       render json: ["Only a list's author can delete a list"], status: 401
@@ -34,6 +30,7 @@ class Api::ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:id, :title, :desk_id, :author_id, paper_order: [])
+    defaults = { paper_order: [] }
+    params.require(:list).permit(:id, :title, :desk_id, :author_id, paper_order: []).reverse_merge(defaults)
   end
 end

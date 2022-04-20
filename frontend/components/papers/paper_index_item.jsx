@@ -8,7 +8,19 @@ class PaperIndexItem extends React.Component{
 
     this.titleUpdate = this.titleUpdate.bind(this)
     this.clickPaperItem = this.clickPaperItem.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
+
+  handleDelete(id){
+    this.props.deletePaper(id)
+    const newOrder = this.props.list.paper_order.filter(paperId => ""+paperId !== ""+id)
+
+    this.props.updateList({
+      id: this.props.listId,
+      paper_order: newOrder,
+    });
+  }
+  
 
   titleUpdate(e){
     e.stopPropagation();
@@ -68,7 +80,7 @@ class PaperIndexItem extends React.Component{
               <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
                   Add Description
               </div>
-              <div onClick={() => this.props.deletePaper(id)}>Delete Paper</div>
+              <div onClick={() => this.handleDelete(id)}>Delete Paper</div>
             </div>
           </div>
         </div>
