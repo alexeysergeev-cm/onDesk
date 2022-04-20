@@ -62,8 +62,7 @@ function PaperIndex({
                   </Draggable>
                 );
               }
-            })
-            .filter((e) => e !== undefined)}
+            })}
           {provided.placeholder}
         </div>
       )}

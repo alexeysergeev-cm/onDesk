@@ -36,9 +36,7 @@ class ListIndex extends React.Component {
       } else {
         const startList =
           this.props.lists[result.source.droppableId].paper_order;
-        console.log(startList)
         startList.splice(result.source.index, 1);
-        console.log(startList)
         this.props.updateList({
           id: result.source.droppableId,
           paper_order: startList,
@@ -46,9 +44,7 @@ class ListIndex extends React.Component {
 
         const finishList =
           this.props.lists[result.destination.droppableId].paper_order;
-        console.log(finishList);
         finishList.splice(result.destination.index, 0, result.draggableId);
-        console.log(finishList);
         this.props.updateList({
           id: result.destination.droppableId,
           paper_order: finishList,
