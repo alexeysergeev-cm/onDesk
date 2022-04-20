@@ -12,8 +12,14 @@ class Api::ListsController < ApplicationController
 
   def update
     @list = List.find_by(id: params[:id])
+
     if @list 
-      if @list.update(list_params)
+      newParams = {}
+      newParams.merge!(list_params)
+      if !list_params["paper_order"].present?
+        newParams["paper_order"] = []
+      end
+      if @list.update(newParams)
         render :show
       end
     else  
