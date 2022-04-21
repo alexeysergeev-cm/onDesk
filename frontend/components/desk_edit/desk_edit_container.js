@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 import { fetchDesk, updateDesk } from '../../actions/desk_actions';
 import EditDesk from './desk_edit';
 
-const mSTP = (state, ownParams) => {
-  const errors = state.errors.desk
-  return({
-    errors
-  })
+const mSTP = (state) => {
+  return {
+    errors: state.errors.desk
+  };
 }
 
 const mDTP = (dispatch) => ({
