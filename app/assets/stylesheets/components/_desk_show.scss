@@ -315,12 +315,13 @@
   text-align: center;
 }
 
-//-----UPDATE DESK NAME 
-
 .desk-title{
-  width: 200px;
-  padding: 9px 0;
+  padding: 10px 15px;
   text-align: center;
+  min-width: 200px;
+  &.is-update {
+    padding: 10px 5px;
+  }
 }
 
 .desk-title.hide{
@@ -329,32 +330,24 @@
 
 .udate-form-container{
   display: none;
-  // width: 125px;
-  // height: 65px;
 }
 
 .udate-form-container.show{
   display: block;
+  width: 200px;
+  padding: 9px 0;
+  text-align: center;
   z-index: 1;
-  padding: 4px 2px 0 0;
   form {
     display: flex;
   }
 }
 
 .desk-edit-input{
-  width: 112px;
-  height: 19px;
-  padding: 3px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  margin: 0 5px 4px;
-  background: rgba(255, 255, 255, 0.54);
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 } 
 
-.desk-edit-input:focus{
-  background: rgba(255, 255, 255, 0.24);
-}
 
 .edit-btn-container{
   text-align: end;

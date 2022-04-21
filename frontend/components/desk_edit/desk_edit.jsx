@@ -1,54 +1,61 @@
-import React from 'react';
+import { useCallback, useEffect, useState, useRef } from "react";
+import { debounce } from "lodash";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
+import { useEventListener } from "../../hooks/useEventListener";
 
-class EditDesk extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      title: ''
+function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
+  const [title, setTitle] = useState("");
+  const ref = useRef();
+
+  useEffect(() => {
+    if (!deskId || !desk) return;
+
+    setTitle(desk[deskId]?.title || "");
+  }, [deskId, setTitle, desk]);
+
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
+
+  const update = useCallback((e) => {
+    console.log(e.currentTarget.value);
+    setTitle(e.currentTarget.value);
+  }, []);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      console.log("submiting new Desk title");
+      submitDesk({
+        title: title,
+        id: deskId,
+      }).then(() => titleUpdate(false));
+
+      setTimeout(() => clearErrors(), 5000);
+    },
+    [submitDesk, titleUpdate, clearErrors, deskId, title]
+  );
+
+  const pressEnter = useCallback((e) => {
+    if (e.keyCode === 13) {
+      handleSubmit(e);
     }
+  }, []);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this)
-  }
+  useOnClickOutside(ref, (e) => handleSubmit(e));
+  // useEventListener("keydown", pressEnter);
 
-  update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.submitDesk({
-      title: this.state.title, 
-      id: this.props.deskId
-    })
-    .then(this.setState({title: ''}))
-
-    let deskTitle = document.getElementsByClassName('desk-title');
-    let updateForm = document.getElementsByClassName('udate-form-container');
-    deskTitle[0].classList.remove('hide')
-    updateForm[0].classList.remove('show')
-
-    setTimeout(() => this.props.clearErrors(), 5000)
-  }
-
-
-  render(){
-    return(
-      <form onSubmit={this.handleSubmit}>
-        <div className='update-desk-container show'>
-          <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-            className='desk-edit-input'
-            placeholder="Update title"
-          />
-        </div>
-        <div className='edit-btn-container'>
-          <button className='edit-submit'>Update</button>
-        </div>
-      </form>
-    )
-  }
+  return (
+    <input
+      type="text"
+      value={title}
+      onChange={(e) => update(e)}
+      className="desk-edit-input"
+      placeholder="New title"
+      ref={ref}
+      onKeyDown={pressEnter}
+    />
+  );
 }
 
 export default EditDesk;
