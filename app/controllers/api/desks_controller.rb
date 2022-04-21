@@ -1,4 +1,5 @@
 class Api::DesksController < ApplicationController
+  before_action :require_logged_in!
 
   def index
     @desks = Desk.all 
@@ -45,5 +46,4 @@ class Api::DesksController < ApplicationController
   def desk_params
     params.require(:desk).permit(:id, :title, :author_id, :background_picture, list_order: [])
   end
-
 end

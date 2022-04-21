@@ -4,7 +4,7 @@ class Desk < ApplicationRecord
   belongs_to :author,
     class_name: :User
 
-  has_many :desk_memberships
+  has_many :desk_memberships, dependent: :destroy
   
   has_many :lists,
     dependent: :destroy
@@ -18,5 +18,4 @@ class Desk < ApplicationRecord
     through: :papers,
     source: :comments,
     dependent: :destroy
-
 end
