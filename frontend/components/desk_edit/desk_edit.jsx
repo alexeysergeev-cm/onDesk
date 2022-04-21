@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useState, useRef } from "react";
-import { debounce } from "lodash";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
-import { useEventListener } from "../../hooks/useEventListener";
 
 function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
   const [title, setTitle] = useState("");
@@ -25,7 +23,8 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      console.log("submiting new Desk title");
+      console.log(`Submiting new Desk: ${title}, ${deskId}`);
+
       submitDesk({
         title: title,
         id: deskId,
@@ -40,10 +39,9 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
     if (e.keyCode === 13) {
       handleSubmit(e);
     }
-  }, []);
+  }, [title]);
 
   useOnClickOutside(ref, (e) => handleSubmit(e));
-  // useEventListener("keydown", pressEnter);
 
   return (
     <input

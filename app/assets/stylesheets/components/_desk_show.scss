@@ -346,6 +346,10 @@
 .desk-edit-input{
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+
+  &::-webkit-input-placeholder {
+    color: #b2cde0
+  }
 } 
 
 
