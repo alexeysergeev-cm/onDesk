@@ -7,6 +7,8 @@ class Api::DesksController < ApplicationController
   def create
     @desk = Desk.new(desk_params)
     if @desk.save 
+      dm = DeskMembership.new(user_id: current_user.id, desk_id: @desk.id)
+      dm.save
       render :show
     else
       render json: @desk.errors.full_messages, status: :unprocessable_entity
