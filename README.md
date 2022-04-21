@@ -42,21 +42,68 @@ onDesk is built using the following stack & libraries:
 
 ## Features
 
-Logged-in users have access to all of the projects, including personal and team ones. Utilizing `JQuery` and `DOM` manipulation, users can choose a desired background for their desk to offer an enhanced UX.
+Piece of code for Editing the Desk Title using react hooks and `useOnClickOutside` custom hook.
 
 ```javascript 
-chooseBackground(e){
-  let allPics = e.target.parentElement.parentElement.children
-  for (let pic of allPics) {
-    if (pic.children.length > 1){
-      pic.lastElementChild.remove()
+import { useCallback, useEffect, useState, useRef } from "react";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
+
+function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
+  const [title, setTitle] = useState("");
+  const ref = useRef();
+
+  useEffect(() => {
+    if (!deskId || !desk) return;
+
+    setTitle(desk[deskId]?.title || "");
+  }, [deskId, setTitle, desk]);
+
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
+
+  const update = useCallback((e) => {
+    console.log(e.currentTarget.value);
+    setTitle(e.currentTarget.value);
+  }, []);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      console.log(`Submiting new Desk: ${title}, ${deskId}`);
+
+      submitDesk({
+        title: title,
+        id: deskId,
+      }).then(() => titleUpdate(false));
+
+      setTimeout(() => clearErrors(), 5000);
+    },
+    [submitDesk, titleUpdate, clearErrors, deskId, title]
+  );
+
+  const pressEnter = useCallback((e) => {
+    if (e.keyCode === 13) {
+      handleSubmit(e);
     }
-  }
-  let check = $("<i class='fa fa-check' aria-hidden='true'></i>")
-  $(e.target.parentElement).append(check)
-  document.getElementsByClassName('desk-form-box')[0].style.backgroundImage = `url(${e.target["currentSrc"]})`
-  this.setState({background_picture: e.target["currentSrc"]})
+  }, [title]);
+
+  useOnClickOutside(ref, (e) => handleSubmit(e));
+
+  return (
+    <input
+      type="text"
+      value={title}
+      onChange={(e) => update(e)}
+      className="desk-edit-input"
+      placeholder="New title"
+      ref={ref}
+      onKeyDown={pressEnter}
+    />
+  );
 }
+
+export default EditDesk;
 ```
 ![S](https://github.com/alexeysergeev-cm/onDesk/blob/main/app/assets/images/create_desk.gif)
 
