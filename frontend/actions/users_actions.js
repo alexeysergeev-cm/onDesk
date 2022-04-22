@@ -18,4 +18,4 @@ const receiveErrors = (errors) => ({
 export const fetchUser = (email) => (dispatch) =>
   UsersApiUtil.fetchUser(email)
     .then((user) => dispatch(findUser(user)))
-    .fail((errors) => dispatch(receiveErrors(errors.responseJSON)));
+    .fail((err) => dispatch(receiveErrors(err.responseJSON)));

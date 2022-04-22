@@ -1,0 +1,19 @@
+.desk-name-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-section-desk-name, .right-section-desk-name {
+  display: flex;
+}
+
+.board-header-btn-divider {
+  border-left: 1px solid #ffffff3d;
+  float: left;
+  height: 30px;
+  margin: 8px 0px 8px 10px;
+}
+
+
+

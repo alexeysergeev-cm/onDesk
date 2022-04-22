@@ -8,7 +8,19 @@ class Api::DeskMembershipsController < ApplicationController
     end
 
     if @desk_membership.save
-      render json: { message: 'Success, user invited!'}
+      @new_member = User.find(@desk_membership.user_id) 
+      render :show
+    end
+  end
+
+  def destroy
+    @desk_membership = DeskMembership.find(params[:id])
+    @desk_id = @desk_membership.desk_id
+    if @desk_membership.destroy
+      @desk = Desk.find(@desk_id)
+      render :index
+    else
+      render json: @desk_membership.errors.full_messages, status: 422
     end
   end
 

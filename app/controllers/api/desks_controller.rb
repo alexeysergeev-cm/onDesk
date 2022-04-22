@@ -1,4 +1,5 @@
 class Api::DesksController < ApplicationController
+  before_action :require_logged_in!
 
   def index
     @desks = Desk.all 
@@ -7,6 +8,8 @@ class Api::DesksController < ApplicationController
   def create
     @desk = Desk.new(desk_params)
     if @desk.save 
+      dm = DeskMembership.new(user_id: current_user.id, desk_id: @desk.id)
+      dm.save
       render :show
     else
       render json: @desk.errors.full_messages, status: :unprocessable_entity
@@ -43,5 +46,4 @@ class Api::DesksController < ApplicationController
   def desk_params
     params.require(:desk).permit(:id, :title, :author_id, :background_picture, list_order: [])
   end
-
 end

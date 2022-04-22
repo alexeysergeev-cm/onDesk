@@ -9,6 +9,7 @@ const mSTP = state => {
   const errors = state.errors.invite
   const membershipErr = state.errors.membership 
   const users = state.entities.users
+
   return({
     users,
     errors,
