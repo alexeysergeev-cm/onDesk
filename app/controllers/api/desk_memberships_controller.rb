@@ -8,7 +8,8 @@ class Api::DeskMembershipsController < ApplicationController
     end
 
     if @desk_membership.save
-      render json: { message: 'Success, user invited!'}
+      @new_member = User.find(@desk_membership.user_id) 
+      render :show
     end
   end
 

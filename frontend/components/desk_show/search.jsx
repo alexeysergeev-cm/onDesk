@@ -1,76 +1,81 @@
-import React from 'react';
+import { useCallback, useEffect, useState } from "react";
+import classnames from "classnames";
 
+function Search({
+  fetchUser,
+  clearMessage,
+  clearErrors,
+  createMembership,
+  deskId,
+}) {
+  const [query, setQuery] = useState("");
+  const [successInvite, setSuccessInvite] = useState("");
+  const [error, setError] = useState("");
 
-class Search extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      query: ""
-    };
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!query.length) return;
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let newMemberId;
-    let email = this.state.query 
+      fetchUser(query)
+        .then((data) => data.user.id)
+        .then((id) =>
+          createMembership({
+            user_id: id,
+            desk_id: deskId,
+          })
+        )
+        .then((data) => setSuccessInvite("Success, user invited!"))
+        .fail((err) => setError(err.responseJSON))
+        .then(() => setQuery(""));
 
-    this.props.fetchUser(this.state.query)
-      .then(() => Object.values(this.props.users).forEach(obj => { 
-        if (obj.email === email) newMemberId = obj.id 
-      }))
-      .then(() => this.props.createMembership({ user_id: newMemberId, desk_id: this.props.deskId }))
-      .then(this.setState({query: ""})) //clear input
+      setTimeout(() => (setSuccessInvite(""), setError("")), 5000);
+    },
+    [query]
+  );
 
-    setTimeout(() => (this.props.clearMessage(), this.props.clearErrors()), 3000)
-  }
+  const handleInputChange = useCallback(
+    (e) => {
+      setQuery(e.currentTarget.value);
+    },
+    [setQuery]
+  );
 
-  handleInputChange(field){
-    return event => this.setState({ [field]: event.currentTarget.value})
-  };
-  
-  render(){
-    const { errors, message, membershipErr } = this.props
-
-    let error = errors[0] || membershipErr[0];
-
-    if (errors.length && !message){
-      let $error = document.getElementsByClassName('invite-errors')
-      $error[0].classList.add('err-on')
-    } else if (message) {
-      let $error = document.getElementsByClassName('invite-errors')
-      $error[0].classList.remove('err-on')
-      let $success = document.getElementsByClassName('invite-success')
-      $success[0].classList.add('suc-on')
-    } else if (membershipErr.length){
-      let $error = document.getElementsByClassName('invite-errors')
-      $error[0].classList.add('err-on')
-    }
-
-    return(
-      <div className="searchForm">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className='invite-input'
-            placeholder="Email address"
-            value={this.state.query}
-            onChange={this.handleInputChange('query')}
-          />
-        <button className='invite-acc-btn'>Invite</button>
-        </form>
-            <hr className="Solid" />
-        <div className='render-result'>
-          <div className='invite-errors'>
-            {error}
+  return (
+    <div className="searchForm">
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input
+          type="email"
+          className="input invite-input"
+          placeholder="Email"
+          value={query}
+          onChange={(e) => handleInputChange(e)}
+        />
+        <button className="button is-link is-outlined">Share</button>
+      </form>
+      {(error || successInvite) && (
+        <>
+          <div className="horizontal-divider"></div>
+          <div className="render-result">
+            <div
+              className={classnames("invite-errors", {
+                "err-on": error.length,
+              })}
+            >
+              {error}
+            </div>
+            <div
+              className={classnames("invite-success", {
+                "suc-on": successInvite.length,
+              })}
+            >
+              {successInvite}
+            </div>
           </div>
-          <div className='invite-success'>
-            {message}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
+        </>
+      )}
+    </div>
+  );
 }
 
 export default Search;

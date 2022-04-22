@@ -8,7 +8,8 @@ const membershipReducer = (state = {}, action) => {
   
   switch(action.type){
     case CREATE_MEMBERSHIP:
-      return action.payload;
+      const newMember = action.payload;
+      return {...nextState, newMember}
     case CLEAR_MESSAGE:
       return "";
     case RECEIVE_DESK:

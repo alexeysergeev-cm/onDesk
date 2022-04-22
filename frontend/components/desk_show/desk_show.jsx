@@ -2,11 +2,13 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { ProtectedRoute } from "../../util/route_util";
 import GreetingContainer from "../greetings/greeting_container";
-import SearchContainer from "./search_container";
 import DeskEditContainer from "../desk_edit/desk_edit_container";
 import ListIndexContainer from "../lists/list_index_container";
 import MembersList from "./membersList";
 import classnames from "classnames";
+import "./deskShow.scss";
+import Invite from "../invite/invite";
+
 class DeskShow extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,7 @@ class DeskShow extends React.Component {
 
     this.clickDropDown = this.clickDropDown.bind(this);
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this);
-    this.clickInvite = this.clickInvite.bind(this);
+    // this.clickInvite = this.clickInvite.bind(this);
     this.setIstitleUpdate = this.setIstitleUpdate.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
@@ -35,17 +37,17 @@ class DeskShow extends React.Component {
     this.setState({ isTitleUpdate: bool });
   }
 
-  clickInvite(e) {
-    e.stopPropagation();
-    let $dropInvite = document.getElementsByClassName("invite-dropdown")[0];
+  // clickInvite(e) {
+  //   e.stopPropagation();
+  //   let $dropInvite = document.getElementsByClassName("invite-dropdown")[0];
 
-    if (
-      e.target.innerText === "Invite Another User" ||
-      e.target.offsetParent.classList.value === "close-x invite"
-    ) {
-      $dropInvite.classList.toggle("open");
-    }
-  }
+  //   if (
+  //     e.target.innerText === "Invite Another User" ||
+  //     e.target.offsetParent.classList.value === "close-x invite"
+  //   ) {
+  //     $dropInvite.classList.toggle("open");
+  //   }
+  // }
 
   clickDropDown(e) {
     if (e.target.innerText === "Show Menu") {
@@ -122,24 +124,6 @@ class DeskShow extends React.Component {
       </div>
     );
 
-    //-------invite Dropdown
-    let invite = (
-      <div className="invite-btn" id="show-invite" onClick={this.clickInvite}>
-        <div className="invite-text" id="show-invite">
-          <span>Invite Another User</span>
-        </div>
-        <ul className="invite-dropdown ">
-          <div className="invite-pop-over">
-            <span style={{ fontSize: "16px" }}>Invite To Desk</span>
-            <div className="close-x invite" onClick={this.clickInvite}>
-              <i className="fa fa-times"></i>
-            </div>
-          </div>
-          <hr className="Solid" />
-          <SearchContainer deskId={deskId} />
-        </ul>
-      </div>
-    );
     return (
       <div className="desk-show-container">
         {/* <div className='desk-show-container' style={ { backgroundImage: `url(${background})` } }> */}
@@ -155,29 +139,31 @@ class DeskShow extends React.Component {
           }}
         >
           <div className="desk-name-header">
-            <div className="desk-name-header-btn">
-              <div
-                className={classnames("desk-title", {
-                  "is-update": this.state.isTitleUpdate,
-                })}
-                onClick={() => this.setIstitleUpdate(true)}
-              >
-                {this.state.isTitleUpdate ? (
-                  <DeskEditContainer
-                    deskId={deskId}
-                    currUserId={currUserId}
-                    clearErrors={this.props.clearErrors}
-                    desk={this.props.desk}
-                    titleUpdate={this.setIstitleUpdate}
-                  />
-                ) : (
-                  title
-                )}
+            <div className="left-section-desk-name">
+              <div className="desk-name-header-btn">
+                <div
+                  className={classnames("desk-title", {
+                    "is-update": this.state.isTitleUpdate,
+                  })}
+                  onClick={() => this.setIstitleUpdate(true)}
+                >
+                  {this.state.isTitleUpdate ? (
+                    <DeskEditContainer
+                      deskId={deskId}
+                      currUserId={currUserId}
+                      clearErrors={this.props.clearErrors}
+                      desk={this.props.desk}
+                      titleUpdate={this.setIstitleUpdate}
+                    />
+                  ) : (
+                    title
+                  )}
+                </div>
               </div>
+              <Invite deskId={deskId} />
+              <MembersList data={this.props.deskMembers} />
             </div>
-            {invite}
-            <MembersList data={this.props.deskMembers} />
-            {menu}
+            <div className="right-section-desk-name">{menu}</div>
           </div>
         </div>
         <div className="desk-errors-container">

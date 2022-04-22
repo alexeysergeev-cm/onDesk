@@ -4,20 +4,20 @@ import { searchItems } from "../../actions/search_actions";
 import { Link } from "react-router-dom";
 import { useEventListener } from "../../hooks/useEventListener";
 import "./memberList.scss";
-import classnames from "classnames"
+import classnames from "classnames";
 
 function MembersList({ data }) {
   const [members, setMembers] = useState([]);
 
   if (!data.length) return null;
-
-  return (
-    <>
-      {data.map((member) => {
+  
+  return (  
+    <div className="members-container">
+      {data.map((member, i) => {
         return (
           <button
-            key={member.id}
-            className={classnames("button is-info is-light member-icon", {
+            key={member.id + "" + i}
+            className={classnames("member-icon", {
               "with-image": !!member.photoUrl,
             })}
             style={{
@@ -27,14 +27,14 @@ function MembersList({ data }) {
           >
             {!member.photoUrl ? (
               <>
-                {member.username.split(" ")[0][0] +
-                  member.username.split(" ")[1][0]}
+                {member.username?.split(" ")[0][0] +
+                  member.username?.split(" ")[1][0]}
               </>
             ) : null}
           </button>
         );
       })}
-    </>
+    </div>
   );
 }
 

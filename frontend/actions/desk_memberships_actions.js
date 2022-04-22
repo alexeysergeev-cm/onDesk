@@ -11,7 +11,6 @@ const receiveMembership = (payload) => {
 };
 
 const receiveMembershipErrors = (errors) => ({
-  //array
   type: RECEIVE_MEMBERSHIP_ERRORS,
   errors,
 });
