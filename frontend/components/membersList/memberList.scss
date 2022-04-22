@@ -1,0 +1,71 @@
+@import "../../index.scss";
+
+.member-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: black;
+  margin-right: -10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-family: sans-serif;
+
+  &.with-image {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.members-container {
+  display: flex;
+  align-items: center;
+}
+
+.show-member-dropdown {
+  position: absolute;
+  top: 44px;
+  background-color: #fff;
+  border: 1px solid $silver;
+  border-radius: 3px;
+  padding: 10px;
+  width: 180px;
+  z-index: 1;
+  color: $dark-blue;
+  font-family: $san-serif;
+  text-align: center;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  font-weight: initial;
+  font-size: 12px;
+  cursor: default;
+  margin-left: 10px;
+
+  button {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  }
+  button:hover {
+    background-color: rgba($blue-home, 20%);
+    color: white;
+  }
+}
+
+.member-info-parent {
+  position: relative;
+  padding: 0 !important;
+}
+
+.member-info {
+  padding: 15px !important;
+  z-index: 1;
+  position: absolute !important;
+  left: -10px;
+
+  .content  {
+    font-size: 15px;
+    white-space: nowrap;
+    margin-bottom: 0 !important;
+  };
+}

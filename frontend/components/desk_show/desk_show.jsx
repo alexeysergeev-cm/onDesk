@@ -4,7 +4,7 @@ import { ProtectedRoute } from "../../util/route_util";
 import GreetingContainer from "../greetings/greeting_container";
 import DeskEditContainer from "../desk_edit/desk_edit_container";
 import ListIndexContainer from "../lists/list_index_container";
-import MembersList from "./membersList";
+import MembersList from "../membersList/membersList";
 import classnames from "classnames";
 import "./deskShow.scss";
 import Invite from "../invite/invite";
