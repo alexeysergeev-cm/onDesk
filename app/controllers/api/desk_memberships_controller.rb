@@ -13,6 +13,17 @@ class Api::DeskMembershipsController < ApplicationController
     end
   end
 
+  def destroy
+    @desk_membership = DeskMembership.find(params[:id])
+    @desk_id = @desk_membership.desk_id
+    if @desk_membership.destroy
+      @desk = Desk.find(@desk_id)
+      render :index
+    else
+      render json: @desk_membership.errors.full_messages, status: 422
+    end
+  end
+
   private
   def membership_params
     params.require(:desk_membership).permit(:user_id, :desk_id)

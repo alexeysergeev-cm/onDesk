@@ -161,7 +161,11 @@ class DeskShow extends React.Component {
                 </div>
               </div>
               <Invite deskId={deskId} />
-              <MembersList data={this.props.deskMembers} />
+              <MembersList
+                data={this.props.deskMembers}
+                membershipIds={this.props.membershipIds}
+                currUserId={currUserId}
+              />
             </div>
             <div className="right-section-desk-name">{menu}</div>
           </div>

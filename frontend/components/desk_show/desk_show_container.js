@@ -11,15 +11,17 @@ const mSTP = (state, ownParams) => {
   const currUserId = state.session.currentUserId
   const desk = state.entities.desks
   const deskMembers = Object.values(state.entities.deskMembers);
-
-  return({
+  const membershipIds = Object.keys(state.entities.deskMembers);
+  
+  return {
     deskId,
     title,
     deskErr,
     currUserId,
     desk,
-    deskMembers
-  }) 
+    deskMembers,
+    membershipIds,
+  }; 
 }
 
 const mDTP = dispatch => {

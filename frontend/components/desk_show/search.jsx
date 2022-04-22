@@ -1,16 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import classnames from "classnames";
 
-function Search({
-  fetchUser,
-  clearMessage,
-  clearErrors,
-  createMembership,
-  deskId,
-}) {
+function Search({ fetchUser, createMembership, deskId }) {
   const [query, setQuery] = useState("");
   const [successInvite, setSuccessInvite] = useState("");
   const [error, setError] = useState("");
+  const ref = useRef();
+
+  useEffect(() => {
+    ref.current?.focus();
+  }, []);
 
   const handleSubmit = useCallback(
     (e) => {
@@ -25,13 +24,13 @@ function Search({
             desk_id: deskId,
           })
         )
-        .then((data) => setSuccessInvite("Success, user invited!"))
+        .then(() => setSuccessInvite("Success, user invited!"))
         .fail((err) => setError(err.responseJSON))
         .then(() => setQuery(""));
 
       setTimeout(() => (setSuccessInvite(""), setError("")), 5000);
     },
-    [query]
+    [query, fetchUser, createMembership, deskId]
   );
 
   const handleInputChange = useCallback(
@@ -50,6 +49,7 @@ function Search({
           placeholder="Email"
           value={query}
           onChange={(e) => handleInputChange(e)}
+          ref={ref}
         />
         <button className="button is-link is-outlined">Share</button>
       </form>

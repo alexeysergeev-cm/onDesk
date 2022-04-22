@@ -44,7 +44,7 @@ function Invite({ deskId }) {
             <span style={{ fontSize: "16px" }}>Invite To Desk</span>
           </div>
           <div className="horizontal-divider"></div>
-          <SearchContainer deskId={deskId} />
+          {isDropdown && <SearchContainer deskId={deskId} />}
         </ul>
       </div>
     </div>

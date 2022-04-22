@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { searchItems } from "../../actions/search_actions";
-import "./memberList.scss";
 import MemberListItem from "./memberListItem";
+import "./memberList.scss";
 
-function MembersList({ data }) {
+function MembersList({ data, membershipIds, currUserId }) {
   const [members, setMembers] = useState([]);
 
   if (!data.length) return null;
@@ -12,7 +10,13 @@ function MembersList({ data }) {
   return (
     <div className="members-container">
       {data.map((member, i) => (
-        <MemberListItem member={member} key={member.id + "" + i} />
+        <MemberListItem
+          member={member}
+          key={member.id + "" + i}
+          index={i}
+          membershipIds={membershipIds}
+          currUserId={currUserId}
+        />
       ))}
     </div>
   );
