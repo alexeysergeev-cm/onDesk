@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../search_bar/search_bar";
-
+import { withRouter } from "react-router-dom";
+import "./greeting.scss"
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
@@ -86,6 +87,8 @@ class Greeting extends React.Component {
   }
 
   render() {
+    const { location, history } = this.props;
+
     const { logout, currentUser, email, openModal } = this.props;
     let welcome;
     let name;
@@ -142,11 +145,13 @@ class Greeting extends React.Component {
         <header className="fixed-top-home">
           <nav className="nav-bar-home loggedIn">
             <div className="float-left-home">
-              <a href="/" className="all-desks-link">
-                {" "}
-                <i className="fa fa-window-restore" aria-hidden="true"></i>All
-                Desks
-              </a>
+              <div
+                className="button is-info is-small all-desk-btn"
+                onClick={() => history.push("/")}
+              >
+                <i className="fa fa-window-restore" aria-hidden="true"></i>
+                <div className="all-desk-text">AllDesks</div>
+              </div>
               <div className="search" onClick={this.showSearchBar}>
                 <i className="fa fa-search"></i>
               </div>
@@ -174,4 +179,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default withRouter(Greeting);
