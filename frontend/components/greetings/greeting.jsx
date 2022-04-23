@@ -164,12 +164,12 @@ class Greeting extends React.Component {
               <h3 className="h3-home">onDesk</h3>
             </a>
             <div className="float-right-home">
-              <a
-                className="btn btn-create"
+              <div
+                className="button is-info is-small create-btn"
                 onClick={() => openModal(["Create Desk", defaultBackground])}
               >
-                Create
-              </a>
+                <div className="create-desk-text">Create</div>
+              </div>
               {welcome}
             </div>
           </nav>
