@@ -10,12 +10,10 @@ import DeskIndexContainer from "../components/desks/desk_index_container";
 import Modal from "./modal/modal";
 import DeskShowContainer from "./desk_show/desk_show_container";
 import ListIndexContainer from "./lists/list_index_container";
-import ModalDynamic from "./modal/modalDynamic";
+import ModalBaseContainer from "./modal/modalBaseContainer";
 
 const App = () => (
   <div className="document-container">
-    <ModalDynamic type={"image"} />
-    <Modal />
     <Route exact path="/">
       <Home />
     </Route>
@@ -23,6 +21,8 @@ const App = () => (
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute path="/:deskId/deskshow" component={DeskShowContainer} />
+    <ModalBaseContainer />
+    <Modal />
   </div>
 );
 

@@ -3,17 +3,13 @@ import Greeting from './greeting';
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
 import { update } from '../../actions/session_actions'
+import { selectors } from '../../reducers/selectors';
 
 
-
-const mSTP = (state) => {
-  const currentUser = state.entities.users[state.session.currentUserId]
-  const photoUrl = state.entities.users[state.session.currentUserId].photoUrl
-  return({
-    currentUser,
-    photoUrl
-  })
-}
+const mSTP = (state) => ({
+  currentUser: selectors.getCurrentUser(state),
+  photoUrl: selectors.geCurrentUserPhoto(state),
+});
 
 const mDTP = (dispatch) => ({
   logout: () => dispatch(logout()),

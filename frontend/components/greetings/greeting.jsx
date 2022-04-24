@@ -58,75 +58,20 @@ class Greeting extends React.Component {
       this.props.updateUser(updatedUser);
     });
 
-    document.getElementsByClassName("btn-logout")[0].classList.remove("active");
+
   }
 
   showSearchBar() {
     document.querySelector(".search-bar").firstChild.focus();
   }
 
-  componentDidMount() {
-    if (this.props.photoUrl) {
-      $($(".btn-logout"))[0].firstChild.remove();
-      $(
-        $(".btn-logout")
-      )[0].style.backgroundImage = `url(${this.props.photoUrl})`;
-    }
-  }
 
-  componentDidUpdate() {
-    if ($($(".btn-logout"))[0].firstChild.tagName === "DIV") {
-      $($(".btn-logout"))[0].firstChild.remove();
-      $(
-        $(".btn-logout")
-      )[0].style.backgroundImage = `url(${this.props.photoUrl})`;
-    } else {
-      $(
-        $(".btn-logout")
-      )[0].style.backgroundImage = `url(${this.props.photoUrl})`;
-    }
-  }
+
 
   render() {
     const { location, history } = this.props;
 
     const { logout, currentUser, email, openModal } = this.props;
-    let welcome;
-    let name;
-
-    if (currentUser) {
-      let splitName = currentUser.username.split(" ")[0];
-      name = splitName[0].toUpperCase() + splitName.slice(1).toLowerCase();
-
-      welcome = (
-        <div className="btn-logout-home">
-          <button
-            className="btn-logout"
-            style={{ backgroundColor: this.props.currentUser.color }}
-            onClick={this.clickDropDown}
-          >
-            <div onClick={this.clickDropDown}>{name[0]}</div>
-            <ul className="home-dropdown">
-              <li style={{ fontWeight: "600" }}>Welcome {name}</li>
-              <i className="fa fa-times" onClick={this.closeMenu}></i>
-              <li className="shadowed-text">{currentUser.email}</li>
-              <hr className="Solid" />
-              <form onSubmit={this.updatePhoto} className="add-photo">
-                <label>Choose profile picture</label>
-                <input type="file" onChange={this.handleFile} />
-                <input type="submit" value="Submit Picture" />
-              </form>
-              <hr className="Solid" />
-              <li style={{ border: "1px solid black", padding: "8px 0" }}>
-                Settings (coming soon)
-              </li>
-              <hr className="Solid" />
-              <li onClick={() => logout()}>Log Out</li>
-            </ul>
-          </button>
-        </div>
-      );
-    }
 
     const defaultBackground = [
       <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg" />,
@@ -171,10 +116,11 @@ class Greeting extends React.Component {
               >
                 <div className="create-desk-text">Create</div>
               </div>
-              {welcome}
               <LogOutButton
                 currentUser={currentUser}
                 logout={logout}
+                updatePhoto={this.updatePhoto}
+                handlePhotoFile={this.handleFile}
               />
             </div>
           </nav>
