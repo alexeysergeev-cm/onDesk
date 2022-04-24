@@ -1,4 +1,4 @@
-
+import classNames from "classnames";
 import { withRouter } from "react-router-dom";
 
 class DeskForm extends React.Component {
@@ -20,7 +20,8 @@ class DeskForm extends React.Component {
     this.props
       .createDesk(this.state)
       .then(this.props.closeModal)
-      .then(() => this.props.history.push(`/${this.props.lastId}/deskshow`));
+      .then(() => this.props.history.push(`/${this.props.lastId}/deskshow`))
+      .fail(() => this.setState({ title: "" }));
   }
 
   update(field) {
@@ -36,7 +37,7 @@ class DeskForm extends React.Component {
   }
 
   chooseBackground(e) {
-     this.inputRef.current && this.inputRef.current.focus();
+    this.inputRef.current && this.inputRef.current.focus();
     let allPics = e.target.parentElement.parentElement.children;
     for (let pic of allPics) {
       if (pic.children.length > 1) {
@@ -52,8 +53,8 @@ class DeskForm extends React.Component {
   }
 
   render() {
-    const { backgroundPics } = this.props;
-    console.log("in FORM", backgroundPics);
+    const { backgroundPics, error, clearErrors } = this.props;
+
     return (
       <div className="desk-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -63,11 +64,19 @@ class DeskForm extends React.Component {
                 type="text"
                 value={this.state.title}
                 onChange={this.update("title")}
-                className="desk-input"
-                placeholder="Add desk title"
+                className={classNames("desk-input", {
+                  "with-error": !!error,
+                })}
+                placeholder={error || "Desk title"}
                 ref={this.inputRef}
               />
-              <div onClick={this.props.closeModal} className="close-x">
+              <div
+                onClick={() => {
+                  this.props.closeModal();
+                  clearErrors();
+                }}
+                className="close-x"
+              >
                 <i className="fa fa-times"></i>
               </div>
             </div>

@@ -43,15 +43,24 @@
 
 .desk-input {
   font-size: clamp(10px, 1.4vw, 33px);
+  color: #000000d6;
+  width: clamp(100px, 16vw, 500px);
+  background: #cccccceb;
+  border-radius: 5px;
+  border: 1px solid #000000d6;
+
+  &.with-error {
+    border: 1px solid #ff0000c4;
+    border-radius: 5px;
+  }
+}
+
+.desk-input::placeholder {
   color: white;
 }
 
-.desk-input:focus {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-}
-.desk-input::placeholder {
-  color: white;
+.desk-input.with-error::placeholder {
+  color: #ff0000c4;
 }
 
 .close-x {
@@ -106,7 +115,7 @@
     top: 40%;
     left: 43%;
     color: white;
-    font-size: clamp(5px,0.8vw,22px);
+    font-size: clamp(5px, 0.8vw, 22px);
   }
 }
 

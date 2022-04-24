@@ -1,7 +1,6 @@
-import DeskFromContainer from "../../desk_form/desk_form_container"
+import DeskFromContainer from "../../desk_form/desk_form_container";
 
 function DeskFormModal({ closeModal, defaultBackground }) {
-
   return (
     <div className="modal-card">
       <DeskFromContainer

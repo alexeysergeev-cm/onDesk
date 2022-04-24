@@ -17,11 +17,11 @@ function ModalBase({ modal, closeModal }) {
 
   return (
     <div
-      class={classNames("modal", {
+      className={classNames("modal", {
         "is-active": isActive,
       })}
     >
-      <div class="modal-background" onClick={closeModal}></div>
+      <div className="modal-background" onClick={closeModal}></div>
       {modalWithProps}
     </div>
   );
