@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../search_bar/search_bar";
 import { withRouter } from "react-router-dom";
-import "./greeting.scss"
+import "./greeting.scss";
+import LogOutButton from "../logout_button/logOutButton";
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
@@ -171,6 +172,10 @@ class Greeting extends React.Component {
                 <div className="create-desk-text">Create</div>
               </div>
               {welcome}
+              <LogOutButton
+                currentUser={currentUser}
+                logout={logout}
+              />
             </div>
           </nav>
         </header>
