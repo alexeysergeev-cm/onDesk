@@ -183,7 +183,8 @@ h3.h3-home {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1000px;
+  width: calc(100vw - 400px);
+  min-width: 700px;
   margin: auto;
 }
 
