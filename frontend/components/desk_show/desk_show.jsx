@@ -93,15 +93,6 @@ class DeskShow extends React.Component {
       $error[0].classList.add("err-on");
     }
 
-    //turning greating header` background to transparent
-    let header = document.getElementsByClassName("desk-header-container");
-    if (header.length) {
-      let greetFixedTop = header[0].lastElementChild;
-      greetFixedTop.classList.add("show");
-      let greetNavBar = greetFixedTop.lastElementChild;
-      greetNavBar.classList.add("show");
-    }
-    //-----
 
     //----dropDown Menu
     let menu;

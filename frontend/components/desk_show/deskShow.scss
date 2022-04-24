@@ -4,7 +4,8 @@
   align-items: center;
 }
 
-.left-section-desk-name, .right-section-desk-name {
+.left-section-desk-name,
+.right-section-desk-name {
   display: flex;
 }
 
@@ -15,5 +16,9 @@
   margin: 8px 0px 8px 10px;
 }
 
-
-
+.desk-header-container {
+  .fixed-top-home,
+  .nav-bar-home {
+    background-color: rgba(2, 106, 167, 0.4);
+  }
+}
