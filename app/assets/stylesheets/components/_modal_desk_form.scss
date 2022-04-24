@@ -15,105 +15,98 @@
   transform: translate(-50%, -50%);
 }
 
-
 //---------__DESK FORM
-.desk-form-container{
-  position: relative;
-  top: 150px;
-  margin-bottom: 80px;
+.desk-form-container {
+  // position: relative;
+  // top: 150px;
+  // margin-bottom: 80px;
 }
 
 .desk-form-box {
+  width: 25vw;
+  height: 16vw;
   outline: 1px solid black;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  background-image: url('https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg');
+  background-image: url("https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg");
   background-size: cover;
   background-position: 50%;
   border-radius: 3px;
 }
 
 .desk-form {
-   display: flex;
-   justify-content: space-between;
-   width: 295px;
-   height: 95px;
- }
-
- .desk-input{
-  box-sizing: border-box;
-  font-size: 16px;
-  font-weight: 700;
-  left: -8px;
-  font-family: $apple;
-  width: 219px;
-  height: 23px;
-  color: $white;
- }
-
- .desk-input:focus {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    
- }
- .desk-input::placeholder { 
-  color: rgba(255, 255, 255, 0.5);
-  opacity: 0.8; 
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
 
- .close-x{
-   font-size: 16px;
-   color: $white;
-   font-weight: lighter;
-   padding: 0px 5px 10px 5px;
-   cursor: pointer;
- }
+.desk-input {
+  font-size: clamp(10px, 1.4vw, 33px);
+  color: white;
+}
 
- .desk-submit{
-   background-color: $white;
-   width: 86px;
-   height: 19px;
-   border-radius: 5px;
-   padding: 6px 12px;
-   margin-top: 8px;
-   margin-bottom: 8px;
-   cursor: not-allowed !important;
-   font-size: 14px;
-   font-family: $apple;
+.desk-input:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+.desk-input::placeholder {
+  color: white;
+}
+
+.close-x {
+  font-size: clamp(10px, 1.4vw, 33px);
+  color: $white;
+  font-weight: lighter;
+  padding: 5px 5px 10px 5px;
+  cursor: pointer;
+}
+
+.desk-submit {
+  background-color: $white;
+  width: 86px;
+  height: 19px;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: not-allowed !important;
+  font-size: 14px;
+  font-family: $apple;
   text-align: center;
   transition: background-color 1s;
- }
+}
 
- .desk-submit.allowed{
-   cursor: pointer !important;
-   background-color: $green;
-   color: $white;
- }
+.desk-submit.allowed {
+  cursor: pointer !important;
+  background-color: $green;
+  color: $white;
+}
 
-.desk-background{
-  padding: 5px 5px 5px 0;
+.desk-background {
+  padding: 5px;
   display: flex;
-  max-width: 330px;
+  width: 25vw;
   flex-wrap: wrap;
-  
-  div{
-    height: 55px;
+  justify-content: center;
+
+  div {
     position: relative;
   }
 
-  img{
-    width: 50px;
-    height: 50px;
-    padding: 5px 5px 5px 0;
+  img {
+    width: 4.5vw;
+    height: 4vw;
+    padding: 5px;
   }
 
-  i{
+  i {
     position: absolute;
     z-index: 1;
-    top: 38%;
-    left: 29%;
-    color: rgb(240, 248, 255);
+    top: 40%;
+    left: 43%;
+    color: white;
+    font-size: clamp(5px,0.8vw,22px);
   }
 }
 

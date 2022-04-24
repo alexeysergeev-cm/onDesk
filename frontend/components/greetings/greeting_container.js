@@ -9,6 +9,7 @@ import { selectors } from '../../reducers/selectors';
 const mSTP = (state) => ({
   currentUser: selectors.getCurrentUser(state),
   photoUrl: selectors.geCurrentUserPhoto(state),
+  defaultBackground: state.ui.defaultBackgroundPictures,
 });
 
 const mDTP = (dispatch) => ({

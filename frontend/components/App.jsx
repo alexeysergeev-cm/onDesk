@@ -22,7 +22,7 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute path="/:deskId/deskshow" component={DeskShowContainer} />
     <ModalBaseContainer />
-    <Modal />
+    {/* <Modal /> */}
   </div>
 );
 

@@ -24,15 +24,6 @@ class DeskForm extends React.Component {
   }
 
   update(field) {
-    let input = document.getElementsByClassName("desk-input");
-    if (input.length) {
-      let b = document.getElementsByClassName("desk-submit");
-      if (input[0].value.length > 0) {
-        b[0].classList.add("allowed");
-      } else {
-        b[0].classList.remove("allowed");
-      }
-    }
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
@@ -62,7 +53,7 @@ class DeskForm extends React.Component {
 
   render() {
     const { backgroundPics } = this.props;
-
+    console.log("in FORM", backgroundPics);
     return (
       <div className="desk-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -88,11 +79,9 @@ class DeskForm extends React.Component {
               </div>
             ))}
           </div>
-          <input
-            type="submit"
-            className="desk-submit"
-            value={this.props.formType}
-          />
+          <div className="button is-success" onClick={this.handleSubmit}>
+            Create Desk
+          </div>
         </form>
       </div>
     );

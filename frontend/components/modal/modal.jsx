@@ -9,7 +9,7 @@ function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
-
+  console.log(modal);
   let backgroundPics;
   if (modal[0] === "Create Desk") {
     backgroundPics = modal[1];

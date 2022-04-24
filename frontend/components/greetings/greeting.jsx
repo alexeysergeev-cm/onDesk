@@ -4,6 +4,8 @@ import SearchBar from "../search_bar/search_bar";
 import { withRouter } from "react-router-dom";
 import "./greeting.scss";
 import LogOutButton from "../logout_button/logOutButton";
+import DeskFormModal from "../modal/deskFormModal/deskFormModal";
+
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
@@ -57,34 +59,17 @@ class Greeting extends React.Component {
     }).then((updatedUser) => {
       this.props.updateUser(updatedUser);
     });
-
-
   }
 
   showSearchBar() {
     document.querySelector(".search-bar").firstChild.focus();
   }
 
-
-
-
   render() {
-    const { location, history } = this.props;
-
-    const { logout, currentUser, email, openModal } = this.props;
-
-    const defaultBackground = [
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/water.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/space.jpg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/skyscraper.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/shark.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ocean.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains1.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/mountains.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/ggbridge.jpeg" />,
-      <img src="https://ondesk-dev.s3-us-west-1.amazonaws.com/forest.jpeg" />,
-    ];
+    const { history } = this.props;
+    const { logout, currentUser, openModal, defaultBackground } =
+      this.props;
+    // const defaultBackgroundPics = defaultBackground.map(b => b.props.src)
 
     return (
       <>
@@ -112,7 +97,11 @@ class Greeting extends React.Component {
             <div className="float-right-home">
               <div
                 className="button is-info is-small create-btn"
-                onClick={() => openModal(["Create Desk", defaultBackground])}
+                onClick={() =>
+                  openModal(
+                    <DeskFormModal defaultBackground={defaultBackground} />
+                  )
+                }
               >
                 <div className="create-desk-text">Create</div>
               </div>
