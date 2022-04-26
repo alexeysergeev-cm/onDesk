@@ -1,0 +1,16 @@
+.all-desk-text {
+  font-size: 1rem;
+  margin-left: 4px;
+}
+
+.all-desk-btn,
+.create-btn {
+  font-size: 1rem;
+  border-radius: 5px !important;
+}
+.create-btn {
+  margin-right: 10px;
+  .create-desk-text {
+    font-size: 1rem;
+  }
+}

@@ -4,7 +4,7 @@
   right: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 10;
   display: block;
   font-family: $san-serif;
   color: $dark-blue;
@@ -114,17 +114,8 @@ h3.h3-home {
 }
 
 .btn-logout {
-  height: 32px;
-  width: 32px;
-  padding: 4px 8px;
-  border: 1px solid transparent;
-  background-color: $grey;
-  border-radius: 100%;
-  background-size: cover;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(240, 255, 255);
+  background-size: cover;  
+  background-position: center;
 }
 
 .home-dropdown {
@@ -192,7 +183,8 @@ h3.h3-home {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1000px;
+  width: calc(100vw - 400px);
+  min-width: 700px;
   margin: auto;
 }
 

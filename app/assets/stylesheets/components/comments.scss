@@ -1,88 +1,58 @@
+.comments-container {
+  .comments-activity {
+    margin: 5px;
+    font-size: initial;
+    font-weight: 700;
 
-
-.comments-container{
-  
-  h1.activ{
-    font-size: 20px;
-    font-family: sans-serif;
-    text-align: start;
-    padding: 5px 5px 5px 37px;
-
-    i{
-      padding-right: 15px;
+    i {
+      margin-right: 5px;
     }
   }
 }
 
-.comment-create{
-  display: flex;
-  justify-content: space-between;
-  padding: 5px !important;
-  height: 25px;
-  margin: 0 40px;
-  padding: 0;
-  border: 1px solid rgb(0, 0, 255);
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-
-  input{
+.comment-create {
+  input {
     font-size: 16px;
-    text-align: initial;  
+    text-align: initial;
     width: 75%;
-
   }
 
-  button{
+  button {
     padding: 4px;
     font-size: 12px;
     margin: 0;
   }
 }
 
-.comment-item{
-  width: 518px;
-  margin: 5px 40px;
-}
-
-.comment-body{
-  font-size: 16px;
-  font-family: sans-serif;
-  text-align: initial;
-  width: fit-content;
-  color: rgb(23, 43, 77);
-  border: 1px solid $grey;
+.comment-body,
+.comment-create {
+  border: 1px solid #dfdfdf;
   border-radius: 5px;
-  padding: 5px 10px;
-  background-color: $white;
+  background-color: white;
+  padding: 8px 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.comment-author{
-  font-size: 16px;
-  font-family: sans-serif;
-  text-align: initial;
-  width: fit-content;
-  text-transform: capitalize;
-  padding-bottom: 2px;
-  padding-top: 2px;
+.comment-author {
   display: flex;
+  margin: 10px 0 5px 0;
 }
 
-.time{
+.time {
   padding-left: 25px;
   font-size: 15px;
 }
 
-.comments-box{
+.comments-box {
   height: 171px;
   overflow: auto;
 }
 
-
-.manipulate-comment{
+.manipulate-comment {
   display: flex;
   padding: 2px;
-  
-  div{
+
+  div {
     display: flex;
     font-size: 12px;
     text-decoration: underline;
@@ -91,13 +61,12 @@
     padding-right: 5px;
   }
 
-  div:hover{
+  div:hover {
     text-decoration: none;
   }
 }
 
-
-.update-comment{
+.update-comment {
   display: none;
   font-size: 16px;
   font-family: sans-serif;
@@ -109,13 +78,13 @@
   padding: 0px 0px 12px 10px;
   background-color: $white;
 
-  form.edit-com-form{
+  form.edit-com-form {
     height: 20px;
 
-    input{
+    input {
       margin-top: 0;
     }
-    button.upd-btn{
+    button.upd-btn {
       border: 1px solid rgb(128, 128, 128);
       border-radius: 5px;
       background-color: rgb(255, 255, 255);
@@ -128,25 +97,25 @@
   }
 }
 
-@media (max-height: 900px) {
-   .comments-container {
-    
-    h1.activ {
-      font-size: 15px;
-    }
-  }
+// @media (max-height: 900px) {
+//    .comments-container {
 
-  .comment-create{
-    input{
-      font-size: 12px;
-      width: 45%;
-    }
-    button{
-      font-size: 9px;
-    }
-  }
-  .comment-body{
-    font-size: 13px;
-    width: 38.3%;
-  }
-}
+//     h1.activ {
+//       font-size: 15px;
+//     }
+//   }
+
+//   .comment-create{
+//     input{
+//       font-size: 12px;
+//       width: 45%;
+//     }
+//     button{
+//       font-size: 9px;
+//     }
+//   }
+//   .comment-body{
+//     font-size: 13px;
+//     width: 38.3%;
+//   }
+// }

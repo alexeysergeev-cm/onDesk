@@ -18,6 +18,7 @@ class CommentForm extends React.Component{
   }
 
   handleSubmit(e){
+    console.log(this.state)
     e.preventDefault()
     this.props.createComment(this.state)
       .then(() => this.setState({body: ''}))
@@ -25,6 +26,7 @@ class CommentForm extends React.Component{
 
   
   render(){
+
     return (
       <div className='comment-form'>
         <form onSubmit={this.handleSubmit} className='comment-create'>

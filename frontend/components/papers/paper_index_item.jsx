@@ -1,95 +1,133 @@
-import React from 'react';
-import PaperEditContainer from './paper_edit_container'
+import React from "react";
+import PaperDescriptionModal from "../modal/paperDescriptionModal/paperDescriptionModal";
+import PaperEditContainer from "./paper_edit_container";
 
-class PaperIndexItem extends React.Component{
-  constructor(props){
-    super(props)
+class PaperIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
 
-
-    this.titleUpdate = this.titleUpdate.bind(this)
-    this.clickPaperItem = this.clickPaperItem.bind(this)
-    this.handleDelete = this.handleDelete.bind(this)
+    this.titleUpdate = this.titleUpdate.bind(this);
+    this.clickPaperItem = this.clickPaperItem.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  handleDelete(id){
-    this.props.deletePaper(id)
-    const newOrder = this.props.list.paper_order.filter(paperId => ""+paperId !== ""+id)
+  handleDelete(id) {
+    this.props.deletePaper(id);
+    const newOrder = this.props.list.paper_order.filter(
+      (paperId) => "" + paperId !== "" + id
+    );
 
     this.props.updateList({
       id: this.props.listId,
       paper_order: newOrder,
     });
   }
-  
 
-  titleUpdate(e){
+  titleUpdate(e) {
     e.stopPropagation();
 
     //find parents and children to manipulate DOM
-    e.target.offsetParent.offsetParent.firstChild.style.display = 'none'
-    e.target.offsetParent.offsetParent.lastChild.style.display = 'none'
-    e.target.parentNode.parentElement.parentElement.children[1].style.display = 'flex'
-    e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus()
+    e.target.offsetParent.offsetParent.firstChild.style.display = "none";
+    e.target.offsetParent.offsetParent.lastChild.style.display = "none";
+    e.target.parentNode.parentElement.parentElement.children[1].style.display =
+      "flex";
+    e.target.parentNode.parentElement.parentElement.children[1].firstElementChild.firstChild.focus();
   }
 
-  clickPaperItem(e){
-    const { title, id, description } = this.props.paper
-    const { listId, openModal } = this.props
-    if (e.currentTarget.children[1].style.display !== 'flex' && e.target.innerText !== "Delete Paper"){
-      openModal({'Add Description': [title, listId, id, description]})
-    } 
+  clickPaperItem(e) {
+    const { title, id, description } = this.props.paper;
+    const { listId, openModal } = this.props;
+    if (
+      e.currentTarget.children[1].style.display !== "flex" &&
+      e.target.innerText !== "Delete Paper"
+    ) {
+      openModal(
+        <PaperDescriptionModal
+          title={title}
+          listId={listId}
+          id={id}
+          description={description}
+        />
+      );
+    }
   }
 
-  render(){
-    const { title, id, description } = this.props.paper
-    const { listId, openModal, comments } = this.props
+  render() {
+    const { title, id, description } = this.props.paper;
+    const { listId, openModal, comments } = this.props;
 
     let descIcon;
-    if (description !== null && description !== ''){
-      descIcon = <i className="fa fa-align-left" aria-hidden="true" 
-                    style={{fontSize: '15px', padding: '5px 8px 5px 2px'}}></i>
+    if (description !== null && description !== "") {
+      descIcon = (
+        <i
+          className="fa fa-align-left"
+          aria-hidden="true"
+          style={{ fontSize: "15px", padding: "5px 8px 5px 2px" }}
+        ></i>
+      );
     }
     let chat;
-    for (let item in comments){
-      if (comments[item].paper_id === id){
-        chat = <i className="fa fa-comment-o" aria-hidden="true"
-                  style={{fontSize: '15px', padding: '3px 2px'}}></i>
-        break
+    for (let item in comments) {
+      if (comments[item].paper_id === id) {
+        chat = (
+          <i
+            className="fa fa-comment-o"
+            aria-hidden="true"
+            style={{ fontSize: "15px", padding: "3px 2px" }}
+          ></i>
+        );
+        break;
       }
     }
 
-
-    return(
+    return (
       <>
-        <div className='single-paper' onClick={this.clickPaperItem}>
-          <div className='paper-title'>
-            {title}
+        <div className="single-paper" onClick={this.clickPaperItem}>
+          <div className="paper-title">{title}</div>
+          <div className="paper-edit-container">
+            <PaperEditContainer listId={listId} paperId={id} />
           </div>
-          <div className='paper-edit-container'>
-            <PaperEditContainer
-              listId={listId}
-              paperId={id}
-            />
-          </div>
-          <div className='paper-extras'>
+          <div className="paper-extras">
             <i className="fa fa-pencil" aria-hidden="true"></i>
-            <div className='delete-paper'>
+            <div className="delete-paper">
               <h5>Paper Actions</h5>
-              <hr className="Solid"/>
+              <hr className="Solid" />
               <div onClick={this.titleUpdate}>Update Title</div>
-              <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
-                  Add Description
+              <div
+                onClick={() =>
+                  openModal(
+                    <PaperDescriptionModal
+                      title={title}
+                      listId={listId}
+                      id={id}
+                      description={description}
+                    />
+                  )
+                }
+              >
+                Add Description
               </div>
               <div onClick={() => this.handleDelete(id)}>Delete Paper</div>
             </div>
           </div>
         </div>
-        <div onClick={() => openModal({'Add Description': [title, listId, id, description]})}>
+        <div
+          onClick={() =>
+            openModal(
+              <PaperDescriptionModal
+                title={title}
+                listId={listId}
+                id={id}
+                description={description}
+              />
+            )
+          }
+        >
           {descIcon}
           {chat}
         </div>
       </>
-    )
+    );
   }
 }
 
