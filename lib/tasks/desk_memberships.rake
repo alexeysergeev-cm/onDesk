@@ -6,8 +6,12 @@ namespace :desk_memberships do
       desk_id = desk.id
       author_id = desk.author_id
 
-      dm = DeskMembership.new(user_id: author_id, desk_id: desk_id)
-      dm.save!
+      isDm = DeskMembership.find_by(desk_id: desk_id, user_id: author_id)
+      
+      if !isDm 
+        dm = DeskMembership.new(user_id: author_id, desk_id: desk_id)
+        dm.save!
+      end
     end
   end
 end
