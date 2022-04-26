@@ -26,7 +26,7 @@ class CommentForm extends React.Component{
 
   
   render(){
-    console.log(this.props)
+
     return (
       <div className='comment-form'>
         <form onSubmit={this.handleSubmit} className='comment-create'>

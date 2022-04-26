@@ -12,7 +12,7 @@ function PaperDescription({ title, paperId, description, listId, authorId }) {
     <div className="paper-description">
       <h2 className="paper-description-tag">Description</h2>
       <textarea
-        class="textarea"
+        className="textarea"
         placeholder="Add additional description..."
         rows="10"
       ></textarea>

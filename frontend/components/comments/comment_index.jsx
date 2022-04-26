@@ -8,7 +8,7 @@ class CommentIndex extends React.Component{
   render(){
     const { paperId, authorId, comments, 
       createComment, updateComment, deleteComment } = this.props
-    console.log(this.props.currUserId);
+
     return (
       <div className="comments-container">
         <h1 className="comments-activity">

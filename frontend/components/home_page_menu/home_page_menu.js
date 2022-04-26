@@ -62,12 +62,20 @@ function HomePageMenu({ handleClick }) {
           {isContact && (
             <ul>
               <li>
-                <a>xengawe@gmail.com</a>
+                <a
+                  href="https://calendly.com/alexeysergeev-software-engineer"
+                  target="none"
+                >
+                  Schedule a call
+                </a>
               </li>
               <li>
                 <a href="https://alexeysergeev-cm.github.io" target="none">
                   Portfolio <i className="fa fa-user" aria-hidden="true"></i>
                 </a>
+              </li>
+              <li>
+                <a>By email: xengawe@gmail.com</a>
               </li>
             </ul>
           )}
