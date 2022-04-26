@@ -1,4 +1,6 @@
-import PaperDescriptionContainer from "../../papers/paper_description_container";
+// import PaperDescriptionContainer from "../../papers/paper_description_container";
+import PaperDescription from "../../papers/paper_description/paper_description";
+import "./paperDescriptionModal.scss";
 
 function PaperDescriptionModal({ closeModal, title, listId, id, description }) {
   console.log("here")
@@ -12,8 +14,8 @@ function PaperDescriptionModal({ closeModal, title, listId, id, description }) {
           onClick={closeModal}
         ></button>
       </header>
-      <section className="modal-card-body">
-        <PaperDescriptionContainer
+      <section className="modal-card-body paper-details">
+        <PaperDescription
           title={title}
           listId={listId}
           paperId={id}

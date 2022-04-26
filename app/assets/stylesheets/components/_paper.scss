@@ -158,100 +158,106 @@
     background-color: rgb(255, 255, 255);
   }
 }
-
 .paper-description{
-  width: 600px;
-  height: 600px;
-  background-color: rgb(211, 211, 211);
-  z-index: 1;
-  margin-top: 700px;
-  font-size: 25px;
-  text-align: center;
-  font-family: $san-serif;
-  border-radius: 5px;
-  overflow: auto;
-
-  h1:first-of-type {
-    i{
-      padding-right: 15px;
-    }
-    font-size: 20px;
-    font-family: sans-serif;
-    text-align: start;  
-    padding: 30px 0 5px 42px;
+  .paper-description-tag {
+    margin: 5px;
+    font-size: initial;
+    font-weight: 700;
   }
+}
+// .paper-description{
+//   width: 600px;
+//   height: 600px;
+//   background-color: rgb(211, 211, 211);
+//   z-index: 1;
+//   margin-top: 700px;
+//   font-size: 25px;
+//   text-align: center;
+//   font-family: $san-serif;
+//   border-radius: 5px;
+//   overflow: auto;
 
-  .desc-div{
-    border: 1px solid rgb(33, 107, 165);
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-  }
+//   h1:first-of-type {
+//     i{
+//       padding-right: 15px;
+//     }
+//     font-size: 20px;
+//     font-family: sans-serif;
+//     text-align: start;  
+//     padding: 30px 0 5px 42px;
+//   }
 
-  textarea{
-    text-align: initial;
-    font-size: 18px;
-  }
+//   .desc-div{
+//     border: 1px solid rgb(33, 107, 165);
+//     background-color: rgb(255, 255, 255);
+//     border-radius: 5px;
+//   }
+
+//   textarea{
+//     text-align: initial;
+//     font-size: 18px;
+//   }
   
-  .paper-create{
-    padding: 10px;
-    margin: 10px 40px 10px 40px;
-    box-shadow: 0px 1px grey;
-  }
+//   .paper-create{
+//     padding: 10px;
+//     margin: 10px 40px 10px 40px;
+//     box-shadow: 0px 1px grey;
+//   }
 
-  button{
-    border: 1px solid rgb(128, 128, 128);
-    margin: 10px 5px 5px;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0 1px;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: background-color 0.5s;
-  }
+//   button{
+//     border: 1px solid rgb(128, 128, 128);
+//     margin: 10px 5px 5px;
+//     border-radius: 5px;
+//     background-color: white;
+//     box-shadow: 0 1px;
+//     font-size: 20px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     transition: background-color 0.5s;
+//   }
 
-  button:hover{
-    background-color: rgb(169, 169, 169);
-  }
-}
+//   button:hover{
+//     background-color: rgb(169, 169, 169);
+//   }
+// }
 
-.paper-title-desc{
-  padding: 15px 40px 0 40px;
-  text-align: center;
-  font-family: $san-serif;
-  word-break: break-all;
+// .paper-title-desc{
+//   padding: 15px 40px 0 40px;
+//   text-align: center;
+//   font-family: $san-serif;
+//   word-break: break-all;
 
-  i{
-    padding-right: 15px;
-    font-size: 20px;
-  }
-}
+//   i{
+//     padding-right: 15px;
+//     font-size: 20px;
+//   }
+// }
 
-@media (max-height: 900px){
-  .paper-description{
-    width: 300px;
-    height: 400px;
-    overflow: auto;
-    font-size: 20px;
-    margin-top: 400px;
+// @media (max-height: 900px){
+//   .paper-description{
+//     width: 300px;
+//     height: 400px;
+//     overflow: auto;
+//     font-size: 20px;
+//     margin-top: 400px;
 
-    i{
-      font-size: 20px;
-    }
-  }
-  .paper-create{
-    width: 200px;
-    height: 300px;
-  }
-  .paper-description {
-    h1:first-of-type {
+//     i{
+//       font-size: 20px;
+//     }
+//   }
+//   .paper-create{
+//     width: 200px;
+//     height: 300px;
+//   }
+//   .paper-description {
+//     h1:first-of-type {
 
-      font-size: 15px;
-    }
-    button{
-      font-size: 12px;
-    }
-  }
+//       font-size: 15px;
+//     }
+//     button{
+//       font-size: 12px;
+//     }
+//   }
 
-}
+// }
 
