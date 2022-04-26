@@ -75,7 +75,7 @@ function HomePageMenu({ handleClick }) {
                 </a>
               </li>
               <li>
-                <a>By email: xengawe@gmail.com</a>
+                <a>xengawe@gmail.com</a>
               </li>
             </ul>
           )}
