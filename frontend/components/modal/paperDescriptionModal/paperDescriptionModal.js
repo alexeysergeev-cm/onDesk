@@ -1,9 +1,9 @@
-// import PaperDescriptionContainer from "../../papers/paper_description_container";
 import PaperDescription from "../../papers/paper_description/paper_description";
 import "./paperDescriptionModal.scss";
 
-function PaperDescriptionModal({ closeModal, title, listId, id, description }) {
 
+function PaperDescriptionModal({ closeModal, title, listId, id, description }) {
+  
   return (
     <div className="modal-card">
       <header className="modal-card-head">
