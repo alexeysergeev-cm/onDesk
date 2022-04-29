@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+  # skip_forgery_protection # use in postman 
   helper_method :current_user, :logged_in?
   #CRLLL
 

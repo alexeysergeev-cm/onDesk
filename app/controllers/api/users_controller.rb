@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
           return render json: [error], status: 404
         end
       end 
-      render json: ["Email already in use by another account. You can use "], status: 401
+      render json: ["This email already in use."], status: 401
     end
   end
 
