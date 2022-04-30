@@ -7,7 +7,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import NavBarContainer from "../components/nav_bar/nav_bar_container";
 import Home from "./nav_bar/home/home";
 import DeskIndexContainer from "../components/desks/desk_index_container";
-import Modal from "./modal/modal";
 import DeskShowContainer from "./desk_show/desk_show_container";
 import ListIndexContainer from "./lists/list_index_container";
 import ModalBaseContainer from "./modal/modalBaseContainer";
@@ -22,7 +21,6 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute path="/:deskId/deskshow" component={DeskShowContainer} />
     <ModalBaseContainer />
-    {/* <Modal /> */}
   </div>
 );
 

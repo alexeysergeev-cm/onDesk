@@ -1,6 +1,6 @@
 import React from 'react'
 import CommentIndexItem from './comment_index_item';
-import CommentForm from './comment_form'
+import CommentForm from './comment_form.js'
 
 class CommentIndex extends React.Component{
 

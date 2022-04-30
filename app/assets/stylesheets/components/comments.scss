@@ -25,12 +25,20 @@
 }
 
 .comment-body,
-.comment-create {
+.comment-create, .comment-form {
   border: 1px solid #dfdfdf;
   border-radius: 5px;
   background-color: white;
-  padding: 8px 12px;
+  padding: 8px 12px !important;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.comment-form-input {
+  width: -webkit-fill-available;
+  padding: 0 !important;
+  &.is-typing {
+    margin-bottom: 10px;
+  }
 }
 
 .comment-author {

@@ -35,11 +35,14 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
     [submitDesk, titleUpdate, clearErrors, deskId, title]
   );
 
-  const pressEnter = useCallback((e) => {
-    if (e.keyCode === 13) {
-      handleSubmit(e);
-    }
-  }, [title]);
+  const pressEnter = useCallback(
+    (e) => {
+      if (e.keyCode === 13) {
+        handleSubmit(e);
+      }
+    },
+    [title, handleSubmit]
+  );
 
   useOnClickOutside(ref, (e) => handleSubmit(e));
 
