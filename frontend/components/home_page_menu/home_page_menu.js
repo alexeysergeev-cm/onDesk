@@ -74,9 +74,6 @@ function HomePageMenu({ handleClick }) {
                   Portfolio <i className="fa fa-user" aria-hidden="true"></i>
                 </a>
               </li>
-              <li>
-                <a>xengawe@gmail.com</a>
-              </li>
             </ul>
           )}
         </li>
