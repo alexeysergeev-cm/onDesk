@@ -1,13 +1,11 @@
-import React from 'react'
-import CommentIndexItem from './comment_index_item';
-import CommentForm from './comment_form.js'
+import React from "react";
+import CommentIndexItem from "./comment_index_item";
+import CommentForm from "./comment_form.js";
 
-class CommentIndex extends React.Component{
-
-
-  render(){
-    const { paperId, authorId, comments, 
-      createComment, updateComment, deleteComment } = this.props
+class CommentIndex extends React.Component {
+  render() {
+    const { paperId, comments, createComment, updateComment, deleteComment } =
+      this.props;
 
     return (
       <div className="comments-container">
@@ -15,21 +13,16 @@ class CommentIndex extends React.Component{
           <i className="fa fa-comments-o" aria-hidden="true"></i>
           Activity
         </h1>
-        <CommentForm
-          paperId={paperId}
-          authorId={this.props.currUserId}
-          createComment={createComment}
-        />
+        <CommentForm paperId={paperId} createComment={createComment} />
         <div className="comments-box">
           {Object.values(comments)
             .reverse()
-            .map((comment, i) => {
+            .map((comment) => {
               if (comment.paper_id === paperId) {
                 return (
                   <div key={comment.id}>
                     <CommentIndexItem
                       comment={comment}
-                      authorId={authorId}
                       updateComment={updateComment}
                       deleteComment={deleteComment}
                     />

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
-function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
+function EditDesk({ clearErrors, desk, deskId, updateDesk, titleUpdate }) {
   const [title, setTitle] = useState("");
   const ref = useRef();
 
@@ -16,7 +16,6 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
   }, []);
 
   const update = useCallback((e) => {
-    console.log(e.currentTarget.value);
     setTitle(e.currentTarget.value);
   }, []);
 
@@ -25,14 +24,14 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
       e.preventDefault();
       console.log(`Submiting new Desk: ${title}, ${deskId}`);
 
-      submitDesk({
+      updateDesk({
         title: title,
         id: deskId,
       }).then(() => titleUpdate(false));
 
       setTimeout(() => clearErrors(), 5000);
     },
-    [submitDesk, titleUpdate, clearErrors, deskId, title]
+    [updateDesk, titleUpdate, clearErrors, deskId, title]
   );
 
   const pressEnter = useCallback(
@@ -41,7 +40,7 @@ function EditDesk({ clearErrors, desk, deskId, submitDesk, titleUpdate }) {
         handleSubmit(e);
       }
     },
-    [title, handleSubmit]
+    [handleSubmit]
   );
 
   useOnClickOutside(ref, (e) => handleSubmit(e));

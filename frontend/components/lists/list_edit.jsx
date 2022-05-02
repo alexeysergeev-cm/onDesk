@@ -27,7 +27,7 @@ class EditList extends React.Component{
     }
   }
 
-  render(e){
+  render(){
     return(
       <form onSubmit={this.handleSubmit}>
         <input type='text'

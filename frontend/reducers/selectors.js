@@ -14,6 +14,9 @@ export default class Selectors {
   getDeskMembers = (deskMembers) => Object.values(deskMembers);
 
   getDeskMembershipIds = (deskMembers) => Object.keys(deskMembers);
+
+  getObjectValues = (object) => Object.values(object);
+  getObjectKeys = (object) => Object.keys(object);
 }
 
 export const selectors = new Selectors();

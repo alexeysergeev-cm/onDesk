@@ -4,7 +4,7 @@ import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import { useDispatch } from "react-redux";
 import { deleteMembership } from "../../actions/desk_memberships_actions";
 // import { useNavigate } from "react-router-dom"; //v6
-import { useHistory } from "react-router-dom" //v5
+import { useHistory } from "react-router-dom"; //v5
 
 function MemberListItem({ member, index, membershipIds, currUserId }) {
   const [isShowingInfo, setIsShowingInfo] = useState(false);
@@ -21,7 +21,7 @@ function MemberListItem({ member, index, membershipIds, currUserId }) {
     if (me) {
       history.push("/");
     }
-  }, [dispatch, membershipIds, me, history]);
+  }, [dispatch, membershipIds, me, history, index]);
 
   const showInfo = useCallback(() => {
     return (
@@ -36,7 +36,7 @@ function MemberListItem({ member, index, membershipIds, currUserId }) {
         </article>
       </div>
     );
-  }, [member, index, kickUser, isShowingInfo, me]);
+  }, [member, kickUser, me]);
 
   useOnClickOutside(ref, () => setIsShowingInfo(false));
 

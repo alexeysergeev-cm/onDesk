@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 import { updateList } from '../../actions/list_actions';
 import EditList from './list_edit';
 
-const mSTP = (state, ownParams) => ({
+const mapStateToProps = (state, ownProps) => ({
   currUserId: state.session.currentUserId,
-  list: ownParams.list,
+  list: ownProps.list,
 });
     
-const mDTP = (dispatch) => ({
-  updateList: (list) => dispatch(updateList(list))
-})
+const mapDispatchToProps = {
+  updateList
+}
 
-export default connect(mSTP, mDTP)(EditList)
+export default connect(mapStateToProps, mapDispatchToProps)(EditList)

@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import { withRouter } from "react-router-dom";
+import React from "react";
+import $ from "jquery";
 
 class DeskForm extends React.Component {
   constructor(props) {

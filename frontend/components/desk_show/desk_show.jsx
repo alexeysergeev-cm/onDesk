@@ -1,6 +1,4 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
-import { ProtectedRoute } from "../../util/route_util";
 import GreetingContainer from "../greetings/greeting_container";
 import DeskEditContainer from "../desk_edit/desk_edit_container";
 import ListIndexContainer from "../lists/list_index_container";

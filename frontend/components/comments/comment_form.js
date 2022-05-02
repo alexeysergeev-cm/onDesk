@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useState, useRef } from "react";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 import classNames from "classnames";
 import { pressEnter } from "../../functions/functions";
 
-function CommentForm({ createComment, authorId, paperId }) {
+function CommentForm({ createComment, paperId }) {
   const [text, setText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
@@ -20,12 +20,11 @@ function CommentForm({ createComment, authorId, paperId }) {
     createComment({
       body: text,
       paper_id: paperId,
-      author_id: authorId,
     }).then(() => {
       setText("");
       setIsTyping(false);
     });
-  }, [createComment, text, paperId, authorId, setIsTyping, setText]);
+  }, [createComment, text, paperId, setIsTyping, setText]);
 
   useOnClickOutside(ref, () => setIsTyping(false));
 

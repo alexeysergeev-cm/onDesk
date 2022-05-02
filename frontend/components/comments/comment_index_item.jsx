@@ -6,7 +6,6 @@ class CommentIndexItem extends React.Component{
     this.state = {
       id: this.props.comment.id,
       body: '',
-      author_id: this.props.authorId,
     }
     this.updateComment = this.updateComment.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
