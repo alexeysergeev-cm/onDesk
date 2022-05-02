@@ -23,16 +23,16 @@ function LogOutButton({ currentUser, logout, updatePhoto, handlePhotoFile }) {
     >
       <div className="dropdown-trigger btn-logout-home">
         <button
-          className="button btn-logout is-rounded"
+          className="button btn-logout is-logout"
           aria-haspopup="true"
           aria-controls="dropdown-menu"
           style={{
             backgroundColor: currentUser.color,
-            backgroundImage: `url(${photoUrl})`,
+            backgroundImage: photoUrl ? `url(${photoUrl})` : "",
           }}
           onClick={() => setIsActiveDropdown(!isActiveDropdown)}
         >
-          {!photoUrl && <span>{currentUser.username[0]}</span>}
+          {!photoUrl && <span className="btn-initials">{currentUser.username[0]}</span>}
         </button>
       </div>
       <div className="dropdown-menu" id="dropdown-menu" role="menu">

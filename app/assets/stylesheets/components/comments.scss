@@ -25,7 +25,8 @@
 }
 
 .comment-body,
-.comment-create, .comment-form {
+.comment-create,
+.comment-form {
   border: 1px solid #dfdfdf;
   border-radius: 5px;
   background-color: white;
@@ -33,7 +34,8 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.comment-form-input {
+.comment-form-input,
+.comment-edit-input {
   width: -webkit-fill-available;
   padding: 0 !important;
   &.is-typing {
@@ -43,12 +45,15 @@
 
 .comment-author {
   display: flex;
-  margin: 10px 0 5px 0;
+  margin: 5px 5px 2px 6px;
+  .comment-author-name {
+    font-weight: 500;
+  }
 }
 
 .time {
-  padding-left: 25px;
-  font-size: 15px;
+  margin: 5px 5px 2px 18px;
+  font-size: 11px;
 }
 
 .comments-box {
@@ -58,7 +63,7 @@
 
 .manipulate-comment {
   display: flex;
-  padding: 2px;
+  margin: 2px 5px 10px 8px;
 
   div {
     display: flex;
