@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.new(comment_params.merge(:author_id => current_user.id))
     if @comment.save 
       render :show
     else
@@ -33,7 +33,7 @@ class Api::CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:id, :body, :paper_id, :author_id)
+    params.require(:comment).permit(:body, :paper_id)
   end
 
 end

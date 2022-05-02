@@ -7,7 +7,7 @@ function ModalBase({ modal, closeModal }) {
 
   useEffect(() => {
     setIsActive(!!modal);
-  }, [!!modal]);
+  }, [modal]);
 
   if (!modal) return null;
 

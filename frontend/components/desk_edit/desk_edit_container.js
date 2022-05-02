@@ -1,16 +1,13 @@
-import { connect } from 'react-redux';
-import { fetchDesk, updateDesk } from '../../actions/desk_actions';
-import EditDesk from './desk_edit';
+import { connect } from "react-redux";
+import { fetchDesk, updateDesk } from "../../actions/desk_actions";
+import EditDesk from "./desk_edit";
 
-const mSTP = (state) => {
+const mapStateToProps = (state) => {
   return {
-    errors: state.errors.desk
+    errors: state.errors.desk,
   };
-}
+};
 
-const mDTP = (dispatch) => ({
-  fetchDesk: (deskId) => dispatch(fetchDesk(deskId)),
-  submitDesk: (desk) => dispatch(updateDesk(desk))
-})
+const mapDispatchToProps = { fetchDesk, updateDesk };
 
-export default connect(mSTP, mDTP)(EditDesk)
+export default connect(mapStateToProps, mapDispatchToProps)(EditDesk);

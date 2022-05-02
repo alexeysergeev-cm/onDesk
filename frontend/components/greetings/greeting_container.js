@@ -6,16 +6,16 @@ import { update } from '../../actions/session_actions'
 import { selectors } from '../../reducers/selectors';
 
 
-const mSTP = (state) => ({
+const mapStateToProps = (state) => ({
   currentUser: selectors.getCurrentUser(state),
   photoUrl: selectors.geCurrentUserPhoto(state),
   defaultBackground: state.ui.defaultBackgroundPictures,
 });
 
-const mDTP = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   openModal: (modal) => dispatch(openModal(modal)),
   updateUser: (user) => dispatch(update(user))
 })
 
-export default connect(mSTP, mDTP)(Greeting);
+export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

@@ -1,28 +1,28 @@
-import { connect } from 'react-redux';
-import Search from './search';
-import { fetchUser } from '../../actions/users_actions'
-import { createMembership } from '../../actions/desk_memberships_actions';
-import {clearErrors, clearMessage} from '../../actions/clear_errors_actions'
+import { connect } from "react-redux";
+import Search from "./search";
+import { fetchUser } from "../../actions/users_actions";
+import { createMembership } from "../../actions/desk_memberships_actions";
+import { clearErrors, clearMessage } from "../../actions/clear_errors_actions";
 
-const mSTP = state => {
-  const message = state.deskMembership.message
-  const errors = state.errors.invite
-  const membershipErr = state.errors.membership 
-  const users = state.entities.users
+const mapStateToProps = (state) => {
+  const message = state.deskMembership.message;
+  const errors = state.errors.invite;
+  const membershipErr = state.errors.membership;
+  const users = state.entities.users;
 
-  return({
+  return {
     users,
     errors,
     message,
-    membershipErr
-  })
-}
+    membershipErr,
+  };
+};
 
-const mDTP = dispatch => ({
-  fetchUser: email => dispatch(fetchUser(email)),
-  createMembership: (payload) => dispatch(createMembership(payload)),
-  clearErrors: () => dispatch(clearErrors()),
-  clearMessage: () => dispatch(clearMessage())
-})
+const mapDispatchToProps = {
+  fetchUser,
+  createMembership,
+  clearErrors,
+  clearMessage,
+};
 
-export default connect(mSTP,mDTP)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

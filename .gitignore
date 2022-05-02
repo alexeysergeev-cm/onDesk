@@ -10,3 +10,5 @@ bundle.js*
 /tmp/*
 /log/*
 log/*
+
+hot/*

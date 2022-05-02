@@ -3,7 +3,7 @@ import MemberListItem from "./memberListItem";
 import "./memberList.scss";
 
 function MembersList({ data, membershipIds, currUserId }) {
-  const [members, setMembers] = useState([]);
+  // const [members, setMembers] = useState([]);
 
   if (!data.length) return null;
 

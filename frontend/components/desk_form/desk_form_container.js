@@ -4,7 +4,7 @@ import DeskForm from "./desk_form";
 import { closeModal } from "../../actions/modal_actions";
 import { clearErrors } from "../../actions/clear_errors_actions";
 
-const mSTP = (state) => {
+const mapStateToProps = (state) => {
   let keys = Object.keys(state.entities.desks);
   let lastId = keys[keys.length - 1];
   const currentUserId = state.session.currentUserId;
@@ -18,10 +18,10 @@ const mSTP = (state) => {
   };
 };
 
-const mDTP = (dispatch) => ({
-  createDesk: (desk) => dispatch(createDesk(desk)),
-  closeModal: () => dispatch(closeModal()),
-  clearErrors: () => dispatch(clearErrors()),
-});
+const mapDispatchToProps = {
+  createDesk,
+  closeModal,
+  clearErrors,
+};
 
-export default connect(mSTP, mDTP)(DeskForm);
+export default connect(mapStateToProps, mapDispatchToProps)(DeskForm);

@@ -46,7 +46,7 @@ function PaperDescription({ title, paperId, description, listId, authorId }) {
         onChange={update}
       ></textarea>
       <section>
-        <CommentIndexContainer paperId={paperId} authorId={authorId} />
+        <CommentIndexContainer paperId={paperId} />
       </section>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SearchBar from "../search_bar/search_bar";
 import { withRouter } from "react-router-dom";
 import "./greeting.scss";
 import LogOutButton from "../logout_button/logOutButton";
 import DeskFormModal from "../modal/deskFormModal/deskFormModal";
+import $ from "jquery";
 
 class Greeting extends React.Component {
   constructor(props) {

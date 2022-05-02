@@ -1,19 +1,21 @@
-import { connect } from 'react-redux';
-import CommentIndex from './comment_index'
-import { createComment, updateComment, deleteComment } from '../../actions/comment_actions'
+import { connect } from "react-redux";
+import CommentIndex from "./comment_index";
+import {
+  createComment,
+  updateComment,
+  deleteComment,
+} from "../../actions/comment_actions";
+import { selectors } from "../../reducers/selectors";
 
-const mSTP = state => {
-  const currUserId = state.session.currentUserId
-  return ({
-    comments: state.entities.comments,
-    currUserId
-  })
-}
+const mapStateToProps = (state) => ({
+  comments: selectors.getObjectValues(state.entities.comments),
+  currentUserId: state.session.currentUserId,
+});
 
-const mDTP = dispatch => ({
-  createComment: (comment) => dispatch(createComment(comment)),
-  updateComment: (comment) => dispatch(updateComment(comment)),
-  deleteComment: (commentId) => dispatch(deleteComment(commentId)),
-})
+const mapDispatchToProps = {
+  createComment,
+  updateComment,
+  deleteComment,
+};
 
-export default connect(mSTP, mDTP)(CommentIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(CommentIndex);
