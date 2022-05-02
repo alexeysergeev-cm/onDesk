@@ -5,11 +5,11 @@ import {
   updateComment,
   deleteComment,
 } from "../../actions/comment_actions";
-
 import { selectors } from "../../reducers/selectors";
 
 const mapStateToProps = (state) => ({
   comments: selectors.getObjectValues(state.entities.comments),
+  currentUserId: state.session.currentUserId,
 });
 
 const mapDispatchToProps = {

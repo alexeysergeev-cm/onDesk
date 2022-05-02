@@ -1,75 +1,59 @@
-import React from 'react';
+import { useCallback, useState } from "react";
 
-class CommentIndexItem extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      id: this.props.comment.id,
-      body: '',
-    }
-    this.updateComment = this.updateComment.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.update = this.update.bind(this)
-  }
+function CommentIndexItem({
+  comment,
+  updateComment,
+  deleteComment,
+  currentUserId,
+}) {
+  const [body, setBody] = useState("");
+  const [editing, setEditing] = useState(false);
 
-  handleSubmit(e){
-    e.preventDefault()
-    this.props.updateComment(this.state)
-    .then(this.setState({body: ''}))
+  const update = useCallback((e) => {
+    setBody(e.target.value);
+  }, []);
 
-    e.target.parentElement.parentElement.children[1].style.display = 'block'
-    e.target.parentElement.style.display = 'none' 
-  }
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      updateComment(body).then(() => setBody(""));
+    },
+    [body, setBody, updateComment]
+  );
 
-  update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
-  }
+  const removeComment = useCallback(() => {
+    deleteComment(comment.id);
+  }, [deleteComment, comment.id]);
 
-  updateComment(e){
-    e.target.parentElement.parentElement.children[1].style.display = 'none'
-    e.target.parentElement.parentElement.children[2].style.display = 'block'
-  }
-
-  render(){
-
-    let updateCom;
-    let deleteCom;
-    if (this.props.comment.author_id === this.props.authorId){
-      updateCom = <div onClick={this.updateComment}>Update</div>
-      deleteCom = <div onClick={() => this.props.deleteComment(this.props.comment.id)}>Delete</div>
-    } 
-
-
-
-    return(
-      <div className='comment-item'>
-        <div className="comment-author">
-          {this.props.comment.username}
-          <div className="time">
-            {this.props.comment.time}
-          </div>
-        </div>
-        <div className='comment-body'>
-          {this.props.comment.body}
-        </div>
-        <div className='update-comment'>
-          <form className='edit-com-form' onSubmit={this.handleSubmit}>
-            <input type='text'
-                value={this.state.body}
-                onChange={this.update('body')}
-                className='comment-edit-input'
-              />
-              <button className='upd-btn'>update</button>
-          </form>
-        </div>
-        <div className='manipulate-comment'>
-          {updateCom}
-          {deleteCom}
-        </div>
+  return (
+    <div className="comment-item">
+      <div className="comment-author">
+        {comment.username}
+        <div className="time">{comment.time}</div>
       </div>
-    )
-  }
+      {editing ? (
+        <div className="comment-body">
+          <input
+            type="text"
+            value={comment.body}
+            onChange={(e) => update(e)}
+            className="comment-edit-input"
+          />
+          <button className="upd-btn">Save</button>
+        </div>
+      ) : (
+        <>
+          <div className="comment-body">{comment.body}</div>
+          {currentUserId === comment.author_id && (
+            <div className="manipulate-comment">
+              <div onClick={() => setEditing(!editing)}>Edit</div>
+              <div onClick={removeComment}>Delete</div>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
 }
-
 
 export default CommentIndexItem;
