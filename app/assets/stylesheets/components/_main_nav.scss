@@ -46,6 +46,11 @@
   width: 130px;
   height: 50px;
   display: flex;
+
+  .nav-bar-logo {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .nav-bar-logo {
@@ -54,9 +59,7 @@
 }
 
 .float-right {
-  float: right;
-  display: block;
-  font-size: 25px;
+  font-size: 20px;
 
   .btn {
     background-color: transparent;
@@ -71,6 +74,9 @@
     color: $white;
     padding: 6px 12px;
     border: 1px solid transparent;
+    &.is-demo {
+      color: #5dff32;
+    }
   }
   .btn-bg {
     color: $light-blue;
@@ -114,7 +120,10 @@
   margin-top: 0;
 }
 
-.img-trello {
-  margin: auto;
-  display: block;
+.image-holder {
+  display: flex;
+  justify-content: center;
+  .img-trello {
+    width: clamp(100px, 60vh, 800px);
+  }
 }

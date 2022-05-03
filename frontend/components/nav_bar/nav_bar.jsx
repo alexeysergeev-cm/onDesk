@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/session_actions";
+// import landing1 from "../../../app/assets/images/landing1.png";
+// import landing2 from "../../../app/assets/images/landing2.png";
 
 function NavBar(props) {
   const { currentUser, logout } = props;
@@ -13,7 +15,7 @@ function NavBar(props) {
   
   const display = (
     <div>
-      <div className="btn btn-sm" onClick={tryDemo}>
+      <div className="btn btn-sm is-demo" onClick={tryDemo}>
         Demo User
       </div>
       <Link className="btn btn-sm" to="/login">
@@ -46,11 +48,13 @@ function NavBar(props) {
             prioritize projects in a fun, flexible, and rewarding way.
           </p>
         </div>
-        <div style={{ width: "100%" }}>
+        <div className="image-holder">
           <img
             className="img-trello"
             src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/308998dcb3ed5ab3d01217a4d24ffa03/hero-a.svg"
           />
+          {/* <img className="img-trello" src={landing1} alt="landing1" /> */}
+          {/* <img src={landing2} alt="landing2" /> */}
         </div>
       </div>
     </header>

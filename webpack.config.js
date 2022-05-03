@@ -1,5 +1,5 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./frontend/onDesk.jsx",
@@ -40,6 +40,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
     ],
   },
   devtool: "source-map",
@@ -49,6 +57,11 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       React: "react",
-    })
+    }),
+    new webpack.DefinePlugin({
+      "process.env.NODE_ENV": JSON.stringify(
+        process.env.NODE_ENV || "development"
+      ),
+    }),
   ],
 };

@@ -2,20 +2,39 @@ import React from "react";
 import DeskIndexItem from "./desk_index_item";
 import { Link } from "react-router-dom";
 import HomePageMenu from "../home_page_menu/home_page_menu";
+import classNames from "classnames";
 class DeskIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: [],
+      isLoadedPictures: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
+    const loadImage = (url) => {
+      return new Promise((resolve, reject) => {
+        const loadImg = new Image();
+        loadImg.src = url;
+
+        loadImg.onload = () => resolve(url);
+        loadImg.onerror = (err) => reject(err);
+      });
+    };
+
     this.props
       .fetchDesks()
-      .then((data) => this.setState({ projects: Object.values(data.desks) }));
+      .then(() => this.setState({ projects: this.props.desks }))
+      .then(() => {
+        Promise.all(
+          this.state.projects.map((proj) => loadImage(proj.background_picture))
+        )
+          .then(() => this.setState({ isLoadedPictures: true }))
+          .catch((err) => console.log("Failed to load images", err));
+      });
   }
 
   handleClick(targetProjects) {
@@ -43,12 +62,6 @@ class DeskIndex extends React.Component {
 
   render() {
     const { desks } = this.props;
-    desks.forEach((desk) => {
-      if (!desk.background_picture) {
-        desk.background_picture =
-          "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
-      }
-    });
 
     if (!desks) return null;
 
@@ -58,19 +71,31 @@ class DeskIndex extends React.Component {
           <nav className="home-left-sidebar">
             <HomePageMenu handleClick={this.handleClick} />
           </nav>
-          <div className="desk-page">
-            {this.state.projects.map((desk) => (
-              <Link key={desk.id} to={`/${desk.id}/deskshow`}>
-                <span
-                  className="desk-tile"
-                  style={{ backgroundImage: `url(${desk.background_picture})` }}
-                >
-                  <div className="desk-tile-details">
-                    <DeskIndexItem desk={desk} />
-                  </div>
-                </span>
-              </Link>
-            ))}
+          <div
+            className={classNames("desk-page", {
+              "is-loading": !this.state.isLoadedPictures,
+            })}
+          >
+            {this.state.isLoadedPictures ? (
+              this.state.projects.map((desk) => (
+                <Link key={desk.id} to={`/${desk.id}/deskshow`}>
+                  <span
+                    className="desk-tile"
+                    style={{
+                      backgroundImage: `url(${desk.background_picture})`,
+                    }}
+                  >
+                    <div className="desk-tile-details">
+                      <DeskIndexItem desk={desk} />
+                    </div>
+                  </span>
+                </Link>
+              ))
+            ) : (
+              <progress class="progress is-small is-link" max="100">
+                60%
+              </progress>
+            )}
           </div>
         </div>
         <footer id="main-footer">
