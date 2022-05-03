@@ -43,12 +43,6 @@ class DeskIndex extends React.Component {
 
   render() {
     const { desks } = this.props;
-    desks.forEach((desk) => {
-      if (!desk.background_picture) {
-        desk.background_picture =
-          "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
-      }
-    });
 
     if (!desks) return null;
 

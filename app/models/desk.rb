@@ -18,4 +18,14 @@ class Desk < ApplicationRecord
     through: :papers,
     source: :comments,
     dependent: :destroy
+
+  before_create :set_background_picture
+
+  DEFAULT_BACKGROUND_URL = "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
+
+  def set_background_picture 
+    if self.background_picture.length == 0
+      self.background_picture = DEFAULT_BACKGROUND_URL
+    end
+  end
 end
