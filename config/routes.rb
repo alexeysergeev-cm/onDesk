@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   #create a search route, 
   #route                       controller#method
   get "/api/search", to: "api/search_bars#search"
-
+  mount ActionCable.server => '/cable'
 end
