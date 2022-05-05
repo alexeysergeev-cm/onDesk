@@ -19,13 +19,18 @@ class Desk < ApplicationRecord
     source: :comments,
     dependent: :destroy
 
-  before_create :set_background_picture
-
   DEFAULT_BACKGROUND_URL = "https://ondesk-dev.s3-us-west-1.amazonaws.com/desert.jpeg";
+
+  before_create :set_background_picture
+  after_commit :send_cable, on: [:update]
 
   def set_background_picture 
     if self.background_picture.length == 0
       self.background_picture = DEFAULT_BACKGROUND_URL
     end
+  end
+
+  def send_cable
+    DeskChannel.broadcast_to(self, {type: "DESK_ACTION", desk_id: self.id})
   end
 end

@@ -6,6 +6,7 @@ import MembersList from "../membersList/membersList";
 import classnames from "classnames";
 import "./deskShow.scss";
 import Invite from "../invite/invite";
+import ActionCable from "actioncable";
 
 class DeskShow extends React.Component {
   constructor(props) {
@@ -16,13 +17,42 @@ class DeskShow extends React.Component {
 
     this.clickDropDown = this.clickDropDown.bind(this);
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this);
-    // this.clickInvite = this.clickInvite.bind(this);
     this.setIstitleUpdate = this.setIstitleUpdate.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+
+    this.cable = ActionCable.createConsumer(process.env.REACT_APP_CABLE_URL);
+    this.channel = null;
   }
 
   componentDidMount() {
     this.props.fetchDesk(this.props.deskId);
+
+    this.channel = this.cable.subscriptions.create(
+      { channel: "DeskChannel", desk_id: this.props.deskId },
+      {
+        received: (data) => {
+          switch (data.type) {
+            // case "PAPER_ACTION":
+            //   this.props.fetchDesk(this.props.deskId);
+            //   break;
+            // case "DESK_ACTION":
+            //   this.props.fetchDesk(data.desk_id);
+            //   break;
+            // case "LIST_ACTION":
+            //   // this.props.fetchDesk(this.props.deskId);
+            //   console.log(data)
+            //   break;
+            default:
+              break;
+          }
+          console.log("in desk show");
+        },
+      }
+    );
+  }
+
+  componentWillUnmount() {
+    this.channel.unsubscribe();
   }
 
   componentDidUpdate(nextProps) {
@@ -34,18 +64,6 @@ class DeskShow extends React.Component {
   setIstitleUpdate(bool) {
     this.setState({ isTitleUpdate: bool });
   }
-
-  // clickInvite(e) {
-  //   e.stopPropagation();
-  //   let $dropInvite = document.getElementsByClassName("invite-dropdown")[0];
-
-  //   if (
-  //     e.target.innerText === "Invite Another User" ||
-  //     e.target.offsetParent.classList.value === "close-x invite"
-  //   ) {
-  //     $dropInvite.classList.toggle("open");
-  //   }
-  // }
 
   clickDropDown(e) {
     if (e.target.innerText === "Show Menu") {
@@ -90,7 +108,6 @@ class DeskShow extends React.Component {
       let $error = document.getElementsByClassName("desk-errors");
       $error[0].classList.add("err-on");
     }
-
 
     //----dropDown Menu
     let menu;

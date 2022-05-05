@@ -15,6 +15,6 @@ class List < ApplicationRecord
   after_commit :send_cable, on: [:update, :create]
 
   def send_cable
-    ActionCable.server.broadcast "list_channel", content:  "test message"
+    DeskChannel.broadcast_to(self.desk, {type: "LIST_ACTION", list_id: self.id})
   end
 end
