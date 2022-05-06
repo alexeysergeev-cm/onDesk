@@ -2,6 +2,7 @@ import {
   RECEIVE_LIST,
   REMOVE_LIST,
   RECEIVE_TWO_LISTS,
+  RECEIVE_LISTS,
 } from "../actions/list_actions";
 import { RECEIVE_DESK } from "../actions/desk_actions";
 
@@ -24,6 +25,8 @@ const listsReducer = (state = {}, action) => {
         nextState[id] = lists[id];
       }
       return nextState;
+    case RECEIVE_LISTS:
+      return Object.assign({}, action.lists);
     default:
       return state;
   }

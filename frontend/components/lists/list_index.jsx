@@ -11,6 +11,7 @@ function ListIndex({
   desk,
   updateTwoLists,
   papers,
+  currentUserId,
 }) {
   const [listsToRender, setListsToRender] = useState({});
 
@@ -75,6 +76,7 @@ function ListIndex({
           paper_id: papers[result.draggableId].id,
           source_order: sourceList.paper_order,
           destination_order: destinationList.paper_order,
+          sender_id: currentUserId,
         };
 
         updateTwoLists(result.source.droppableId, payload).fail((err) => {

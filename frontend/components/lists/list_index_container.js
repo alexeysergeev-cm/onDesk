@@ -12,6 +12,7 @@ import ListIndex from "./list_index";
 const mapStateToProps = (state) => ({
   lists: state.entities.lists,
   papers: state.entities.papers,
+  currentUserId: state.session.currentUserId,
 });
 
 const mapDispatchToProps = {

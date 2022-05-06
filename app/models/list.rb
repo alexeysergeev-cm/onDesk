@@ -8,16 +8,16 @@ class List < ApplicationRecord
   after_commit :send_cable, on: [:update, :create]
 
   def send_cable
-    DeskChannel.broadcast_to(self.desk, { type: "LIST_ACTION", list_id: self.id })
+    # DeskChannel.broadcast_to(self.desk, { event_type: "list_sync" })
   end
 
-  def handle_transaction(destination_list, paper, source_order, destination_order)
+  def handle_transaction(destination_list, paper, source_order, destination_order, sender_id)
     ActiveRecord::Base.transaction do 
       self.update_attributes!(paper_order: source_order)
       destination_list.update_attributes!(paper_order: destination_order)
       paper.update_attributes!(list_id: destination_list.id)
-      # raise "Oops, something went wrong"
-      raise "Oops, something went wrong" unless self.save && destination_list.save && paper.save
     end
+    
+    DeskChannel.broadcast_to(self.desk, { event_type: "list_sync", sender_id: sender_id})
   end
 end

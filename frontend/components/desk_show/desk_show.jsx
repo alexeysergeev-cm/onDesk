@@ -31,17 +31,18 @@ class DeskShow extends React.Component {
       { channel: "DeskChannel", desk_id: this.props.deskId },
       {
         received: (data) => {
-          switch (data.type) {
-            // case "PAPER_ACTION":
-            //   this.props.fetchDesk(this.props.deskId);
-            //   break;
-            // case "DESK_ACTION":
-            //   this.props.fetchDesk(data.desk_id);
-            //   break;
-            // case "LIST_ACTION":
-            //   // this.props.fetchDesk(this.props.deskId);
-            //   console.log(data)
-            //   break;
+          switch (data.event_type) {
+            case "PAPER_ACTION":
+              this.props.fetchDesk(this.props.deskId);
+              break;
+            case "DESK_ACTION":
+              this.props.fetchDesk(data.desk_id);
+              break;
+            case "list_sync":
+              if (data.sender_id !== this.props.currUserId.toString()) {
+                this.props.fetchLists(this.props.deskId);
+              }
+              break;
             default:
               break;
           }

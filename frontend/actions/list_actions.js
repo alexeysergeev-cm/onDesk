@@ -1,9 +1,17 @@
 import * as ListUtil from "../util/list_api_util";
 
 export const RECEIVE_LIST = "RECEIVE_LIST";
+export const RECEIVE_LISTS = "RECEIVE_LISTS";
 export const REMOVE_LIST = "REMOVE_LIST";
 export const RECEIVE_TWO_LISTS = "RECEIVE_TWO_LISTS";
 export const RECEIVE_LIST_ERROR = "RECEIVE_LIST_ERROR";
+
+const receiveLists = (lists) => {
+  return {
+    type: RECEIVE_LISTS,
+    lists,
+  };
+}
 
 const receiveList = (list) => {
   return {
@@ -30,6 +38,9 @@ const receiveListError = (error) => ({
   type: RECEIVE_LIST_ERROR,
   error,
 })
+
+export const fetchLists = (desk_id) => (dispatch) => 
+  ListUtil.fetchLists(desk_id).then(lists => dispatch(receiveLists(lists)));
 
 export const createList = (list) => (dispatch) =>
   ListUtil.createList(list).then((list) => dispatch(receiveList(list)));

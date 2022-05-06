@@ -3,6 +3,7 @@ import DeskShow from "./desk_show";
 import { fetchDesk, deleteDesk } from "../../actions/desk_actions";
 import { selectors } from "../../reducers/selectors";
 import { clearErrors } from "../../actions/clear_errors_actions";
+import { fetchLists } from "../../actions/list_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const deskId = ownProps.match.params.deskId;
@@ -30,6 +31,7 @@ const mapDispatchToProps = {
   fetchDesk,
   deleteDesk,
   clearErrors,
+  fetchLists,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeskShow);
