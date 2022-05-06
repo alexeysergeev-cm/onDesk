@@ -1,5 +1,10 @@
 import { connect } from "react-redux";
-import { createList, updateList, deleteList } from "../../actions/list_actions";
+import {
+  createList,
+  updateList,
+  deleteList,
+  updateTwoLists,
+} from "../../actions/list_actions";
 import { updateDesk } from "../../actions/desk_actions";
 import { updatePaper } from "../../actions/paper_actions";
 import ListIndex from "./list_index";
@@ -15,6 +20,7 @@ const mapDispatchToProps = {
   deleteList,
   updateDesk,
   updatePaper,
+  updateTwoLists,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

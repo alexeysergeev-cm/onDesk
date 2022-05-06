@@ -27,10 +27,29 @@ class Api::ListsController < ApplicationController
     end
   end
 
+  def update_two_lists
+    @source_list = List.find(params[:id])
+    @destination_list = List.find(two_lists_params[:destination_list_id])
+    @paper = Paper.find(two_lists_params[:paper_id])
+    source_order = two_lists_params[:source_order]
+    destination_order = two_lists_params[:destination_order]
+    
+    begin
+      @source_list.handle_transaction(@destination_list, @paper, source_order, destination_order)
+      render :update_two_list_transaction
+    rescue => exception
+      render json: [exception], status: :unprocessable_entity
+    end
+  end
+
 
   private
   def list_params
     defaults = { paper_order: [] }
     params.require(:list).permit(:id, :title, :desk_id, :author_id, paper_order: []).reverse_merge(defaults)
+  end
+
+  def two_lists_params
+    params.require(:payload).permit(:destination_list_id, :paper_id, source_order: [], destination_order: [])
   end
 end

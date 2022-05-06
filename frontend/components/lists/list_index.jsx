@@ -1,116 +1,139 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ListIndexItem from "./list_index_item";
 import ListFormContainer from "./list_form_container";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { cloneDeep } from "lodash";
+function ListIndex({
+  lists,
+  deskId,
+  deleteList,
+  updateList,
+  desk,
+  updateTwoLists,
+  papers,
+}) {
+  const [listsToRender, setListsToRender] = useState({});
 
-class ListIndex extends React.Component {
-  constructor(props) {
-    super(props);
+  useEffect(() => {
+    if (!lists || JSON.stringify(lists) === JSON.stringify(listsToRender)) {
+      return;
+    }
+    cloneAndSet(lists);
+  }, [lists]);
 
-    this.handleOnDragEnd = this.handleOnDragEnd.bind(this);
-  }
+  const cloneAndSet = useCallback(
+    (lists) => {
+      /*
+      Object.assign({}, lists); won't work since it does shallow dup
+      use: 
+        1) JSON.parse(JSON.stringify(lists))   
+        2) lodash Library: 
+          var objects = [{ 'a': 1 }, { 'b': 2 }];
+          var deep = _.cloneDeep(objects);
+     */
+      const listsCopy = cloneDeep(lists);
+      setListsToRender(listsCopy);
+    },
+    [lists, setListsToRender, cloneDeep]
+  );
 
-  handleOnDragEnd(result) {
+  const handleOnDragEnd = (result) => {
     if (!result.destination) return;
 
     if (result.type === "list") {
-      const deskId = this.props.desk.id;
-      const items = this.props.desk.list_order;
-      const author_id = this.props.desk.list_order;
+      const items = desk.list_order;
+      const author_id = desk.list_order; //remove this
       const [reorderedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 0, reorderedItem);
-      this.props.updateDesk({
+      updateDesk({
         id: deskId,
         list_order: items,
         author_id: author_id,
       });
     } else if (result.type === "paper") {
       if (result.source.droppableId === result.destination.droppableId) {
-        const papers = this.props.lists[result.source.droppableId].paper_order;
+        const papers = lists[result.source.droppableId].paper_order;
         const [reorderedItem] = papers.splice(result.source.index, 1);
         papers.splice(result.destination.index, 0, reorderedItem);
-        this.props.updateList({
+        updateList({
           id: result.source.droppableId,
           paper_order: papers,
         });
       } else {
-        const startList =
-          this.props.lists[result.source.droppableId].paper_order;
-        startList.splice(result.source.index, 1);
-        this.props.updateList({
-          id: result.source.droppableId,
-          paper_order: startList,
-        });
+        const sourceList = listsToRender[result.source.droppableId];
+        sourceList.paper_order.splice(result.source.index, 1);
 
-        const finishList =
-          this.props.lists[result.destination.droppableId].paper_order;
-        finishList.splice(result.destination.index, 0, result.draggableId);
-        this.props.updateList({
-          id: result.destination.droppableId,
-          paper_order: finishList,
-        });
+        const destinationList = listsToRender[result.destination.droppableId];
+        destinationList.paper_order.splice(
+          result.destination.index,
+          0,
+          result.draggableId
+        );
 
-        this.props.updatePaper({
-          id: this.props.papers[result.draggableId].id,
-          list_id: result.destination.droppableId,
+        const payload = {
+          destination_list_id: result.destination.droppableId,
+          paper_id: papers[result.draggableId].id,
+          source_order: sourceList.paper_order,
+          destination_order: destinationList.paper_order,
+        };
+
+        updateTwoLists(result.source.droppableId, payload).fail((err) => {
+          console.log(err.responseJSON);
+          cloneAndSet(lists);
         });
       }
     }
-  }
+  };
 
-  render() {
-    const { lists, deskId, desk } = this.props;
-    if (!lists) return null;
-    if (!desk) return null;
+  if (!lists) return null;
+  if (!desk) return null;
 
-    return (
-      <DragDropContext onDragEnd={this.handleOnDragEnd}>
-        <Droppable droppableId="all-lists" direction="horizontal" type="list">
-          {(provided) => (
-            <div
-              className="list-index-container"
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {desk.list_order.map((listId, i) => {
-          
-                if (lists[listId]) {
-                  return (
-                    <Draggable
-                      key={lists[listId].id}
-                      draggableId={""+listId}
-                      index={i}
-                    >
-                      {(provided) => (
-                        <div
-                          className="list-wrapper"
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                        >
-                          <div className="list-item">
-                            <ListIndexItem
-                              list={lists[listId]}
-                              deskId={deskId}
-                              deleteList={this.props.deleteList}
-                              updateList={this.props.updateList}
-                              desk={desk}
-                            />
-                          </div>
+  return (
+    <DragDropContext onDragEnd={handleOnDragEnd}>
+      <Droppable droppableId="all-lists" direction="horizontal" type="list">
+        {(provided) => (
+          <div
+            className="list-index-container"
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+          >
+            {desk.list_order.map((listId, i) => {
+              if (listsToRender[listId]) {
+                return (
+                  <Draggable
+                    key={listsToRender[listId].id}
+                    draggableId={"" + listId}
+                    index={i}
+                  >
+                    {(provided) => (
+                      <div
+                        className="list-wrapper"
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <div className="list-item">
+                          <ListIndexItem
+                            list={listsToRender[listId]}
+                            deskId={deskId}
+                            deleteList={deleteList}
+                            updateList={updateList}
+                            desk={desk}
+                          />
                         </div>
-                      )}
-                    </Draggable>
-                  );
-                }
-              })}
-              {provided.placeholder}
-              <ListFormContainer deskId={deskId} desk={desk} />
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-    );
-  }
+                      </div>
+                    )}
+                  </Draggable>
+                );
+              }
+            })}
+            {provided.placeholder}
+            <ListFormContainer deskId={deskId} desk={desk} />
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
+  );
 }
 
 export default ListIndex;
