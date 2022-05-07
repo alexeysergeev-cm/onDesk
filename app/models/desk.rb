@@ -31,6 +31,9 @@ class Desk < ApplicationRecord
   end
 
   def send_cable
-    DeskChannel.broadcast_to(self, {type: "DESK_ACTION", desk_id: self.id})
+    if title_previously_changed? 
+      # debugger
+    end
+    DeskChannel.broadcast_to(self, { event_type: "desk_sync", desk_id: self.id, title: self.title, list_order: self.list_order })
   end
 end

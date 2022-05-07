@@ -8,6 +8,7 @@ function ListIndex({
   deskId,
   deleteList,
   updateList,
+  updateDesk,
   desk,
   updateTwoLists,
   papers,
@@ -53,7 +54,7 @@ function ListIndex({
       });
     } else if (result.type === "paper") {
       if (result.source.droppableId === result.destination.droppableId) {
-        const papers = lists[result.source.droppableId].paper_order;
+        const papers = listsToRender[result.source.droppableId].paper_order;
         const [reorderedItem] = papers.splice(result.source.index, 1);
         papers.splice(result.destination.index, 0, reorderedItem);
         updateList({

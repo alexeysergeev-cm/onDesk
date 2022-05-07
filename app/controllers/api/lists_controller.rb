@@ -1,6 +1,6 @@
 class Api::ListsController < ApplicationController
   before_action :require_logged_in!
-
+  
   def index 
     @lists = List.where(desk_id: params[:desk_id])
     render :index
@@ -60,3 +60,4 @@ class Api::ListsController < ApplicationController
     params.require(:payload).permit(:destination_list_id, :paper_id, :sender_id, source_order: [], destination_order: [])
   end
 end
+

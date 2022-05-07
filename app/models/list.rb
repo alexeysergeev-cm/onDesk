@@ -5,11 +5,7 @@ class List < ApplicationRecord
   belongs_to :desk
   has_many :papers, dependent: :destroy
 
-  after_commit :send_cable, on: [:update, :create]
-
-  def send_cable
-    # DeskChannel.broadcast_to(self.desk, { event_type: "list_sync" })
-  end
+  after_commit :cast_to_channel, on: %i[create update destroy]
 
   def handle_transaction(destination_list, paper, source_order, destination_order, sender_id)
     ActiveRecord::Base.transaction do 
@@ -17,7 +13,12 @@ class List < ApplicationRecord
       destination_list.update_attributes!(paper_order: destination_order)
       paper.update_attributes!(list_id: destination_list.id)
     end
-    
-    DeskChannel.broadcast_to(self.desk, { event_type: "list_sync", sender_id: sender_id})
+  end
+
+  def cast_to_channel
+    # debugger
+    DeskChannel.broadcast_to(self.desk, { event_type: "list_sync", sender_id: Current.user.id})
   end
 end
+
+

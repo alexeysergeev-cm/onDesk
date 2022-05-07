@@ -35,8 +35,8 @@ class DeskShow extends React.Component {
             case "PAPER_ACTION":
               this.props.fetchDesk(this.props.deskId);
               break;
-            case "DESK_ACTION":
-              this.props.fetchDesk(data.desk_id);
+            case "desk_sync":
+              this.props.deskSync(data);
               break;
             case "list_sync":
               if (data.sender_id !== this.props.currUserId.toString()) {
@@ -46,7 +46,7 @@ class DeskShow extends React.Component {
             default:
               break;
           }
-          console.log("in desk show");
+          
         },
       }
     );
@@ -56,10 +56,12 @@ class DeskShow extends React.Component {
     this.channel.unsubscribe();
   }
 
-  componentDidUpdate(nextProps) {
-    if (this.props.location.pathname !== nextProps.location.pathname) {
+  componentDidUpdate(prevState) {
+    if (this.props.location.pathname !== prevState.location.pathname) {
       this.props.fetchDesk(this.props.deskId);
     }
+    console.log(this.props.desk)
+    console.log(prevState.desk)
   }
 
   setIstitleUpdate(bool) {

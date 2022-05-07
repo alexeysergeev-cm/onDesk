@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import DeskShow from "./desk_show";
-import { fetchDesk, deleteDesk } from "../../actions/desk_actions";
+import { fetchDesk, deleteDesk, deskSync } from "../../actions/desk_actions";
 import { selectors } from "../../reducers/selectors";
 import { clearErrors } from "../../actions/clear_errors_actions";
 import { fetchLists } from "../../actions/list_actions";
@@ -32,6 +32,7 @@ const mapDispatchToProps = {
   deleteDesk,
   clearErrors,
   fetchLists,
+  deskSync,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeskShow);

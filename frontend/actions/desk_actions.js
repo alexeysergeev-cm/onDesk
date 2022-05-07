@@ -4,6 +4,7 @@ export const RECEIVE_DESKS = "RECEIVE_DESKS";
 export const RECEIVE_DESK = "RECEIVE_DESK";
 export const RECEIVE_DESK_ERRORS = "RECEIVE_DESK_ERRORS";
 export const REMOVE_DESK = "REMOVE_DESK";
+export const DESK_SYNC = "DESK_SYNC";
 
 const receiveDesks = (desks) => ({
   type: RECEIVE_DESKS,
@@ -25,6 +26,11 @@ const removeDesk = (deskId) => ({
   type: REMOVE_DESK,
   deskId,
 });
+
+const receiveDeskSync = (data) => ({
+  type: DESK_SYNC,
+  data,
+})
 
 export const fetchDesks = () => (dispatch) =>
   DeskUtil.fetchDesks()
@@ -50,3 +56,5 @@ export const deleteDesk = (deskId) => (dispatch) =>
   DeskUtil.deleteDesk(deskId)
     .then(() => dispatch(removeDesk(deskId)))
     .fail((errors) => dispatch(receiveDeskErrors(errors.responseJSON)));
+
+export const deskSync = (data) => (dispatch) => dispatch(receiveDeskSync(data));
