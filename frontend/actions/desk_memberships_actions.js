@@ -33,3 +33,6 @@ export const deleteMembership = (id) => (dispatch) =>
   DeskMembershipsApiUtil.deleteMembership(id)
     .then((members) => dispatch(receiveUpdatedMembers(members)))
     .fail((errors) => dispatch(receiveMembershipErrors(errors.responseJSON)));
+
+export const receiveCableMember = (member) => (dispatch) => dispatch(receiveMembership(member));
+export const deleteCableMember = (dm) => (dispatch) => dispatch(receiveUpdatedMembers(dm));

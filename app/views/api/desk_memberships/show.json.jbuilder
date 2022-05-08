@@ -1,5 +1,7 @@
-json.set! :new_member do 
-  json.partial! 'api/users/user', user: @new_member
+json.set! :member do 
+  if @member
+    json.partial! 'api/users/user', user: @member
+  end
 end
 
 json.set! :desk_membership do

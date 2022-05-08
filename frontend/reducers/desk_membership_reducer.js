@@ -8,12 +8,13 @@ const membershipReducer = (state = {}, action) => {
   
   switch(action.type){
     case CREATE_MEMBERSHIP:
-      const newMember = action.payload.new_member;
+      const newMember = action.payload.member;
       const dm = action.payload.desk_membership;
       nextState[dm.id] = newMember;
       return nextState
     case DELETE_MEMBERSHIP:
-      return action.payload.desk_memberships;
+      delete nextState[action.payload.desk_membership.id];
+      return nextState
     case CLEAR_MESSAGE:
       return "";
     case RECEIVE_DESK:
