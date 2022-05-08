@@ -6,6 +6,10 @@ import { clearErrors } from "../../actions/clear_errors_actions";
 import { fetchLists } from "../../actions/list_actions";
 import { receiveCablePaper } from "../../actions/paper_actions";
 import { receiveCableComment } from "../../actions/comment_actions";
+import {
+  receiveCableMember,
+  deleteCableMember,
+} from "../../actions/desk_memberships_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const deskId = ownProps.match.params.deskId;
@@ -37,6 +41,8 @@ const mapDispatchToProps = {
   deskSync,
   receiveCablePaper,
   receiveCableComment,
+  receiveCableMember,
+  deleteCableMember,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeskShow);
