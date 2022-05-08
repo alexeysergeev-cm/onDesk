@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # skip_forgery_protection # use in postman 
   helper_method :current_user, :logged_in?
+  before_action :set_current_user
+
   #CRLLL
 
   def current_user
@@ -25,5 +27,10 @@ class ApplicationController < ActionController::Base
     @current_user.reset_sesssion_token!
     session[:session_token] = nil 
     @current_user = nil 
+  end
+
+  private
+  def set_current_user
+    Current.user = current_user
   end
 end

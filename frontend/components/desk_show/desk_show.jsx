@@ -6,6 +6,7 @@ import MembersList from "../membersList/membersList";
 import classnames from "classnames";
 import "./deskShow.scss";
 import Invite from "../invite/invite";
+import ActionCable from "actioncable";
 
 class DeskShow extends React.Component {
   constructor(props) {
@@ -16,17 +17,49 @@ class DeskShow extends React.Component {
 
     this.clickDropDown = this.clickDropDown.bind(this);
     this.handleDeleteDesk = this.handleDeleteDesk.bind(this);
-    // this.clickInvite = this.clickInvite.bind(this);
     this.setIstitleUpdate = this.setIstitleUpdate.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+
+    this.cable = ActionCable.createConsumer(process.env.REACT_APP_CABLE_URL);
+    this.channel = null;
   }
 
   componentDidMount() {
     this.props.fetchDesk(this.props.deskId);
+
+    this.channel = this.cable.subscriptions.create(
+      { channel: "DeskChannel", desk_id: this.props.deskId },
+      {
+        received: (data) => {
+          if (data.sender_id !== this.props.currUserId) {
+            switch (data.event_type) {
+              case "paper_sync":
+                this.props.receiveCablePaper(data.paper);
+                break;
+              case "desk_sync":
+                this.props.deskSync(data);
+                break;
+              case "list_sync":
+                this.props.fetchLists(this.props.deskId);
+                break;
+              case "comment_sync":
+                this.props.receiveCableComment(data.comment);
+                break;
+              default:
+                break;
+            }
+          }
+        },
+      }
+    );
   }
 
-  componentDidUpdate(nextProps) {
-    if (this.props.location.pathname !== nextProps.location.pathname) {
+  componentWillUnmount() {
+    this.channel.unsubscribe();
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.props.location.pathname !== prevState.location.pathname) {
       this.props.fetchDesk(this.props.deskId);
     }
   }
@@ -34,18 +67,6 @@ class DeskShow extends React.Component {
   setIstitleUpdate(bool) {
     this.setState({ isTitleUpdate: bool });
   }
-
-  // clickInvite(e) {
-  //   e.stopPropagation();
-  //   let $dropInvite = document.getElementsByClassName("invite-dropdown")[0];
-
-  //   if (
-  //     e.target.innerText === "Invite Another User" ||
-  //     e.target.offsetParent.classList.value === "close-x invite"
-  //   ) {
-  //     $dropInvite.classList.toggle("open");
-  //   }
-  // }
 
   clickDropDown(e) {
     if (e.target.innerText === "Show Menu") {
@@ -90,7 +111,6 @@ class DeskShow extends React.Component {
       let $error = document.getElementsByClassName("desk-errors");
       $error[0].classList.add("err-on");
     }
-
 
     //----dropDown Menu
     let menu;

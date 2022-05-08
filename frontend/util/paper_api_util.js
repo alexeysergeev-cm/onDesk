@@ -1,5 +1,3 @@
-
-
 export const createPaper = (paper) => (
   $.ajax({
     url: '/api/papers',

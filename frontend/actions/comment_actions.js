@@ -31,3 +31,5 @@ export const deleteComment = (commentId) => (dispatch) =>
   CommentUtil.deleteComment(commentId).then(() =>
     dispatch(removeComment(commentId))
   );
+
+export const receiveCableComment = (comment) => (dispatch) => dispatch(receiveComment(comment));

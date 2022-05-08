@@ -15,7 +15,7 @@ function PaperIndex({
   papers,
   updateList,
 }) {
-  if (!papers) return null;
+  if (!papers || !list) return null;
 
   return (
     <Droppable droppableId={"" + list_id} type="paper">
@@ -25,8 +25,7 @@ function PaperIndex({
           {...provided.droppableProps}
           ref={provided.innerRef}
         >
-          {list.paper_order
-            .map((paperId, i) => {
+          {list.paper_order?.map((paperId, i) => {
               if (papers[paperId]) {
                 const paper = papers[paperId];
                 return (
