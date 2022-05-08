@@ -20,6 +20,7 @@ class DeskShow extends React.Component {
     this.setIstitleUpdate = this.setIstitleUpdate.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
 
+    // console.log(App.cable)
     this.cable = ActionCable.createConsumer(
       process.env.NODE_ENV === "production"
         ? process.env.REACT_APP_PROD_CABLE_URL
