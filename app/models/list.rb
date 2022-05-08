@@ -16,7 +16,6 @@ class List < ApplicationRecord
   end
 
   def cast_to_channel
-    # debugger
     DeskChannel.broadcast_to(self.desk, { event_type: "list_sync", sender_id: Current.user.id})
   end
 end

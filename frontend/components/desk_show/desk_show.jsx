@@ -31,22 +31,24 @@ class DeskShow extends React.Component {
       { channel: "DeskChannel", desk_id: this.props.deskId },
       {
         received: (data) => {
-          switch (data.event_type) {
-            case "PAPER_ACTION":
-              this.props.fetchDesk(this.props.deskId);
-              break;
-            case "desk_sync":
-              this.props.deskSync(data);
-              break;
-            case "list_sync":
-              if (data.sender_id !== this.props.currUserId.toString()) {
+          if (data.sender_id !== this.props.currUserId) {
+            switch (data.event_type) {
+              case "paper_sync":
+                this.props.receiveCablePaper(data.paper);
+                break;
+              case "desk_sync":
+                this.props.deskSync(data);
+                break;
+              case "list_sync":
                 this.props.fetchLists(this.props.deskId);
-              }
-              break;
-            default:
-              break;
+                break;
+              case "comment_sync":
+                this.props.receiveCableComment(data.comment);
+                break;
+              default:
+                break;
+            }
           }
-          
         },
       }
     );
@@ -60,8 +62,6 @@ class DeskShow extends React.Component {
     if (this.props.location.pathname !== prevState.location.pathname) {
       this.props.fetchDesk(this.props.deskId);
     }
-    console.log(this.props.desk)
-    console.log(prevState.desk)
   }
 
   setIstitleUpdate(bool) {

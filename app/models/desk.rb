@@ -34,6 +34,6 @@ class Desk < ApplicationRecord
     if title_previously_changed? 
       # debugger
     end
-    DeskChannel.broadcast_to(self, { event_type: "desk_sync", desk_id: self.id, title: self.title, list_order: self.list_order })
+    DeskChannel.broadcast_to(self, { event_type: "desk_sync", desk_id: self.id, title: self.title, list_order: self.list_order, sender_id: Current.user.id })
   end
 end

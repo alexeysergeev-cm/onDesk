@@ -57,7 +57,8 @@ class Api::ListsController < ApplicationController
   end
 
   def two_lists_params
-    params.require(:payload).permit(:destination_list_id, :paper_id, :sender_id, source_order: [], destination_order: [])
+    defaults = { source_order: [], destination_order: [] }
+    params.require(:payload).permit(:destination_list_id, :paper_id, :sender_id, source_order: [], destination_order: []).reverse_merge(defaults)
   end
 end
 

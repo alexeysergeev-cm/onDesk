@@ -25,3 +25,5 @@ export const updatePaper = (paper) => (dispatch) =>
 
 export const deletePaper = (paperId) => (dispatch) =>
   PaperUtil.deletePaper(paperId).then(() => dispatch(removePaper(paperId)));
+
+export const receiveCablePaper = (paper) => (dispatch) => dispatch(receivePaper(paper));

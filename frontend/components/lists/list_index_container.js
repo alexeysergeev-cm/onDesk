@@ -9,10 +9,11 @@ import { updateDesk } from "../../actions/desk_actions";
 import { updatePaper } from "../../actions/paper_actions";
 import ListIndex from "./list_index";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   lists: state.entities.lists,
   papers: state.entities.papers,
   currentUserId: state.session.currentUserId,
+  listOrder: state.entities.desks[ownProps.deskId]?.list_order,
 });
 
 const mapDispatchToProps = {

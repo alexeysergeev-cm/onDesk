@@ -13,6 +13,7 @@ function ListIndex({
   updateTwoLists,
   papers,
   currentUserId,
+  listOrder,
 }) {
   const [listsToRender, setListsToRender] = useState({});
 
@@ -100,7 +101,7 @@ function ListIndex({
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
-            {desk.list_order.map((listId, i) => {
+            {listOrder.map((listId, i) => {
               if (listsToRender[listId]) {
                 return (
                   <Draggable

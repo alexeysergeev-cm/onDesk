@@ -13,14 +13,10 @@ const desksReducer = (state = {}, action) => {
       delete nextState[action.deskId]
       return nextState
     case DESK_SYNC:
-      console.log(nextState[action.data.desk_id].list_order, "nextState");
-      console.log(action.data.list_order, 'action.data')
       const desk = nextState[action.data.desk_id]
       desk.title = action.data.title;
       desk.list_order = action.data.list_order;
-      console.log(nextState[action.data.desk_id].list_order, "desk");
-      console.log(nextState, "desk state");
-      return nextState;
+      return { [desk.id]: desk};
     default:
       return state;
   }
