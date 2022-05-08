@@ -14,5 +14,6 @@ namespace :desks do
     puts "------------"
     puts "added #{total} background pictures!"
     puts "------------"
+    # Rails.logger.info "added #{total} background pictures!"  - > Better practice than puts
   end
 end 
