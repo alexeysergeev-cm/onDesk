@@ -24,7 +24,7 @@ jobs:
           --health-retries 5
     
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup Ruby 2.7
         uses: ruby/setup-ruby@v1
         with: 
@@ -35,6 +35,7 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 14.x
+          cache: 'npm'
 
       - name: Install dependencies
         run: |
@@ -51,8 +52,8 @@ jobs:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           PG_USER: postgres
         run: |
-          bin/rails db:test:setup
-          bin/rails test
+          bundle exec rails db:setup
+          bundle exec rails test
 
   Deploy:
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
