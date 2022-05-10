@@ -29,6 +29,8 @@ jobs:
 
       - name: Setup Ruby 2.7
         uses: ruby/setup-ruby@v1
+        env:
+          ImageOS: ubuntu18
         with: 
           ruby-version: 2.7
       
