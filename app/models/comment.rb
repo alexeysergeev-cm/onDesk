@@ -7,6 +7,7 @@ class Comment < ApplicationRecord
   after_commit :cast_to_channel, on: %i[create update destroy]
 
   def cast_to_channel    
+    return if !Current.user
     DeskChannel.broadcast_to(self.paper.list.desk, { event_type: "comment_sync", sender_id: Current.user.id, comment: CommentSerializer.new(self)})
   end
 end

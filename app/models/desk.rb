@@ -31,6 +31,7 @@ class Desk < ApplicationRecord
   end
 
   def send_cable
+    return if !Current.user
     if title_previously_changed? 
       # debugger
     end
