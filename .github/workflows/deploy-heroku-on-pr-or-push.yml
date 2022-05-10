@@ -11,16 +11,21 @@ on:
 jobs:
   Test:
     runs-on: ubuntu-latest
+    container: node:10.18-jessie
     services:
       postgres:
-        image: posgres:12
+        image: posgres
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: postgres
         ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
 
       - name: Setup Ruby 2.7
         uses: ruby/setup-ruby@v1
@@ -28,7 +33,7 @@ jobs:
           ruby-version: 2.7
       
       - name: Setup Node 14
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with: 
           ruby-version: 14.x
 
@@ -37,7 +42,7 @@ jobs:
         run: echo "::set-output name-dir::$(yarn cache dir)"
 
       - name: Cache yarn
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with: 
           path: ${{ steps.yarn-cache.outputs.dir }}  
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -45,7 +50,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Cache gems
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with: 
           path: vendor/bundle
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/Gemfile.lock') }}
@@ -61,12 +66,12 @@ jobs:
 
       - name: Run tests
         env: 
-          DATABASE_URL: postgres://postgres:password@localhost:5432/test
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
           REDIS_URL: redis://localhost:6379/0
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           PG_USER: postgres
-        run: 
+        run: |
           bin/rails db:test:setup
           bin/rails test
 
@@ -76,7 +81,7 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@main
+        - uses: actions/checkout@v3
         - name: Deploy to Heroku
           uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
           with:
