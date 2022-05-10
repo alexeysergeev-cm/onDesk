@@ -11,6 +11,8 @@ on:
 jobs:
   Test:
     runs-on: ubuntu-latest
+    env:
+      ImageOS: ubuntu18
     container: node:10.18-jessie
     services:
       postgres:
@@ -23,16 +25,16 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     
     steps:
       - uses: actions/checkout@v3
 
       - name: Setup Ruby 2.7
         uses: ruby/setup-ruby@v1
-        env:
-          ImageOS: ubuntu18
         with: 
-          ruby-version: 2.7.4
+          ruby-version: 2.7
+          bundler-cache: true
       
       - name: Setup Node 14
         uses: actions/setup-node@v3
