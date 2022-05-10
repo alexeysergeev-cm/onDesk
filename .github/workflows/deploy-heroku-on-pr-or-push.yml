@@ -11,11 +11,10 @@ on:
 jobs:
   Deploy:
       if: ${{ github.event_name == 'push' && github.ref == 'refs/head/main' }}
-      # needs: Test
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@master
+        - uses: actions/checkout@main
         - name: Deploy to Heroku
           uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
           with:
@@ -23,7 +22,9 @@ jobs:
             heroku_app_name: "ondesk" #Must be unique in Heroku
             heroku_email: "xengawe@gmail.com"
 
-#test below should go before deploy
+
+# add to line 14  => needs: Test
+# test below should go before deploy
 
   # Test:
   #   runs-on: ubuntu-latest
