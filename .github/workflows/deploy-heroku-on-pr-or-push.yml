@@ -32,7 +32,7 @@ jobs:
         env:
           ImageOS: ubuntu18
         with: 
-          ruby-version: 2.7
+          ruby-version: 2.7.x
       
       - name: Setup Node 14
         uses: actions/setup-node@v3
