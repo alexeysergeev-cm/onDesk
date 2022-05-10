@@ -52,7 +52,6 @@ class DeskShow extends React.Component {
                 break;
               case "member_sync":
                 if (data.action_type === "delete") {
-                  console.log(this.props.deleteCableMember);
                   this.props.deleteCableMember({
                     desk_membership: data.desk_membership,
                   });
