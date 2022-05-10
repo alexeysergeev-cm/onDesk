@@ -14,7 +14,7 @@ jobs:
     container: node:10.18-jessie
     services:
       postgres:
-        image: posgres
+        image: postgres
         env:
           POSTGRES_PASSWORD: postgres
         ports: ['5432:5432']
