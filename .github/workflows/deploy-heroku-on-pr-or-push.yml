@@ -9,6 +9,22 @@ on:
       - main
 
 jobs:
+  Deploy:
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/head/main' }}
+      needs: Test
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@master
+        - name: Deploy to Heroku
+          uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+          with:
+            heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+            heroku_app_name: "ondesk" #Must be unique in Heroku
+            heroku_email: "xengawe@gmail.com"
+
+#test below should go before deploy
+
   # Test:
   #   runs-on: ubuntu-latest
   #   services:
@@ -70,16 +86,4 @@ jobs:
   #         bin/rails db:test:prepare
   #         bin/rails test
 
-  Deploy:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/head/main' }}
-    needs: Test
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@master
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: "ondesk" #Must be unique in Heroku
-          heroku_email: "xengawe@gmail.com"
+  
