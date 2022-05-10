@@ -11,7 +11,7 @@ on:
 jobs:
   Deploy:
       if: ${{ github.event_name == 'push' && github.ref == 'refs/head/main' }}
-      needs: Test
+      # needs: Test
       runs-on: ubuntu-latest
 
       steps:
