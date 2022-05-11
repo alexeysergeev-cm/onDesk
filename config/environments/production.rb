@@ -31,7 +31,7 @@ Rails.application.configure do
 
   # add this to show my logo on home page!
   config.serve_static_assets = true
-  config.assets.compile = true
+  # config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
