@@ -44,7 +44,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development",
+    "build": "webpack",
+    "start": "webpack --watch",
     "postinstall": "webpack",
     "lint": "eslint \"frontend/**/*.{js,jsx}\""
   },
