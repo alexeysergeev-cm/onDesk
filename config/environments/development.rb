@@ -60,4 +60,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
+  routes.default_url_options[:host] = 'localhost:3000'
 end
