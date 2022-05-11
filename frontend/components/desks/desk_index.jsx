@@ -92,7 +92,7 @@ class DeskIndex extends React.Component {
                 </Link>
               ))
             ) : (
-              <progress class="progress is-small is-link" max="100">
+              <progress className="progress is-small is-link" max="100">
                 60%
               </progress>
             )}
