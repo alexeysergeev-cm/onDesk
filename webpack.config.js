@@ -2,6 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
 
+const mode = process.env.NODE_ENV || "development";
+console.log(mode, "in WEBPACK config ---->>>")
+
 module.exports = {
   entry: "./frontend/onDesk.jsx",
   output: {
@@ -51,7 +54,8 @@ module.exports = {
       },
     ],
   },
-  devtool: "source-map",
+  devtool: mode === "development" ? "source-map" : false,
+  mode: mode,
   resolve: {
     extensions: [".js", ".jsx", "*", ".css"],
   },
@@ -60,9 +64,7 @@ module.exports = {
       React: "react",
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify(
-        process.env.NODE_ENV || "development"
-      ),
+      "process.env.NODE_ENV": JSON.stringify(mode),
     }),
     new Dotenv(),
   ],
