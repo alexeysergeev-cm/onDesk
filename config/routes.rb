@@ -22,13 +22,10 @@ Rails.application.routes.draw do
     #route,       controller#action,        as: :something (optional) 
     get "search", to: "search_bars#search"
 
-    resources :links, only: [:create, :destroy, :update] do
-      collection do 
-        get ":slug", to: 'links#show', as: :slug
-      end
-    end
+    resources :links, only: [:create, :destroy]
   end
 
+  get "/s/:slug", to: 'api/links#show', as: :slug
   mount ActionCable.server => '/cable'
 
   root to: 'static_pages#root'
