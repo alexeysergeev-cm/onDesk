@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_11_030617) do
+ActiveRecord::Schema.define(version: 2022_05_11_212156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2022_05_11_030617) do
     t.integer "clicked", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["url", "slug"], name: "index_links_on_url_and_slug", unique: true
   end
 
   create_table "lists", force: :cascade do |t|
