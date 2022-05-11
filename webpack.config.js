@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const Dotenv = require("dotenv-webpack");
 
 const mode = process.env.NODE_ENV || "development";
-console.log(mode, "in WEBPACK config ---->>>")
 
 module.exports = {
   entry: "./frontend/onDesk.jsx",
