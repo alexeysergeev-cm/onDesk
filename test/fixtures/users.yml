@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  username: John Tailor
-  email: john@io.com
-  password_digest: MyString
-  session_token: MyString1
+# one:
+#   username: John Tailor
+#   email: john@io.com
+#   password_digest: MyString
+#   session_token: MyString1
 
-two:
-  username: Chris Smith
-  email: chris@io.com
-  password_digest: MyString2
-  session_token: MyString2
+# two:
+#   username: Chris Smith
+#   email: chris@io.com
+#   password_digest: MyString2
+#   session_token: MyString2
