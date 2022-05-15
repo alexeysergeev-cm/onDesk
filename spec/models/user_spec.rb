@@ -29,7 +29,4 @@ RSpec.describe User, :type => :model do
     it { should have_many(:desks) }
     it { should have_many(:desk_memberships)}
   end
-
-
-
 end
