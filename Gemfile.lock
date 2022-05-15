@@ -112,6 +112,10 @@ GEM
     erubi (1.10.0)
     eventmachine (1.2.7)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     formatador (1.1.0)
     globalid (1.0.0)
@@ -302,6 +306,8 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
+  factory_bot
+  faker
   guard
   guard-livereload (~> 2.4)
   jbuilder (~> 2.5)

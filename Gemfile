@@ -43,6 +43,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'pry-rails'
+  gem 'faker'
+  gem 'factory_bot'
 end
 
 group :development do
@@ -54,9 +57,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
   gem 'annotate'
-  
   gem 'guard'
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'rack-livereload'
@@ -64,6 +65,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  # test views or features done by capybara
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
