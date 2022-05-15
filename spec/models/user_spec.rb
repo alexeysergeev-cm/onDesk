@@ -6,8 +6,8 @@ RSpec.describe User, :type => :model do
   # Associations
   # Class methods
   # Errors messages
-
-  subject(:user) { User.new(username: "Jacky Chan", password: "123456", email: "chan@io.com") }
+  subject(:db_user) { create(:user) }
+  subject(:user) { build(:user) }
 
   describe "Validations" do 
     it "is valid with valid attributes" do
@@ -25,12 +25,11 @@ RSpec.describe User, :type => :model do
     end
   
     it "is not valid without a password" do
-      user = build(:user, email: nil)
-      expect(user).to_not be_valid
+      pw_user = User.new(email: "hello@io.com", username: "hello me")
+      expect(pw_user).to_not be_valid
     end
 
     it "is invalid with a duplicate email address" do
-      db_user = create(:user)
       user = build(:user, email: db_user.email)
       user.valid?
       expect(user.errors[:email]).to include("has already been taken")
