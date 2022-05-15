@@ -13,7 +13,7 @@ RSpec.describe Desk, type: :model do
     it { should validate_uniqueness_of(:title) }
     
     it "does not create a desk with the same title" do 
-      desk2 = Desk.new(title: "Hello World", author_id: 1)
+      desk2 = Desk.new(title: desk.title, author_id: 1)
       expect(desk2.valid?).to be false
     end
   end
@@ -29,7 +29,7 @@ RSpec.describe Desk, type: :model do
   describe "Class methods" do 
     describe "#set_background_picture" do 
       it "should assign background picture if one is not passed in params" do
-        desk_with_no_pic = Desk.create(title: "Testing", author_id: 2)
+        desk_with_no_pic = build(:desk)
         desk_with_no_pic.set_background_picture
         expect(desk_with_no_pic.background_picture).not_to be nil
       end
