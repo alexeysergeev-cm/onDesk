@@ -2,6 +2,11 @@ require 'rails_helper'
 
 
 RSpec.describe User, :type => :model do
+  # validations
+  # Associations
+  # Class methods
+  # Errors messages
+
   subject(:user) { User.new(username: "Jacky Chan", password: "123456", email: "chan@io.com") }
 
   describe "Validations" do 
