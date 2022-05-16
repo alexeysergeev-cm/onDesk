@@ -15,7 +15,7 @@ RSpec.describe Desk, type: :model do
     it "does not create a desk with the same title" do 
       user = build(:user)
       desk1 = build(:desk, author_id: user.id)
-      desk2 = build(:desk)
+      desk2 = build(:desk, title: desk1.title)
       expect(desk2.valid?).to be false
     end
   end
