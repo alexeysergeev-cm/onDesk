@@ -13,9 +13,11 @@ RSpec.describe Desk, type: :model do
     it { should validate_uniqueness_of(:title) }
     
     it "does not create a desk with the same title" do 
-      user = build(:user)
-      desk1 = build(:desk, author_id: user.id)
+      user = create(:user)
+      desk1 = create(:desk, author_id: user.id)
       desk2 = build(:desk, title: desk1.title)
+      desk2.valid?
+      expect(desk2.errors[:title]).to include("has already been taken")
       expect(desk2.valid?).to be false
     end
   end
