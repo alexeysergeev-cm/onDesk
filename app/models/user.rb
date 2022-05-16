@@ -4,26 +4,21 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  has_many :desks, foreign_key: :author_id
+  has_many :desk_memberships, foreign_key: :user_id
+  has_many :lists, foreign_key: :author_id
+
+  has_one_attached :photo
+  
   PHOTO_COLORS = ["#EA7AF4", "#B43E8F", "#6200B3", "#3B0086", "#290628", "#060F29", "#3EAFB5", "#3EB57D", "#71B53E", "#B5B13E", "#B5B13E"]
   
   before_create do
     self.color = PHOTO_COLORS.sample
   end
 
-
   after_initialize :ensure_session_token
   attr_reader :password
 
-  has_many :desks,
-    foreign_key: :author_id
-
-  has_many :desk_memberships,
-    foreign_key: :user_id
-
-  has_many :lists, 
-    foreign_key: :author_id
-
-  has_one_attached :photo
   #SPIRE
 
   def self.find_by_credentials(email, pw)

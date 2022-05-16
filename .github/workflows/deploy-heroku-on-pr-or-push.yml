@@ -52,8 +52,8 @@ jobs:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
           PG_USER: postgres
         run: |
-          bundle exec rails db:setup
-          bundle exec rails test
+          bundle exec rails db:create db:schema:load
+          bundle exec rspec
 
   Deploy:
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
