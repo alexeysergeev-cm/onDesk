@@ -3,6 +3,7 @@ class Api::DesksController < ApplicationController
 
   def index
     @desks = Desk.all 
+    render :index
   end
 
   def create
@@ -18,6 +19,7 @@ class Api::DesksController < ApplicationController
 
   def show
     @desk = Desk.includes(:lists, :papers, :comments, :desk_memberships).find_by(id: params[:id])
+    render :show
   end
 
   def update
