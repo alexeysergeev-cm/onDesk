@@ -91,4 +91,9 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+  # [:black, :white, :red, :green, :yellow, :blue, :magenta, :cyan]
+  # config.success_color = :green
+  # config.pending_color = :yellow
+  # config.failure_color = :magenta
 end
