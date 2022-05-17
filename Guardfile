@@ -54,3 +54,14 @@ guard 'livereload' do
   watch(%r{config/locales/.+\.yml})
   watch(%r{app/assets/stylesheets/.+\.scss})
 end
+
+# As your test suite grows larger, you can change the catch-all 'spec' 
+# command to name a specific spec directory (such as 'spec/models' or 'spec/features') 
+# or a specific spec file (such as 'spec/features/auth_spec.rb') to only trigger the 
+# execution of whichever specs you are focusing on at the moment.
+
+guard :rspec, cmd: 'spring rspec' do
+  watch(%r{^app/}) { 'spec' }
+  watch(%r{^spec/}) { 'spec' }
+  watch('config/routes.rb') { 'spec' }
+end
